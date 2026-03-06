@@ -2,6 +2,8 @@ package gui;
 
 import processing.core.PApplet;
 
+import static gui.Mides.*;
+
 public class TarjaResum extends GuiElement {
     
     String[] textos;
@@ -32,17 +34,19 @@ public class TarjaResum extends GuiElement {
         // Text nivell 2
         p5.fill(0);
         p5.textFont(fonts.getFontSecundaria());
+        p5.textSize(TEXT_NIVELL2);
         p5.text(this.textos[0], this.x + this.margeEsq, this.y + this.h/4);
 
         // Text nivell 1
         p5.fill(0);
         p5.textFont(fonts.getFontPrimaria());
-        p5.textSize(98);
+        p5.textSize(TEXT_NIVELL1);
         p5.text(this.textos[1], this.x + this.margeEsq, this.y + this.h/2);
 
         // Text nivell 3
         p5.fill(50);
         p5.textFont(fonts.getFontTerciaria());
+        p5.textSize(TEXT_NIVELL3);
         p5.text(this.textos[2], this.x + this.margeEsq, this.y + 3*this.h/4);
         
         p5.popStyle();

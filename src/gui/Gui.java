@@ -15,6 +15,7 @@ public class Gui {
     Taula taula;
     Boto boto;
     Desplegable desplegable;
+    GraellaTarja graellaTarja;
 
     Colors colors;
     Fonts fonts;
@@ -30,8 +31,9 @@ public class Gui {
 
     public void setElementsGUI(){
 
-        tarja = new Tarja(100, 100, 300, 300);
+        tarja = new Tarja(50, 100, 300, 300);
         tarja.setTextos("titol", "subtitol");
+        tarja.setImatge(p5, p5.loadImage("data/img/foto.jpg"));
         tarja.setColors(colors);
         tarja.setFonts(fonts);
 
@@ -40,7 +42,7 @@ public class Gui {
         tarjaResum.setColors(colors);
         tarjaResum.setFonts(fonts);
 
-        taula = new Taula(300, 300, 400, 400);
+        taula = new Taula(750, 100, 400, 400);
         String[] cols = { "col1", "col2", "col3"};
         String[][] dades = {{"1", "2", "3"}, {"4", "5", "6"}, {"4", "5", "6"}, {"4", "5", "6"}, {"4", "5", "6"}};
         float[] mides = {33, 33, 33};
@@ -51,23 +53,36 @@ public class Gui {
         taula.setColors(colors);
         taula.setFonts(fonts);
 
+        //taula.paginaSeguent();
+
         boto = new Boto(p5, "OK", 50, 50, AMPLE_BOTO, ALT_BOTO);
         boto.setColors(colors);
         boto.setFonts(fonts);
 
         String[] opcions = {"opcioA", "opcioB"};
-        desplegable = new Desplegable(opcions, 500, 100, AMPLE_DESPLEGABLE, ALT_DESPLEGABLE);
+        desplegable = new Desplegable(opcions, 200, 50, AMPLE_DESPLEGABLE, ALT_DESPLEGABLE);
         desplegable.setColors(colors);
         desplegable.setFonts(fonts);
+
+
+        graellaTarja = new GraellaTarja(1, 5, 100, 100, 400, 400);
+        String[][] dadesGraella = { {"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"}, };
+        graellaTarja.setData(dadesGraella);
+        graellaTarja.setColors(colors);
+        graellaTarja.setFonts(fonts);
+        graellaTarja.setTarges();
+
 
     }
 
 
     public void dibuixaPantalla(){
+        tarjaResum.display(p5);
         tarja.display(p5);
-        //taula.display(p5);
+        taula.display(p5);
         boto.display(p5);
         desplegable.display(p5);
+        graellaTarja.display(p5);
     }
 
 

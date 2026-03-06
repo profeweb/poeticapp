@@ -4,6 +4,8 @@ import processing.core.PApplet;
 import processing.core.PGraphics;
 import processing.core.PImage;
 
+import static gui.Mides.*;
+
 public class Tarja extends GuiElement {
 
     int num;
@@ -46,7 +48,11 @@ public class Tarja extends GuiElement {
         mask.rect(0, 0, this.w, this.h, 5);
         mask.endDraw();
 
-        PImage inputImage= img.get();
+        PGraphics inputImage= p5.createGraphics((int)this.w, (int)this.h);
+        inputImage.beginDraw();
+        inputImage.image(img, 0, 0);
+        inputImage.endDraw();
+
         PImage maskImage = mask.get();
         inputImage.mask(maskImage);
 
@@ -72,18 +78,20 @@ public class Tarja extends GuiElement {
         // Número
         p5.fill(0);
         p5.textFont(fonts.getFontSecundaria());
-        p5.text(this.num, this.x + this.margeEsq, this.y + 20);
+        p5.textSize(TEXT_NUM);
+        p5.text(this.num, this.x + this.margeEsq, this.y + TEXT_NUM / 2f);
 
         // Text Títol
         p5.fill(0);
         p5.textFont(fonts.getFontPrimaria());
-        p5.textSize(98);
-        p5.text(this.titol, this.x + this.margeEsq, this.y + this.h + 20);
+        p5.textSize(TEXT_TITOL);
+        p5.text(this.titol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL);
 
         // Text Subtítol
         p5.fill(50);
-        p5.textFont(fonts.getFontTerciaria());
-        p5.text(this.subtitol, this.x + this.margeEsq, this.y + this.h + 40);
+        p5.textFont(fonts.getFontSecundaria());
+        p5.textSize(TEXT_SUBTITOL);
+        p5.text(this.subtitol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL + TEXT_SUBTITOL/1.5f);
 
         p5.popStyle();
     }

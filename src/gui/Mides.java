@@ -24,4 +24,12 @@ public class Mides {
     public static final float GRUIX_BOTO = 3.5f;
     public static final float AMPLE_ENTRADA_TEXT = 200;
     public static final float ALT_ENTRADA_TEXT = ALT_GUI;
+
+    // TARJA, TARJA_RESUM
+    public static final float TEXT_NUM = 80f;
+    public static final float TEXT_TITOL = 50f;
+    public static final float TEXT_SUBTITOL = 40f;
+    public static final float TEXT_NIVELL1 = 80f;
+    public static final float TEXT_NIVELL2 = 50f;
+    public static final float TEXT_NIVELL3 = 25f;
 }

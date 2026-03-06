@@ -28,13 +28,14 @@ public class Taula extends GuiElement {
 
     public void setDades(String[][] d){
         this.dadesTaula = d;
-        this.numFiles = d.length + 1;
+        this.numFiles = d.length;
         if(d.length % (this.numFiles -1)==0){
             this.numTotalPagines = (d.length / (this.numFiles -1)) -1;
         }
         else {
             this.numTotalPagines = (d.length / (this.numFiles -1)) ;
         }
+        this.numFiles = d.length + 1;
     }
 
     public void setNumFilesPagina(int numFiles){ this.numFiles  = numFiles + 1; }
