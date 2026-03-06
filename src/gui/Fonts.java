@@ -17,10 +17,11 @@ public class Fonts {
 
     // Estableix les fonts de l'App
     public void setFonts(PApplet p5){
-        this.fonts = new PFont[3];
+        this.fonts = new PFont[4];
         this.fonts[0] = p5.createFont("data/fonts/Astila.ttf", midaTitol);
         this.fonts[1] = p5.createFont("data/fonts/GameOver.ttf", midaSubtitol);
         this.fonts[2] = p5.createFont("data/fonts/Graffiti.ttf", midaParagraf);
+        this.fonts[3] = p5.createFont("data/fonts/NotoEmoji-Bold.ttf", TEXT_BOTO);
     }
 
     // Getter del número de fonts
@@ -41,6 +42,11 @@ public class Fonts {
     // Getter del la font terciaria
     public PFont getFontTerciaria(){
         return  this.fonts[2];
+    }
+
+    // Getter del la font emoji
+    public PFont getFontEmoji(){
+        return  this.fonts[3];
     }
 
     // Getter de la font i-èssima

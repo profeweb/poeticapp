@@ -13,7 +13,6 @@ public class Tarja extends GuiElement {
     String subtitol;
 
     PImage imatge;
-
     float margeEsq = 15;
 
     public Tarja(float x, float y, float w, float h){
@@ -85,15 +84,57 @@ public class Tarja extends GuiElement {
         p5.fill(0);
         p5.textFont(fonts.getFontPrimaria());
         p5.textSize(TEXT_TITOL);
-        p5.text(this.titol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL);
+        p5.text(this.titol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL/1.25f);
 
         // Text Subtítol
         p5.fill(50);
         p5.textFont(fonts.getFontSecundaria());
         p5.textSize(TEXT_SUBTITOL);
-        p5.text(this.subtitol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL + TEXT_SUBTITOL/1.5f);
+        p5.text(this.subtitol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL/1.5f + TEXT_SUBTITOL/1.5f);
 
         p5.popStyle();
     }
+
+    public void displaySelected(PApplet p5){
+
+        p5.pushStyle();
+
+        p5.fill(200);
+        p5.strokeWeight(10);
+        p5.rect(this.x, this.y, this.w, this.h, 5);
+
+        // Imatge
+        if(this.imatge!=null){
+            p5.tint(255, 150, 150);
+            p5.image(this.imatge, this.x, this.y, this.w, this.h);
+            p5.noTint();
+        }
+
+        // Número
+        p5.fill(0);
+        p5.textFont(fonts.getFontSecundaria());
+        p5.textSize(TEXT_NUM);
+        p5.text(this.num, this.x + this.margeEsq, this.y + TEXT_NUM / 2f);
+
+        // Text Títol
+        p5.fill(0);
+        p5.textFont(fonts.getFontPrimaria());
+        p5.textSize(TEXT_TITOL);
+        p5.text(this.titol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL/1.25f);
+
+        // Text Subtítol
+        p5.fill(50);
+        p5.textFont(fonts.getFontSecundaria());
+        p5.textSize(TEXT_SUBTITOL);
+        p5.text(this.subtitol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL/1.5f + TEXT_SUBTITOL/1.5f);
+
+        p5.popStyle();
+    }
+
+    public boolean mouseDins(PApplet p5){
+        return this.x < p5.mouseX && p5.mouseX < this.x + this.w &&
+                this.y < p5.mouseY && p5.mouseY < this.y + this.h;
+    }
+
 
 }

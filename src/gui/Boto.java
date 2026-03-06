@@ -7,8 +7,6 @@ import static gui.Mides.TEXT_BOTO;
 
 public class Boto extends GuiElement {
 
-    // Propietats d'un botó:
-
     // Colors del botó
     int colorContorn, colorFarciment, colorFarcimentActiu, colorFarcimentDesactivat;
 

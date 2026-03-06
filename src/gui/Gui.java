@@ -1,6 +1,7 @@
 package gui;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 import static gui.Mides.*;
 
@@ -14,16 +15,21 @@ public class Gui {
     Tarja tarja;
     Taula taula;
     Boto boto;
+    BotoIcona botoIcona;
     Desplegable desplegable;
     GraellaTarja graellaTarja;
 
     Colors colors;
     Fonts fonts;
 
+    PImage img;
+
     public Gui(PApplet p5){
         this.p5 = p5;
         this.colors = new Colors(p5);
         this.fonts = new Fonts(p5);
+
+        img = p5.loadImage("data/img/foto.jpg");
 
         setElementsGUI();
     }
@@ -65,13 +71,17 @@ public class Gui {
         desplegable.setFonts(fonts);
 
 
-        graellaTarja = new GraellaTarja(1, 5, 100, 100, 400, 400);
-        String[][] dadesGraella = { {"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"}, };
+        graellaTarja = new GraellaTarja(2, 4, 100, 100, 600, 400);
+        String[][] dadesGraella = { {"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
         graellaTarja.setData(dadesGraella);
         graellaTarja.setColors(colors);
         graellaTarja.setFonts(fonts);
-        graellaTarja.setTarges();
+        graellaTarja.setTarges(p5);
+        graellaTarja.setImatges(p5,img);
 
+        botoIcona = new BotoIcona(p5, "Hola", 0x1F600, 600, 50, AMPLE_BOTO_MENU, ALT_BOTO);
+        botoIcona.setColors(colors);
+        botoIcona.setFonts(fonts);
 
     }
 
@@ -83,6 +93,8 @@ public class Gui {
         boto.display(p5);
         desplegable.display(p5);
         graellaTarja.display(p5);
+
+        botoIcona.display(p5);
     }
 
 
@@ -93,6 +105,8 @@ public class Gui {
         if(boto.mouseDins(p5)){
             p5.println("CLICK BOTÓ");
         }
+
+        graellaTarja.clickSobreTarges(p5);
     }
 
 }
