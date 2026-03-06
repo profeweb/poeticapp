@@ -10,7 +10,7 @@ public class Main extends PApplet {
     }
 
     public void settings(){
-        size(1400, 800);
+        size(1920, 1080);
         smooth(10);
     }
 

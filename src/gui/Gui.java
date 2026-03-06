@@ -16,13 +16,17 @@ public class Gui {
     Taula taula;
     Boto boto;
     BotoIcona botoIcona;
+    BotoFavorit botoFavorit;
     Desplegable desplegable;
     GraellaTarja graellaTarja;
+    BotonsGrup botonsGrup;
+    EntradaText entradaText;
 
     Colors colors;
     Fonts fonts;
 
     PImage img;
+
 
     public Gui(PApplet p5){
         this.p5 = p5;
@@ -48,7 +52,7 @@ public class Gui {
         tarjaResum.setColors(colors);
         tarjaResum.setFonts(fonts);
 
-        taula = new Taula(750, 100, 400, 400);
+        taula = new Taula(50, 600, 600, 400);
         String[] cols = { "col1", "col2", "col3"};
         String[][] dades = {{"1", "2", "3"}, {"4", "5", "6"}, {"4", "5", "6"}, {"4", "5", "6"}, {"4", "5", "6"}};
         float[] mides = {33, 33, 33};
@@ -71,22 +75,41 @@ public class Gui {
         desplegable.setFonts(fonts);
 
 
-        graellaTarja = new GraellaTarja(2, 4, 100, 100, 600, 400);
-        String[][] dadesGraella = { {"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
+        graellaTarja = new GraellaTarja(2, 4, 750, 100, 1100, 600);
+        String[][] dadesGraella = { {"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
         graellaTarja.setData(dadesGraella);
         graellaTarja.setColors(colors);
         graellaTarja.setFonts(fonts);
         graellaTarja.setTarges(p5);
         graellaTarja.setImatges(p5,img);
+        graellaTarja.setBotons(p5);
+
+        graellaTarja.paginaSeguent();
 
         botoIcona = new BotoIcona(p5, "Hola", 0x1F600, 600, 50, AMPLE_BOTO_MENU, ALT_BOTO);
         botoIcona.setColors(colors);
         botoIcona.setFonts(fonts);
 
+        botoFavorit = new BotoFavorit(1200, 50, BOTO_FAVORIT);
+        botoFavorit.setColors(colors);
+        botoFavorit.setFonts(fonts);
+
+        String[] titols = {"AUTOR", "LLIBRE", "POEMARI", "ESTADISTIQUES"};
+        botonsGrup = new BotonsGrup( 100, 800, AMPLE_BOTO_MENU, ALT_BOTO);
+        botonsGrup.setColors(colors);
+        botonsGrup.setFonts(fonts);
+        botonsGrup.setBotons(p5, titols);
+
+        entradaText = new EntradaText(p5, 100, 100, AMPLE_ENTRADA_TEXT, ALT_ENTRADA_TEXT, colors, fonts);
+        entradaText.setTextEtiqueta("NOM");
+        entradaText.setColors(colors);
+        entradaText.setFonts(fonts);
+
     }
 
 
     public void dibuixaPantalla(){
+        /*
         tarjaResum.display(p5);
         tarja.display(p5);
         taula.display(p5);
@@ -95,6 +118,13 @@ public class Gui {
         graellaTarja.display(p5);
 
         botoIcona.display(p5);
+
+        botoFavorit.display(p5);
+        botonsGrup.display(p5);
+
+         */
+
+        entradaText.display(p5);
     }
 
 
@@ -107,6 +137,14 @@ public class Gui {
         }
 
         graellaTarja.clickSobreTarges(p5);
+        graellaTarja.clickBotoAnterior(p5);
+        graellaTarja.clickBotoSeguent(p5);
+
+        botoFavorit.clickFavorit(p5);
+
+        botonsGrup.clickBotons(p5);
+
+
     }
 
 }

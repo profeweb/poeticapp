@@ -15,6 +15,8 @@ public class Tarja extends GuiElement {
     PImage imatge;
     float margeEsq = 15;
 
+    BotoFavorit bFavorit;
+
     public Tarja(float x, float y, float w, float h){
         super(x, y, w, h);
         this.num =  0;
@@ -28,6 +30,12 @@ public class Tarja extends GuiElement {
         this.titol = titol;
         this.subtitol = subtitol;
         this.imatge = null;
+    }
+
+    public void setBotoFavorit(){
+        this.bFavorit = new BotoFavorit(this.x + this.w - BOTO_FAVORIT/2 - MARGE_FAVORIT, this.y + this.h - BOTO_FAVORIT/2 - MARGE_FAVORIT, BOTO_FAVORIT);
+        this.bFavorit.setColors(colors);
+        this.bFavorit.setFonts(fonts);
     }
 
     public void setNum(int n){ this.num = n; }
@@ -92,6 +100,11 @@ public class Tarja extends GuiElement {
         p5.textSize(TEXT_SUBTITOL);
         p5.text(this.subtitol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL/1.5f + TEXT_SUBTITOL/1.5f);
 
+        // Boto Favorit
+        if(this.bFavorit!=null){
+            this.bFavorit.display(p5);
+        }
+
         p5.popStyle();
     }
 
@@ -127,6 +140,11 @@ public class Tarja extends GuiElement {
         p5.textFont(fonts.getFontSecundaria());
         p5.textSize(TEXT_SUBTITOL);
         p5.text(this.subtitol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL/1.5f + TEXT_SUBTITOL/1.5f);
+
+        // Boto Favorit
+        if(this.bFavorit!=null){
+            this.bFavorit.display(p5);
+        }
 
         p5.popStyle();
     }

@@ -7,6 +7,8 @@ public class Mides {
     public static float midaSubtitol = 54;
     public static float midaParagraf = 18;
 
+    public static final float TEXT_INFO_GUI = 34;
+
 
     // ELEMENTS GUI
     public static final float ALT_GUI = 40;
@@ -21,6 +23,7 @@ public class Mides {
     public static final float ALT_DESPLEGABLE  = ALT_GUI;
 
     // ENTRADA DE TEXT
+    public static final float TEXT_ENTRADA = 24;
     public static final float TEXT_BOTO = 75;
     public static final float TEXT_ICONA_BOTO = 25;
     public static final float GRUIX_BOTO = 3.5f;
@@ -34,4 +37,13 @@ public class Mides {
     public static final float TEXT_NIVELL1 = 80f;
     public static final float TEXT_NIVELL2 = 50f;
     public static final float TEXT_NIVELL3 = 25f;
+
+    // CODIS EMOJI
+    public static final float BOTO_FAVORIT = 50f;
+    public static final float MARGE_FAVORIT = 10f;
+    public static final int CODI_FAVORIT = 0x1F600 + 54;
+    public static final int CODI_NO_FAVORIT = 0x1F600 + 66;
+    public static final int CODI_SEGUENT = 0x1F600 + 1265;
+    public static final int CODI_ANTERIOR = 0x1F600 + 1266;
+
 }

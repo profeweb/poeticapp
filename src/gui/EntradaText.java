@@ -2,33 +2,33 @@ package gui;
 
 import processing.core.PApplet;
 
+import static gui.Mides.TEXT_ENTRADA;
 import static processing.core.PConstants.BACKSPACE;
 
-public class EntradaText {
-
-    // Propietats del camp d'entrada de text
-    int x, y, h, w;
+public class EntradaText extends GuiElement {
 
     // Colors
     int colorFarciment, colorText, colorFarcimentActiu, colorContorn;
     int gruixaContorn;
 
     // Text del camp
+    String textEtiqueta = "";
     String text = "";
-    int midaText;
 
     // Estat del camp de text
     boolean actiu = false;
 
     // Constructor
-    public EntradaText(PApplet p5, int x, int y, int w, int h) {
-        this.x = x; this.y = y; this.w = w; this.h = h;
+    public EntradaText(PApplet p5, float x, float y, float w, float h, Colors colors, Fonts fonts) {
+        super(x, y, w, h);
         this.colorFarciment = p5.color(140, 140, 140);
         this.colorText = p5.color(0, 0, 0);
         this.colorFarcimentActiu = p5.color(190, 190, 60);
         this.colorContorn = p5.color(30, 30, 30);
         this.gruixaContorn = 1;
-        this.midaText = 24;
+
+        setColors(colors);
+        setFonts(fonts);
     }
 
     // Setters
@@ -41,6 +41,10 @@ public class EntradaText {
     }
 
     // Setter del text
+    public void setTextEtiqueta(String t){
+        this.textEtiqueta= t;
+    }
+
     public void setText(String t){
         this.text= t;
     }
@@ -59,8 +63,15 @@ public class EntradaText {
         p5.rect(x, y, w, h, 5);
 
         p5.fill(colorText);
-        p5.textSize(midaText); p5.textAlign(p5.LEFT, p5.CENTER);
-        p5.text(text, x + 5, y + h - midaText);
+        p5.textSize(TEXT_ENTRADA);
+        p5.textAlign(p5.LEFT, p5.CENTER);
+        p5.textFont(fonts.getFontSecundaria());
+        p5.text(text, x + 5, y + h - TEXT_ENTRADA);
+
+        p5.fill(colors.getColorPrimari());
+        p5.textAlign(p5.RIGHT, p5.CENTER);
+        p5.textFont(fonts.getFontSecundaria());
+        p5.text(textEtiqueta, x - 15, y + h - TEXT_ENTRADA);
         p5.popStyle();
     }
 
