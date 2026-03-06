@@ -1,0 +1,50 @@
+package gui;
+
+import processing.core.PApplet;
+
+public class Colors {
+
+    private int[] colors;
+
+    public Colors(PApplet p5){
+        this.setColors(p5);
+    }
+
+    // Estableix colors de l'App
+    void setColors(PApplet p5){
+
+        this.colors = new int[5];
+
+        this.colors[0] = p5.color(0xFF068D9D);
+        this.colors[1] = p5.color(0xFF53599A);
+        this.colors[2] = p5.color(0xFF6D9DC5);
+        this.colors[3] = p5.color(0xFF80DED9);
+        this.colors[4] = p5.color(0xFFAEECEF);
+    }
+
+    // Getter del número de colors
+    public int getNumColors(){
+        return this.colors.length;
+    }
+
+    // Getter del color primari
+    public int getColorPrimari(){
+        return  getColorAt(0);
+    }
+
+    // Getter del color secundari
+    public int getColorSecundari(){
+        return  getColorAt(1);
+    }
+
+    // Getter del color terciari
+    public int getColorTerciari(){
+        return  getColorAt(2);
+    }
+
+    // Getter del color i-èssim
+    public int getColorAt(int i){
+        return this.colors[i];
+    }
+
+}
