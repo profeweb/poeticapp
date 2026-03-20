@@ -13,6 +13,11 @@ public class BotoIcona extends Boto {
         this.codiIcona = codiIcona;
     }
 
+    public BotoIcona(String text, int codiIcona, float x, float y, float w, float h){
+        super(text, x, y, w, h);
+        this.codiIcona = codiIcona;
+    }
+
     public BotoIcona(PApplet p5, int codiIcona, float x, float y, float w, float h){
         super(p5, null, x, y, w, h);
         this.codiIcona = codiIcona;

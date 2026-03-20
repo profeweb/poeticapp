@@ -114,16 +114,22 @@ public class EntradaText extends GuiElement {
         }
     }
 
-    // Afegeix i/o lleva el text que es tecleja
-    public void updateKey(PApplet p5){
-        if (actiu) {
-            if (p5.keyCode == (int)BACKSPACE) {
-                esborrarText();
-            } else if (p5.keyCode == 32) {
-                afegirText(' '); // SPACE
-            } else {
-                afegirText(p5.key);
-            }
+    // Gestiona tecles especials
+    public void updateKeyPressed(int keyCode) {
+        if (!actiu) return;
+
+        if (keyCode == BACKSPACE) {
+            esborrarText();
         }
+    }
+
+    // Gestiona entrada de text real (inclou accents)
+    public void updateKeyTyped(char key) {
+        if (!actiu) return;
+
+        // Evita caracteres de control
+        if (key == '\n' || key == '\r' || key == '\b') return;
+
+        afegirText(key);
     }
 }

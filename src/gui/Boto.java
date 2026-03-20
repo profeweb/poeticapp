@@ -27,6 +27,12 @@ public class Boto extends GuiElement {
         this.colorContorn = p5.color(0);
     }
 
+    public Boto(String text, float x, float y, float w, float h){
+        super(x, y, w, h);
+        this.textBoto = text;
+        this.activat = true;
+    }
+
     // Setters
 
     public void setActivat(boolean b){

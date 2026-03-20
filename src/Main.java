@@ -25,7 +25,11 @@ public class Main extends PApplet {
     }
 
     public void keyPressed(){
+        gui.keyPressedEvent(this);
+    }
 
+    public void keyTyped(){
+        gui.keyTypedEvent(this);
     }
 
     public void mousePressed(){

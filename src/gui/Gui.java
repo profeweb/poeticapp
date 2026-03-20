@@ -7,10 +7,13 @@ import static gui.Mides.*;
 
 public class Gui {
 
+    // PANTALLES
     public enum PANTALLA {INICI, AUTOR_INICI, AUTOR_ESTADISTICA, AUTOR_VISUAL };
     public PANTALLA pantallaActual;
     PApplet p5;
 
+
+    // ELEMENTS GUI
     TarjaResum tarjaResum;
     Tarja tarja;
     Taula taula;
@@ -21,21 +24,24 @@ public class Gui {
     GraellaTarja graellaTarja;
     BotonsGrup botonsGrup;
     EntradaText entradaText;
+    SubMenu subMenu1;
 
+    // MEDIA
     Colors colors;
     Fonts fonts;
-
     PImage img;
 
 
     public Gui(PApplet p5){
         this.p5 = p5;
+        setMedia(p5);
+        setElementsGUI();
+    }
+
+    public void setMedia(PApplet p5){
         this.colors = new Colors(p5);
         this.fonts = new Fonts(p5);
-
         img = p5.loadImage("data/img/foto.jpg");
-
-        setElementsGUI();
     }
 
 
@@ -105,11 +111,20 @@ public class Gui {
         entradaText.setColors(colors);
         entradaText.setFonts(fonts);
 
+        subMenu1 = new SubMenu("Submenu1", 100, 100, 400, 300);
+        subMenu1.setColors(colors);
+        subMenu1.setFonts(fonts);
+        subMenu1.afegirOpcioMenu("Opció 1", 0x1F600);
+        subMenu1.afegirOpcioMenu("Opció 2", 0x1F600);
+        subMenu1.afegirOpcioMenu("Opció 3", 0x1F600);
+
     }
 
 
     public void dibuixaPantalla(){
+
         /*
+
         tarjaResum.display(p5);
         tarja.display(p5);
         taula.display(p5);
@@ -122,9 +137,13 @@ public class Gui {
         botoFavorit.display(p5);
         botonsGrup.display(p5);
 
-         */
+
 
         entradaText.display(p5);
+
+
+         */
+        subMenu1.display(p5);
     }
 
 
@@ -144,7 +163,17 @@ public class Gui {
 
         botonsGrup.clickBotons(p5);
 
+        entradaText.updateClick(p5);
 
+
+    }
+
+    public void keyPressedEvent(PApplet p5){
+        entradaText.updateKeyPressed(p5.keyCode);
+    }
+
+    public void keyTypedEvent(PApplet p5){
+        entradaText.updateKeyTyped(p5.key);
     }
 
 }
