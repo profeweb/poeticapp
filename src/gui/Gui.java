@@ -165,6 +165,11 @@ public class Gui {
 
         entradaText.updateClick(p5);
 
+        int opcio = subMenu1.opcioClicada(p5);
+        if(opcio!=-1){
+            System.out.println("OPCIÓ "+ opcio);
+        }
+
 
     }
 

@@ -45,4 +45,15 @@ public class SubMenu extends GuiElement{
             boto.display(p5);
         }
     }
+
+    public int opcioClicada(PApplet p5){
+        int numOpcio = 0;
+        for(BotoIcona boto : botons){
+            if(boto.mouseDins(p5)){
+                return numOpcio;
+            }
+            numOpcio++;
+        }
+        return -1;
+    }
 }

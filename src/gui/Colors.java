@@ -47,4 +47,11 @@ public class Colors {
         return this.colors[i];
     }
 
+    // Getters Colors Botons
+    public int getColorBotoText(){ return this.colors[0]; }
+    public int getColorBotoContorn(){ return this.colors[0]; }
+    public int getColorBotoFarcimentDesactivat(){ return this.colors[0]; }
+    public int getColorBotoFarcimentFora(){ return this.colors[0]; }
+    public int getColorBotoFarcimentDins(){ return this.colors[0]; }
+
 }
