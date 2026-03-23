@@ -9,7 +9,7 @@ public class BotoIcona extends Boto {
     int codiIcona;
 
     public BotoIcona(PApplet p5, String text, int codiIcona, float x, float y, float w, float h){
-        super(p5, text, x, y, w, h);
+        super(text, x, y, w, h);
         this.codiIcona = codiIcona;
     }
 
@@ -19,23 +19,15 @@ public class BotoIcona extends Boto {
     }
 
     public BotoIcona(PApplet p5, int codiIcona, float x, float y, float w, float h){
-        super(p5, null, x, y, w, h);
+        super( null, x, y, w, h);
         this.codiIcona = codiIcona;
     }
 
     // Dibuixa el botó
     public void display(PApplet p5){
         p5.pushStyle();
-        if(!this.activat){
-            p5.fill(this.colorFarcimentDesactivat);  // Color desabilitat
-        }
-        else if(super.mouseDins(p5)){
-            p5.fill(this.colorFarcimentActiu);      // Color quan ratolí a sobre
-        }
-        else{
-            p5.fill(this.colorFarciment);          // Color actiu però ratolí fora
-        }
-        p5.stroke(this.colorContorn);
+        p5.fill(getColorActual(p5));
+        p5.stroke(colors.getColorBotoContorn());
         p5.strokeWeight(GRUIX_BOTO);        //Color i gruixa del contorn
         p5.rect(this.x, this.y, this.w, this.h, 10);    // Rectangle del botó
 

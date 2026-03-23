@@ -71,7 +71,7 @@ public class Gui {
 
         //taula.paginaSeguent();
 
-        boto = new Boto(p5, "OK", 50, 50, AMPLE_BOTO, ALT_BOTO);
+        boto = new Boto("OK", 50, 50, AMPLE_BOTO, ALT_BOTO);
         boto.setColors(colors);
         boto.setFonts(fonts);
 

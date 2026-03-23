@@ -15,7 +15,7 @@ public class BotonsGrup extends GuiElement {
     public void setBotons(PApplet p5, String[] titols){
         botons = new Boto[titols.length];
         for (int i = 0; i< botons.length; i++) {
-            botons[i] = new Boto(p5, titols[i], x + (w+10)*i, y, w, h);
+            botons[i] = new Boto(titols[i], x + (w+10)*i, y, w, h);
             botons[i].setActivat(true);
             botons[i].setColors(colors);
             botons[i].setFonts(fonts);

@@ -35,30 +35,6 @@ public class Boto extends GuiElement {
         return  this.activat;
     }
 
-    // Dibuixa el botó
-    public void display(PApplet p5){
-        p5.pushStyle();
-
-        p5.fill(getColorActual(p5));
-        p5.stroke(colors.getColorBotoContorn());
-        p5.strokeWeight(GRUIX_BOTO);        //Color i gruixa del contorn
-        p5.rect(this.x, this.y, this.w, this.h, 10);    // Rectangle del botó
-
-        // Text (color, alineació i mida)
-        p5.fill(colors.getColorBotoText()); p5.textAlign(p5.CENTER);
-        p5.textFont(fonts.getFontSecundaria());
-        p5.textSize(TEXT_BOTO);
-        p5.text(textBoto, this.x + this.w/2, this.y + this.h/2 + 10);
-        
-        p5.popStyle();
-    }
-
-    // Indica si el cursor està sobre el botó
-    public boolean mouseDins(PApplet p5){
-        return (p5.mouseX >= this.x) && (p5.mouseX <= this.x + this.w) &&
-                (p5.mouseY >= this.y) && (p5.mouseY <= this.y + this.h);
-    }
-
     // Color del boto
     public int getColorActual(PApplet p5){
         if(!activat){
@@ -72,9 +48,34 @@ public class Boto extends GuiElement {
         }
     }
 
+    // Dibuixa el botó
+    public void display(PApplet p5){
+        p5.pushStyle();
+
+        // Rectangle del botó (color, gruixa del contorn)
+        p5.fill(getColorActual(p5));
+        p5.stroke(colors.getColorBotoContorn());
+        p5.strokeWeight(GRUIX_BOTO);
+        p5.rect(this.x, this.y, this.w, this.h, 10);
+
+        // Text (color, alineació i mida)
+        p5.fill(colors.getColorBotoText()); p5.textAlign(p5.CENTER);
+        p5.textFont(fonts.getFontSecundaria());
+        p5.textSize(TEXT_BOTO);
+        p5.text(textBoto, this.x + this.w/2, this.y + this.h/2 + 10);
+
+        p5.popStyle();
+    }
+
+    // Indica si el cursor està sobre el botó
+    public boolean mouseDins(PApplet p5){
+        return (p5.mouseX >= this.x) && (p5.mouseX <= this.x + this.w) &&
+                (p5.mouseY >= this.y) && (p5.mouseY <= this.y + this.h);
+    }
+
     // Indica si cal posar el cursor a HAND
-    public boolean updateHandCursor(PApplet p5){
-        return mouseDins(p5) && activat;
+    public boolean updateCursor(PApplet p5){
+        return mouseDins(p5) && isActivat();
     }
 
 }

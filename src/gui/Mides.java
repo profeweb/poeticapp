@@ -14,6 +14,9 @@ public class Mides {
     public static final float ALT_GUI = 40;
 
     // BOTONS
+    public static final float TEXT_BOTO = 75;
+    public static final float TEXT_ICONA_BOTO = 25;
+    public static final float GRUIX_BOTO = 3.5f;
     public static final float AMPLE_BOTO = 100;
     public static final float AMPLE_BOTO_MENU = 300;
     public static final float ALT_BOTO  = ALT_GUI;
@@ -24,9 +27,6 @@ public class Mides {
 
     // ENTRADA DE TEXT
     public static final float TEXT_ENTRADA = 24;
-    public static final float TEXT_BOTO = 75;
-    public static final float TEXT_ICONA_BOTO = 25;
-    public static final float GRUIX_BOTO = 3.5f;
     public static final float AMPLE_ENTRADA_TEXT = 200;
     public static final float ALT_ENTRADA_TEXT = ALT_GUI;
 
