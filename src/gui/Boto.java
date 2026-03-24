@@ -59,10 +59,13 @@ public class Boto extends GuiElement {
         p5.rect(this.x, this.y, this.w, this.h, 10);
 
         // Text (color, alineació i mida)
-        p5.fill(colors.getColorBotoText()); p5.textAlign(p5.CENTER);
-        p5.textFont(fonts.getFontSecundaria());
-        p5.textSize(TEXT_BOTO);
-        p5.text(textBoto, this.x + this.w/2, this.y + this.h/2 + 10);
+        if(textBoto!=null) {
+            p5.fill(colors.getColorBotoText());
+            p5.textAlign(p5.CENTER);
+            p5.textFont(fonts.getFontSecundaria());
+            p5.textSize(TEXT_BOTO);
+            p5.text(textBoto, this.x + this.w / 2, this.y + this.h / 2 + 10);
+        }
 
         p5.popStyle();
     }

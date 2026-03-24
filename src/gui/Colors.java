@@ -56,4 +56,11 @@ public class Colors {
     public int getColorBotoFarcimentFora(){ return this.colors[2]; }
     public int getColorBotoFarcimentDins(){ return this.colors[3]; }
 
+
+    // COLORS ENTRADA TEXT
+    public int getColorEntradaTextContorn(){ return this.colors[0]; }
+    public int getColorEntradaTextDesactivat(){ return this.colors[1]; }
+    public int getColorEntradaTextActivat(){ return this.colors[3]; }
+    public int getColorEntradaTextText(){ return this.colors[0]; }
+
 }

@@ -40,6 +40,7 @@ public class TestTresBotons extends PApplet {
 
     public void draw(){
         background(colorFons);
+
         bRed.display(this);
         bGreen.display(this);
         bBlue.display(this);

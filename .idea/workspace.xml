@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gui/test/TestBoto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/test/TestTresBotons.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/test/TestBotoIcona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/test/TestDosBotonsIcona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/test/TestEntradaText.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/test/TestEntradesText.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Boto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Boto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/BotoIcona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotoIcona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/BotonsGrup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotonsGrup.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Colors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Colors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/EntradaText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/EntradaText.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Gui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Mides.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Mides.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/test/TestTresBotons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/test/TestTresBotons.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,10 +57,55 @@
       <recent name="gui.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestTresBotons">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="Application.TestDosBotonsIcona">
+    <configuration name="TestBotoIcona" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestBotoIcona" />
       <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDosBotonsIcona" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestDosBotonsIcona" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestEntradaText" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestEntradaText" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestEntradesText" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestEntradesText" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -75,24 +123,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="gui.test.TestBoto" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.test.TestBoto" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestDosBotonsIcona" />
+        <item itemvalue="Application.TestEntradesText" />
+        <item itemvalue="Application.TestBotoIcona" />
+        <item itemvalue="Application.TestEntradaText" />
         <item itemvalue="Application.TestTresBotons" />
-        <item itemvalue="Application.gui.test.TestBoto" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -120,7 +157,8 @@
       <workItem from="1774005393619" duration="894000" />
       <workItem from="1774027640931" duration="596000" />
       <workItem from="1774249752735" duration="925000" />
-      <workItem from="1774265466750" duration="658000" />
+      <workItem from="1774265466750" duration="1379000" />
+      <workItem from="1774335909623" duration="4614000" />
     </task>
     <task id="LOCAL-00001" summary="Inicial">
       <created>1772797946480</created>
@@ -171,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1773996308543</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Inicial">
+      <created>1774266186942</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1774266186942</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

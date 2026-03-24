@@ -92,7 +92,7 @@ public class Gui {
 
         graellaTarja.paginaSeguent();
 
-        botoIcona = new BotoIcona(p5, "Hola", 0x1F600, 600, 50, AMPLE_BOTO_MENU, ALT_BOTO);
+        botoIcona = new BotoIcona("Hola", 0x1F600, 600, 50, AMPLE_BOTO_MENU, ALT_BOTO);
         botoIcona.setColors(colors);
         botoIcona.setFonts(fonts);
 
@@ -106,7 +106,7 @@ public class Gui {
         botonsGrup.setFonts(fonts);
         botonsGrup.setBotons(p5, titols);
 
-        entradaText = new EntradaText(p5, 100, 100, AMPLE_ENTRADA_TEXT, ALT_ENTRADA_TEXT, colors, fonts);
+        entradaText = new EntradaText("NOM", 100, 100, AMPLE_ENTRADA_TEXT, ALT_ENTRADA_TEXT, colors, fonts);
         entradaText.setTextEtiqueta("NOM");
         entradaText.setColors(colors);
         entradaText.setFonts(fonts);

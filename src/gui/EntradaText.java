@@ -7,10 +7,6 @@ import static processing.core.PConstants.BACKSPACE;
 
 public class EntradaText extends GuiElement {
 
-    // Colors
-    int colorFarciment, colorText, colorFarcimentActiu, colorContorn;
-    int gruixaContorn;
-
     // Text del camp
     String textEtiqueta = "";
     String text = "";
@@ -19,26 +15,20 @@ public class EntradaText extends GuiElement {
     boolean actiu = false;
 
     // Constructor
-    public EntradaText(PApplet p5, float x, float y, float w, float h, Colors colors, Fonts fonts) {
-        super(x, y, w, h);
-        this.colorFarciment = p5.color(140, 140, 140);
-        this.colorText = p5.color(0, 0, 0);
-        this.colorFarcimentActiu = p5.color(190, 190, 60);
-        this.colorContorn = p5.color(30, 30, 30);
-        this.gruixaContorn = 1;
 
-        setColors(colors);
+    public EntradaText(String textEtiqueta, float x, float y, float w, float h) {
+        super(x, y, w, h);
+        this.textEtiqueta = textEtiqueta;
+    }
+
+    public EntradaText(String textEtiqueta, float x, float y, float w, float h, Colors colors, Fonts fonts) {
+        super(x, y, w, h);
+        this.textEtiqueta = textEtiqueta;
         setFonts(fonts);
+        setColors(colors);
     }
 
     // Setters
-
-    public void setColors(int cContorn, int cFarciment, int cActiu, int cText){
-        this.colorFarciment = cFarciment;
-        this.colorContorn = cContorn;
-        this.colorFarcimentActiu = cActiu;
-        this.colorText = cText;
-    }
 
     // Setter del text
     public void setTextEtiqueta(String t){
@@ -52,23 +42,27 @@ public class EntradaText extends GuiElement {
     // Dibuixa el Camp de Text
     public void display(PApplet p5) {
         p5.pushStyle();
-        if (actiu) {
-            p5.fill(colorFarcimentActiu);
-        } else {
-            p5.fill(colorFarciment);
-        }
 
-        p5.strokeWeight(gruixaContorn);
-        p5.stroke(colorContorn);
+        // Rectangle
+        p5.stroke(colors.getColorEntradaTextContorn());
+        p5.strokeWeight(Mides.GRUIXA_ENTRADA_TEXT);
+        if(!actiu){
+            p5.fill(colors.getColorEntradaTextDesactivat());
+        }
+        else {
+            p5.fill(colors.getColorEntradaTextActivat());
+        }
         p5.rect(x, y, w, h, 5);
 
-        p5.fill(colorText);
+        // Text
+        p5.fill(colors.getColorEntradaTextText());
         p5.textSize(TEXT_ENTRADA);
         p5.textAlign(p5.LEFT, p5.CENTER);
         p5.textFont(fonts.getFontSecundaria());
         p5.text(text, x + 5, y + h - TEXT_ENTRADA);
 
-        p5.fill(colors.getColorPrimari());
+        // Etiqueta
+        p5.fill(colors.getColorEntradaTextText());
         p5.textAlign(p5.RIGHT, p5.CENTER);
         p5.textFont(fonts.getFontSecundaria());
         p5.text(textEtiqueta, x - 15, y + h - TEXT_ENTRADA);
