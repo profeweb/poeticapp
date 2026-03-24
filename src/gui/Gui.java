@@ -24,7 +24,8 @@ public class Gui {
     GraellaTarja graellaTarja;
     BotonsGrup botonsGrup;
     EntradaText entradaText;
-    SubMenu subMenu1;
+    SubMenu subMenu1, subMenu2;
+    Menu menu1;
 
     // MEDIA
     Colors colors;
@@ -111,12 +112,25 @@ public class Gui {
         entradaText.setColors(colors);
         entradaText.setFonts(fonts);
 
-        subMenu1 = new SubMenu("Submenu1", 100, 100, 400, 300);
+        subMenu1 = new SubMenu("Submenu1", 100, 200, 400, 300);
         subMenu1.setColors(colors);
         subMenu1.setFonts(fonts);
-        subMenu1.afegirOpcioMenu("Opció 1", 0x1F600);
-        subMenu1.afegirOpcioMenu("Opció 2", 0x1F600);
-        subMenu1.afegirOpcioMenu("Opció 3", 0x1F600);
+        subMenu1.afegirOpcioMenu("Opció 1A", 0x1F600);
+        subMenu1.afegirOpcioMenu("Opció 1B", 0x1F600);
+        subMenu1.afegirOpcioMenu("Opció 1C", 0x1F600);
+
+        subMenu2 = new SubMenu("Submenu2", 100, 600, 400, 300);
+        subMenu2.setColors(colors);
+        subMenu2.setFonts(fonts);
+        subMenu2.afegirOpcioMenu("Opció 2A", 0x1F600);
+        subMenu2.afegirOpcioMenu("Opció 2B", 0x1F600);
+        subMenu2.afegirOpcioMenu("Opció 2C", 0x1F600);
+
+        menu1 = new Menu("MENU", 100, 100, 400, 600);
+        menu1.setColors(colors);
+        menu1.setFonts(fonts);
+        menu1.afegirSubMenu(subMenu1);
+        menu1.afegirSubMenu(subMenu2);
 
     }
 
@@ -142,8 +156,12 @@ public class Gui {
         entradaText.display(p5);
 
 
-         */
+
         subMenu1.display(p5);
+
+         */
+
+        menu1.display(p5);
     }
 
 
@@ -165,9 +183,10 @@ public class Gui {
 
         entradaText.updateClick(p5);
 
-        int opcio = subMenu1.opcioClicada(p5);
-        if(opcio!=-1){
-            System.out.println("OPCIÓ "+ opcio);
+
+        int[] opcio = menu1.opcioClicada(p5);
+        if(opcio!=null){
+            System.out.println("OPCIÓ "+ opcio[0]+", "+opcio[1]);
         }
 
 

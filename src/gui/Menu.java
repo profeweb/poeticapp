@@ -30,7 +30,7 @@ public class Menu extends GuiElement {
             // Titol
             p5.fill(colors.getColorEntradaTextText());
             p5.textFont(fonts.getFontTerciaria());
-            p5.text(titol, x + w/2, y + 100);
+            p5.text(titol, x + w/2, y);
 
             // Logo
             if(logo!=null){
