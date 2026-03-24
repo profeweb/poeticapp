@@ -53,11 +53,11 @@ public class GraellaTarja extends GuiElement {
     }
 
     public void setBotons(PApplet p5){
-        this.bAnt = new BotoIcona(p5,CODI_ANTERIOR, this.x + this.w - 2*BOTO_FAVORIT - margeHoritzontal, this.y - BOTO_FAVORIT - margeHoritzontal , BOTO_FAVORIT, BOTO_FAVORIT);
+        this.bAnt = new BotoIcona(CODI_ANTERIOR, this.x + this.w - 2*BOTO_FAVORIT - margeHoritzontal, this.y - BOTO_FAVORIT - margeHoritzontal , BOTO_FAVORIT, BOTO_FAVORIT);
         this.bAnt.setColors(colors);
         this.bAnt.setFonts(fonts);
 
-        this.bSeg = new BotoIcona(p5,CODI_SEGUENT, this.x + this.w - BOTO_FAVORIT, this.y - BOTO_FAVORIT - margeHoritzontal , BOTO_FAVORIT, BOTO_FAVORIT);
+        this.bSeg = new BotoIcona(CODI_SEGUENT, this.x + this.w - BOTO_FAVORIT, this.y - BOTO_FAVORIT - margeHoritzontal , BOTO_FAVORIT, BOTO_FAVORIT);
         this.bSeg.setColors(colors);
         this.bSeg.setFonts(fonts);
     }

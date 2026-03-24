@@ -7,9 +7,8 @@ import static gui.Mides.TEXT_BOTO;
 
 public class Boto extends GuiElement {
 
-
     // Text del botó
-    String textBoto;  // Text
+    String textBoto;
 
     // Estat del botó (actiu / inactiu).
     boolean activat;
@@ -68,12 +67,6 @@ public class Boto extends GuiElement {
         }
 
         p5.popStyle();
-    }
-
-    // Indica si el cursor està sobre el botó
-    public boolean mouseDins(PApplet p5){
-        return (p5.mouseX >= this.x) && (p5.mouseX <= this.x + this.w) &&
-                (p5.mouseY >= this.y) && (p5.mouseY <= this.y + this.h);
     }
 
     // Indica si cal posar el cursor a HAND

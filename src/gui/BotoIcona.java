@@ -8,13 +8,13 @@ public class BotoIcona extends Boto {
 
     int codiIcona;
 
-    public BotoIcona(String text, int codiIcona, float x, float y, float w, float h){
-        super(text, x, y, w, h);
+    public BotoIcona(int codiIcona, float x, float y, float w, float h){
+        super("", x, y, w, h);
         this.codiIcona = codiIcona;
     }
 
-    public BotoIcona(PApplet p5, int codiIcona, float x, float y, float w, float h){
-        super( null, x, y, w, h);
+    public BotoIcona(String text, int codiIcona, float x, float y, float w, float h){
+        super(text, x, y, w, h);
         this.codiIcona = codiIcona;
     }
 

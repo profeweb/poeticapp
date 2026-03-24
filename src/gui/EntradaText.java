@@ -92,12 +92,6 @@ public class EntradaText extends GuiElement {
     }
 
 
-    // Indica si el ratolí està sobre el camp de text
-    public boolean mouseDins(PApplet p5) {
-        return (p5.mouseX >= this.x && p5.mouseX <= this.x + this.w &&
-                p5.mouseY >= this.y && p5.mouseY <= this.y + this.h);
-    }
-
     // Selecciona el camp de text si pitjam a sobre
     // Deselecciona el camp de text si pitjam a fora
     public void updateClick(PApplet p5) {
