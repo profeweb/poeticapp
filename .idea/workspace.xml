@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gui/BotoOpcio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/CasellaSeleccio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/Seleccionable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/BotoOpcioGrup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/CasellaSeleccioGrup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/SeleccionablesGrup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Seleccionable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Seleccionable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +148,7 @@
       <workItem from="1774539378575" duration="599000" />
       <workItem from="1774547222738" duration="485000" />
       <workItem from="1774550247776" duration="653000" />
-      <workItem from="1774596027676" duration="1683000" />
+      <workItem from="1774596027676" duration="2601000" />
     </task>
     <task id="LOCAL-00001" summary="Inicial">
       <created>1772797946480</created>
@@ -227,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1774347105574</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Inicial">
+      <created>1774598888870</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1774598888870</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
