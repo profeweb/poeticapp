@@ -12,10 +12,14 @@ public class BotonsGrup extends GuiElement {
         super(x, y, w, h);
     }
 
-    public void setBotons(PApplet p5, String[] titols){
+    public void setBotons(String[] titols){
         botons = new Boto[titols.length];
+
+        float marge = 10;
+        int numBotons = botons.length;
+        float wb = (w - (marge-1)*numBotons) / numBotons;
         for (int i = 0; i< botons.length; i++) {
-            botons[i] = new Boto(titols[i], x + (w+10)*i, y, w, h);
+            botons[i] = new Boto(titols[i], x + (wb + marge)*i, y, wb, h);
             botons[i].setActivat(true);
             botons[i].setColors(colors);
             botons[i].setFonts(fonts);
