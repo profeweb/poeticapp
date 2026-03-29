@@ -36,7 +36,7 @@ public class BotonsGrup extends GuiElement {
     }
 
     public int getBotoActivat() {
-        return (this.botoSeleccionat + 1);
+        return (this.botoSeleccionat);
     }
 
     public void updateBotons() {

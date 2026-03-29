@@ -12,6 +12,7 @@ public class TestBotonsGrup extends PApplet {
     Colors colors;
     Fonts fonts;
     int n = 5;
+    String[] nums;
 
     public static void main(String[] args) {
         PApplet.main("gui.test.TestBotonsGrup");
@@ -27,7 +28,7 @@ public class TestBotonsGrup extends PApplet {
         bGrup.setColors(colors);
         bGrup.setFonts(fonts);
 
-        String [] nums = creaArrayNums(n);
+        nums = creaArrayNums(n);
         bGrup.setBotons(nums);
 
     }
@@ -51,6 +52,9 @@ public class TestBotonsGrup extends PApplet {
         else {
             cursor(ARROW);
         }
+
+        fill(0); textSize(98); textAlign(CENTER);
+        text(nums[bGrup.getBotoActivat()], width/2, height/3);
     }
 
     public void mousePressed(){
