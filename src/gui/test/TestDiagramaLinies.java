@@ -2,6 +2,7 @@ package gui.test;
 
 import gui.Colors;
 import gui.DiagramaBarres;
+import gui.DiagramaLinies;
 import gui.Fonts;
 import processing.core.PApplet;
 
@@ -10,7 +11,7 @@ public class TestDiagramaLinies extends PApplet {
     float[] valors = {100, 50, 200, 60};
     String[] titols = {"2010", "2011", "2012", "2013"};
     int[] colorBarres;
-    DiagramaBarres db;
+    DiagramaLinies db;
     Colors colors;
     Fonts fonts;
 
@@ -23,7 +24,7 @@ public class TestDiagramaLinies extends PApplet {
     public void setup(){
         colors = new Colors(this);
         fonts = new Fonts(this);
-        db = new DiagramaBarres(100, 100, width-200, height-200);
+        db = new DiagramaLinies(100, 100, width-200, height-200);
         db.setColors(colors);
         db.setFonts(fonts);
 
@@ -35,7 +36,7 @@ public class TestDiagramaLinies extends PApplet {
         db.setValors(valors);
         db.setCategories(titols);
         db.setColors(colorBarres);
-        db.setBarres();
+        db.setPunts();
     }
 
     public void draw(){

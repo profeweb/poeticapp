@@ -35,12 +35,9 @@ public class DiagramaBarres extends Diagrama {
     // Dibuixa el Diagrama de Barres
 
     public void display(PApplet p5){
-        p5.pushStyle();
-
-        for(int i=0; i<barres.length; i++){
-            barres[i].display(p5);
+        for(Barra b : barres){
+            b.display(p5);
         }
-        p5.popStyle();
     }
 
 

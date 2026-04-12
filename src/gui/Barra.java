@@ -2,7 +2,7 @@ package gui;
 
 import processing.core.PApplet;
 
-public class Barra extends ElementDades{
+public class Barra extends ElementDades {
 
     public Barra(float x, float y, float w, float h) {
         super(x, y, w, h);

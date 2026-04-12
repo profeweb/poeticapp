@@ -8,6 +8,10 @@ public class BotoOpcio extends Seleccionable {
         super(x, y, d, d);
     }
 
+    public BotoOpcio(String text, float x, float y, float w, float h) {
+        super(text, x, y, w, h);
+    }
+
     public void display(PApplet p5){
 
         p5.pushStyle();
@@ -27,7 +31,7 @@ public class BotoOpcio extends Seleccionable {
         if(this.seleccionat){
             p5.fill(colors.getColorBotoContorn());
             p5.noStroke();
-            p5.circle(x, y, 1.5f*w);
+            p5.circle(x, y, 0.8f*w);
         }
 
         // Dibuixa el text

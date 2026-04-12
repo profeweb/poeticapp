@@ -10,6 +10,26 @@ public class DiagramaLinies extends Diagrama {
         super(x, y, w, h);
     }
 
+    public void setPunts(){
+
+        punts = new PuntDades[this.valors.length];
+
+        float espaiX = w / (float) this.valors.length;
+
+        for(int i=0; i<punts.length; i++){
+
+            float yPunt = this.y + this.h - (this.valors[i] / maxValor) * h;;
+            float xPunt = this.x + espaiX*i + espaiX/2;
+
+            punts[i] = new PuntDades(xPunt, yPunt, 10);
+            punts[i].setValor(this.valors[i]);
+            punts[i].setPercentatge(this.percentages[i]);
+            punts[i].setCategoria(this.categories[i]);
+            punts[i].setColor(colors[0]);
+
+        }
+    }
+
     // Dibuixa el Diagrama de Línies
 
     public void display(PApplet p5){
@@ -17,59 +37,13 @@ public class DiagramaLinies extends Diagrama {
         displayLinies(p5, colors[0], 1.5f);
 
         for(PuntDades pd: punts){
-
+            pd.display(p5);
         }
 
         // Eix qualitatiu
 
         // Eix quantitatiu
 
-        p5.pushStyle();
-
-        p5.stroke(0); p5.strokeWeight(2);
-        p5.line(this.x, this.y, this.x, this.y + this.h);
-        p5.line(this.x, this.y + this.h, this.x +  this.w, this.y + this.h);
-
-        float widthBar = w / (float) this.valors.length;
-
-        for(int i = 0; i<this.valors.length-1; i++){
-
-            // Posició Mes i
-            float barValue1 = this.y + this.h - p5.map(this.valors[i], 0, maxValor, 0, h-50);
-            float xBar1 = this.x + widthBar*i + widthBar/2;
-
-            // Posició Mes i+1
-            float barValue2 = this.y + this.h - p5.map(this.valors[i+1], 0, maxValor, 0, h-50);
-            float xBar2 = this.x + widthBar*(i+1) + widthBar/2;
-
-            // Linia de mesos i a i+1
-            p5.stroke(colors[0]); p5.strokeWeight(2);
-            p5.line(xBar1, barValue1, xBar2, barValue2);
-
-            // Quadradet del mes i
-            p5.noStroke();
-            p5.fill(colors[1]); p5.rectMode(p5.CENTER);
-            p5.rect(xBar1, barValue1, 10, 10);
-
-            //
-            float textY = this.y + this.h + 50;
-            p5.fill(0); p5.textAlign(p5.CENTER); p5.textSize(24);
-            p5.text(this.categories[i], xBar1, textY);
-
-            p5.textSize(24);
-            p5.text((int)this.valors[i], xBar1, barValue1 - 20);
-
-            if(i+1==this.valors.length-1){
-                p5.text(this.categories[i+1], xBar2, textY);
-                p5.text((int)this.valors[i+1], xBar2, barValue2 - 20);
-
-                p5.noStroke();
-                p5.fill(colors[1]); p5.rectMode(p5.CENTER);
-                p5.rect(xBar2, barValue2, 10, 10);
-            }
-
-        }
-        p5.popStyle();
     }
 
     public void displayLinies(PApplet p5, int colorLinia, float gruixaLinia){
