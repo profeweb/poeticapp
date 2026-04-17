@@ -30,6 +30,8 @@ public class EntradaText extends GuiElement {
 
     // Setters
 
+    public void setActiu(boolean b){ this.actiu = b; }
+
     // Setter del text
     public void setTextEtiqueta(String t){
         this.textEtiqueta= t;

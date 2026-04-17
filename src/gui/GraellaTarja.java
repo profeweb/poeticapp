@@ -3,9 +3,14 @@ package gui;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 import static gui.Mides.*;
 
 public class GraellaTarja extends GuiElement {
+
+    String titol;
 
     String[][] dadesTarges;    // Dades de les Cards
     PImage[] imatgesTarges;
@@ -19,10 +24,11 @@ public class GraellaTarja extends GuiElement {
     int numTotalPagines;
 
     float ampleTarja, altTarja;
-    float margeHoritzontal = 15, margeVertical = 80;
+    float margeHoritzontal = 15, margeVertical = 100;
     int numTarjaSeleccionada = -1;
 
     BotoIcona bSeg, bAnt;
+    Desplegable selOrdre;
 
     // Constructor
     public GraellaTarja(int numFiles, int numCols, float x, float y, float w, float h) {
@@ -36,7 +42,6 @@ public class GraellaTarja extends GuiElement {
     }
 
     // Setters
-
     public void setData(String[][] d) {
         this.dadesTarges = d;
         this.numTarges = d.length;
@@ -45,6 +50,48 @@ public class GraellaTarja extends GuiElement {
             this.numTotalPagines++;
         }
     }
+
+    public void ordenaTargesPerCamp( int numCamp, boolean ascendent){
+        for(int i=0; i<this.dadesTarges.length-1; i++){
+            int maxPos = i;
+            for(int j=i+1; j<this.dadesTarges.length; j++){
+                if(ascendent) {
+                    if (dadesTarges[j][numCamp].compareTo(dadesTarges[maxPos][numCamp]) < 0) {
+                        maxPos = j;
+                    }
+                }
+                else {
+                    if (dadesTarges[j][numCamp].compareTo(dadesTarges[maxPos][numCamp]) > 0) {
+                        maxPos = j;
+                    }
+                }
+            }
+            String tempTitol = this.dadesTarges[i][0];
+            String tempSubtitol = this.dadesTarges[i][1];
+            this.dadesTarges[i][0] = this.dadesTarges[maxPos][0];
+            this.dadesTarges[i][1] = this.dadesTarges[maxPos][1];
+            this.dadesTarges[maxPos][0] = tempTitol;
+            this.dadesTarges[maxPos][1] = tempSubtitol;
+        }
+    }
+
+    public void ordenaTargesPerTitolAsc(){
+        ordenaTargesPerCamp(0, true);
+    }
+
+    public void ordenaTargesPerSubitolAsc(){
+        ordenaTargesPerCamp(1, true);
+    }
+
+    public void ordenaTargesPerTitolDesc(){
+        ordenaTargesPerCamp(0, false);
+    }
+
+    public void ordenaTargesPerSubitolDesc(){
+        ordenaTargesPerCamp(1, false);
+    }
+
+    public void setTitol(String t){ this.titol = t; }
 
     public void setImatges(PApplet p5, PImage[] imatges) {
         for(int numTarja=0; numTarja<targes.length; numTarja++){
@@ -60,6 +107,14 @@ public class GraellaTarja extends GuiElement {
         this.bSeg = new BotoIcona(CODI_SEGUENT, this.x + this.w - BOTO_FAVORIT, this.y - BOTO_FAVORIT - margeHoritzontal , BOTO_FAVORIT, BOTO_FAVORIT);
         this.bSeg.setColors(colors);
         this.bSeg.setFonts(fonts);
+    }
+
+    public void setSelecccionableOrdre(PApplet p5){
+        String[] opcions = {"Nom asc", "Nom desc", "Data asc", "Data desc"};
+        selOrdre = new Desplegable(opcions, this.x + this.w - 2*BOTO_FAVORIT - AMPLE_DESPLEGABLE - 2*margeHoritzontal, this.y - BOTO_FAVORIT - margeHoritzontal, AMPLE_DESPLEGABLE, ALT_DESPLEGABLE);
+        selOrdre.setColors(colors);
+        selOrdre.setFonts(fonts);
+        selOrdre.setTextEtiqueta("Ordenar");
     }
 
     public void setImatges(PApplet p5, PImage imatge) {
@@ -125,19 +180,32 @@ public class GraellaTarja extends GuiElement {
             }
         }
 
-        // Informació de la Pàgina
-        p5.fill(0);
-        p5.textFont(fonts.getFontSecundaria());
-        p5.textSize(TEXT_INFO_GUI);
-        p5.textAlign(p5.RIGHT);
-        p5.text("Pag: "+(this.numPaginaActual + 1)+" / "+ this.numTotalPagines, this.x + this.w, this.y - margeHoritzontal);
-
         if(this.bSeg!=null){
             this.bSeg.display(p5);
         }
         if(this.bAnt!=null){
             this.bAnt.display(p5);
         }
+
+        if(this.selOrdre!=null){
+            this.selOrdre.display(p5);
+        }
+
+        if(titol!=null){
+            p5.fill(0);
+            p5.textFont(fonts.getFontPrimaria());
+            p5.textSize(TEXT_INFO_GUI);
+            p5.textAlign(p5.LEFT);
+            p5.text(titol, x, y - margeHoritzontal);
+        }
+
+        // Informació de la Pàgina
+        p5.fill(0);
+        p5.textFont(fonts.getFontSecundaria());
+        p5.textSize(TEXT_INFO_GUI);
+        p5.textAlign(p5.LEFT, p5.BOTTOM);
+        String textPaginacio = "(" + (this.numPaginaActual * numTargesPagina +1 ) + " - " + ((this.numPaginaActual+1) * numTargesPagina -1)+ ", Pag: "+(this.numPaginaActual + 1)+" / "+ this.numTotalPagines +")";
+        p5.text(textPaginacio, this.x + 125, this.y - margeHoritzontal);
 
         p5.popStyle();
     }
@@ -191,6 +259,14 @@ public class GraellaTarja extends GuiElement {
         if(bAnt!=null && bAnt.mouseDins(p5)){
             paginaAnterior();
         }
+    }
+
+
+    public void updateClick(PApplet p5){
+        this.clickSobreTarges(p5);
+        this.clickBotoAnterior(p5);
+        this.clickBotoSeguent(p5);
+        this.selOrdre.update(p5);
     }
 
 

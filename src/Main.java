@@ -21,7 +21,7 @@ public class Main extends PApplet {
 
     public void draw(){
         background(255);
-        gui.dibuixaPantalla();
+        gui.dibuixaGUI();
     }
 
     public void keyPressed(){

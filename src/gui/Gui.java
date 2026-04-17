@@ -21,11 +21,12 @@ public class Gui {
     BotoIcona botoIcona;
     BotoFavorit botoFavorit;
     Desplegable desplegable;
-    GraellaTarja graellaTarja;
+    GraellaTarja graellaAutors, graellaLlibres;
     BotonsGrup botonsGrup;
     EntradaText entradaText;
-    SubMenu subMenu1, subMenu2;
-    Menu menu1;
+    EntradaCercador entradaCercador;
+
+    MenuApp menuApp;
 
     // MEDIA
     Colors colors;
@@ -35,6 +36,7 @@ public class Gui {
 
     public Gui(PApplet p5){
         this.p5 = p5;
+        this.pantallaActual = PANTALLA.INICI;
         setMedia(p5);
         setElementsGUI();
     }
@@ -77,21 +79,37 @@ public class Gui {
         boto.setFonts(fonts);
 
         String[] opcions = {"opcioA", "opcioB"};
-        desplegable = new Desplegable(opcions, 200, 50, AMPLE_DESPLEGABLE, ALT_DESPLEGABLE);
+        desplegable = new Desplegable(opcions, 200, 25, AMPLE_DESPLEGABLE, ALT_DESPLEGABLE);
         desplegable.setColors(colors);
         desplegable.setFonts(fonts);
 
 
-        graellaTarja = new GraellaTarja(2, 4, 750, 100, 1100, 600);
+        graellaAutors = new GraellaTarja(1, 5, 310, 180, 1550, 300);
         String[][] dadesGraella = { {"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
-        graellaTarja.setData(dadesGraella);
-        graellaTarja.setColors(colors);
-        graellaTarja.setFonts(fonts);
-        graellaTarja.setTarges(p5);
-        graellaTarja.setImatges(p5,img);
-        graellaTarja.setBotons(p5);
+        graellaAutors.setData(dadesGraella);
+        graellaAutors.ordenaTargesPerTitolAsc();
+        graellaAutors.setTitol("Autors");
+        graellaAutors.setColors(colors);
+        graellaAutors.setFonts(fonts);
+        graellaAutors.setTarges(p5);
+        graellaAutors.setImatges(p5,img);
+        graellaAutors.setBotons(p5);
+        graellaAutors.setSelecccionableOrdre(p5);
 
-        graellaTarja.paginaSeguent();
+
+        graellaLlibres = new GraellaTarja(1, 5, 310, 650, 1550, 300);
+        String[][] dadesGraella2 = { {"a", "d1"},{"f", "d1"},{"b", "d1"},{"g", "d1"},{"c", "d1"},{"k", "d1"},{"d", "d1"},{"v", "d1"},{"e", "d1"} };
+        graellaLlibres.setData(dadesGraella2);
+        graellaLlibres.ordenaTargesPerTitolAsc();
+        graellaLlibres.setTitol("Llibres");
+        graellaLlibres.setColors(colors);
+        graellaLlibres.setFonts(fonts);
+        graellaLlibres.setTarges(p5);
+        graellaLlibres.setImatges(p5,img);
+        graellaLlibres.setBotons(p5);
+        graellaLlibres.setSelecccionableOrdre(p5);
+
+        //graellaTarja.paginaSeguent();
 
         botoIcona = new BotoIcona("Hola", 0x1F600, 600, 50, AMPLE_BOTO_MENU, ALT_BOTO);
         botoIcona.setColors(colors);
@@ -112,39 +130,29 @@ public class Gui {
         entradaText.setColors(colors);
         entradaText.setFonts(fonts);
 
-        subMenu1 = new SubMenu("Submenu1", 100, 200, 400, 300);
-        subMenu1.setColors(colors);
-        subMenu1.setFonts(fonts);
-        subMenu1.afegirOpcioMenu("Opció 1A", 0x1F600);
-        subMenu1.afegirOpcioMenu("Opció 1B", 0x1F600);
-        subMenu1.afegirOpcioMenu("Opció 1C", 0x1F600);
+        menuApp = new MenuApp(10, 200, 250, 600);
+        menuApp.setColors(colors);
+        menuApp.setFonts(fonts);
+        menuApp.setMenuApp();
 
-        subMenu2 = new SubMenu("Submenu2", 100, 600, 400, 300);
-        subMenu2.setColors(colors);
-        subMenu2.setFonts(fonts);
-        subMenu2.afegirOpcioMenu("Opció 2A", 0x1F600);
-        subMenu2.afegirOpcioMenu("Opció 2B", 0x1F600);
-        subMenu2.afegirOpcioMenu("Opció 2C", 0x1F600);
-
-        menu1 = new Menu("MENU", 100, 100, 400, 600);
-        menu1.setColors(colors);
-        menu1.setFonts(fonts);
-        menu1.afegirSubMenu(subMenu1);
-        menu1.afegirSubMenu(subMenu2);
+        entradaCercador = new EntradaCercador("", p5.width - AMPLE_ENTRADA_CERCADOR -50, 40, AMPLE_ENTRADA_CERCADOR, BOTO_FAVORIT, colors, fonts);
+        entradaCercador.setColors(colors);
+        entradaCercador.setFonts(fonts);
 
     }
 
 
     public void dibuixaPantalla(){
 
-        /*
+
 
         tarjaResum.display(p5);
         tarja.display(p5);
         taula.display(p5);
         boto.display(p5);
         desplegable.display(p5);
-        graellaTarja.display(p5);
+        graellaAutors.display(p5);
+        graellaLlibres.display(p5);
 
         botoIcona.display(p5);
 
@@ -156,12 +164,26 @@ public class Gui {
         entradaText.display(p5);
 
 
+        menuApp.display(p5);
+    }
 
-        subMenu1.display(p5);
+    public void dibuixaPantallaInici(){
 
-         */
+        p5.fill(0);
+        p5.text(pantallaActual.toString(), 300, 100);
 
-        menu1.display(p5);
+
+        entradaCercador.display(p5);
+        menuApp.display(p5);
+        graellaAutors.display(p5);
+        graellaLlibres.display(p5);
+    }
+
+    public void dibuixaGUI(){
+        switch (pantallaActual){
+            case INICI: dibuixaPantallaInici(); break;
+            default:
+        }
     }
 
 
@@ -173,20 +195,21 @@ public class Gui {
             p5.println("CLICK BOTÓ");
         }
 
-        graellaTarja.clickSobreTarges(p5);
-        graellaTarja.clickBotoAnterior(p5);
-        graellaTarja.clickBotoSeguent(p5);
+        graellaAutors.updateClick(p5);
+        graellaLlibres.updateClick(p5);
+
 
         botoFavorit.clickFavorit(p5);
 
         botonsGrup.clickBotons(p5);
 
         entradaText.updateClick(p5);
+        entradaCercador.updateClick(p5);
 
+        menuApp.updateClick(p5);
 
-        int[] opcio = menu1.opcioClicada(p5);
-        if(opcio!=null){
-            System.out.println("OPCIÓ "+ opcio[0]+", "+opcio[1]);
+        if(menuApp.opcioSeleccionada[0]!=-1){
+            System.out.println("OPCIÓ "+ menuApp.opcioSeleccionada[0]+", "+menuApp.opcioSeleccionada[1]);
         }
 
 
@@ -194,10 +217,12 @@ public class Gui {
 
     public void keyPressedEvent(PApplet p5){
         entradaText.updateKeyPressed(p5.keyCode);
+        entradaCercador.updateKeyPressed(p5.keyCode);
     }
 
     public void keyTypedEvent(PApplet p5){
         entradaText.updateKeyTyped(p5.key);
+        entradaCercador.updateKeyTyped(p5.key);
     }
 
 }

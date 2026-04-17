@@ -47,6 +47,9 @@ public class Boto extends GuiElement {
         }
     }
 
+    //
+    public void toggleActivat(){ this.activat = !this.activat; }
+
     // Dibuixa el botó
     public void display(PApplet p5){
         p5.pushStyle();

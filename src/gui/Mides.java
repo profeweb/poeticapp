@@ -11,7 +11,7 @@ public class Mides {
 
 
     // ELEMENTS GUI
-    public static final float ALT_GUI = 40;
+    public static final float ALT_GUI = 50;
 
     // BOTONS
     public static final float TEXT_BOTO = 75;
@@ -29,6 +29,7 @@ public class Mides {
     public static float GRUIXA_ENTRADA_TEXT = 1.5f;
     public static final float TEXT_ENTRADA = 24;
     public static final float AMPLE_ENTRADA_TEXT = 200;
+    public static final float AMPLE_ENTRADA_CERCADOR = 400;
     public static final float ALT_ENTRADA_TEXT = ALT_GUI;
 
     // TARJA, TARJA_RESUM
@@ -46,5 +47,6 @@ public class Mides {
     public static final int CODI_NO_FAVORIT = 0x1F600 + 66;
     public static final int CODI_SEGUENT = 0x1F600 + 1265;
     public static final int CODI_ANTERIOR = 0x1F600 + 1266;
+    public static final int CODI_ICONA_CERCADOR = 0x1F600 + 1266;
 
 }

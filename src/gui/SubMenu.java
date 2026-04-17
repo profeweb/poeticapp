@@ -9,6 +9,7 @@ public class SubMenu extends GuiElement{
     String titol;
     ArrayList<BotoIcona> botons;
     float margeVertical = 5;
+    int opcioSeleccionada = -1;
 
     public SubMenu(String titol, float x, float y, float w, float h) {
         super(x, y, w, h);
@@ -34,6 +35,8 @@ public class SubMenu extends GuiElement{
 
     }
 
+    public String getTitol(){ return  this.titol; }
+
     public void display(PApplet p5){
         p5.pushStyle();
         p5.textFont(fonts.getFontSecundaria());
@@ -46,14 +49,32 @@ public class SubMenu extends GuiElement{
         }
     }
 
-    public int opcioClicada(PApplet p5){
+    public void updateClick(PApplet p5){
         int numOpcio = 0;
         for(BotoIcona boto : botons){
             if(boto.mouseDins(p5)){
-                return numOpcio;
+                opcioSeleccionada = numOpcio;
             }
             numOpcio++;
         }
-        return -1;
     }
+
+    public void setBotonsActius(boolean b){
+        for(BotoIcona boto : botons){
+            boto.activat = b;
+        }
+    }
+
+    public void setOpcioSeleccionada(int i){
+        this.opcioSeleccionada = i;
+        botons.get(i).setActivat(false);
+    }
+
+    public void resetOpcioSeleccionada(){ this.opcioSeleccionada = -1; }
+
+    public int getOpcioSeleccionada(){ return  this.opcioSeleccionada; }
+
+    public BotoIcona getBotoIcona(){ return botons.get(opcioSeleccionada); }
+
+    public String getTitolOpcioSeleccionada(){ return getBotoIcona().textBoto; }
 }

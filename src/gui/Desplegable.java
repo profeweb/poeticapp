@@ -2,11 +2,14 @@ package gui;
 
 import processing.core.PApplet;
 
+import static gui.Mides.TEXT_ENTRADA;
+
 public class Desplegable extends GuiElement {
 
     String[] opcions;            // Valors possibles
     String opcioSeleccionada;      // Valor Seleccionat
 
+    String textEtiqueta;
     boolean desplegat = false;  // Plegat / Desplegat
     boolean activat;           // Abilitat / desabilitat
 
@@ -66,8 +69,20 @@ public class Desplegable extends GuiElement {
                 p5.text(opcions[i], x + 10, y + h + 25 + (h + lineSpace)*i);
             }
         }
+
+        // Text Etiqueta
+        // Etiqueta
+        p5.fill(colors.getColorEntradaTextText());
+        p5.textAlign(p5.RIGHT, p5.CENTER);
+        p5.textFont(fonts.getFontSecundaria());
+        p5.text(textEtiqueta, x - 15, y + h - TEXT_ENTRADA);
+        p5.popStyle();
+
+
         p5.popStyle();
     }
+
+    public void setTextEtiqueta(String text){ this.textEtiqueta = text; }
 
     public void setDesplegat(boolean b){
         this.desplegat = b;
