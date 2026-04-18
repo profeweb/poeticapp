@@ -12,6 +12,11 @@ public abstract class GuiElement {
         this.x = x; this.y = y; this.w = w; this.h = h;
     }
 
+    public void setColorsFonts(Colors c, Fonts f){
+        this.colors = c;
+        this.fonts = f;
+    }
+
     public void setColors(Colors c){ this.colors = c; }
 
     public void setFonts(Fonts f){ this.fonts = f; }
