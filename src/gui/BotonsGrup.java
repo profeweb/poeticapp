@@ -39,6 +39,10 @@ public class BotonsGrup extends GuiElement {
         return (this.botoSeleccionat);
     }
 
+    public String getTextBotoActivat() {
+        return botons[this.botoSeleccionat].textBoto;
+    }
+
     public void updateBotons() {
         for (int i = 0; i< botons.length; i++) {
             botons[i].activat = (botoSeleccionat != i);

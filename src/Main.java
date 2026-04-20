@@ -10,7 +10,8 @@ public class Main extends PApplet {
     }
 
     public void settings(){
-        size(1920, 1080);
+        //size(1920, 1080);
+        fullScreen();
         smooth(10);
     }
 

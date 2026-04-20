@@ -8,12 +8,13 @@ import static gui.Mides.*;
 public class Gui {
 
     // PANTALLES
-    public enum PANTALLA {INICI, AUTOR_INICI, AUTOR_ESTADISTICA, AUTOR_VISUAL };
+    public enum PANTALLA {INICI, AUTOR_OBRA, AUTOR_ESTADISTICA, AUTOR_VISUAL };
     public PANTALLA pantallaActual;
     PApplet p5;
 
 
     // ELEMENTS GUI
+    Titulars titulars;
     TarjaResum tarjaResum;
     Tarja tarja;
     TaulaPaginada taula;
@@ -21,7 +22,7 @@ public class Gui {
     BotoIcona botoIcona;
     BotoFavorit botoFavorit;
     Desplegable desplegable;
-    GraellaTarja graellaAutors, graellaLlibres;
+    GraellaTarja graellaAutors, graellaLlibres, graellaLlibresAutor;
     BotonsGrup botonsGrup;
     EntradaText entradaText;
     EntradaCercador entradaCercador;
@@ -38,7 +39,7 @@ public class Gui {
 
     public Gui(PApplet p5){
         this.p5 = p5;
-        this.pantallaActual = PANTALLA.AUTOR_INICI;
+        this.pantallaActual = PANTALLA.AUTOR_OBRA;
         setMedia(p5);
         setElementsGUI();
     }
@@ -63,7 +64,7 @@ public class Gui {
         tarjaResum.setColors(colors);
         tarjaResum.setFonts(fonts);
 
-        taula = new TaulaPaginada(300, 500, p5.width-350, 500);
+        taula = new TaulaPaginada(300, 540, p5.width-350, 500);
         String[] cols = { "Títol", "Any", "Poemes", "Estrofes", "Versos", "Paraules", "Síl·labes"};
         String[][] dades = {{"1", "2", "3", "4", "5", "6", "7"},
                 {"1", "2", "3", "4", "5", "6", "7"},
@@ -103,7 +104,7 @@ public class Gui {
         desplegable.setFonts(fonts);
 
 
-        graellaAutors = new GraellaTarja(1, 5, 310, 180, 1550, 300);
+        graellaAutors = new GraellaTarja(1, 5, 310, 200, 1550, 300);
         String[][] dadesGraella = { {"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
         graellaAutors.setData(dadesGraella);
         graellaAutors.ordenaTargesPerTitolAsc();
@@ -116,7 +117,7 @@ public class Gui {
         graellaAutors.setSelecccionableOrdre(p5);
 
 
-        graellaLlibres = new GraellaTarja(1, 5, 310, 650, 1550, 300);
+        graellaLlibres = new GraellaTarja(1, 5, 310, 670, 1550, 300);
         String[][] dadesGraella2 = { {"a", "d1"},{"f", "d1"},{"b", "d1"},{"g", "d1"},{"c", "d1"},{"k", "d1"},{"d", "d1"},{"v", "d1"},{"e", "d1"} };
         graellaLlibres.setData(dadesGraella2);
         graellaLlibres.ordenaTargesPerTitolAsc();
@@ -127,6 +128,22 @@ public class Gui {
         graellaLlibres.setImatges(p5,img);
         graellaLlibres.setBotons(p5);
         graellaLlibres.setSelecccionableOrdre(p5);
+
+
+        graellaLlibresAutor = new GraellaTarja(2, 5, 310, 300, 1550, 600);
+        String[][] dadesLlibresAutor = { {"a", "d1"},{"f", "d1"},{"b", "d1"},{"g", "d1"},{"c", "d1"},{"k", "d1"},{"d", "d1"},{"v", "d1"},{"e", "d1"},
+                {"a", "d1"},{"f", "d1"},{"b", "d1"},{"g", "d1"},{"c", "d1"},{"k", "d1"},{"d", "d1"},{"v", "d1"},{"e", "d1"},
+                {"a", "d1"},{"f", "d1"},{"b", "d1"},{"g", "d1"},{"c", "d1"},{"k", "d1"},{"d", "d1"},{"v", "d1"},{"e", "d1"},
+        };
+        graellaLlibresAutor.setData(dadesLlibresAutor);
+        graellaLlibresAutor.ordenaTargesPerTitolAsc();
+        graellaLlibresAutor.setTitol("Llibres");
+        graellaLlibresAutor.setColors(colors);
+        graellaLlibresAutor.setFonts(fonts);
+        graellaLlibresAutor.setTarges(p5);
+        graellaLlibresAutor.setImatges(p5,img);
+        graellaLlibresAutor.setBotons(p5);
+        graellaLlibresAutor.setSelecccionableOrdre(p5);
 
         //graellaTarja.paginaSeguent();
 
@@ -158,13 +175,17 @@ public class Gui {
         entradaCercador.setColors(colors);
         entradaCercador.setFonts(fonts);
 
-        resumAutor = new ResumAutor(300, 220, p5.width-350, 200);
+        resumAutor = new ResumAutor(300, 260, p5.width-350, 200);
         resumAutor.setColors(colors);
         resumAutor.setFonts(fonts);
         resumAutor.setResumLlibres(12, 1856, 2010);
         resumAutor.setResumPoemes(28, 12);
         resumAutor.setResumEstrofes(256, 12);
         resumAutor.setResumVersos(13873, 234);
+
+        titulars = new Titulars(300, 200);
+        titulars.setTitulars("Autor", "1965");
+        titulars.setColorsFonts(colors, fonts);
 
     }
 
@@ -192,18 +213,31 @@ public class Gui {
         menuApp.display(p5);
     }
 
+
     public void dibuixaPantallaInici(){
 
         p5.fill(0);
         p5.text(pantallaActual.toString(), 300, 100);
         menuApp.display(p5);
         entradaCercador.display(p5);
-
+        botonsGrup.display(p5);
+        titulars.display(p5);
         graellaAutors.display(p5);
         graellaLlibres.display(p5);
     }
 
-    public void dibuixaPantallaAutor(){
+    public void dibuixaPantallaAutorObra(){
+
+        p5.fill(0);
+        p5.text(pantallaActual.toString(), 300, 100);
+        menuApp.display(p5);
+        entradaCercador.display(p5);
+        botonsGrup.display(p5);
+        titulars.display(p5);
+        graellaLlibresAutor.display(p5);
+    }
+
+    public void dibuixaPantallaAutorEstadistica(){
         p5.fill(0);
         p5.text(pantallaActual.toString(), 300, 100);
         menuApp.display(p5);
@@ -212,12 +246,25 @@ public class Gui {
         botonsGrup.display(p5);
         resumAutor.display(p5);
         taula.display(p5);
+        titulars.display(p5);
+    }
+
+    public void dibuixaPantallaAutorVisuals(){
+        p5.fill(0);
+        p5.text(pantallaActual.toString(), 300, 100);
+        menuApp.display(p5);
+        entradaCercador.display(p5);
+
+        botonsGrup.display(p5);
+        titulars.display(p5);
     }
 
     public void dibuixaGUI(){
         switch (pantallaActual){
             case INICI: dibuixaPantallaInici(); break;
-            case AUTOR_INICI: dibuixaPantallaAutor(); break;
+            case AUTOR_OBRA: dibuixaPantallaAutorObra(); break;
+            case AUTOR_ESTADISTICA: dibuixaPantallaAutorEstadistica(); break;
+            case AUTOR_VISUAL: dibuixaPantallaAutorVisuals(); break;
             default:
         }
     }
@@ -234,10 +281,18 @@ public class Gui {
         graellaAutors.updateClick(p5);
         graellaLlibres.updateClick(p5);
 
-
         botoFavorit.clickFavorit(p5);
 
         botonsGrup.clickBotons(p5);
+        if(botonsGrup.getTextBotoActivat().equals("OBRA")){
+            pantallaActual = PANTALLA.AUTOR_OBRA;
+        }
+        else if(botonsGrup.getTextBotoActivat().equals("ESTADÍSTICA")){
+            pantallaActual = PANTALLA.AUTOR_ESTADISTICA;
+        }
+        else if(botonsGrup.getTextBotoActivat().equals("VISUALITZACIONS")){
+            pantallaActual = PANTALLA.AUTOR_VISUAL;
+        }
 
         entradaText.updateClick(p5);
         entradaCercador.updateClick(p5);
