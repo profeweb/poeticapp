@@ -19,9 +19,9 @@ public class MenuApp extends Menu {
         SubMenu sb2 = new SubMenu("Biblioteca", 10,  y + 300, w-20, 150);
         sb2.setColors(colors);
         sb2.setFonts(fonts);
+        sb2.afegirOpcioMenu("Autors", 0x1F600);
         sb2.afegirOpcioMenu("Llibres", 0x1F600);
         sb2.afegirOpcioMenu("Poemes", 0x1F600);
-        sb2.afegirOpcioMenu("Autors", 0x1F600);
         subMenus.add(sb2);
 
         SubMenu sb3 = new SubMenu("Visualitzacions", 10, y + 500, w-20, 350);

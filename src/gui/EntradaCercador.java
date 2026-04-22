@@ -46,7 +46,7 @@ public class EntradaCercador extends EntradaText{
         p5.fill(colors.getColorEntradaTextText());
         p5.textAlign(p5.RIGHT, p5.CENTER);
         p5.textFont(fonts.getFontSecundaria());
-        p5.text(textEtiqueta, x + 5, y + h - TEXT_ENTRADA);
+        p5.text(textEtiqueta, x - 15, y + h - TEXT_ENTRADA);
         p5.popStyle();
 
         // Icona
@@ -60,8 +60,9 @@ public class EntradaCercador extends EntradaText{
 
 
     // Gestiona tecles especials
-    public void updateKeyPressed(int keyCode) {
-        if (!actiu) return;
+    public Gui.PANTALLA updateKeyPressed(int keyCode, Gui.PANTALLA pantalla, EntradaCercador entradaExplorador) {
+
+        if (!actiu) return pantalla;
 
         if (keyCode == BACKSPACE) {
             esborrarText();
@@ -70,6 +71,9 @@ public class EntradaCercador extends EntradaText{
             this.textCerca = this.text;
             this.setActiu(false);
             esborrraTotText();
+            entradaExplorador.text = this.textCerca;
+            return Gui.PANTALLA.EXPLORAR;
         }
+        return pantalla;
     }
 }

@@ -10,28 +10,23 @@ public class Gui {
     // PANTALLES
     public enum PANTALLA {INICI, EXPLORAR, FAVORITS, LLIBRES, POEMES, AUTORS,
                             QUANTITATIVES, QUALITATIVES, CRONOLOGIQUES, RELACIONALS, TEMATIQUES, ALTRES,
-                            AUTOR_OBRA, AUTOR_ESTADISTICA, AUTOR_VISUAL, AUTOR_EDITA,
+                            AUTOR_OBRA, AUTOR_RESUM, AUTOR_VISUAL, AUTOR_EDITA,
                             LLIBRE_INFO, LLIBRE_EDITA};
     public PANTALLA pantallaActual;
     PApplet p5;
 
 
     // ELEMENTS GUI
-    Titulars titulars;
-    TarjaResum tarjaResum;
-    Tarja tarja;
-    TaulaPaginada taula;
-    Boto boto;
-    BotoIcona botoEditar, botoAfegir;
-    BotoFavorit botoFavorit;
-    Desplegable desplegableAutor, desplegableLlibre, desplegablePoema;
-    GraellaTarja graellaAutorsResum, graellaLlibresResum, graellaLlibres, graellaAutors, graellaPoemes;
-    BotonsGrup botonsGrup;
-    EntradaText entradaText;
-    EntradaCercador entradaCercador;
+    Titulars titularsPagina;
 
+    TaulaPaginada taulaResumAutor;
+    BotoIcona botoEditarAutor, botoAfegirAutor, botoAfegirLlibre, botoFiltrar;
+    EntradaTextLlista llistaAutors, llistaLlibres, llistaPoemes;
+    GraellaTarja graellaAutorsFavorits, graellaLlibresFavorits, graellaLlibres, graellaAutors, graellaPoemes;
+    BotonsGrup botonsAutor;
+    EntradaCercador entradaCercador, entradaCercadorGlobal;
     ResumAutor resumAutor;
-
+    ResumApp resumApp;
     MenuApp menuApp;
 
     // MEDIA
@@ -42,7 +37,6 @@ public class Gui {
 
     // Hooks
     String autorSeleccionat;
-
 
     public Gui(PApplet p5){
         this.p5 = p5;
@@ -67,16 +61,7 @@ public class Gui {
 
     public void setElementsGUI(){
 
-        tarja = new Tarja(50, 100, 300, 300);
-        tarja.setTextos("titol", "subtitol");
-        tarja.setImatge(p5, p5.loadImage("data/img/foto.jpg"), p5.color(100, 100, 100));
-        tarja.setColorsFonts(colors, fonts);
-
-        tarjaResum = new TarjaResum(400, 100, 300, 300);
-        tarjaResum.setTextos("aaa", "bb", "cc");
-        tarjaResum.setColorsFonts(colors, fonts);
-
-        taula = new TaulaPaginada(300, 540, p5.width-350, 500);
+        taulaResumAutor = new TaulaPaginada(300, 540, p5.width-350, 500);
         String[] cols = { "Títol", "Any", "Poemes", "Estrofes", "Versos", "Paraules", "Síl·labes"};
         String[][] dades = {{"1", "2", "3", "4", "5", "6", "7"},
                 {"1", "2", "3", "4", "5", "6", "7"},
@@ -96,36 +81,34 @@ public class Gui {
 
         };
         float[] mides = {40, 10, 10, 10, 10, 10, 10};
-        taula.setTitols(cols);
-        taula.setDades(dades);
-        taula.setMidaColumnes(mides);
-        taula.setNumFilesPagina(10);
-        taula.setColorsFonts(colors, fonts);
-        taula.setBotonsPaginacio();
-
-        taula.paginaSeguent();
-
-        boto = new Boto("OK", 50, 50, AMPLE_BOTO, ALT_BOTO);
-        boto.setColors(colors);
-        boto.setFonts(fonts);
+        taulaResumAutor.setTitols(cols);
+        taulaResumAutor.setDades(dades);
+        taulaResumAutor.setMidaColumnes(mides);
+        taulaResumAutor.setNumFilesPagina(10);
+        taulaResumAutor.setColorsFonts(colors, fonts);
+        taulaResumAutor.setBotonsPaginacio();
 
         String[] opcionsAutors = {"Autor A", "Autor B", "Autor C", "Autor D"};
-        desplegableAutor = new Desplegable(opcionsAutors, 200, 25, AMPLE_DESPLEGABLE, ALT_DESPLEGABLE);
-        desplegableAutor.setColorsFonts(colors, fonts);
+        llistaAutors = new EntradaTextLlista("Autor", opcionsAutors, 400, 150, AMPLE_ENTRADA_LLISTA, ALT_ENTRADA_LLISTA);
+        llistaAutors.setColorsFonts(colors, fonts);
 
         String[] opcionsLlibres = {"Llibre A", "Llibre B", "Llibre C", "Llibre D"};
-        desplegableLlibre = new Desplegable(opcionsLlibres, 200, 25, AMPLE_DESPLEGABLE, ALT_DESPLEGABLE);
-        desplegableLlibre.setColorsFonts(colors, fonts);
+        llistaLlibres = new EntradaTextLlista("Llibre", opcionsLlibres, 800, 150, AMPLE_ENTRADA_LLISTA, ALT_ENTRADA_LLISTA);
+        llistaLlibres.setColorsFonts(colors, fonts);
+
+        String[] opcionsPoemes = {"Poema A", "Poema B", "Poema C", "Poema D"};
+        llistaPoemes = new EntradaTextLlista("Poema", opcionsPoemes, 1200, 150, AMPLE_ENTRADA_LLISTA, ALT_ENTRADA_LLISTA);
+        llistaPoemes.setColorsFonts(colors, fonts);
 
         // Graella Autors 1 linea
         String[][] dadesAutorsResum = { {"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
-        graellaAutorsResum = setGraella(dadesAutorsResum, "Autors", imgAutor, colorAutor, 1, 5, 310, 300, 1550, 292);
-        graellaAutorsResum.amagaSubtitols();
+        graellaAutorsFavorits = setGraella(dadesAutorsResum, "Autors", imgAutor, colorAutor, 1, 5, 310, 300, 1550, 292);
+        graellaAutorsFavorits.amagaSubtitols();
 
         // Graella Llibres 1 línea
         String[][] dadesLlibresResum = { {"a", "d1"},{"f", "d1"},{"b", "d1"},{"g", "d1"},{"c", "d1"},{"k", "d1"},{"d", "d1"},{"v", "d1"},{"e", "d1"} };
-        graellaLlibresResum = setGraella(dadesLlibresResum, "Llibres", imgLlibre, colorLlibre, 1, 5, 310, 730, 1550, 292);
-        graellaLlibresResum.amagaSubtitols();
+        graellaLlibresFavorits = setGraella(dadesLlibresResum, "Llibres", imgLlibre, colorLlibre, 1, 5, 310, 730, 1550, 292);
+        graellaLlibresFavorits.amagaSubtitols();
 
         // Graella Autors 2 lineas
         String[][] dadesAutors = { {"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
@@ -141,23 +124,23 @@ public class Gui {
 
         //graellaTarja.paginaSeguent();
 
-        botoEditar = new BotoIcona("", 0x1F600, p5.width - 200 -25 -50, 150, 100, ALT_BOTO);
-        botoEditar.setColorsFonts(colors, fonts);
+        botoEditarAutor = new BotoIcona("Autor", 0x1F600, p5.width - 500 -25 -50, 150, 250, ALT_BOTO);
+        botoEditarAutor.setColorsFonts(colors, fonts);
 
-        botoAfegir = new BotoIcona("", 0x1F600, p5.width - 100 -50, 150, 100, ALT_BOTO);
-        botoAfegir.setColorsFonts(colors, fonts);
+        botoAfegirAutor = new BotoIcona("Autor", 0x1F600, p5.width - 500 -50 -25, 150, 250, ALT_BOTO);
+        botoAfegirAutor.setColorsFonts(colors, fonts);
 
-        botoFavorit = new BotoFavorit(1200, 50, BOTO_FAVORIT);
-        botoFavorit.setColorsFonts(colors, fonts);
+        botoAfegirLlibre = new BotoIcona("Llibre", 0x1F600, p5.width - 250 - 50, 150, 250, ALT_BOTO);
+        botoAfegirLlibre.setColorsFonts(colors, fonts);
 
-        String[] titols = {"OBRA", "ESTADÍSTICA", "VISUALITZACIONS"};
-        botonsGrup = new BotonsGrup( 300, 20, 850, ALT_BOTO);
-        botonsGrup.setColorsFonts(colors, fonts);
-        botonsGrup.setBotons(titols);
+        botoFiltrar = new BotoIcona("Filtrar", 0x1F600, p5.width - 250  -50, 150, 250, ALT_BOTO);
+        botoFiltrar.setColorsFonts(colors, fonts);
 
-        entradaText = new EntradaText("NOM", 100, 100, AMPLE_ENTRADA_TEXT, ALT_ENTRADA_TEXT, colors, fonts);
-        entradaText.setTextEtiqueta("NOM");
-        entradaText.setColorsFonts(colors, fonts);
+        String[] opcionsAutor = {"RESUM", "OBRA", "VISUALITZACIONS"};
+        botonsAutor = new BotonsGrup( 600, 20, 850, ALT_BOTO);
+        botonsAutor.setColorsFonts(colors, fonts);
+        botonsAutor.setBotons(opcionsAutor);
+
 
         menuApp = new MenuApp(10, 200, 250, 840);
         menuApp.setColorsFonts(colors, fonts);
@@ -167,6 +150,10 @@ public class Gui {
         entradaCercador.setColors(colors);
         entradaCercador.setFonts(fonts);
 
+        entradaCercadorGlobal = new EntradaCercador("Termes", 400, 225, AMPLE_ENTRADA_EXPLORADOR, BOTO_FAVORIT, colors, fonts);
+        entradaCercadorGlobal.setColors(colors);
+        entradaCercadorGlobal.setFonts(fonts);
+
         resumAutor = new ResumAutor(300, 260, p5.width-350, 200);
         resumAutor.setColorsFonts(colors, fonts);
         resumAutor.setResumLlibres(12, 1856, 2010);
@@ -174,9 +161,17 @@ public class Gui {
         resumAutor.setResumEstrofes(256, 12);
         resumAutor.setResumVersos(13873, 234);
 
-        titulars = new Titulars(300, 200);
-        titulars.setTitulars("Autor", "1965");
-        titulars.setColorsFonts(colors, fonts);
+        resumApp = new ResumApp(300, 260, p5.width-350, 200);
+        resumApp.setColorsFonts(colors, fonts);
+        resumApp.setResumAutors(2, 1988, 2010);
+        resumApp.setResumLlibres(12, 8.9f);
+        resumApp.setResumPoemes(28, 12);
+        resumApp.setResumEstrofes(256, 12);
+        resumApp.setResumVersos(13873, 234);
+
+        titularsPagina = new Titulars(300, 200);
+        titularsPagina.setTitulars("Autor", "1965");
+        titularsPagina.setColorsFonts(colors, fonts);
 
     }
 
@@ -194,31 +189,6 @@ public class Gui {
     }
 
 
-    public void dibuixaPantalla(){
-
-        tarjaResum.display(p5);
-        tarja.display(p5);
-        taula.display(p5);
-        boto.display(p5);
-        desplegableAutor.display(p5);
-
-        graellaAutorsResum.display(p5);
-        graellaLlibresResum.display(p5);
-
-        botoEditar.display(p5);
-
-        botoFavorit.display(p5);
-        botonsGrup.display(p5);
-
-
-
-        entradaText.display(p5);
-
-
-        menuApp.display(p5);
-    }
-
-
     public void dibuixaPantallaInici(){
 
         p5.fill(0);
@@ -227,10 +197,12 @@ public class Gui {
         menuApp.display(p5);
         entradaCercador.display(p5);
 
-        titulars.display(p5);
+        titularsPagina.display(p5);
+        resumApp.display(p5);
 
-        graellaAutorsResum.display(p5);
-        graellaLlibresResum.display(p5);
+        botoAfegirAutor.display(p5);
+        botoAfegirLlibre.display(p5);
+
     }
 
     public void dibuixaPantallaExplorar(){
@@ -238,16 +210,28 @@ public class Gui {
         p5.fill(0);
         p5.text(pantallaActual.toString(), 300, 100);
         menuApp.display(p5);
-        entradaCercador.display(p5);
+
+        entradaCercadorGlobal.display(p5);
+
+        llistaAutors.display(p5);
+        llistaLlibres.display(p5);
+        llistaPoemes.display(p5);
+        botoFiltrar.display(p5);
 
     }
 
     public void dibuixaPantallaFavorits(){
 
         p5.fill(0);
-        p5.text(pantallaActual.toString(), 300, 100);
+        p5.text(pantallaActual.toString(), 600, 100);
+
         menuApp.display(p5);
         entradaCercador.display(p5);
+
+        titularsPagina.display(p5);
+
+        graellaAutorsFavorits.display(p5);
+        graellaLlibresFavorits.display(p5);
 
     }
 
@@ -257,6 +241,11 @@ public class Gui {
         p5.text(pantallaActual.toString(), 300, 100);
         menuApp.display(p5);
         entradaCercador.display(p5);
+
+        llistaAutors.display(p5);
+        llistaLlibres.display(p5);
+        llistaPoemes.display(p5);
+        botoFiltrar.display(p5);
 
         graellaAutors.display(p5);
 
@@ -269,8 +258,12 @@ public class Gui {
         menuApp.display(p5);
         entradaCercador.display(p5);
 
-        graellaLlibres.display(p5);
+        llistaAutors.display(p5);
+        llistaLlibres.display(p5);
+        llistaPoemes.display(p5);
+        botoFiltrar.display(p5);
 
+        graellaLlibres.display(p5);
     }
 
     public void dibuixaPantallaPoemes(){
@@ -279,6 +272,11 @@ public class Gui {
         p5.text(pantallaActual.toString(), 300, 100);
         menuApp.display(p5);
         entradaCercador.display(p5);
+
+        llistaAutors.display(p5);
+        llistaLlibres.display(p5);
+        llistaPoemes.display(p5);
+        botoFiltrar.display(p5);
 
         graellaPoemes.display(p5);
 
@@ -290,11 +288,11 @@ public class Gui {
         p5.text(pantallaActual.toString(), 300, 100);
         menuApp.display(p5);
         entradaCercador.display(p5);
-        botonsGrup.display(p5);
-        titulars.display(p5);
+        botonsAutor.display(p5);
+        titularsPagina.display(p5);
 
-        botoEditar.display(p5);
-        botoAfegir.display(p5);
+        botoEditarAutor.display(p5);
+        botoAfegirLlibre.display(p5);
 
         graellaLlibres.display(p5);
     }
@@ -305,10 +303,10 @@ public class Gui {
         menuApp.display(p5);
         entradaCercador.display(p5);
 
-        botonsGrup.display(p5);
+        botonsAutor.display(p5);
         resumAutor.display(p5);
-        taula.display(p5);
-        titulars.display(p5);
+        taulaResumAutor.display(p5);
+        titularsPagina.display(p5);
     }
 
     public void dibuixaPantallaAutorVisuals(){
@@ -317,34 +315,61 @@ public class Gui {
         menuApp.display(p5);
         entradaCercador.display(p5);
 
-        botonsGrup.display(p5);
-        titulars.display(p5);
+        botonsAutor.display(p5);
+        titularsPagina.display(p5);
+
+        llistaAutors.display(p5);
+        llistaLlibres.display(p5);
+        llistaPoemes.display(p5);
+        botoFiltrar.display(p5);
+    }
+
+    public void dibuixaPantallaQuantitatives(){
+        p5.fill(0);
+        p5.text(pantallaActual.toString(), 300, 100);
+        menuApp.display(p5);
+        entradaCercador.display(p5);
+
+        llistaAutors.display(p5);
+        llistaLlibres.display(p5);
+        llistaPoemes.display(p5);
+        botoFiltrar.display(p5);
     }
 
     public void dibuixaGUI(){
         switch (pantallaActual){
+            // MENU 1: INICI, EXPLORAR, FAVORITS
             case INICI: dibuixaPantallaInici(); break;
             case EXPLORAR: dibuixaPantallaExplorar(); break;
             case FAVORITS: dibuixaPantallaFavorits(); break;
+            // MENU 2: AUTORS, LLIBRES, POEMES
             case AUTORS: dibuixaPantallaAutors(); break;
             case LLIBRES: dibuixaPantallaLlibres(); break;
             case POEMES: dibuixaPantallaPoemes(); break;
+            // MENU 3: VISUALITZACIONS
+            case QUANTITATIVES: dibuixaPantallaQuantitatives(); break;
+            case QUALITATIVES: dibuixaPantallaQuantitatives(); break;
+            case RELACIONALS: dibuixaPantallaQuantitatives(); break;
+            case CRONOLOGIQUES: dibuixaPantallaQuantitatives(); break;
+            case ALTRES: dibuixaPantallaQuantitatives(); break;
+            case TEMATIQUES: dibuixaPantallaQuantitatives(); break;
+            // ALTRES
             case AUTOR_OBRA: dibuixaPantallaAutorObra(); break;
-            case AUTOR_ESTADISTICA: dibuixaPantallaAutorEstadistica(); break;
+            case AUTOR_RESUM: dibuixaPantallaAutorEstadistica(); break;
             case AUTOR_VISUAL: dibuixaPantallaAutorVisuals(); break;
             default: dibuixaPantallaExplorar();
         }
     }
 
     public void updatePantallesAutor(PApplet p5){
-        botonsGrup.clickBotons(p5);
-        if(botonsGrup.getTextBotoActivat().equals("OBRA")){
+        botonsAutor.clickBotons(p5);
+        if(botonsAutor.getTextBotoActivat().equals("OBRA")){
             pantallaActual = PANTALLA.AUTOR_OBRA;
         }
-        else if(botonsGrup.getTextBotoActivat().equals("ESTADÍSTICA")){
-            pantallaActual = PANTALLA.AUTOR_ESTADISTICA;
+        else if(botonsAutor.getTextBotoActivat().equals("RESUM")){
+            pantallaActual = PANTALLA.AUTOR_RESUM;
         }
-        else if(botonsGrup.getTextBotoActivat().equals("VISUALITZACIONS")){
+        else if(botonsAutor.getTextBotoActivat().equals("VISUALITZACIONS")){
             pantallaActual = PANTALLA.AUTOR_VISUAL;
         }
     }
@@ -352,8 +377,8 @@ public class Gui {
     public void updatePantallaMenu(PApplet p5){
         menuApp.updateClick(p5);
         if(menuApp.mouseDins(p5) && menuApp.opcioSeleccionada[0]!=-1){
-            System.out.println("OPCIÓ "+ menuApp.opcioSeleccionada[0]+", "+menuApp.opcioSeleccionada[1]);
-            System.out.println(menuApp.getTitolOpcioSeleccionada());
+            //System.out.println("OPCIÓ "+ menuApp.opcioSeleccionada[0]+", "+menuApp.opcioSeleccionada[1]);
+            //System.out.println(menuApp.getTitolOpcioSeleccionada());
             switch(menuApp.getTitolOpcioSeleccionada()){
                 case "Inici":       pantallaActual = PANTALLA.INICI; break;
                 case "Explorar":    pantallaActual = PANTALLA.EXPLORAR; break;
@@ -375,28 +400,26 @@ public class Gui {
 
     public void mouseEvents(PApplet p5){
 
-        if(pantallaActual == PANTALLA.INICI){
-            graellaAutorsResum.updateClick(p5);
-            if(graellaAutorsResum.numTarjaSeleccionada!=-1){
-                pantallaActual = PANTALLA.AUTOR_OBRA;
+        if(pantallaActual == PANTALLA.FAVORITS){
+            graellaAutorsFavorits.updateClick(p5);
+            if(graellaAutorsFavorits.numTarjaSeleccionada!=-1){
+                pantallaActual = PANTALLA.AUTOR_RESUM;
             }
-            graellaLlibresResum.updateClick(p5);
+            graellaLlibresFavorits.updateClick(p5);
         }
         else if(pantallaActual == PANTALLA.AUTOR_OBRA){
             updatePantallesAutor(p5);
         }
-        else if(pantallaActual == PANTALLA.AUTOR_ESTADISTICA){
+        else if(pantallaActual == PANTALLA.AUTOR_RESUM){
             updatePantallesAutor(p5);
-            taula.updateClick(p5);
+            taulaResumAutor.updateClick(p5);
         }
         else if(pantallaActual == PANTALLA.AUTOR_VISUAL){
             updatePantallesAutor(p5);
         }
-
-        desplegableAutor.update(p5);
-
-        if(boto.mouseDins(p5)){
-            p5.println("CLICK BOTÓ");
+        else if(pantallaActual == PANTALLA.LLIBRES){
+            llistaAutors.updateClick(p5);
+            llistaLlibres.updateClick(p5);
         }
 
         // Elements comuns en totes les pantalles
@@ -406,13 +429,23 @@ public class Gui {
     }
 
     public void keyPressedEvent(PApplet p5){
-        entradaText.updateKeyPressed(p5.keyCode);
-        entradaCercador.updateKeyPressed(p5.keyCode);
+
+        pantallaActual = entradaCercador.updateKeyPressed(p5.keyCode, pantallaActual, entradaCercadorGlobal);
+
+        if(pantallaActual == PANTALLA.LLIBRES){
+            llistaAutors.keyPressed(p5);
+            llistaLlibres.keyPressed(p5);
+        }
     }
 
     public void keyTypedEvent(PApplet p5){
-        entradaText.updateKeyTyped(p5.key);
+
         entradaCercador.updateKeyTyped(p5.key);
+
+        if(pantallaActual == PANTALLA.LLIBRES){
+            llistaAutors.keyTyped(p5);
+            llistaLlibres.keyTyped(p5);
+        }
     }
 
 }

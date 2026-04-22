@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gui/EntradaTextLlista.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/Resum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/ResumApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/test/TestEntradaTextLlista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/GraellaTarja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/GraellaTarja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/EntradaCercador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/EntradaCercador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/EntradaTextLlista.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/EntradaTextLlista.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/MenuApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MenuApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/SubMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/SubMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Tarja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Tarja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Mides.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Mides.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/ResumAutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ResumAutor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +52,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="gui" />
       <recent name="gui.test" />
     </key>
   </component>
@@ -61,8 +64,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDesplegable" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.test.TestDesplegable" />
+    <configuration name="TestDiagramaLinies" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestDiagramaLinies" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
@@ -74,8 +77,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDiagramaLinies" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.test.TestDiagramaLinies" />
+    <configuration name="TestEntradaTextLlista" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestEntradaTextLlista" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
@@ -116,10 +119,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.TestEntradaTextLlista" />
         <item itemvalue="Application.gui.test.TestDiagramaSectors" />
         <item itemvalue="Application.TestDiagramaLinies" />
         <item itemvalue="Application.gui.test.TestDiagramaBarres" />
-        <item itemvalue="Application.TestDesplegable" />
       </list>
     </recent_temporary>
   </component>
@@ -170,7 +173,8 @@
       <workItem from="1776440020043" duration="3202000" />
       <workItem from="1776513415429" duration="6447000" />
       <workItem from="1776668045697" duration="3615000" />
-      <workItem from="1776837801300" duration="12096000" />
+      <workItem from="1776837801300" duration="13126000" />
+      <workItem from="1776865673224" duration="11772000" />
     </task>
     <task id="LOCAL-00001" summary="Inicial">
       <created>1772797946480</created>
@@ -312,7 +316,21 @@
       <option name="project" value="LOCAL" />
       <updated>1776535741984</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Inicial">
+      <created>1776852873758</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1776852873758</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Inicial">
+      <created>1776852894013</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1776852894013</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

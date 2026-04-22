@@ -25,11 +25,16 @@ public class Mides {
     public static final float AMPLE_DESPLEGABLE = 200;
     public static final float ALT_DESPLEGABLE  = ALT_GUI;
 
+    // ENTRADA DE TEXT LLISTA
+    public static final float AMPLE_ENTRADA_LLISTA = 300;
+    public static final float ALT_ENTRADA_LLISTA = ALT_GUI;
+
     // ENTRADA DE TEXT
     public static float GRUIXA_ENTRADA_TEXT = 1.5f;
     public static final float TEXT_ENTRADA = 24;
     public static final float AMPLE_ENTRADA_TEXT = 200;
     public static final float AMPLE_ENTRADA_CERCADOR = 400;
+    public static final float AMPLE_ENTRADA_EXPLORADOR = 1100;
     public static final float ALT_ENTRADA_TEXT = ALT_GUI;
 
     // TARJA, TARJA_RESUM
