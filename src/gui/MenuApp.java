@@ -24,7 +24,7 @@ public class MenuApp extends Menu {
         sb2.afegirOpcioMenu("Autors", 0x1F600);
         subMenus.add(sb2);
 
-        SubMenu sb3 = new SubMenu("Visualitzacions", 10, y + 500, w-20, 250);
+        SubMenu sb3 = new SubMenu("Visualitzacions", 10, y + 500, w-20, 350);
         sb3.setColors(colors);
         sb3.setFonts(fonts);
         sb3.afegirOpcioMenu("Quantitatives", 0x1F600);
@@ -32,6 +32,7 @@ public class MenuApp extends Menu {
         sb3.afegirOpcioMenu("Relacionals", 0x1F600);
         sb3.afegirOpcioMenu("Temàtiques", 0x1F600);
         sb3.afegirOpcioMenu("Cronològiques", 0x1F600);
+        sb3.afegirOpcioMenu("Altres", 0x1F600);
         subMenus.add(sb3);
 
         sb1.setOpcioSeleccionada(0);

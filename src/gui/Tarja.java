@@ -11,6 +11,7 @@ public class Tarja extends GuiElement {
     int num;
     String titol;
     String subtitol;
+    boolean mostraSubtitol;
 
     PImage imatge;
     float margeEsq = 15;
@@ -22,6 +23,16 @@ public class Tarja extends GuiElement {
         this.num =  0;
         this.titol = ""; this.subtitol = "";
         this.imatge = null;
+        this.mostraSubtitol = false;
+    }
+
+    public Tarja(int num, String titol, float x, float y, float w, float h){
+        super(x, y, w, h);
+        this.num = num;
+        this.titol = titol;
+        this.subtitol = "";
+        this.mostraSubtitol = false;
+        this.imatge = null;
     }
 
     public Tarja(int num, String titol, String subtitol, float x, float y, float w, float h){
@@ -29,6 +40,7 @@ public class Tarja extends GuiElement {
         this.num = num;
         this.titol = titol;
         this.subtitol = subtitol;
+        this.mostraSubtitol = true;
         this.imatge = null;
     }
 
@@ -45,7 +57,9 @@ public class Tarja extends GuiElement {
         this.subtitol = t2;
     }
 
-    public void setImatge(PApplet p5, PImage img){
+    public void setMostraSubtitol(boolean b){ this.mostraSubtitol = b; }
+
+    public void setImatge(PApplet p5, PImage img, int colorTint){
 
         // Màscara amb caires arrodonits
         PGraphics mask = p5.createGraphics((int)this.w, (int)this.h);
@@ -57,7 +71,8 @@ public class Tarja extends GuiElement {
 
         PGraphics inputImage= p5.createGraphics((int)this.w, (int)this.h);
         inputImage.beginDraw();
-        inputImage.image(img, 0, 0);
+        inputImage.tint(colorTint);
+        inputImage.image(img, 0, 0, w, h);
         inputImage.endDraw();
 
         PImage maskImage = mask.get();
@@ -96,10 +111,12 @@ public class Tarja extends GuiElement {
         p5.text(this.titol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL*1.5f);
 
         // Text Subtítol
-        p5.fill(50);
-        p5.textFont(fonts.getFontSecundaria());
-        p5.textSize(TEXT_SUBTITOL);
-        p5.text(this.subtitol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL*1.5f + TEXT_SUBTITOL/10f);
+        if(mostraSubtitol) {
+            p5.fill(50);
+            p5.textFont(fonts.getFontSecundaria());
+            p5.textSize(TEXT_SUBTITOL);
+            p5.text(this.subtitol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL * 1.5f + TEXT_SUBTITOL / 10f);
+        }
 
         // Boto Favorit
         if(this.bFavorit!=null){

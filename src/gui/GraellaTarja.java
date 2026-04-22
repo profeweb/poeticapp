@@ -75,6 +75,12 @@ public class GraellaTarja extends GuiElement {
         }
     }
 
+    public void amagaSubtitols(){
+        for(Tarja tarja: targes){
+            tarja.setMostraSubtitol(false);
+        }
+    }
+
     public void ordenaTargesPerTitolAsc(){
         ordenaTargesPerCamp(0, true);
     }
@@ -93,9 +99,9 @@ public class GraellaTarja extends GuiElement {
 
     public void setTitol(String t){ this.titol = t; }
 
-    public void setImatges(PApplet p5, PImage[] imatges) {
+    public void setImatges(PApplet p5, PImage[] imatges, int colorTint) {
         for(int numTarja=0; numTarja<targes.length; numTarja++){
-            targes[numTarja].setImatge(p5, imatges[numTarja]);
+            targes[numTarja].setImatge(p5, imatges[numTarja], colorTint);
         }
     }
 
@@ -117,9 +123,9 @@ public class GraellaTarja extends GuiElement {
         selOrdre.setTextEtiqueta("Ordenar");
     }
 
-    public void setImatges(PApplet p5, PImage imatge) {
+    public void setImatges(PApplet p5, PImage imatge, int colorTint) {
         for(Tarja tarja : targes){
-            tarja.setImatge(p5, imatge);
+            tarja.setImatge(p5, imatge, colorTint);
         }
     }
 

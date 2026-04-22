@@ -57,30 +57,42 @@ public class Menu extends GuiElement {
         for(SubMenu subMenu : subMenus){
             subMenu.display(p5);
         }
+
+    }
+
+    public void deseleccionaOpcions(){
+        for(SubMenu subMenu: subMenus){
+            subMenu.deseleccionaOpcions();
+        }
     }
 
     public void updateClick(PApplet p5){
-        for(int numSubMenu =0; numSubMenu<subMenus.size(); numSubMenu++) {
-            SubMenu sbi = subMenus.get(numSubMenu);
-            int numOpcions = subMenus.get(numSubMenu).botons.size();
-            for (int numOpcio=0; numOpcio<numOpcions; numOpcio++) {
-                BotoIcona bi = sbi.botons.get(numOpcio);
-                if (bi.mouseDins(p5)) {
-                    opcioSeleccionada[0] = numSubMenu;
-                    opcioSeleccionada[1] = numOpcio;
-                }
-            }
-        }
+        if(mouseDins(p5)) {
 
-        for(int numSubMenu =0; numSubMenu<subMenus.size(); numSubMenu++) {
-            SubMenu sbi = subMenus.get(numSubMenu);
-            sbi.setBotonsActius(true);
-            if(opcioSeleccionada[0]== numSubMenu) {
+            deseleccionaOpcions();
+
+            for (int numSubMenu = 0; numSubMenu < subMenus.size(); numSubMenu++) {
+                SubMenu sbi = subMenus.get(numSubMenu);
                 int numOpcions = subMenus.get(numSubMenu).botons.size();
                 for (int numOpcio = 0; numOpcio < numOpcions; numOpcio++) {
                     BotoIcona bi = sbi.botons.get(numOpcio);
-                    if (numOpcio == opcioSeleccionada[1]) {
-                        bi.setActivat(false);
+                    if (bi.mouseDins(p5)) {
+                        opcioSeleccionada[0] = numSubMenu;
+                        opcioSeleccionada[1] = numOpcio;
+                    }
+                }
+            }
+
+            for (int numSubMenu = 0; numSubMenu < subMenus.size(); numSubMenu++) {
+                SubMenu sbi = subMenus.get(numSubMenu);
+                sbi.setBotonsActius(true);
+                if (opcioSeleccionada[0] == numSubMenu) {
+                    int numOpcions = subMenus.get(numSubMenu).botons.size();
+                    for (int numOpcio = 0; numOpcio < numOpcions; numOpcio++) {
+                        BotoIcona bi = sbi.botons.get(numOpcio);
+                        if (numOpcio == opcioSeleccionada[1]) {
+                            bi.setActivat(false);
+                        }
                     }
                 }
             }
@@ -89,6 +101,6 @@ public class Menu extends GuiElement {
 
     public int[] getOpcioSeleccionada(){ return this.opcioSeleccionada; }
 
-    public String getTitolOpcioSeleccionada(){ return subMenus.get(opcioSeleccionada[0]).getTitolOpcioSeleccionada(); }
+    public String getTitolOpcioSeleccionada(){ return subMenus.get(opcioSeleccionada[0]).getTitolOpcioAt(opcioSeleccionada[1]); }
 
 }

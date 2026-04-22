@@ -70,11 +70,20 @@ public class SubMenu extends GuiElement{
         botons.get(i).setActivat(false);
     }
 
+    public void deseleccionaOpcions(){
+        this.opcioSeleccionada = -1;
+        for(BotoIcona botoIcona: botons){
+            botoIcona.setActivat(true);
+        }
+    }
+
     public void resetOpcioSeleccionada(){ this.opcioSeleccionada = -1; }
 
     public int getOpcioSeleccionada(){ return  this.opcioSeleccionada; }
 
     public BotoIcona getBotoIcona(){ return botons.get(opcioSeleccionada); }
 
-    public String getTitolOpcioSeleccionada(){ return getBotoIcona().textBoto; }
+    public BotoIcona getBotoIconaAt(int i){ return botons.get(i); }
+
+    public String getTitolOpcioAt(int i){ return getBotoIconaAt(i).textBoto; }
 }
