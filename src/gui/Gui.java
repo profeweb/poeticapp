@@ -24,7 +24,10 @@ public class Gui {
     EntradaTextLlista llistaAutors, llistaLlibres, llistaPoemes;
     GraellaTarja graellaAutorsFavorits, graellaLlibresFavorits, graellaLlibres, graellaAutors, graellaPoemes;
     BotonsGrup botonsAutor;
+
+
     EntradaCercador entradaCercador, entradaCercadorGlobal;
+    BotoOpcioGrup opcionsCercador;
     ResumAutor resumAutor;
     ResumApp resumApp;
     MenuApp menuApp;
@@ -146,13 +149,27 @@ public class Gui {
         menuApp.setColorsFonts(colors, fonts);
         menuApp.setMenuApp();
 
+        // EXPLORADOR ////////////////////////////////////////////////////////////////////////////
+
         entradaCercador = new EntradaCercador("", p5.width - AMPLE_ENTRADA_CERCADOR -50, 20, AMPLE_ENTRADA_CERCADOR, BOTO_FAVORIT, colors, fonts);
         entradaCercador.setColors(colors);
         entradaCercador.setFonts(fonts);
 
-        entradaCercadorGlobal = new EntradaCercador("Termes", 400, 225, AMPLE_ENTRADA_EXPLORADOR, BOTO_FAVORIT, colors, fonts);
+        entradaCercadorGlobal = new EntradaCercador("Cerca", 400, 225, AMPLE_ENTRADA_EXPLORADOR, BOTO_FAVORIT, colors, fonts);
         entradaCercadorGlobal.setColors(colors);
         entradaCercadorGlobal.setFonts(fonts);
+
+
+        BotoOpcio opcioTerme = new BotoOpcio("Terme", 400, 150, 50, 50);
+        opcioTerme.setColorsFonts(colors, fonts);
+
+        BotoOpcio opcioLema = new BotoOpcio("Lema", 500, 300, 50, 50);
+        opcioLema.setColorsFonts(colors, fonts);
+
+        opcionsCercador = new BotoOpcioGrup(2);
+        opcionsCercador.setSeleccionables(opcioTerme, opcioLema);
+
+        
 
         resumAutor = new ResumAutor(300, 260, p5.width-350, 200);
         resumAutor.setColorsFonts(colors, fonts);
