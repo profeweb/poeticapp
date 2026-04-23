@@ -12,7 +12,8 @@ public class Gui {
                             AUTOR_OBRA, AUTOR_RESUM, AUTOR_VISUAL, AUTOR_EDITA,
                             QUANTITATIVES, QUALITATIVES, CRONOLOGIQUES, RELACIONALS, TEMATIQUES, ALTRES,
 
-                             LLIBRE_RESUM, LLIBRE_EDITA};
+                             LLIBRE_RESUM, LLIBRE_EDITA,
+                             POEMA_RESUM, POEMA_EDITA};
     public PANTALLA pantallaActual;
 
     // Titulars Pantalla
@@ -21,6 +22,7 @@ public class Gui {
             {"Autor", "Obra", ""},{"Autor", "Resum", ""},{"Autor", "Visualitzacions", ""},{"Autor", "Edita", ""},
             {"Visualitzacions", "Quantitatives", ""},{"Visualitzacions", "Qualitatives", ""},{"Visualitzacions", "Cronològiques", ""},{"Visualitzacions", "Relacionals", ""},{"Visualitzacions", "Temàtiques", ""},{"Visualitzacions", "Altres", ""},
             {"Llibre", "Resum", ""},{"Llibre", "Edita", ""},
+            {"Poema", "Resum", ""},{"Poema", "Edita", ""},
     };
 
     int[] iconesTitulars ={CODI_ANTERIOR, CODI_SEGUENT, CODI_ANTERIOR, CODI_SEGUENT, CODI_ANTERIOR, CODI_SEGUENT,
@@ -48,6 +50,8 @@ public class Gui {
     Resum resumAutor, resumLlibre, resumApp;
 
     MenuApp menuApp;
+
+    Pantalla pantallaInici, pantallaFavorits;
 
     // MEDIA
     Colors colors;
@@ -81,6 +85,8 @@ public class Gui {
 
 
     public void setElementsGUI(){
+
+
 
         taulaResumAutor = new TaulaPaginada(300, 540, p5.width-350, 500);
         String[] cols = { "Títol", "Any", "Poemes", "Estrofes", "Versos", "Paraules", "Síl·labes"};
@@ -253,9 +259,26 @@ public class Gui {
         ((ResumApp)resumApp).setResumVersos(13873, 234);
 
         titularsPagina = new Titulars(360, 100);
-        titularsPagina.setTitulars("Autor", "1965");
+        titularsPagina.setTitulars("Poètica", "Inici");
         titularsPagina.setCodiIcona(CODI_NO_FAVORIT);
         titularsPagina.setColorsFonts(colors, fonts);
+
+
+        pantallaInici = new Pantalla(PANTALLA.INICI, pantallaActual);
+        pantallaInici.addElement(menuApp);
+        pantallaInici.addElement(titularsPagina);
+
+        pantallaFavorits = new Pantalla(PANTALLA.FAVORITS, pantallaActual);
+        pantallaFavorits.addElement(menuApp);
+        pantallaFavorits.addElement(titularsPagina);
+        pantallaFavorits.addElement(entradaCercador);
+        pantallaFavorits.addElement(graellaAutorsFavorits);
+        pantallaFavorits.addElement(graellaLlibresFavorits);
+        // entradaCercador.display(p5);
+        //
+        //        graellaAutorsFavorits.display(p5);
+        //        graellaLlibresFavorits.display(p5);
+
 
     }
 
@@ -444,6 +467,17 @@ public class Gui {
         titularsPagina.display(p5);
     }
 
+    public void dibuixaPantallaLlibreEdita(){
+        p5.fill(0);
+        p5.text(pantallaActual.toString(), 600, 100);
+
+        titularsPagina.display(p5);
+        menuApp.display(p5);
+        entradaCercador.display(p5);
+
+
+    }
+
     public void dibuixaPantallaQuantitatives(){
         p5.fill(0);
         p5.text(pantallaActual.toString(), 300, 100);
@@ -457,6 +491,10 @@ public class Gui {
     }
 
     public void dibuixaGUI(){
+
+        //pantallaInici.display(p5);
+        pantallaFavorits.display(p5);
+        /*
         switch (pantallaActual){
             // MENU 1: INICI, EXPLORAR, FAVORITS
             case INICI: dibuixaPantallaInici(); break;
@@ -479,10 +517,12 @@ public class Gui {
             case AUTOR_VISUAL: dibuixaPantallaAutorVisuals(); break;
             case AUTOR_EDITA: dibuixaPantallaAutorEdita(); break;
             // LLIBRE
-            case LLIBRE_EDITA: dibuixaPantallaLlibreResum(); break;
             case LLIBRE_RESUM: dibuixaPantallaLlibreResum(); break;
+            case LLIBRE_EDITA: dibuixaPantallaLlibreEdita(); break;
             default: dibuixaPantallaExplorar();
         }
+
+         */
     }
 
     public void updatePantallesAutor(PApplet p5){
@@ -533,6 +573,10 @@ public class Gui {
 
     public void mouseEvents(PApplet p5){
 
+        pantallaInici.mouseEvents(p5);
+
+        /*
+
         if(pantallaActual == PANTALLA.FAVORITS){
             graellaAutorsFavorits.updateClick(p5);
             if(graellaAutorsFavorits.numTarjaSeleccionada!=-1){
@@ -553,7 +597,6 @@ public class Gui {
                 pantallaActual = PANTALLA.AUTOR_EDITA;
                 botonsAutor.desactivaTotesOpcions();
             }
-
         }
         else if(pantallaActual == PANTALLA.AUTOR_VISUAL){
             updatePantallesAutor(p5);
@@ -566,6 +609,12 @@ public class Gui {
                 pantallaActual = PANTALLA.AUTOR_RESUM;
                 botonsAutor.setBotoSeleccionat(0);
                 updatePantallesAutor(p5);
+            }
+        }
+        else if(pantallaActual == PANTALLA.LLIBRE_RESUM){
+            taulaResumLlibre.updateClick(p5);
+            if(botoEditarLlibre.mouseDins(p5)){
+                pantallaActual = PANTALLA.LLIBRE_EDITA;
             }
         }
         else if(pantallaActual == PANTALLA.LLIBRE_EDITA){
@@ -593,6 +642,8 @@ public class Gui {
         entradaCercador.updateClick(p5);
         updatePantallaMenu(p5);
         updateTitular(pantallaActual);
+
+         */
 
     }
 
