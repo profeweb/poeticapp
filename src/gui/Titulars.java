@@ -2,8 +2,11 @@ package gui;
 
 import processing.core.PApplet;
 
+import static gui.Mides.*;
+
 public class Titulars extends GuiElement {
 
+    int codiIcona;
     String [] titulars;
     float stepY = 25;
 
@@ -19,6 +22,8 @@ public class Titulars extends GuiElement {
         }
     }
 
+    public void setCodiIcona(int codiIcona){ this.codiIcona = codiIcona; }
+
     public void setTitulars(String ... titulars){
         this.titulars = new String[titulars.length];
         for(int i=0; i<titulars.length; i++){
@@ -33,6 +38,13 @@ public class Titulars extends GuiElement {
     public void display(PApplet p5){
 
         p5.pushStyle();
+
+        if(codiIcona!=0){
+            p5.fill(0);
+            p5.textFont(this.fonts.getFontEmoji());
+            p5.textSize(TEXT_TITOL); p5.textAlign(p5.RIGHT, p5.CENTER);
+            p5.text(new String(Character.toChars(codiIcona)), this.x - 10, this.y - TEXT_TITOL/4f);
+        }
 
         for(int i=0; i<titulars.length; i++){
             p5.fill(0);

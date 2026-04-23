@@ -35,4 +35,6 @@ public abstract class GuiElement {
                 (p5.mouseY >= this.y) && (p5.mouseY <= this.y + this.h);
     }
 
+    public void display(PApplet p5){ }
+
 }

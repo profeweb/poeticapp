@@ -35,6 +35,19 @@ public class BotonsGrup extends GuiElement {
         p5.popStyle();
     }
 
+    public void desactivaTotesOpcions(){
+        botoSeleccionat = -1;
+        for (int i = 0; i< botons.length; i++) {
+            botons[i].activat = true;
+        }
+    }
+
+    public void setBotoSeleccionat(int i){
+        desactivaTotesOpcions();
+        botoSeleccionat = i;
+        botons[i].activat = false;
+    }
+
     public int getBotoActivat() {
         return (this.botoSeleccionat);
     }

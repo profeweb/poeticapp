@@ -1,9 +1,12 @@
 import gui.Gui;
 import processing.core.PApplet;
 
+import java.io.File;
+
 public class Main extends PApplet {
 
     Gui gui;
+    File file;
 
     public static void main(String[] args) {
         PApplet.main("Main");
@@ -34,7 +37,21 @@ public class Main extends PApplet {
     }
 
     public void mousePressed(){
+
         gui.mouseEvents(this);
+
+        if(gui.pantallaActual == Gui.PANTALLA.AUTOR_EDITA && gui.selectorImatge.carregarImatge(this)){
+            selectInput("Selecciona una imatge ...", "seleccionarImatgeAutor");
+        }
     }
 
+
+    // Carrega Imatge
+    public void seleccionarImatgeAutor(File selection) {
+        if (selection == null) {
+            println("No s'ha seleccionat cap fitxer.");
+        } else {
+            gui.selectorImatge.update(this, selection);
+        }
+    }
 }
