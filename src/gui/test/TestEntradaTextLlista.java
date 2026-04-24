@@ -43,12 +43,12 @@ public class TestEntradaTextLlista extends PApplet {
     }
 
     public void keyPressed(){
-        entrada.keyPressed(this);
+        entrada.updateKeyPressed(this);
     }
 
     public void keyTyped(){
 
-        entrada.keyTyped(this);
+        entrada.updateKeyTyped(this);
     }
 
 

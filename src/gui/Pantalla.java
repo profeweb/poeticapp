@@ -55,4 +55,26 @@ public class Pantalla {
             }
         }
     }
+
+    public void keyPressedEvents(PApplet p5){
+        for(GuiElement element: elements) {
+            if (element instanceof EntradaText) {
+                ((EntradaText) element).updateKeyPressed(p5.keyCode);
+            }
+            else if (element instanceof EntradaTextLlista) {
+                ((EntradaTextLlista) element).updateKeyPressed(p5);
+            }
+        }
+    }
+
+    public void keyTypedEvents(PApplet p5){
+        for(GuiElement element: elements) {
+            if (element instanceof EntradaText) {
+                ((EntradaText) element).updateKeyTyped(p5.key);
+            }
+            else if (element instanceof EntradaTextLlista) {
+                ((EntradaTextLlista) element).updateKeyTyped(p5);
+            }
+        }
+    }
 }

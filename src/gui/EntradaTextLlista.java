@@ -113,14 +113,14 @@ public class EntradaTextLlista extends GuiElement {
         }
     }
 
-    public void keyPressed(PApplet p5){
+    public void updateKeyPressed(PApplet p5){
         if(entradaText.mouseDins(p5)){
             entradaText.updateKeyPressed(p5.keyCode);
             this.update(p5);
         }
     }
 
-    public void keyTyped(PApplet p5){
+    public void updateKeyTyped(PApplet p5){
         if(entradaText.mouseDins(p5)){
             entradaText.updateKeyTyped(p5.key);
             this.update(p5);

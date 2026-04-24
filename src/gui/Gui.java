@@ -13,7 +13,6 @@ public class Gui {
                             QUANTITATIVES, QUALITATIVES, CRONOLOGIQUES, RELACIONALS, TEMATIQUES, ALTRES,
                              LLIBRE_RESUM, LLIBRE_OBRA, LLIBRE_VISUAL, LLIBRE_EDITA,
                              POEMA_RESUM, POEMA_EDITA};
-    //public PANTALLA pantallaActual;
 
     public Pantalla currentPantalla;
 
@@ -22,16 +21,13 @@ public class Gui {
 
 
     // ELEMENTS GUI
-    Titulars titularsPagina;
-    int posTitularX = 360;
-    int posTitularY = 100;
+    int posTitularX = 360, posTitularY = 100;
 
     TaulaPaginada taulaResumAutor, taulaResumLlibre, taulaResumApp, taulaResumPoema;
     public BotoIcona botoEditarAutor, botoEditarLlibre, botoEditarPoema, botoAfegirAutor, botoAfegirLlibre, botoFiltrar, botoGuardar;
     EntradaTextLlista llistaAutors, llistaLlibres, llistaPoemes;
     GraellaTarja graellaAutorsFavorits, graellaLlibresFavorits, graellaLlibres, graellaAutors, graellaPoemes;
     BotonsGrup botonsAutor, botonsLlibre;
-
 
     EntradaText entradaNomAutor, entradaAnyAutor, entradaTitolLlibre, entradaAnyLlibre;
     EntradaCercador entradaCercador, entradaCercadorGlobal;
@@ -59,9 +55,9 @@ public class Gui {
 
     public Gui(PApplet p5){
         this.p5 = p5;
-        //this.pantallaActual = PANTALLA.INICI;
         setMedia(p5);
         setElementsGUI();
+        setPantalles();
         this.currentPantalla = pantallaInici;
     }
 
@@ -80,8 +76,6 @@ public class Gui {
 
 
     public void setElementsGUI(){
-
-
 
         taulaResumAutor = new TaulaPaginada(300, 540, p5.width-350, 500);
         String[] cols = { "Títol", "Any", "Poemes", "Estrofes", "Versos", "Paraules", "Síl·labes"};
@@ -185,18 +179,16 @@ public class Gui {
         graellaLlibresFavorits.amagaSubtitols();
 
         // Graella Autors 2 lineas
-        String[][] dadesAutors = { {"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
+        String[][] dadesAutors = { {"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
         graellaAutors = setGraella(dadesAutors, "Autors",imgAutor,colorAutor, 2, 5, 310, 300, 1550, 600);
 
         // Graella Llibres 2 líneas
-        String[][] dadesLlibres= { {"a", "d1"},{"f", "d1"},{"b", "d1"},{"g", "d1"},{"c", "d1"},{"k", "d1"},{"d", "d1"},{"v", "d1"},{"e", "d1"} };
+        String[][] dadesLlibres= { {"a", "d1"},{"f", "d1"},{"b", "d1"},{"g", "d1"},{"c", "d1"},{"k", "d1"},{"d", "d1"},{"v", "d1"},{"e", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
         graellaLlibres = setGraella(dadesLlibres, "Llibres",imgLlibre,colorLlibre, 2, 5, 310, 300, 1550, 600);
 
         // Graella Poemes 2 líneas
-        String[][] dadesPoemes= { {"a", "d1"},{"f", "d1"},{"b", "d1"},{"g", "d1"},{"c", "d1"},{"k", "d1"},{"d", "d1"},{"v", "d1"},{"e", "d1"} };
+        String[][] dadesPoemes= { {"a", "d1"},{"f", "d1"},{"b", "d1"},{"g", "d1"},{"c", "d1"},{"k", "d1"},{"d", "d1"},{"v", "d1"},{"e", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
         graellaPoemes = setGraella(dadesPoemes, "Poemes",imgPoema,colorPoema, 2, 5, 310, 300, 1550, 600);
-
-        //graellaTarja.paginaSeguent();
 
         botoEditarAutor = new BotoIcona("Autor", 0x1F600, p5.width - 250 -50, 150, 250, ALT_BOTO);
         botoEditarAutor.setColorsFonts(colors, fonts);
@@ -292,14 +284,9 @@ public class Gui {
         ((ResumApp)resumApp).setResumEstrofes(256, 12);
         ((ResumApp)resumApp).setResumVersos(13873, 234);
 
-        titularsPagina = new Titulars(360, 100);
-        titularsPagina.setTitulars("Poètica", "Inici");
-        titularsPagina.setCodiIcona(CODI_NO_FAVORIT);
-        titularsPagina.setColorsFonts(colors, fonts);
+    }
 
-
-        // PANTALLES ///////////////////////////////////////////////////////////
-
+    public void setPantalles(){
         pantallaInici = new Pantalla(PANTALLA.INICI);
         pantallaInici.addElements(menuApp, entradaCercador, resumApp, botoAfegirAutor, botoAfegirLlibre);
         pantallaInici.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Inici", "Poètica"));
@@ -372,7 +359,6 @@ public class Gui {
         pantallaQualitatives = new Pantalla(PANTALLA.QUALITATIVES);
         pantallaQualitatives.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar);
         pantallaQualitatives.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Visualitzacions", "Qualitatives"));
-
     }
 
     public GraellaTarja setGraella(String[][] dades, String titol, PImage img, int colorFons, int numFiles, int numColumnes, float x, float y, float w, float h){
@@ -418,7 +404,6 @@ public class Gui {
             }
         }
     }
-
 
     public void updatePantallaMenu(PApplet p5){
         menuApp.updateClick(p5);
@@ -496,114 +481,21 @@ public class Gui {
                 currentPantalla = pantallaPoemaEdita;
             }
         }
-
-
         updatePantallaMenu(p5);
-
-        /*
-
-        if(pantallaActual == PANTALLA.FAVORITS){
-            graellaAutorsFavorits.updateClick(p5);
-            if(graellaAutorsFavorits.numTarjaSeleccionada!=-1){
-                pantallaActual = PANTALLA.AUTOR_RESUM;
-            }
-            graellaLlibresFavorits.updateClick(p5);
-            if(graellaLlibresFavorits.numTarjaSeleccionada!=-1){
-                pantallaActual = PANTALLA.LLIBRE_RESUM;
-            }
-        }
-        else if(pantallaActual == PANTALLA.AUTOR_OBRA){
-            updatePantallesAutor(p5);
-        }
-        else if(pantallaActual == PANTALLA.AUTOR_RESUM){
-            updatePantallesAutor(p5);
-            taulaResumAutor.updateClick(p5);
-            if(botoEditarAutor.mouseDins(p5)){
-                pantallaActual = PANTALLA.AUTOR_EDITA;
-                botonsAutor.desactivaTotesOpcions();
-            }
-        }
-        else if(pantallaActual == PANTALLA.AUTOR_VISUAL){
-            updatePantallesAutor(p5);
-        }
-        else if(pantallaActual == PANTALLA.AUTOR_EDITA){
-            updatePantallesAutor(p5);
-            entradaNomAutor.updateClick(p5);
-            entradaAnyAutor.updateClick(p5);
-            if(botoGuardar.mouseDins(p5)){
-                pantallaActual = PANTALLA.AUTOR_RESUM;
-                botonsAutor.setBotoSeleccionat(0);
-                updatePantallesAutor(p5);
-            }
-        }
-        else if(pantallaActual == PANTALLA.LLIBRE_RESUM){
-            taulaResumLlibre.updateClick(p5);
-            if(botoEditarLlibre.mouseDins(p5)){
-                pantallaActual = PANTALLA.LLIBRE_EDITA;
-            }
-        }
-        else if(pantallaActual == PANTALLA.LLIBRE_EDITA){
-
-
-        }
-        else if(pantallaActual == PANTALLA.AUTORS){
-
-            graellaAutors.updateClick(p5);
-            if(graellaAutors.numTarjaSeleccionada!=-1){
-                pantallaActual = PANTALLA.AUTOR_RESUM;
-            }
-        }
-        else if(pantallaActual == PANTALLA.LLIBRES){
-            llistaAutors.updateClick(p5);
-            llistaLlibres.updateClick(p5);
-
-            graellaLlibres.updateClick(p5);
-            if(graellaLlibres.numTarjaSeleccionada!=-1){
-                pantallaActual = PANTALLA.LLIBRE_RESUM;
-            }
-        }
-
-        // Elements comuns en totes les pantalles
-        entradaCercador.updateClick(p5);
-        updatePantallaMenu(p5);
-        updateTitular(pantallaActual);
-
-         */
 
     }
 
     public void keyPressedEvent(PApplet p5){
 
+        currentPantalla.keyPressedEvents(p5);
+
         /*
         pantallaActual = entradaCercador.updateKeyPressed(p5.keyCode, pantallaActual, entradaCercadorGlobal);
-
-        if(pantallaActual == PANTALLA.LLIBRES){
-            llistaAutors.keyPressed(p5);
-            llistaLlibres.keyPressed(p5);
-        }
-        else if(pantallaActual == PANTALLA.AUTOR_EDITA){
-            entradaNomAutor.updateKeyPressed(p5.keyCode);
-            entradaAnyAutor.updateKeyPressed(p5.keyCode);
-        }
-
          */
     }
 
     public void keyTypedEvent(PApplet p5){
-
-        entradaCercador.updateKeyTyped(p5.key);
-
-        /*
-        if(pantallaActual == PANTALLA.LLIBRES){
-            llistaAutors.keyTyped(p5);
-            llistaLlibres.keyTyped(p5);
-        }
-        else if(pantallaActual == PANTALLA.AUTOR_EDITA){
-            entradaNomAutor.updateKeyTyped(p5.key);
-            entradaAnyAutor.updateKeyTyped(p5.key);
-        }
-
-         */
+        currentPantalla.keyTypedEvents(p5);
     }
 
 }
