@@ -2,11 +2,12 @@ package gui;
 
 import processing.core.PApplet;
 
-public class SeleccionablesGrup {
+public class SeleccionablesGrup extends GuiElement {
 
     Seleccionable[] seleccionables;
 
     public SeleccionablesGrup(int n){
+        super(0,0,0,0);
         seleccionables = new Seleccionable[n];
     }
 

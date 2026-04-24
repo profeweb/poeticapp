@@ -12,7 +12,7 @@ public class BotonsGrup extends GuiElement {
         super(x, y, w, h);
     }
 
-    public void setBotons(String[] titols){
+    public void setBotons(String ... titols){
         botons = new Boto[titols.length];
 
         float marge = 10;

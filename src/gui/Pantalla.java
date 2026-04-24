@@ -8,18 +8,21 @@ public class Pantalla {
 
     ArrayList<GuiElement> elements;
     Gui.PANTALLA pantallaNom;
-    Gui.PANTALLA pantallaActual;
 
-    public Pantalla(Gui.PANTALLA pantallaNom, Gui.PANTALLA pantallaActual){
+    public Pantalla(Gui.PANTALLA pantallaNom){
         this.pantallaNom = pantallaNom;
         this.elements = new ArrayList<>();
-        this.pantallaActual = pantallaActual;
     }
-
 
 
     public void addElement(GuiElement element){
         elements.add(element);
+    }
+
+    public void addElements(GuiElement ... elements){
+        for(GuiElement element : elements) {
+            this.elements.add(element);
+        }
     }
 
     public void display(PApplet p5){

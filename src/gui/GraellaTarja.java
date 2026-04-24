@@ -81,6 +81,8 @@ public class GraellaTarja extends GuiElement {
         }
     }
 
+    public boolean isTarjaSeleccionada(){ return this.numTarjaSeleccionada != -1; }
+
     public void ordenaTargesPerTitolAsc(){
         ordenaTargesPerCamp(0, true);
     }

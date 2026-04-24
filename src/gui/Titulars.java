@@ -22,6 +22,13 @@ public class Titulars extends GuiElement {
         }
     }
 
+    public Titulars(float x, float y, Colors colors, Fonts fonts, int codiIcona, String ... titulars){
+        super(x, y, 0, 0);
+        setColorsFonts(colors, fonts);
+        setCodiIcona(codiIcona);
+        setTitulars(titulars);
+    }
+
     public void setCodiIcona(int codiIcona){ this.codiIcona = codiIcona; }
 
     public void setTitulars(String ... titulars){

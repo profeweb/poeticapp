@@ -40,7 +40,7 @@ public class Main extends PApplet {
 
         gui.mouseEvents(this);
 
-        if(gui.pantallaActual == Gui.PANTALLA.AUTOR_EDITA && gui.selectorImatge.carregarImatge(this)){
+        if(gui.currentPantalla.equals(gui.pantallaAutorEdita) && gui.selectorImatge.carregarImatge(this)){
             selectInput("Selecciona una imatge ...", "seleccionarImatgeAutor");
         }
     }
