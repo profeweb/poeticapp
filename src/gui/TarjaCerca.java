@@ -61,9 +61,11 @@ public class TarjaCerca extends GuiElement {
         p5.textFont(fonts.getFontSecundaria());
         p5.textSize(TEXT_NIVELL2);
         p5.textAlign(p5.LEFT, p5.BOTTOM);
-        p5.text(this.textos[0]+"    "+ textos[1]+"    "+ textos[2], this.x + this.h + this.margeEsq, this.y + this.h/2);
-        p5.text(textos[3]+" estrofes"+ textos[4], this.x + this.h + this.margeEsq +  this.w*3/4f, this.y + this.h/2);
-        p5.text(textos[4]+" versos", this.x + this.h + this.margeEsq +  this.w*3/4f + 50, this.y + this.h/2);
+        p5.text("Poema: " +this.textos[0], this.x + this.h + this.margeEsq, this.y + this.h/2);
+        p5.text(",Llibre: " +textos[1], this.x + this.h + this.margeEsq + this.w* 1/5f, this.y + this.h/2);
+        p5.text(",Autor: " +textos[2], this.x + this.h + this.margeEsq + this.w* 2/5f, this.y + this.h/2);
+        p5.text(textos[3]+" estrofes", this.x + this.h + this.margeEsq +  this.w*3/5f, this.y + this.h/2);
+        p5.text(textos[4]+" versos", this.x + this.h + this.margeEsq +  this.w*4/5f + 50, this.y + this.h/2);
 
         // Text Vers
         p5.fill(50);

@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/GraellaTarjaCerca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/GraellaTarjaCerca.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Pantalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Pantalla.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/TarjaCerca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/TarjaCerca.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -177,7 +173,7 @@
       <workItem from="1776963412494" duration="387000" />
       <workItem from="1776965381081" duration="2929000" />
       <workItem from="1777011227265" duration="14233000" />
-      <workItem from="1777038494652" duration="12487000" />
+      <workItem from="1777038494652" duration="12974000" />
     </task>
     <task id="LOCAL-00001" summary="Inicial">
       <created>1772797946480</created>
@@ -382,7 +378,14 @@
       <option name="project" value="LOCAL" />
       <updated>1777051831696</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Inicial">
+      <created>1777057420266</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1777057420266</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
