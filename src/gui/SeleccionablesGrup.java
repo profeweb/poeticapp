@@ -11,6 +11,8 @@ public class SeleccionablesGrup extends GuiElement {
         seleccionables = new Seleccionable[n];
     }
 
+    public Seleccionable getSeleccionableAT(int i){ return  this.seleccionables[i]; }
+
     public void setSeleccionables(Seleccionable ... sels){
         for(int i=0; i<sels.length; i++){
             this.seleccionables[i] = sels[i];
@@ -25,7 +27,7 @@ public class SeleccionablesGrup extends GuiElement {
         }
     }
 
-    public void updateAmbClic(PApplet p5){
+    public void updateClick(PApplet p5){
         if(clicSobreSeleccionables(p5)){
             for(int i=0; i<seleccionables.length; i++){
                 if(seleccionables[i]!=null && seleccionables[i].mouseDins(p5)){

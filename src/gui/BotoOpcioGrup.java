@@ -11,7 +11,7 @@ public class BotoOpcioGrup extends SeleccionablesGrup {
         this.opcioSeleccionada = -1;
     }
 
-    public void updateAmbClic(PApplet p5){
+    public void updateClick(PApplet p5){
         if(clicSobreSeleccionables(p5)){
             opcioSeleccionada = -1;
             for(int i=0; i<seleccionables.length; i++){

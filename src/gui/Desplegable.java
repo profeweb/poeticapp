@@ -120,6 +120,15 @@ public class Desplegable extends GuiElement {
         }
     }
 
+    int getNumOpcioSeleccionada(){
+        for(int i=0; i<opcions.length; i++){
+            if(opcions[i].equals(opcioSeleccionada)){
+                return i;
+            }
+        }
+        return -1;
+    }
+
     int numOpcioSeleccionada(PApplet p5){
         return (int)p5.map(p5.mouseY, y + h, y + h + (h + lineSpace)* opcions.length,
                 0, opcions.length);

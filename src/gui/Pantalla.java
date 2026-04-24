@@ -51,7 +51,9 @@ public class Pantalla {
             }
             else if(element instanceof MenuApp){
                 ((MenuApp)element).updateClick(p5);
-
+            }
+            else if(element instanceof BotoOpcioGrup){
+                ((BotoOpcioGrup)element).updateClick(p5);
             }
         }
     }

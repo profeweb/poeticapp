@@ -29,6 +29,9 @@ public class GraellaTarja extends GuiElement {
     Desplegable selOrdre;
     int ordre = -1;
 
+    PImage img;
+    int colorFons;
+
     // Constructor
     public GraellaTarja(int numFiles, int numCols, float x, float y, float w, float h) {
         super(x, y, w, h);
@@ -102,6 +105,8 @@ public class GraellaTarja extends GuiElement {
     public void setTitol(String t){ this.titol = t; }
 
     public void setImatges(PApplet p5, PImage[] imatges, int colorTint) {
+        this.colorFons = colorTint;
+
         for(int numTarja=0; numTarja<targes.length; numTarja++){
             targes[numTarja].setImatge(p5, imatges[numTarja], colorTint);
         }
@@ -126,6 +131,8 @@ public class GraellaTarja extends GuiElement {
     }
 
     public void setImatges(PApplet p5, PImage imatge, int colorTint) {
+        this.img = imatge;
+        this.colorFons = colorTint;
         for(Tarja tarja : targes){
             tarja.setImatge(p5, imatge, colorTint);
         }
@@ -275,24 +282,23 @@ public class GraellaTarja extends GuiElement {
         this.clickBotoAnterior(p5);
         this.clickBotoSeguent(p5);
         this.selOrdre.update(p5);
-        if(this.selOrdre.numOpcioSeleccionada(p5)!= ordre){
-
-            // {"Nom asc", "Nom desc", "Data asc", "Data desc"};
-
-            if(this.selOrdre.numOpcioSeleccionada(p5)==0){
+        if(this.selOrdre.getNumOpcioSeleccionada()!= ordre){
+            p5.println("ORDRE: " + ordre +", SEL: "+ this.selOrdre.getNumOpcioSeleccionada());
+            if(this.selOrdre.getNumOpcioSeleccionada()==0){
                 this.ordenaTargesPerTitolAsc();
             }
-            else if(this.selOrdre.numOpcioSeleccionada(p5)==1){
+            else if(this.selOrdre.getNumOpcioSeleccionada()==1){
                 this.ordenaTargesPerTitolDesc();
             }
-            else if(this.selOrdre.numOpcioSeleccionada(p5)==2){
+            else if(this.selOrdre.getNumOpcioSeleccionada()==2){
                 this.ordenaTargesPerSubitolAsc();
             }
-            else if(this.selOrdre.numOpcioSeleccionada(p5)==3){
+            else if(this.selOrdre.getNumOpcioSeleccionada()==3){
                 this.ordenaTargesPerSubitolDesc();
             }
             setTarges(p5);
-            ordre = this.selOrdre.numOpcioSeleccionada(p5);
+            setImatges(p5, img, colorFons);
+            ordre = this.selOrdre.getNumOpcioSeleccionada();
         }
     }
 

@@ -31,15 +31,15 @@ public class BotoOpcio extends Seleccionable {
         if(this.seleccionat){
             p5.fill(colors.getColorBotoContorn());
             p5.noStroke();
-            p5.circle(x, y, 0.8f*w);
+            p5.circle(x, y, 0.7f*w);
         }
 
         // Dibuixa el text
-        p5.textFont(fonts.getFontTerciaria());
+        p5.textFont(fonts.getFontSecundaria());
         p5.fill(colors.getColorBotoContorn());
-        p5.textSize(Mides.TEXT_BOTO);
+        p5.textSize(Mides.midaSubtitol);
         p5.textAlign(p5.RIGHT, p5.CENTER);
-        p5.text(textOpcio, this.x - 10, this.y + this.h/2);
+        p5.text(textOpcio, this.x - w/2f - 15, this.y);
 
         p5.popStyle();
     }

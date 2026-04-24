@@ -42,6 +42,6 @@ public class TestBotoOpcio extends PApplet {
     }
 
     public void mousePressed(){
-        csg.updateAmbClic(this);
+        csg.updateClick(this);
     }
 }

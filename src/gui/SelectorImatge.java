@@ -15,7 +15,6 @@ public class SelectorImatge extends GuiElement {
 
     PImage img;
     String titol="";
-    File file;
     String rutaCarpeta = "C:\\Users\\tonim\\Desktop\\imatges\\";
 
     Boto bLoad;
@@ -62,6 +61,7 @@ public class SelectorImatge extends GuiElement {
         String rutaImatge = selection.getAbsolutePath();
         img = p5.loadImage(rutaImatge);  // Actualitzam imatge
         titol = selection.getName();  // Actualitzam títol (igual)
+        p5.println("IMATGE ACTAULITZADA");
     }
 
     // Copia un fitxer a una altra ubicació

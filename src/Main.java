@@ -6,7 +6,6 @@ import java.io.File;
 public class Main extends PApplet {
 
     Gui gui;
-    File file;
 
     public static void main(String[] args) {
         PApplet.main("Main");
@@ -37,21 +36,34 @@ public class Main extends PApplet {
     }
 
     public void mousePressed(){
-
-        gui.mouseEvents(this);
-
-        if(gui.currentPantalla.equals(gui.pantallaAutorEdita) && gui.selectorImatge.carregarImatge(this)){
+        if(gui.currentPantalla.equals(gui.pantallaAutorEdita) && gui.selectorImatgeAutor.carregarImatge(this)){
             selectInput("Selecciona una imatge ...", "seleccionarImatgeAutor");
+        }
+        else if(gui.currentPantalla.equals(gui.pantallaLlibreEdita) && gui.selectorImatgeLlibre.carregarImatge(this)){
+            selectInput("Selecciona una imatge ...", "seleccionarImatgeLlibre");
+        }
+        else {
+            gui.mouseEvents(this);
         }
     }
 
 
     // Carrega Imatge
     public void seleccionarImatgeAutor(File selection) {
+        println("SELECCTING AUTOR IMAGE");
         if (selection == null) {
             println("No s'ha seleccionat cap fitxer.");
         } else {
-            gui.selectorImatge.update(this, selection);
+            gui.selectorImatgeAutor.update(this, selection);
+        }
+    }
+
+    public void seleccionarImatgeLlibre(File selection) {
+        println("SELECCTING BOOK IMAGE");
+        if (selection == null) {
+            println("No s'ha seleccionat cap fitxer.");
+        } else {
+            gui.selectorImatgeLlibre.update(this, selection);
         }
     }
 }

@@ -16,16 +16,14 @@ public class Gui {
 
     public Pantalla currentPantalla;
 
-
     PApplet p5;
-
 
     // ELEMENTS GUI
     int posTitularX = 360, posTitularY = 100;
 
-    TaulaPaginada taulaResumAutor, taulaResumLlibre, taulaResumApp, taulaResumPoema;
-    public BotoIcona botoEditarAutor, botoEditarLlibre, botoEditarPoema, botoAfegirAutor, botoAfegirLlibre, botoFiltrar, botoGuardar;
-    EntradaTextLlista llistaAutors, llistaLlibres, llistaPoemes;
+    TaulaPaginada taulaAutors, taulaResumAutor, taulaResumLlibre, taulaLlibres, taulaResumPoema;
+    public BotoIcona botoEditarAutor, botoEditarLlibre, botoEditarPoema, botoAfegirAutor, botoAfegirLlibre, botoAfegirPoema, botoFiltrar, botoGuardar;
+    EntradaTextLlista llistaAutors, llistaAutorLlibre, llistaLlibres, llistaPoemes;
     GraellaTarja graellaAutorsFavorits, graellaLlibresFavorits, graellaLlibres, graellaAutors, graellaPoemes;
     BotonsGrup botonsAutor, botonsLlibre;
 
@@ -39,7 +37,7 @@ public class Gui {
 
     Pantalla pantallaInici, pantallaExplorar, pantallaFavorits, pantallaAutors, pantallaLlibres, pantallaPoemes;
     public Pantalla pantallaAutorResum, pantallaAutorObra, pantallaAutorVisual, pantallaAutorEdita;
-    Pantalla pantallaLlibreResum, pantallaLlibreObra, pantallaLlibreVisual, pantallaLlibreEdita;
+    public Pantalla pantallaLlibreResum, pantallaLlibreObra, pantallaLlibreVisual, pantallaLlibreEdita;
     Pantalla pantallaPoemaResum, pantallaPoemaEdita;
     Pantalla pantallaQuantitatives, pantallaQualitatives, pantallaRelacionals, pantallaTematiques, pantallaCronologiques, pantallaAltres;
 
@@ -47,7 +45,7 @@ public class Gui {
     Colors colors;
     Fonts fonts;
     PImage imgAutor, imgLlibre, imgPoema;
-    public SelectorImatge selectorImatge;
+    public SelectorImatge selectorImatgeAutor, selectorImatgeLlibre;
     int colorAutor, colorLlibre, colorPoema;
 
     // Hooks
@@ -77,24 +75,20 @@ public class Gui {
 
     public void setElementsGUI(){
 
+        taulaAutors = new TaulaPaginada(300, 540, 600, 500);
+        String[] colsAutors1 = { "Autor", "Any"};
+        String[][] dadesAutors1 = {{"1", "2"}, {"1", "2"}, {"1", "2"},{"1", "2"},{"1", "2"},{"1", "2"},{"1", "2"},{"1", "2"},{"1", "2"},{"1", "2"},{"1", "2"},};
+        float[] midesAutors1 = {75, 25};
+        taulaAutors.setTitols(colsAutors1);
+        taulaAutors.setDades(dadesAutors1);
+        taulaAutors.setMidaColumnes(midesAutors1);
+        taulaAutors.setNumFilesPagina(10);
+        taulaAutors.setColorsFonts(colors, fonts);
+        taulaAutors.setBotonsPaginacio();
+
         taulaResumAutor = new TaulaPaginada(300, 540, p5.width-350, 500);
         String[] cols = { "Títol", "Any", "Poemes", "Estrofes", "Versos", "Paraules", "Síl·labes"};
-        String[][] dades = {{"1", "2", "3", "4", "5", "6", "7"},
-                {"1", "2", "3", "4", "5", "6", "7"},
-                {"1", "2", "3", "4", "5", "6", "7"},
-                {"1", "2", "3", "4", "5", "6", "7"},
-                {"1", "2", "3", "4", "5", "6", "7"},
-                {"1", "2", "3", "4", "5", "6", "7"},
-                {"1", "2", "3", "4", "5", "6", "7"},
-                {"1", "2", "3", "4", "5", "6", "7"},
-                {"1", "2", "3", "4", "5", "6", "7"},
-                {"1", "2", "3", "4", "5", "6", "7"},
-                {"1", "2", "3", "4", "5", "6", "7"},
-                {"1", "2", "3", "4", "5", "6", "7"},
-                {"1", "2", "3", "4", "5", "6", "7"},
-                {"1", "2", "3", "4", "5", "6", "7"},
-
-
+        String[][] dades = {{"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"},
         };
         float[] mides = {40, 10, 10, 10, 10, 10, 10};
         taulaResumAutor.setTitols(cols);
@@ -104,24 +98,20 @@ public class Gui {
         taulaResumAutor.setColorsFonts(colors, fonts);
         taulaResumAutor.setBotonsPaginacio();
 
+        taulaLlibres = new TaulaPaginada(950, 540, 920, 500);
+        String[] colsTaulaLlibre1 = { "Llibre", "Any", "Poemes", "Autor"};
+        String[][] dadesTaulaLlibre1 = {{"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"},};
+        float[] midesTaulaLlibre1 = {40, 10, 10, 40};
+        taulaLlibres.setTitols(colsTaulaLlibre1);
+        taulaLlibres.setDades(dadesTaulaLlibre1);
+        taulaLlibres.setMidaColumnes(midesTaulaLlibre1);
+        taulaLlibres.setNumFilesPagina(10);
+        taulaLlibres.setColorsFonts(colors, fonts);
+        taulaLlibres.setBotonsPaginacio();
+
         taulaResumLlibre = new TaulaPaginada(300, 540, p5.width-350, 500);
         String[] colsTaulaLlibre = { "Poema", "Número", "Estrofes", "Versos", "Paraules", "Síl·labes"};
-        String[][] dadesTaulaLlibre = {{"1", "2", "3", "4", "5", "6"},
-                {"1", "2", "3", "4", "5", "6"},
-                {"1", "2", "3", "4", "5", "6"},
-                {"1", "2", "3", "4", "5", "6"},
-                {"1", "2", "3", "4", "5", "6"},
-                {"1", "2", "3", "4", "5", "6"},
-                {"1", "2", "3", "4", "5", "6"},
-                {"1", "2", "3", "4", "5", "6"},
-                {"1", "2", "3", "4", "5", "6"},
-                {"1", "2", "3", "4", "5", "6"},
-                {"1", "2", "3", "4", "5", "6"},
-                {"1", "2", "3", "4", "5", "6"},
-                {"1", "2", "3", "4", "5", "6"},
-                {"1", "2", "3", "4", "5", "6"},
-                {"1", "2", "3", "4", "5", "6"},
-        };
+        String[][] dadesTaulaLlibre = {{"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"},};
         float[] midesTaulaLlibre = {50, 10, 10, 10, 10, 10};
         taulaResumLlibre.setTitols(colsTaulaLlibre);
         taulaResumLlibre.setDades(dadesTaulaLlibre);
@@ -132,22 +122,7 @@ public class Gui {
 
         taulaResumPoema = new TaulaPaginada(300, 540, p5.width-350, 500);
         String[] colsTaulaPoema = { "Estrofa", "Número", "Versos", "Paraules", "Síl·labes"};
-        String[][] dadesTaulaPoema = {{"1", "2", "3", "4", "5"},
-                {"1", "2", "3", "4", "5"},
-                {"1", "2", "3", "4", "5"},
-                {"1", "2", "3", "4", "5"},
-                {"1", "2", "3", "4", "5"},
-                {"1", "2", "3", "4", "5"},
-                {"1", "2", "3", "4", "5"},
-                {"1", "2", "3", "4", "5"},
-                {"1", "2", "3", "4", "5"},
-                {"1", "2", "3", "4", "5"},
-                {"1", "2", "3", "4", "5"},
-                {"1", "2", "3", "4", "5"},
-                {"1", "2", "3", "4", "5"},
-                {"1", "2", "3", "4", "5"},
-                {"1", "2", "3", "4", "5"},
-        };
+        String[][] dadesTaulaPoema = {{"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"},};
         float[] midesTaulaPoema = {60, 10, 10, 10, 10};
         taulaResumPoema.setTitols(colsTaulaPoema);
         taulaResumPoema.setDades(dadesTaulaPoema);
@@ -156,9 +131,14 @@ public class Gui {
         taulaResumPoema.setColorsFonts(colors, fonts);
         taulaResumPoema.setBotonsPaginacio();
 
+        // LLISTES AUTCOMPLETAR /////////////////////////////////////////////////////////////////////////////
+
         String[] opcionsAutors = {"Autor A", "Autor B", "Autor C", "Autor D"};
         llistaAutors = new EntradaTextLlista("Autor", opcionsAutors, 400, 150, AMPLE_ENTRADA_LLISTA, ALT_ENTRADA_LLISTA);
         llistaAutors.setColorsFonts(colors, fonts);
+
+        llistaAutorLlibre = new EntradaTextLlista("Autor", opcionsAutors, 1100, 300, AMPLE_ENTRADA_LLISTA, ALT_ENTRADA_LLISTA);
+        llistaAutorLlibre.setColorsFonts(colors, fonts);
 
         String[] opcionsLlibres = {"Llibre A", "Llibre B", "Llibre C", "Llibre D"};
         llistaLlibres = new EntradaTextLlista("Llibre", opcionsLlibres, 800, 150, AMPLE_ENTRADA_LLISTA, ALT_ENTRADA_LLISTA);
@@ -167,6 +147,9 @@ public class Gui {
         String[] opcionsPoemes = {"Poema A", "Poema B", "Poema C", "Poema D"};
         llistaPoemes = new EntradaTextLlista("Poema", opcionsPoemes, 1200, 150, AMPLE_ENTRADA_LLISTA, ALT_ENTRADA_LLISTA);
         llistaPoemes.setColorsFonts(colors, fonts);
+
+
+        // GRAELLES ///////////////////////////////////////////////////////////////////////////////////////////
 
         // Graella Autors 1 linea
         String[][] dadesAutorsResum = { {"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
@@ -205,6 +188,9 @@ public class Gui {
         botoAfegirLlibre = new BotoIcona("Llibre", 0x1F600, p5.width - 250 - 50, 150, 250, ALT_BOTO);
         botoAfegirLlibre.setColorsFonts(colors, fonts);
 
+        botoAfegirPoema = new BotoIcona("Poema", 0x1F600, p5.width - 250 - 50, 150, 250, ALT_BOTO);
+        botoAfegirPoema.setColorsFonts(colors, fonts);
+
         botoFiltrar = new BotoIcona("Filtrar", 0x1F600, p5.width - 250  -50, 150, 250, ALT_BOTO);
         botoFiltrar.setColorsFonts(colors, fonts);
 
@@ -214,11 +200,20 @@ public class Gui {
         entradaNomAutor = new EntradaText("Nom", 1100, 300, AMPLE_ENTRADA_TEXT*2, ALT_ENTRADA_TEXT);
         entradaNomAutor.setColorsFonts(colors, fonts);
 
+        entradaTitolLlibre = new EntradaText("Títol", 1100, 400, AMPLE_ENTRADA_TEXT*2, ALT_ENTRADA_TEXT);
+        entradaTitolLlibre.setColorsFonts(colors, fonts);
+
         entradaAnyAutor = new EntradaText("Any", 1100, 400, AMPLE_ENTRADA_TEXT/2, ALT_ENTRADA_TEXT);
         entradaAnyAutor.setColorsFonts(colors, fonts);
 
-        selectorImatge = new SelectorImatge(400, 300, 500, 500);
-        selectorImatge.setColorsFonts(colors, fonts);
+        entradaAnyLlibre = new EntradaText("Any", 1100, 500, AMPLE_ENTRADA_TEXT/2, ALT_ENTRADA_TEXT);
+        entradaAnyLlibre.setColorsFonts(colors, fonts);
+
+        selectorImatgeAutor = new SelectorImatge(400, 300, 500, 500);
+        selectorImatgeAutor.setColorsFonts(colors, fonts);
+
+        selectorImatgeLlibre = new SelectorImatge(400, 300, 500, 500);
+        selectorImatgeLlibre.setColorsFonts(colors, fonts);
 
         botonsAutor = new BotonsGrup( 600, 20, 850, ALT_BOTO);
         botonsAutor.setColorsFonts(colors, fonts);
@@ -240,20 +235,21 @@ public class Gui {
         entradaCercador.setFonts(fonts);
 
         entradaCercadorGlobal = new EntradaCercador("Cerca", 400, 225, AMPLE_ENTRADA_EXPLORADOR, BOTO_FAVORIT, colors, fonts);
-        entradaCercadorGlobal.setColors(colors);
-        entradaCercadorGlobal.setFonts(fonts);
+        entradaCercadorGlobal.setEsborraEnConfirmar(false);
 
 
-        BotoOpcio opcioTerme = new BotoOpcio("Terme", 400, 150, 50, 50);
+        BotoOpcio opcioTerme = new BotoOpcio("Terme", 500, 325, 50, 50);
         opcioTerme.setColorsFonts(colors, fonts);
 
-        BotoOpcio opcioLema = new BotoOpcio("Lema", 500, 300, 50, 50);
+        BotoOpcio opcioLema = new BotoOpcio("Lema", 700, 325, 50, 50);
         opcioLema.setColorsFonts(colors, fonts);
 
         opcionsCercador = new BotoOpcioGrup(2);
         opcionsCercador.setSeleccionables(opcioTerme, opcioLema);
+        opcionsCercador.getSeleccionableAT(0).setSeleccionat(true);
 
 
+        // RESUMS //////////////////////////////////////////////////////////////////////
 
         resumAutor = new ResumAutor(300, 260, p5.width-350, 200);
         resumAutor.setColorsFonts(colors, fonts);
@@ -288,7 +284,7 @@ public class Gui {
 
     public void setPantalles(){
         pantallaInici = new Pantalla(PANTALLA.INICI);
-        pantallaInici.addElements(menuApp, entradaCercador, resumApp, botoAfegirAutor, botoAfegirLlibre);
+        pantallaInici.addElements(menuApp, entradaCercador, resumApp, botoAfegirAutor, botoAfegirLlibre, taulaAutors, taulaLlibres);
         pantallaInici.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Inici", "Poètica"));
 
         pantallaExplorar = new Pantalla(PANTALLA.EXPLORAR);
@@ -296,7 +292,7 @@ public class Gui {
         pantallaExplorar.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Explorar", "Poètica"));
 
         pantallaFavorits = new Pantalla(PANTALLA.FAVORITS);
-        pantallaFavorits.addElements(menuApp, entradaCercador, graellaAutorsFavorits, graellaLlibresFavorits);
+        pantallaFavorits.addElements(menuApp, entradaCercador, graellaAutorsFavorits, graellaLlibresFavorits, botoAfegirAutor, botoAfegirLlibre);
         pantallaFavorits.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Favorits", "Poètica"));
 
         pantallaAutors = new Pantalla(PANTALLA.AUTORS);
@@ -325,7 +321,7 @@ public class Gui {
         pantallaAutorVisual.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Autor", "Visualitzacions"));
 
         pantallaAutorEdita = new Pantalla(PANTALLA.AUTOR_EDITA);
-        pantallaAutorEdita.addElements(menuApp, entradaCercador, botonsAutor, entradaNomAutor, entradaAnyAutor, selectorImatge, botoGuardar);
+        pantallaAutorEdita.addElements(menuApp, entradaCercador, botonsAutor, entradaNomAutor, entradaAnyAutor, selectorImatgeAutor, botoGuardar);
         pantallaAutorEdita.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Autor", "Edita"));
 
         pantallaLlibreResum = new Pantalla(PANTALLA.LLIBRE_RESUM);
@@ -333,7 +329,7 @@ public class Gui {
         pantallaLlibreResum.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Llibre", "Resum"));
 
         pantallaLlibreObra = new Pantalla(PANTALLA.LLIBRE_OBRA);
-        pantallaLlibreObra.addElements(menuApp, entradaCercador, botoAfegirLlibre, botonsLlibre, graellaPoemes);
+        pantallaLlibreObra.addElements(menuApp, entradaCercador, botoAfegirPoema, botonsLlibre, graellaPoemes);
         pantallaLlibreObra.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Llibre", "Obra"));
 
         pantallaLlibreVisual = new Pantalla(PANTALLA.LLIBRE_VISUAL);
@@ -341,7 +337,7 @@ public class Gui {
         pantallaLlibreVisual.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Llibre", "Visualitzacions"));
 
         pantallaLlibreEdita = new Pantalla(PANTALLA.LLIBRE_EDITA);
-        pantallaLlibreEdita.addElements(menuApp, entradaCercador, botonsLlibre);
+        pantallaLlibreEdita.addElements(menuApp, entradaCercador, botonsLlibre, selectorImatgeLlibre, llistaAutorLlibre, entradaTitolLlibre, entradaAnyLlibre, botoGuardar);
         pantallaLlibreEdita.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Llibre", "Edita"));
 
         pantallaPoemaResum = new Pantalla(PANTALLA.POEMA_RESUM);
@@ -359,6 +355,23 @@ public class Gui {
         pantallaQualitatives = new Pantalla(PANTALLA.QUALITATIVES);
         pantallaQualitatives.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar);
         pantallaQualitatives.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Visualitzacions", "Qualitatives"));
+
+        pantallaRelacionals = new Pantalla(PANTALLA.RELACIONALS);
+        pantallaRelacionals.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar);
+        pantallaRelacionals.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Visualitzacions", "Relacionals"));
+
+        pantallaTematiques = new Pantalla(PANTALLA.TEMATIQUES);
+        pantallaTematiques.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar);
+        pantallaTematiques.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Visualitzacions", "Temàtiques"));
+
+        pantallaCronologiques = new Pantalla(PANTALLA.CRONOLOGIQUES);
+        pantallaCronologiques.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar);
+        pantallaCronologiques.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Visualitzacions", "Cronològiques"));
+
+        pantallaAltres = new Pantalla(PANTALLA.ALTRES);
+        pantallaAltres.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar);
+        pantallaAltres.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Visualitzacions", "Altres"));
+
     }
 
     public GraellaTarja setGraella(String[][] dades, String titol, PImage img, int colorFons, int numFiles, int numColumnes, float x, float y, float w, float h){
@@ -409,13 +422,13 @@ public class Gui {
         menuApp.updateClick(p5);
         if(menuApp.mouseDins(p5) && menuApp.opcioSeleccionada[0]!=-1){
             switch(menuApp.getTitolOpcioSeleccionada()){
-                case "Inici":       currentPantalla = pantallaInici; break;
-                case "Explorar":    currentPantalla = pantallaExplorar; break;
-                case "Favorits":    currentPantalla = pantallaFavorits; break;
-                case "Autors":      currentPantalla = pantallaAutors; break;
-                case "Llibres":     currentPantalla = pantallaLlibres; break;
-                case "Poemes":      currentPantalla = pantallaPoemes; break;
-                case "Quantitatives": currentPantalla = pantallaQuantitatives; break;
+                case "Inici":           currentPantalla = pantallaInici; break;
+                case "Explorar":        currentPantalla = pantallaExplorar; break;
+                case "Favorits":        currentPantalla = pantallaFavorits; break;
+                case "Autors":          currentPantalla = pantallaAutors; break;
+                case "Llibres":         currentPantalla = pantallaLlibres; break;
+                case "Poemes":          currentPantalla = pantallaPoemes; break;
+                case "Quantitatives":   currentPantalla = pantallaQuantitatives; break;
                 case "Qualitatives":    currentPantalla = pantallaQualitatives; break;
                 case "Relacionals":     currentPantalla = pantallaRelacionals; break;
                 case "Temàtiques":      currentPantalla = pantallaTematiques; break;
@@ -431,7 +444,13 @@ public class Gui {
 
         currentPantalla.mouseEvents(p5);
 
-        if(currentPantalla.equals(pantallaFavorits) && graellaAutorsFavorits.isTarjaSeleccionada()){
+        if((currentPantalla.equals(pantallaInici) || currentPantalla.equals(pantallaFavorits)) && botoAfegirAutor.mouseDins(p5)){
+            currentPantalla = pantallaAutorEdita;
+        }
+        else if((currentPantalla.equals(pantallaInici) || currentPantalla.equals(pantallaFavorits)) && botoAfegirLlibre.mouseDins(p5)){
+            currentPantalla = pantallaLlibreEdita;
+        }
+        else if(currentPantalla.equals(pantallaFavorits) && graellaAutorsFavorits.isTarjaSeleccionada()){
             currentPantalla = pantallaAutorResum;
         }
         else if(currentPantalla.equals(pantallaAutors) && graellaAutors.isTarjaSeleccionada()){
@@ -473,6 +492,12 @@ public class Gui {
                     botonsLlibre.desactivaTotesOpcions();
                 }
             }
+            else if (currentPantalla.equals(pantallaLlibreObra)) {
+                if (botoAfegirPoema.mouseDins(p5)) {
+                    currentPantalla = pantallaPoemaEdita;
+                    botonsLlibre.desactivaTotesOpcions();
+                }
+            }
 
             updatePantallesLlibre(p5);
         }
@@ -486,16 +511,18 @@ public class Gui {
     }
 
     public void keyPressedEvent(PApplet p5){
-
         currentPantalla.keyPressedEvents(p5);
-
-        /*
-        pantallaActual = entradaCercador.updateKeyPressed(p5.keyCode, pantallaActual, entradaCercadorGlobal);
-         */
+        //pantallaActual = entradaCercador.updateKeyPressed(p5.keyCode, pantallaActual, entradaCercadorGlobal);
+        if(entradaCercador.textCerca.length()>0){
+            currentPantalla = pantallaExplorar;
+            entradaCercadorGlobal.text = entradaCercador.textCerca;
+            entradaCercador.textCerca = "";
+        }
     }
 
     public void keyTypedEvent(PApplet p5){
         currentPantalla.keyTypedEvents(p5);
+
     }
 
 }

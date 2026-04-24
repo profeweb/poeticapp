@@ -39,6 +39,6 @@ public class TestCasellaSeleccio extends PApplet {
     }
 
     public void mousePressed(){
-        csg.updateAmbClic(this);
+        csg.updateClick(this);
     }
 }

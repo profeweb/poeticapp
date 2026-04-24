@@ -10,6 +10,8 @@ import static processing.core.PConstants.ENTER;
 public class EntradaCercador extends EntradaText{
 
     String textCerca ="";
+    boolean textConfirmat = false;
+    boolean esborraEnConfirmar = true;
 
     public EntradaCercador(float x, float y, float w, float h) {
         super("Cercar", x, y, w, h);
@@ -18,6 +20,8 @@ public class EntradaCercador extends EntradaText{
     public EntradaCercador(String textEtiqueta, float x, float y, float w, float h, Colors colors, Fonts fonts) {
         super(textEtiqueta, x, y, w, h, colors, fonts);
     }
+
+    public void setEsborraEnConfirmar(boolean b){ this.esborraEnConfirmar = b; }
 
     // Dibuixa el botó
     public void display(PApplet p5){
@@ -60,20 +64,20 @@ public class EntradaCercador extends EntradaText{
 
 
     // Gestiona tecles especials
-    public Gui.PANTALLA updateKeyPressed(int keyCode, Gui.PANTALLA pantalla, EntradaCercador entradaExplorador) {
+    public void updateKeyPressed(int keyCode) {
 
-        if (!actiu) return pantalla;
+        if (!actiu) return ;
 
         if (keyCode == BACKSPACE) {
             esborrarText();
         }
         else if(keyCode == ENTER){
+            this.textConfirmat = true;
             this.textCerca = this.text;
-            this.setActiu(false);
-            esborrraTotText();
-            entradaExplorador.text = this.textCerca;
-            return Gui.PANTALLA.EXPLORAR;
+            if(esborraEnConfirmar) {
+                this.setActiu(false);
+                esborrraTotText();
+            }
         }
-        return pantalla;
     }
 }
