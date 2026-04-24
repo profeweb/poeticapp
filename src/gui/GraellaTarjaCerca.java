@@ -135,9 +135,9 @@ public class GraellaTarjaCerca extends GuiElement {
         p5.fill(0);
         p5.textFont(fonts.getFontSecundaria());
         p5.textSize(TEXT_INFO_GUI);
-        p5.textAlign(p5.LEFT, p5.BOTTOM);
+        p5.textAlign(p5.RIGHT, p5.BOTTOM);
         String textPaginacio = "(" + (this.numPaginaActual * numTargesPagina +1 ) + " - " + ((this.numPaginaActual+1) * numTargesPagina -1)+ ", Pag: "+(this.numPaginaActual + 1)+" / "+ this.numTotalPagines +")";
-        p5.text(textPaginacio, this.x + 125, this.y - margeHoritzontal);
+        p5.text(textPaginacio, this.x + w, this.y - margeHoritzontal);
 
         p5.popStyle();
     }

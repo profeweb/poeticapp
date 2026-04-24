@@ -40,6 +40,9 @@ public class Pantalla {
             if(element instanceof GraellaTarja){
                 ((GraellaTarja)element).updateClick(p5);
             }
+            else if(element instanceof GraellaTarjaCerca){
+                ((GraellaTarjaCerca)element).updateClick(p5);
+            }
             else if(element instanceof TaulaPaginada){
                 ((TaulaPaginada)element).updateClick(p5);
             }

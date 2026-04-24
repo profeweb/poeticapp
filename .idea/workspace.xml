@@ -2,23 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gui/GraellaTarjaCerca.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/TarjaCerca.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/test/TestGraellaTarjaCerca.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/test/TestTarjaCerca.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/BotoOpcio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotoOpcio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/BotoOpcioGrup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotoOpcioGrup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Desplegable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Desplegable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/EntradaCercador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/EntradaCercador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/GraellaTarja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/GraellaTarja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/GraellaTarjaCerca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/GraellaTarjaCerca.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Gui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Pantalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Pantalla.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/SeleccionablesGrup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/SeleccionablesGrup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/SelectorImatge.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/SelectorImatge.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/test/TestBotoOpcio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/test/TestBotoOpcio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/test/TestCasellaSeleccio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/test/TestCasellaSeleccio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/TarjaCerca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/TarjaCerca.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +51,7 @@
       <recent name="gui" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestGraellaTarjaCerca">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Poetica" />
@@ -125,9 +113,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.TestGraellaTarjaCerca" />
         <item itemvalue="Application.TestTarjaCerca" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.TestBotoOpcio" />
         <item itemvalue="Application.TestEntradaTextLlista" />
       </list>
@@ -189,7 +177,7 @@
       <workItem from="1776963412494" duration="387000" />
       <workItem from="1776965381081" duration="2929000" />
       <workItem from="1777011227265" duration="14233000" />
-      <workItem from="1777038494652" duration="10728000" />
+      <workItem from="1777038494652" duration="12487000" />
     </task>
     <task id="LOCAL-00001" summary="Inicial">
       <created>1772797946480</created>
@@ -387,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1777028640148</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Inicial">
+      <created>1777051831696</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1777051831696</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -54,21 +54,23 @@ public class TarjaCerca extends GuiElement {
         p5.textFont(fonts.getFontSecundaria());
         p5.textSize(TEXT_NIVELL1);
         p5.textAlign(p5.CENTER, p5.CENTER);
-        p5.text(this.num, this.x + this.h/2, this.y + this.h/2);
+        p5.text(this.num, this.x + this.h/2, this.y + this.h/2 - 5);
 
         // Textos Detall
         p5.fill(0);
         p5.textFont(fonts.getFontSecundaria());
         p5.textSize(TEXT_NIVELL2);
         p5.textAlign(p5.LEFT, p5.BOTTOM);
-        p5.text(this.textos[0]+"    "+ textos[1]+"    "+ textos[2]+"    "+ textos[3]+"    "+ textos[4], this.x + this.h + this.margeEsq, this.y + this.h/2);
+        p5.text(this.textos[0]+"    "+ textos[1]+"    "+ textos[2], this.x + this.h + this.margeEsq, this.y + this.h/2);
+        p5.text(textos[3]+" estrofes"+ textos[4], this.x + this.h + this.margeEsq +  this.w*3/4f, this.y + this.h/2);
+        p5.text(textos[4]+" versos", this.x + this.h + this.margeEsq +  this.w*3/4f + 50, this.y + this.h/2);
 
         // Text Vers
         p5.fill(50);
         p5.textFont(fonts.getFontSecundaria());
-        p5.textSize(TEXT_NIVELL3);
+        p5.textSize(TEXT_NIVELL2);
         p5.textAlign(p5.LEFT, p5.BOTTOM);
-        p5.text(this.vers, this.x + this.h + this.margeEsq, this.y + 3*this.h/4);
+        p5.text(this.vers, this.x + this.h + this.margeEsq, this.y + this.h - 5);
 
         // Boto
         if(botoDetall!=null){

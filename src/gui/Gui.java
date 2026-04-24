@@ -29,6 +29,7 @@ public class Gui {
 
     EntradaText entradaNomAutor, entradaAnyAutor, entradaTitolLlibre, entradaAnyLlibre;
     EntradaCercador entradaCercador, entradaCercadorGlobal;
+    GraellaTarjaCerca gtc;
     BotoOpcioGrup opcionsCercador;
 
     Resum resumAutor, resumLlibre, resumPoema, resumApp;
@@ -241,12 +242,39 @@ public class Gui {
         BotoOpcio opcioTerme = new BotoOpcio("Terme", 500, 325, 50, 50);
         opcioTerme.setColorsFonts(colors, fonts);
 
-        BotoOpcio opcioLema = new BotoOpcio("Lema", 700, 325, 50, 50);
+        BotoOpcio opcioLema = new BotoOpcio("Lema", 680, 325, 50, 50);
         opcioLema.setColorsFonts(colors, fonts);
 
         opcionsCercador = new BotoOpcioGrup(2);
         opcionsCercador.setSeleccionables(opcioTerme, opcioLema);
         opcionsCercador.getSeleccionableAT(0).setSeleccionat(true);
+
+        String[][] textosCerca = {
+                {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
+                {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
+                {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
+                /*
+                {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
+                {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
+                {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
+                {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
+                {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
+                {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
+                {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
+                {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
+                {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
+
+                 */
+                {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
+
+        };
+
+        gtc = new GraellaTarjaCerca(10, 1, 300, 400, 1580, 600);
+        gtc.setColorsFonts(colors, fonts);
+        gtc.setData(textosCerca);
+        gtc.setTitol("Resultats cerca");
+        gtc.setTarges(p5);
+        gtc.setBotons(p5);
 
 
         // RESUMS //////////////////////////////////////////////////////////////////////
@@ -288,7 +316,7 @@ public class Gui {
         pantallaInici.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Inici", "Poètica"));
 
         pantallaExplorar = new Pantalla(PANTALLA.EXPLORAR);
-        pantallaExplorar.addElements(menuApp, entradaCercadorGlobal, opcionsCercador, llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar);
+        pantallaExplorar.addElements(menuApp, entradaCercadorGlobal, opcionsCercador, llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar, gtc);
         pantallaExplorar.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Explorar", "Poètica"));
 
         pantallaFavorits = new Pantalla(PANTALLA.FAVORITS);
