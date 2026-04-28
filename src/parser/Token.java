@@ -6,9 +6,12 @@ public class Token {
     Tipus tipus;
     String valor;
 
-
     public Token(Tipus tipus, String valor){
         this.tipus = tipus;
         this.valor = valor;
+    }
+
+    public void printToken(){
+        System.out.print("Token: " + valor + "(" + tipus + "), \t");
     }
 }
