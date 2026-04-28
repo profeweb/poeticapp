@@ -2,6 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/parser/Estrofa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/ParserPoema.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/Poema.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/Poemari.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/Seccio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/Terme.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/Vers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +54,7 @@
       <recent name="gui" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.ParserPoema">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Poetica" />
@@ -55,12 +62,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestBotoOpcio" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.test.TestBotoOpcio" />
+    <configuration name="ParserPoema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parser.ParserPoema" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="gui.test.*" />
+          <option name="PATTERN" value="parser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -68,8 +75,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestEntradaTextLlista" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.test.TestEntradaTextLlista" />
+    <configuration name="TestBotoOpcio" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestBotoOpcio" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
@@ -109,11 +116,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ParserPoema" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.TestGraellaTarjaCerca" />
         <item itemvalue="Application.TestTarjaCerca" />
         <item itemvalue="Application.TestBotoOpcio" />
-        <item itemvalue="Application.TestEntradaTextLlista" />
       </list>
     </recent_temporary>
   </component>
@@ -176,6 +183,7 @@
       <workItem from="1777038494652" duration="13980000" />
       <workItem from="1777108726325" duration="1496000" />
       <workItem from="1777271421017" duration="2396000" />
+      <workItem from="1777360468296" duration="7994000" />
     </task>
     <task id="LOCAL-00001" summary="Inicial">
       <created>1772797946480</created>
@@ -394,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1777058105555</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Inicial">
+      <created>1777360504784</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1777360504785</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
