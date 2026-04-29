@@ -42,6 +42,7 @@ public class BotonsEstrofa extends GuiElement{
             botonsVers.setColorsFonts(colors, fonts);
             botonsVers.setBotons(vers);
             this.botonsVersos.add(botonsVers);
+            
             numVers++;
             if(numVers >= numVersosPagina){
                 numVers = 0;

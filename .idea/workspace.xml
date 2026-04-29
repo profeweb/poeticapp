@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gui/BotoSeleccionable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/BotonsPaginacio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/BotonsPoema.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/test/TestBotonsPaginacio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/test/TestBotonsPoema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/BotoToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotoToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/BotonsEstrofa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotonsEstrofa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Estrofa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Estrofa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Poema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Seccio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Seccio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +181,7 @@
       <workItem from="1777376579670" duration="11766000" />
       <workItem from="1777402723626" duration="902000" />
       <workItem from="1777443234580" duration="16574000" />
-      <workItem from="1777466961507" duration="9143000" />
+      <workItem from="1777466961507" duration="9457000" />
     </task>
     <task id="LOCAL-00001" summary="Inicial">
       <created>1772797946480</created>
@@ -452,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1777467964692</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Inicial">
+      <created>1777482361919</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1777482361919</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
