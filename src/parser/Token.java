@@ -11,6 +11,10 @@ public class Token {
         this.valor = valor;
     }
 
+    public String getValor(){ return this.valor; }
+
+    public Tipus getTipus(){ return this.tipus; }
+
     public void printToken(){
         System.out.print("Token: " + valor + "(" + tipus + "), \t");
     }

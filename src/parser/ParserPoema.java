@@ -79,7 +79,7 @@ public class ParserPoema {
         }
     }
 
-    private static Vers parseVers(String line, int numVers) {
+    public static Vers parseVers(String line, int numVers) {
 
         Vers vers = new Vers(numVers, line);
         StringBuilder buffer = new StringBuilder();
@@ -121,7 +121,8 @@ public class ParserPoema {
 
     private static boolean isLetter(char c) {
         return Character.isLetter(c)
-                || "àèéíòóúïüçÀÈÉÍÒÓÚÏÜÇ".indexOf(c) >= 0;
+                || "àèéíòóúïüçÀÈÉÍÒÓÚÏÜÇ".indexOf(c) >= 0
+                || c == '·'; // en el cas de l·l
     }
 
     public static ArrayList<String> getLinies(String fitxerPoema){

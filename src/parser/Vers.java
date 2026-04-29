@@ -14,6 +14,12 @@ public class Vers {
         this.tokens = new ArrayList<>();
     }
 
+    public int getNumVers(){ return this.numVers; }
+
+    public String getText(){ return this.text; }
+
+    public ArrayList<Token> getTokens(){ return this.tokens; }
+
     public int getNumTokensTipus(Token.Tipus tipus){
         int num = 0;
         for(Token token: tokens){

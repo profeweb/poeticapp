@@ -13,6 +13,9 @@ public class Boto extends GuiElement {
     // Estat del botó (actiu / inactiu).
     boolean activat;
 
+    // Arrodoniment de caires
+    float arrodoniment = 10f;
+
     // Constructor
     public Boto(String text, float x, float y, float w, float h){
         super(x, y, w, h);
@@ -27,6 +30,8 @@ public class Boto extends GuiElement {
     }
 
     public void setTextBoto(String t){ this.textBoto = t; }
+
+    public void setArrodoniment(float f){ this.arrodoniment = f; }
 
     // Getters
 
@@ -58,7 +63,7 @@ public class Boto extends GuiElement {
         p5.fill(getColorActual(p5));
         p5.stroke(colors.getColorBotoContorn());
         p5.strokeWeight(GRUIX_BOTO);
-        p5.rect(this.x, this.y, this.w, this.h, 10);
+        p5.rect(this.x, this.y, this.w, this.h, this.arrodoniment);
 
         // Text (color, alineació i mida)
         if(textBoto!=null) {

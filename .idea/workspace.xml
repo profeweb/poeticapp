@@ -2,9 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gui/BotoToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/BotonsEstrofa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/test/TestBotomsVers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/test/TestBotonsEstrofa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/test/ComptadorSilabesCatala.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Boto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Boto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/BotoToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotoToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/BotonsVers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotonsVers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Estrofa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Estrofa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Metrica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Metrica.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/ParserPoema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ParserPoema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Vers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Vers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,25 +55,25 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="parser.test" />
       <recent name="gui.test" />
+      <recent name="parser.test" />
       <recent name="gui" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestMetrica">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="Application.TestBotonsEstrofa">
+    <configuration name="ComptadorSilabesCatala (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ComptadorSilabesCatala" />
       <module name="Poetica" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ParserPoema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.ParserPoema" />
+    <configuration name="ComptadorSilabesCatala" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parser.test.ComptadorSilabesCatala" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="parser.*" />
+          <option name="PATTERN" value="parser.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -71,8 +81,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestGraellaTarjaCerca" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.test.TestGraellaTarjaCerca" />
+    <configuration name="TestBotomsVers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestBotomsVers" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestBotonsEstrofa" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestBotonsEstrofa" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
@@ -97,26 +120,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestMetrica2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.test.TestMetrica2" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="parser.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestBotonsEstrofa" />
+        <item itemvalue="Application.ComptadorSilabesCatala" />
+        <item itemvalue="Application.ComptadorSilabesCatala (1)" />
+        <item itemvalue="Application.TestBotomsVers" />
         <item itemvalue="Application.TestMetrica" />
-        <item itemvalue="Application.TestMetrica2" />
-        <item itemvalue="Application.ParserPoema" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.TestGraellaTarjaCerca" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +191,8 @@
       <workItem from="1777271421017" duration="2396000" />
       <workItem from="1777360468296" duration="8271000" />
       <workItem from="1777376579670" duration="11766000" />
-      <workItem from="1777402723626" duration="819000" />
+      <workItem from="1777402723626" duration="902000" />
+      <workItem from="1777443234580" duration="9529000" />
     </task>
     <task id="LOCAL-00001" summary="Inicial">
       <created>1772797946480</created>
@@ -421,7 +432,14 @@
       <option name="project" value="LOCAL" />
       <updated>1777399379643</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Inicial">
+      <created>1777403554075</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1777403554075</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

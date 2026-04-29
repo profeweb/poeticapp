@@ -36,6 +36,14 @@ public class Estrofa {
 
     public ArrayList<Vers> getVersosSeccioAt(int s){ return seccions.get(s).versos; }
 
+    public ArrayList<Vers> getVersos(){
+        ArrayList<Vers> versos = new ArrayList<>();
+        for(Seccio s : seccions){
+            versos.addAll(s.versos);
+        }
+        return versos;
+    }
+
     public void printEstrofa(){
         System.out.println("\nEstrofa #"+ numero + " ("+seccions.size()+ " seccions):");
         for(Seccio seccio : seccions){

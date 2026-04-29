@@ -2,7 +2,6 @@ package parser;
 
 public class Metrica {
 
-
     public static int comptarSilabes(String paraula) {
         if (paraula == null || paraula.isEmpty()) return 0;
 
@@ -10,14 +9,14 @@ public class Metrica {
 
         int vocals = 0;
 
-        // 1. comptar vocals reals
+        // 1. Comptar vocals reals
         for (int i = 0; i < p.length(); i++) {
             if (esVocal(p.charAt(i))) {
                 vocals++;
             }
         }
 
-        // 2. restar diftongs segurs
+        // 2. Restar diftongs segurs
         int diftongs = 0;
 
         for (int i = 0; i < p.length() - 1; i++) {
@@ -44,7 +43,7 @@ public class Metrica {
         // dièresi trenca sempre
         if (a == 'ï' || a == 'ü' || b == 'ï' || b == 'ü') return false;
 
-        // diftongs catalans segurs (reduït i correcte)
+        // diftongs catalans segurs
         String pair = "" + a + b;
 
         return pair.equals("ai") || pair.equals("ei") ||
