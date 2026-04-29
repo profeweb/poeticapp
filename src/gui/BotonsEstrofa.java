@@ -10,6 +10,7 @@ import static gui.Mides.ALT_BOTO;
 
 public class BotonsEstrofa extends GuiElement{
 
+    int numEstrofa;
     int paginaActual = 0;
     int numVersosPagina, numTotalPagines;
     ArrayList<BotonsVers> botonsVersos;
@@ -24,6 +25,7 @@ public class BotonsEstrofa extends GuiElement{
 
     public void setBotonsEstrofa(Estrofa estrofa, int numVersosPagina){
 
+        this.numEstrofa = estrofa.getNumero();
         this.numVersosPagina = numVersosPagina;
         this.numTotalPagines = 1;
         this.botonsVersos = new ArrayList<>();
@@ -60,6 +62,13 @@ public class BotonsEstrofa extends GuiElement{
     }
 
     public void display(PApplet p5){
+
+        p5.pushStyle();
+        p5.fill(0);
+        p5.textSize(Mides.midaSubtitol);
+        p5.textAlign(p5.LEFT, p5.BOTTOM);
+        p5.text("estrofa "+ this.numEstrofa, this.x, this.y);
+        p5.popStyle();
 
         int numVers = 0;
         for(BotonsVers botonsVers : botonsVersos){

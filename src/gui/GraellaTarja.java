@@ -26,7 +26,7 @@ public class GraellaTarja extends GuiElement {
     int numTarjaSeleccionada = -1;
 
     BotoIcona bSeg, bAnt;
-    Desplegable selOrdre;
+    Desplegable selOrdre, filtar;
     int ordre = -1;
 
     PImage img;
@@ -49,6 +49,30 @@ public class GraellaTarja extends GuiElement {
         this.numTarges = d.length;
         this.numTotalPagines = d.length / this.numTargesPagina;
         if(d.length % this.numTargesPagina !=0){
+            this.numTotalPagines++;
+        }
+    }
+
+    public void filtraDades(String valorFiltre){
+        String[][] copiaDades = this.dadesTarges;
+        int num = 0;
+        for(int i=0; i<copiaDades.length; i++){
+            if(copiaDades[i][1].equals(valorFiltre)){
+                num++;
+            }
+        }
+        this.dadesTarges = new String[num][2];
+        int k=0;
+        for(int i=0; i<copiaDades.length; i++){
+            if(copiaDades[i][1].equals(valorFiltre)){
+                dadesTarges[k] = copiaDades[i];
+                k++;
+            }
+        }
+
+        this.numTarges = dadesTarges.length;
+        this.numTotalPagines = dadesTarges.length / this.numTargesPagina;
+        if(dadesTarges.length % this.numTargesPagina !=0){
             this.numTotalPagines++;
         }
     }
@@ -128,6 +152,13 @@ public class GraellaTarja extends GuiElement {
         selOrdre.setColors(colors);
         selOrdre.setFonts(fonts);
         selOrdre.setTextEtiqueta("Ordenar");
+    }
+
+    public void setSelecccionableFiltre(PApplet p5, String[] opcions){
+        selOrdre = new Desplegable(opcions, this.x + this.w - 2*BOTO_FAVORIT - AMPLE_DESPLEGABLE - 2*margeHoritzontal, this.y - BOTO_FAVORIT - margeHoritzontal, AMPLE_DESPLEGABLE, ALT_DESPLEGABLE);
+        selOrdre.setColors(colors);
+        selOrdre.setFonts(fonts);
+        selOrdre.setTextEtiqueta("Filtrar");
     }
 
     public void setImatges(PApplet p5, PImage imatge, int colorTint) {
@@ -281,24 +312,23 @@ public class GraellaTarja extends GuiElement {
         this.clickSobreTarges(p5);
         this.clickBotoAnterior(p5);
         this.clickBotoSeguent(p5);
-        this.selOrdre.update(p5);
-        if(this.selOrdre.getNumOpcioSeleccionada()!= ordre){
-            p5.println("ORDRE: " + ordre +", SEL: "+ this.selOrdre.getNumOpcioSeleccionada());
-            if(this.selOrdre.getNumOpcioSeleccionada()==0){
-                this.ordenaTargesPerTitolAsc();
+        if(this.selOrdre!=null) {
+            this.selOrdre.update(p5);
+            if (this.selOrdre.getNumOpcioSeleccionada() != ordre) {
+                p5.println("ORDRE: " + ordre + ", SEL: " + this.selOrdre.getNumOpcioSeleccionada());
+                if (this.selOrdre.getNumOpcioSeleccionada() == 0) {
+                    this.ordenaTargesPerTitolAsc();
+                } else if (this.selOrdre.getNumOpcioSeleccionada() == 1) {
+                    this.ordenaTargesPerTitolDesc();
+                } else if (this.selOrdre.getNumOpcioSeleccionada() == 2) {
+                    this.ordenaTargesPerSubitolAsc();
+                } else if (this.selOrdre.getNumOpcioSeleccionada() == 3) {
+                    this.ordenaTargesPerSubitolDesc();
+                }
+                setTarges(p5);
+                setImatges(p5, img, colorFons);
+                ordre = this.selOrdre.getNumOpcioSeleccionada();
             }
-            else if(this.selOrdre.getNumOpcioSeleccionada()==1){
-                this.ordenaTargesPerTitolDesc();
-            }
-            else if(this.selOrdre.getNumOpcioSeleccionada()==2){
-                this.ordenaTargesPerSubitolAsc();
-            }
-            else if(this.selOrdre.getNumOpcioSeleccionada()==3){
-                this.ordenaTargesPerSubitolDesc();
-            }
-            setTarges(p5);
-            setImatges(p5, img, colorFons);
-            ordre = this.selOrdre.getNumOpcioSeleccionada();
         }
     }
 

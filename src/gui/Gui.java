@@ -8,14 +8,16 @@ import static gui.Mides.*;
 public class Gui {
 
     // PANTALLES
-    public enum PANTALLA {  INICI, EXPLORAR, FAVORITS, LLIBRES, POEMES, AUTORS,
-                            AUTOR_OBRA, AUTOR_RESUM, AUTOR_VISUAL, AUTOR_EDITA,
-                            QUANTITATIVES, QUALITATIVES, CRONOLOGIQUES, RELACIONALS, TEMATIQUES, ALTRES,
-                             LLIBRE_RESUM, LLIBRE_OBRA, LLIBRE_VISUAL, LLIBRE_EDITA,
-                             POEMA_RESUM, POEMA_EDITA};
+    public enum PANTALLA { INICI, EXPLORAR, FAVORITS, LLIBRES, POEMES, AUTORS,
+        AUTOR_OBRA, AUTOR_RESUM, AUTOR_VISUAL, AUTOR_EDITA,
+        QUANTITATIVES, QUALITATIVES, CRONOLOGIQUES, RELACIONALS, TEMATIQUES, ALTRES,
+        LLIBRE_RESUM, LLIBRE_OBRA, LLIBRE_VISUAL, LLIBRE_EDITA,
+        POEMA_RESUM, POEMA_EDITA
+    };
+
+    String[][] dadesVisuals = { {"Quant 01", "Quantitativa"},{"Quant 02", "Quantitativa"},{"Rela 03", "Relacional"},{"Tema 04", "Temàtica"},{"c", "Qualitativa"},{"Quant 03", "Quantitativa"},{"d", "d1"},{"v", "d1"},{"e", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
 
     public Pantalla currentPantalla;
-
     PApplet p5;
 
     // ELEMENTS GUI
@@ -25,6 +27,7 @@ public class Gui {
     public BotoIcona botoEditarAutor, botoEditarLlibre, botoEditarPoema, botoAfegirAutor, botoAfegirLlibre, botoAfegirPoema, botoFiltrar, botoGuardar;
     EntradaTextLlista llistaAutors, llistaAutorLlibre, llistaLlibres, llistaPoemes;
     GraellaTarja graellaAutorsFavorits, graellaLlibresFavorits, graellaLlibres, graellaAutors, graellaPoemes;
+    GraellaTarja graellaVisualitzacions;
     BotonsGrup botonsAutor, botonsLlibre;
 
     EntradaText entradaNomAutor, entradaAnyAutor, entradaTitolLlibre, entradaAnyLlibre;
@@ -45,9 +48,9 @@ public class Gui {
     // MEDIA
     Colors colors;
     Fonts fonts;
-    PImage imgAutor, imgLlibre, imgPoema;
+    PImage imgAutor, imgLlibre, imgPoema, imgVisuals;
     public SelectorImatge selectorImatgeAutor, selectorImatgeLlibre;
-    int colorAutor, colorLlibre, colorPoema;
+    int colorAutor, colorLlibre, colorPoema, colorVisuals;
 
     // Hooks
     String autorSeleccionat;
@@ -65,12 +68,14 @@ public class Gui {
         this.fonts = new Fonts(p5);
 
         this.imgAutor = p5.loadImage("data/img/autor.png");
-        imgLlibre = p5.loadImage("data/img/llibre.png");
-        imgPoema = p5.loadImage("data/img/poema.png");
+        this.imgLlibre = p5.loadImage("data/img/llibre.png");
+        this.imgPoema = p5.loadImage("data/img/poema.png");
+        this.imgVisuals = p5.loadImage("data/img/poema.png");
 
         colorAutor = p5.color(250, 220, 200);
         colorLlibre = p5.color(200, 250, 150);
         colorPoema = p5.color(150, 200, 250);
+        colorVisuals= p5.color(150, 150, 250);
     }
 
 
@@ -174,6 +179,9 @@ public class Gui {
         String[][] dadesPoemes= { {"a", "d1"},{"f", "d1"},{"b", "d1"},{"g", "d1"},{"c", "d1"},{"k", "d1"},{"d", "d1"},{"v", "d1"},{"e", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
         graellaPoemes = setGraella(dadesPoemes, "Poemes",imgPoema,colorPoema, 2, 5, 310, 300, 1550, 600);
 
+        // Graella Visuals 2 líneas
+        graellaVisualitzacions = setGraellaVisuals(dadesVisuals, "Quantitativa", "Visuals Quantitatius", imgVisuals, colorVisuals, 2, 5, 310, 300, 1550, 600);
+
         botoEditarAutor = new BotoIcona("Autor", 0x1F600, p5.width - 250 -50, 150, 250, ALT_BOTO);
         botoEditarAutor.setColorsFonts(colors, fonts);
 
@@ -223,7 +231,6 @@ public class Gui {
         botonsLlibre= new BotonsGrup( 600, 20, 850, ALT_BOTO);
         botonsLlibre.setColorsFonts(colors, fonts);
         botonsLlibre.setBotons("RESUM", "OBRA", "VISUALITZACIONS");
-
 
         menuApp = new MenuApp(10, 200, 250, 840);
         menuApp.setColorsFonts(colors, fonts);
@@ -345,7 +352,7 @@ public class Gui {
         pantallaAutorObra.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Autor", "Obra"));
 
         pantallaAutorVisual = new Pantalla(PANTALLA.AUTOR_VISUAL);
-        pantallaAutorVisual.addElements(menuApp, entradaCercador, botonsAutor);
+        pantallaAutorVisual.addElements(menuApp, entradaCercador, botonsAutor, graellaVisualitzacions);
         pantallaAutorVisual.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Autor", "Visualitzacions"));
 
         pantallaAutorEdita = new Pantalla(PANTALLA.AUTOR_EDITA);
@@ -377,27 +384,27 @@ public class Gui {
         pantallaPoemaEdita.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Poema", "Edita"));
 
         pantallaQuantitatives = new Pantalla(PANTALLA.QUANTITATIVES);
-        pantallaQuantitatives.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar);
+        pantallaQuantitatives.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar, graellaVisualitzacions);
         pantallaQuantitatives.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Visualitzacions", "Quantitatives"));
 
         pantallaQualitatives = new Pantalla(PANTALLA.QUALITATIVES);
-        pantallaQualitatives.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar);
+        pantallaQualitatives.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar, graellaVisualitzacions);
         pantallaQualitatives.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Visualitzacions", "Qualitatives"));
 
         pantallaRelacionals = new Pantalla(PANTALLA.RELACIONALS);
-        pantallaRelacionals.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar);
+        pantallaRelacionals.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar, graellaVisualitzacions);
         pantallaRelacionals.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Visualitzacions", "Relacionals"));
 
         pantallaTematiques = new Pantalla(PANTALLA.TEMATIQUES);
-        pantallaTematiques.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar);
+        pantallaTematiques.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar, graellaVisualitzacions);
         pantallaTematiques.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Visualitzacions", "Temàtiques"));
 
         pantallaCronologiques = new Pantalla(PANTALLA.CRONOLOGIQUES);
-        pantallaCronologiques.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar);
+        pantallaCronologiques.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar, graellaVisualitzacions);
         pantallaCronologiques.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Visualitzacions", "Cronològiques"));
 
         pantallaAltres = new Pantalla(PANTALLA.ALTRES);
-        pantallaAltres.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar);
+        pantallaAltres.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar, graellaVisualitzacions);
         pantallaAltres.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_FAVORIT, "Visualitzacions", "Altres"));
 
     }
@@ -413,6 +420,29 @@ public class Gui {
         graella.setBotons(p5);
         graella.setSelecccionableOrdre(p5);
         return graella;
+    }
+
+    public GraellaTarja setGraellaVisuals(String[][] dades, String valorFiltre, String titol, PImage img, int colorFons, int numFiles, int numColumnes, float x, float y, float w, float h){
+        GraellaTarja graella = new GraellaTarja(numFiles, numColumnes, x, y, w, h);
+        graella.setData(dades);
+        graella.setTitol(titol);
+        graella.setColorsFonts(colors, fonts);
+        graella.setTarges(p5);
+        graella.setImatges(p5, img, colorFons);
+        graella.setBotons(p5);
+        return graella;
+    }
+
+    public void updateGraellaFiltre(String[][] dades,String valorFiltre, PImage img, int colorFons){
+        graellaVisualitzacions.setData(dades);
+        if(!valorFiltre.equals("Totes")) {
+            graellaVisualitzacions.filtraDades(valorFiltre);
+            graellaVisualitzacions.setTitol(valorFiltre);
+        }
+        graellaVisualitzacions.setColorsFonts(colors, fonts);
+        graellaVisualitzacions.setTarges(p5);
+        graellaVisualitzacions.setImatges(p5, img, colorFons);
+        graellaVisualitzacions.setBotons(p5);
     }
 
 
@@ -456,12 +486,24 @@ public class Gui {
                 case "Autors":          currentPantalla = pantallaAutors; break;
                 case "Llibres":         currentPantalla = pantallaLlibres; break;
                 case "Poemes":          currentPantalla = pantallaPoemes; break;
-                case "Quantitatives":   currentPantalla = pantallaQuantitatives; break;
-                case "Qualitatives":    currentPantalla = pantallaQualitatives; break;
-                case "Relacionals":     currentPantalla = pantallaRelacionals; break;
-                case "Temàtiques":      currentPantalla = pantallaTematiques; break;
-                case "Cronològiques":   currentPantalla = pantallaCronologiques; break;
-                case "Altres":          currentPantalla = pantallaAltres; break;
+                case "Quantitatives":   currentPantalla = pantallaQuantitatives;
+                                        updateGraellaFiltre(dadesVisuals, "Quantitativa", imgVisuals, colorVisuals);
+                                        break;
+                case "Qualitatives":    currentPantalla = pantallaQualitatives;
+                                        updateGraellaFiltre(dadesVisuals, "Qualitativa", imgVisuals, colorVisuals);
+                                        break;
+                case "Relacionals":     currentPantalla = pantallaRelacionals;
+                                        updateGraellaFiltre(dadesVisuals, "Relacional", imgVisuals, colorVisuals);
+                                        break;
+                case "Temàtiques":      currentPantalla = pantallaTematiques;
+                                        updateGraellaFiltre(dadesVisuals, "Temàtica", imgVisuals, colorVisuals);
+                                        break;
+                case "Cronològiques":   currentPantalla = pantallaCronologiques;
+                                        updateGraellaFiltre(dadesVisuals, "Cronològica", imgVisuals, colorVisuals);
+                                        break;
+                case "Altres":          currentPantalla = pantallaAltres;
+                                        updateGraellaFiltre(dadesVisuals, "Altres", imgVisuals, colorVisuals);
+                                        break;
                 default:
             }
         }
@@ -489,6 +531,11 @@ public class Gui {
         }
         else if(currentPantalla.equals(pantallaPoemes) && graellaPoemes.isTarjaSeleccionada()){
             currentPantalla = pantallaPoemaResum;
+        }
+        else if(currentPantalla.equals(pantallaQualitatives) && graellaVisualitzacions.isTarjaSeleccionada()){
+            currentPantalla = pantallaAutorVisual;
+            updateGraellaFiltre(dadesVisuals, "Qualitativa", imgVisuals,colorVisuals);
+            System.out.println("VISUALITZACIÓ QUALITATIVA: " + graellaVisualitzacions.numTarjaSeleccionada);
         }
         else  if(currentPantalla.equals(pantallaAutorResum) ||
                 currentPantalla.equals(pantallaAutorObra) ||

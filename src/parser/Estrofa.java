@@ -12,6 +12,8 @@ public class Estrofa {
         this.seccions = new ArrayList<>();
     }
 
+    public int getNumero(){ return this.numero; }
+
     public int getNumSeccions(){ return this.seccions.size(); }
 
     public int getNumVersos(){

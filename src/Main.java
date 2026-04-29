@@ -1,4 +1,5 @@
 import gui.Gui;
+import parser.Poemari;
 import processing.core.PApplet;
 
 import java.io.File;
@@ -6,6 +7,7 @@ import java.io.File;
 public class Main extends PApplet {
 
     Gui gui;
+    Poemari poemari;
 
     public static void main(String[] args) {
         PApplet.main("Main");
@@ -20,6 +22,8 @@ public class Main extends PApplet {
     public void setup(){
         surface.setTitle("PoeticAPP");
         gui = new Gui(this);
+
+
     }
 
     public void draw(){

@@ -87,7 +87,7 @@ public class ParserPoema {
         for (int i = 0; i < line.length(); i++) {
             char c = line.charAt(i);
 
-            if (isLetter(c)) {
+            if (esLletraCatalà(c)) {
                 buffer.append(c);
             }
 
@@ -112,14 +112,12 @@ public class ParserPoema {
 
     private static void flushWord(Vers vers, StringBuilder buffer) {
         if (buffer.length() > 0) {
-            vers.tokens.add(
-                    new Token(Token.Tipus.PARAULA, buffer.toString())
-            );
+            vers.tokens.add(new Token(Token.Tipus.PARAULA, buffer.toString()));
             buffer.setLength(0);
         }
     }
 
-    private static boolean isLetter(char c) {
+    private static boolean esLletraCatalà(char c) {
         return Character.isLetter(c)
                 || "àèéíòóúïüçÀÈÉÍÒÓÚÏÜÇ".indexOf(c) >= 0
                 || c == '·'; // en el cas de l·l
