@@ -22,6 +22,8 @@ public class Poema {
 
     public void setTitol(String titol){ this.titol = titol; }
 
+    public int getNumEstrofes(){ return this.estrofes.size(); }
+
     public Vers getVersAt(int i){
         int n = 0;
         for(int e = 0; e < estrofes.size(); e++){

@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/gui/BotoSeleccionable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/BotonsPaginacio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/BotonsPoema.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/test/TestBotonsPaginacio.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/test/TestBotonsPoema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/BotoToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotoToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/BotonsEstrofa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotonsEstrofa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/GraellaTarja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/GraellaTarja.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Gui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Estrofa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Estrofa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/ParserPoema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ParserPoema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Poema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Seccio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Seccio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,14 +58,7 @@
       <recent name="gui" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestBotonsEstrofa">
-    <configuration name="ComptadorSilabesCatala (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ComptadorSilabesCatala" />
-      <module name="Poetica" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.TestBotonsPoema">
     <configuration name="ComptadorSilabesCatala" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="parser.test.ComptadorSilabesCatala" />
       <module name="Poetica" />
@@ -82,19 +79,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestBotomsVers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.test.TestBotomsVers" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestBotonsEstrofa" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.test.TestBotonsEstrofa" />
       <module name="Poetica" />
@@ -108,13 +92,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestBotonsPaginacio" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestBotonsPaginacio" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestBotonsPoema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestBotonsPoema" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestBotonsPoema" />
+        <item itemvalue="Application.TestBotonsPaginacio" />
         <item itemvalue="Application.TestBotonsEstrofa" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ComptadorSilabesCatala" />
-        <item itemvalue="Application.ComptadorSilabesCatala (1)" />
-        <item itemvalue="Application.TestBotomsVers" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +191,7 @@
       <workItem from="1777376579670" duration="11766000" />
       <workItem from="1777402723626" duration="902000" />
       <workItem from="1777443234580" duration="16574000" />
-      <workItem from="1777466961507" duration="924000" />
+      <workItem from="1777466961507" duration="9143000" />
     </task>
     <task id="LOCAL-00001" summary="Inicial">
       <created>1772797946480</created>
@@ -435,7 +445,14 @@
       <option name="project" value="LOCAL" />
       <updated>1777454581701</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Inicial">
+      <created>1777467964692</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1777467964692</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

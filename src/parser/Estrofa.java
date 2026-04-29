@@ -24,6 +24,10 @@ public class Estrofa {
         return  num;
     }
 
+    public int getPrimerVersEstrofa(){ return this.seccions.get(0).getPrimerVersSeccio(); }
+
+    public int getDarrerVersEstrofa(){ return this.seccions.get(seccions.size()-1).getDarrerVersSeccio(); }
+
     public Vers getVersAt(int i){
         int n=0;
         for(int s=0; s<seccions.size(); s++){

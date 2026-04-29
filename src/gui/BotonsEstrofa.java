@@ -7,6 +7,7 @@ import processing.core.PApplet;
 import java.util.ArrayList;
 
 import static gui.Mides.ALT_BOTO;
+import static java.lang.Math.min;
 
 public class BotonsEstrofa extends GuiElement{
 
@@ -27,7 +28,10 @@ public class BotonsEstrofa extends GuiElement{
 
         this.numEstrofa = estrofa.getNumero();
         this.numVersosPagina = numVersosPagina;
-        this.numTotalPagines = 1;
+        this.numTotalPagines = estrofa.getNumVersos() / numVersosPagina;
+        if(estrofa.getNumVersos() % numVersosPagina !=0){
+            this.numTotalPagines++;
+        }
         this.botonsVersos = new ArrayList<>();
 
         int numVers = 0;
@@ -39,9 +43,8 @@ public class BotonsEstrofa extends GuiElement{
             botonsVers.setBotons(vers);
             this.botonsVersos.add(botonsVers);
             numVers++;
-            if(numVers>=numVersosPagina){
+            if(numVers >= numVersosPagina){
                 numVers = 0;
-                numTotalPagines++;
             }
         }
     }
@@ -57,8 +60,19 @@ public class BotonsEstrofa extends GuiElement{
         bSeg.setFonts(fonts);
     }
 
+    public int primerVersMostrat(){ return this.botonsVersos.get(primerBotoMostrat()).numVers; }
+    public int darrerVersMostrat(){ return this.botonsVersos.get(darrerBotoMostrat()).numVers; }
+
+    public int primerBotoMostrat(){
+        return paginaActual * numVersosPagina;
+    }
+
+    public int darrerBotoMostrat(){
+        return min((paginaActual+1)*numVersosPagina -1, botonsVersos.size()-1);
+    }
+
     public boolean mostrarBotonsVers(int numVers){
-        return (numVers>= paginaActual * numVersosPagina && numVers< (paginaActual+1)*numVersosPagina);
+        return (numVers >= primerBotoMostrat() && numVers <= darrerBotoMostrat());
     }
 
     public void display(PApplet p5){
@@ -67,7 +81,7 @@ public class BotonsEstrofa extends GuiElement{
         p5.fill(0);
         p5.textSize(Mides.midaSubtitol);
         p5.textAlign(p5.LEFT, p5.BOTTOM);
-        p5.text("estrofa "+ this.numEstrofa, this.x, this.y);
+        p5.text("Estrofa "+ this.numEstrofa + " (" + primerVersMostrat() + " - " + darrerVersMostrat() +")", this.x, this.y);
         p5.popStyle();
 
         int numVers = 0;
