@@ -24,6 +24,22 @@ public class Poema {
 
     public int getNumEstrofes(){ return this.estrofes.size(); }
 
+    public int getNumVersos(){
+        int num = 0;
+        for(Estrofa estrofa : estrofes){
+            num += estrofa.getNumVersos();
+        }
+        return  num;
+    }
+
+    public ArrayList<Vers> getVersos(){
+        ArrayList<Vers> versos = new ArrayList<>();
+        for(Estrofa estrofa : estrofes){
+            versos.addAll(estrofa.getVersos());
+        }
+        return versos;
+    }
+
     public Vers getVersAt(int i){
         int n = 0;
         for(int e = 0; e < estrofes.size(); e++){

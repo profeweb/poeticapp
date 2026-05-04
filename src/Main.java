@@ -22,8 +22,6 @@ public class Main extends PApplet {
     public void setup(){
         surface.setTitle("PoeticAPP");
         gui = new Gui(this);
-
-
     }
 
     public void draw(){

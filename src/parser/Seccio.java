@@ -17,6 +17,8 @@ public class Seccio {
 
     public Vers getVersAt(int i){ return  this.versos.get(i); }
 
+    public ArrayList<Vers> getVersos(){ return this.versos; }
+
     public int getPrimerVersSeccio(){ return this.versos.get(0).numVers; }
 
     public int getDarrerVersSeccio(){ return this.versos.get(this.versos.size()-1).numVers; }

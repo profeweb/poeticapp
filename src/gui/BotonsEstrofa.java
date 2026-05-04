@@ -17,7 +17,6 @@ public class BotonsEstrofa extends GuiElement{
     ArrayList<BotonsVers> botonsVersos;
 
     float margeEntreVersos = 10;
-
     BotoIcona bSeg, bAnt;
 
     public BotonsEstrofa(float x, float y, float w, float h) {
@@ -42,7 +41,7 @@ public class BotonsEstrofa extends GuiElement{
             botonsVers.setColorsFonts(colors, fonts);
             botonsVers.setBotons(vers);
             this.botonsVersos.add(botonsVers);
-            
+
             numVers++;
             if(numVers >= numVersosPagina){
                 numVers = 0;
