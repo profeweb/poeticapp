@@ -1,5 +1,7 @@
 package parser;
 
+import processing.core.PApplet;
+
 import java.util.ArrayList;
 
 public class Vers {
@@ -79,6 +81,30 @@ public class Vers {
             token.printToken();
         }
         System.out.println();
+    }
+
+    public void dibuixaVersLinea(PApplet p5, float x, float y, float gruixa, float wLinia, float w, int color, int quantitat){
+        p5.pushStyle();
+
+            // Línia
+            p5.stroke(color);
+            p5.strokeWeight(gruixa);
+            p5.strokeCap(p5.ROUND);
+            p5.line(x, y, x + wLinia, y);
+
+            // Núm. vers
+            if(numVers%5==0) {
+                p5.fill(0);
+                p5.textSize(12);
+                p5.textAlign(p5.RIGHT, p5.CENTER);
+                p5.text(numVers, x - 5, y);
+            }
+
+            // Quantitat
+            p5.fill(color);
+            p5.textSize(12); p5.textAlign(p5.RIGHT, p5.CENTER);
+            p5.text(quantitat, x + w - 30, y);
+        p5.popStyle();
     }
 
 }

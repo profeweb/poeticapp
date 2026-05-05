@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/parser/Simbol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual02.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/DadesPoema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/DadesPoema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Estrofa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Estrofa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Frase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Frase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Paraula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Paraula.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/ParserPoema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ParserPoema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Seccio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Frase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Poema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Poemari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poemari.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Vers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Vers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,20 +58,7 @@
       <recent name="gui" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="ComptadorSilabesCatala" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.test.ComptadorSilabesCatala" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="parser.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Test_Visual02">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Poetica" />
@@ -73,25 +66,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestBotonsEstrofa" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.test.TestBotonsEstrofa" />
+    <configuration name="ParserPoema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parser.ParserPoema" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="gui.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestBotonsPaginacio" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.test.TestBotonsPaginacio" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.test.*" />
+          <option name="PATTERN" value="parser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,13 +92,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test_Visual01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual01" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parser.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test_Visual02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual02" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parser.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test_Visual02" />
+        <item itemvalue="Application.Test_Visual01" />
+        <item itemvalue="Application.ParserPoema" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.TestBotonsPoema" />
-        <item itemvalue="Application.TestBotonsPaginacio" />
-        <item itemvalue="Application.TestBotonsEstrofa" />
-        <item itemvalue="Application.ComptadorSilabesCatala" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +197,8 @@
       <workItem from="1777797195953" duration="15000" />
       <workItem from="1777898738007" duration="2310000" />
       <workItem from="1777926586459" duration="343000" />
-      <workItem from="1777960971564" duration="897000" />
+      <workItem from="1777960971564" duration="15517000" />
+      <workItem from="1777979641830" duration="1875000" />
     </task>
     <task id="LOCAL-00001" summary="Inicial">
       <created>1772797946480</created>
@@ -473,7 +480,14 @@
       <option name="project" value="LOCAL" />
       <updated>1777900243182</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Inicial">
+      <created>1777964734831</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1777964734831</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -13,17 +13,15 @@ public class ParserPoema {
 
         Poemari poemari = new Poemari("Poemes a Nai", "MA Rieria", 1988);
         poemari.parsePoemes(3, "data/poems/mariera/poemes a nai/");
-        //poemari.getPoemaAt(2).printInfo();
-        poemari.getPoemaAt(2).getVersAt(15).printVers();
+        poemari.getPoemaAt(2).printInfo();
+        //poemari.getPoemaAt(2).getVersAt(15).printVers();
     }
 
     public static Poema parse(File file) throws IOException {
 
-        int numEstrofa = 1;
-        int numSeccio = 1;
-        int numVers = 1;
+        int numEstrofa = 1, numSeccio = 1, numVers = 1;
 
-        Poema poema = new Poema("itol poema", 1);
+        Poema poema = new Poema(1);
         Estrofa estrofaActual = new Estrofa(numEstrofa);
         Frase fraseActual = new Frase(numSeccio);
 
@@ -35,11 +33,11 @@ public class ParserPoema {
 
                 if (line.isBlank()) {
                     // final d'estrofa
-                    flushSeccio(estrofaActual, fraseActual);
+                    confirmaFrase(estrofaActual, fraseActual);
                     numSeccio++;
                     fraseActual = new Frase(numSeccio);
 
-                    if (!estrofaActual.seccions.isEmpty()) {
+                    if (!estrofaActual.frases.isEmpty()) {
                         poema.estrofes.add(estrofaActual);
                     }
 
@@ -53,8 +51,10 @@ public class ParserPoema {
                 numVers++;
 
                 if (line.trim().endsWith(".")) {
+                    // final de frase
                     fraseActual.finalAmbPunt = true;
-                    estrofaActual.seccions.add(fraseActual);
+                    estrofaActual.frases.add(fraseActual);
+
                     numSeccio++;
                     fraseActual = new Frase(numSeccio);
                 }
@@ -63,19 +63,21 @@ public class ParserPoema {
 
         // flush final
         if (!fraseActual.versos.isEmpty()) {
-            estrofaActual.seccions.add(fraseActual);
+            estrofaActual.frases.add(fraseActual);
         }
 
-        if (!estrofaActual.seccions.isEmpty()) {
+        if (!estrofaActual.frases.isEmpty()) {
             poema.estrofes.add(estrofaActual);
         }
 
         return poema;
     }
 
-    private static void flushSeccio(Estrofa e, Frase s) {
+
+
+    private static void confirmaFrase(Estrofa e, Frase s) {
         if (!s.versos.isEmpty()) {
-            e.seccions.add(s);
+            e.frases.add(s);
         }
     }
 
@@ -92,27 +94,24 @@ public class ParserPoema {
             }
 
             else if (Character.isWhitespace(c)) {
-                flushWord(vers, buffer);
+                confirmaParaula(vers, buffer);
             }
 
             else {
                 // símbol = token independent
-                flushWord(vers, buffer);
-
-                vers.tokens.add(
-                        new Token(Token.Tipus.SEPARADOR, String.valueOf(c))
-                );
+                confirmaParaula(vers, buffer);
+                vers.tokens.add(new Simbol(String.valueOf(c)));
             }
         }
 
-        flushWord(vers, buffer);
+        confirmaParaula(vers, buffer);
 
         return vers;
     }
 
-    private static void flushWord(Vers vers, StringBuilder buffer) {
+    private static void confirmaParaula(Vers vers, StringBuilder buffer) {
         if (buffer.length() > 0) {
-            vers.tokens.add(new Token(Token.Tipus.PARAULA, buffer.toString()));
+            vers.tokens.add(new Paraula(buffer.toString()));
             buffer.setLength(0);
         }
     }

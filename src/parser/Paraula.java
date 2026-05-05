@@ -13,4 +13,8 @@ public class Paraula extends Token{
     public int getNumLletres(){ return this.valor.length(); }
 
     public int getNumSilabes(){ return this.numSilabes; }
+
+    public void printToken(){
+        System.out.print("Paraula: " + valor + " \t");
+    }
 }
