@@ -129,7 +129,7 @@ public class Vers {
 
             // Quantitat
             p5.fill(color);
-            p5.textSize(12); p5.textAlign(p5.RIGHT, p5.CENTER);
+            p5.textSize(12); p5.textAlign(p5.CENTER, p5.CENTER);
             p5.text(quantitat, x +  (radiShift + radiQuant + 15)*cos(angle), y +  (radiShift + radiQuant + 15)*sin(angle));
         p5.popStyle();
     }

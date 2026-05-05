@@ -124,7 +124,7 @@ public class Estrofa {
     public void dibuixaEstrofaArc(PApplet p5, float x, float y, float radiMin, float radiMax, float angleMin, float angleMax, float mitjanaParaules, int maxParaulesVersPoema, int colorEstrofa, int colorVers){
 
         float migAngle = (angleMin + angleMax) / 2f;
-        float mifRadi = (radiMin + radiMax) /2f;
+        float migRadi = (radiMin + radiMax) /2f;
         float margeAng = PI/100f;
         float numPasses = 20;
 
@@ -142,8 +142,14 @@ public class Estrofa {
                     p5.vertex(x + radiMax * cos(angle), y + radiMax*sin(angle));
                 }
             p5.endShape(p5.CLOSE);
-            p5.fill(0); p5.textAlign(p5.CENTER, p5.CENTER);
-            p5.text(numero, x + mifRadi * cos(migAngle), y + mifRadi*sin(migAngle));
+
+                // Text a,n múmero d'estrofa
+            p5.fill(0); p5.textAlign(p5.CENTER, p5.CENTER); p5.textSize(18);
+            p5.text("E" + numero, x + migRadi * cos(migAngle), y + migRadi*sin(migAngle));
+
+            // Text amb número de versos de l'estrofa
+            p5.fill(50); p5.textAlign(p5.CENTER, p5.CENTER); p5.textSize(14);
+            p5.text(getNumVersos(), x + (radiMin -15) * cos(migAngle), y + (radiMin -15)*sin(migAngle));
 
             for(Vers vers : getVersos()){
                 float angle = (angleMax + angleMin)/2f;

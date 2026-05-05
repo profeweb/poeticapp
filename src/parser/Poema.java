@@ -149,12 +149,12 @@ public class Poema {
         p5.pushStyle();
         p5.textSize(24); p5.fill(0);
         p5.textAlign(p5.CENTER, p5.CENTER);
-        p5.text(numero, x, y - 25);
+        p5.text("P" + numero, x, y - 25);
         p5.textSize(18); p5.fill(100);
         p5.text(titol.substring(0, min(15, titol.length())) + "...", x, y);
 
         p5.noFill(); p5.stroke(0);
-        p5.circle(x, y, minRadi*1.65f);
+        p5.circle(x, y, minRadi*1.5f);
 
         float angleVers = (angFi - angInici) / getNumVersos();
         float angle = angInici;
