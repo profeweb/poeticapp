@@ -3,6 +3,15 @@ package parser;
 public class DadesPoema {
 
 
+    public static int[] numParaulesVersosEstrofa(Estrofa estrofa){
+        int[] numParaules = new int[estrofa.getNumVersos()];
+        for(int v=0; v<estrofa.getNumVersos(); v++){
+            numParaules[v] = estrofa.getVersAt(v).getNumParaules();
+        }
+        return numParaules;
+    }
+
+
     public static float mitjanaParaulesVersosPoema(Poema poema){
         float numVersos = poema.getNumVersos();
         float sumaParaules = 0;
@@ -39,5 +48,7 @@ public class DadesPoema {
         }
         return sumaSilabes / numVersos;
     }
+
+
 
 }

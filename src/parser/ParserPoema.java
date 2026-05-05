@@ -25,7 +25,7 @@ public class ParserPoema {
 
         Poema poema = new Poema("itol poema", 1);
         Estrofa estrofaActual = new Estrofa(numEstrofa);
-        Seccio seccioActual = new Seccio(numSeccio);
+        Frase fraseActual = new Frase(numSeccio);
 
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
 
@@ -35,9 +35,9 @@ public class ParserPoema {
 
                 if (line.isBlank()) {
                     // final d'estrofa
-                    flushSeccio(estrofaActual, seccioActual);
+                    flushSeccio(estrofaActual, fraseActual);
                     numSeccio++;
-                    seccioActual = new Seccio(numSeccio);
+                    fraseActual = new Frase(numSeccio);
 
                     if (!estrofaActual.seccions.isEmpty()) {
                         poema.estrofes.add(estrofaActual);
@@ -49,21 +49,21 @@ public class ParserPoema {
                 }
 
                 Vers vers = parseVers(line, numVers);
-                seccioActual.versos.add(vers);
+                fraseActual.versos.add(vers);
                 numVers++;
 
                 if (line.trim().endsWith(".")) {
-                    seccioActual.finalAmbPunt = true;
-                    estrofaActual.seccions.add(seccioActual);
+                    fraseActual.finalAmbPunt = true;
+                    estrofaActual.seccions.add(fraseActual);
                     numSeccio++;
-                    seccioActual = new Seccio(numSeccio);
+                    fraseActual = new Frase(numSeccio);
                 }
             }
         }
 
         // flush final
-        if (!seccioActual.versos.isEmpty()) {
-            estrofaActual.seccions.add(seccioActual);
+        if (!fraseActual.versos.isEmpty()) {
+            estrofaActual.seccions.add(fraseActual);
         }
 
         if (!estrofaActual.seccions.isEmpty()) {
@@ -73,7 +73,7 @@ public class ParserPoema {
         return poema;
     }
 
-    private static void flushSeccio(Estrofa e, Seccio s) {
+    private static void flushSeccio(Estrofa e, Frase s) {
         if (!s.versos.isEmpty()) {
             e.seccions.add(s);
         }

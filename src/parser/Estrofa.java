@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Estrofa {
 
     int numero;
-    ArrayList<Seccio> seccions;
+    ArrayList<Frase> seccions;
 
     public Estrofa(int posicio) {
         this.numero = posicio;
@@ -18,8 +18,8 @@ public class Estrofa {
 
     public int getNumVersos(){
         int num = 0;
-        for(Seccio seccio : seccions){
-            num += seccio.getNumVersos();
+        for(Frase frase : seccions){
+            num += frase.getNumVersos();
         }
         return  num;
     }
@@ -31,11 +31,11 @@ public class Estrofa {
     public Vers getVersAt(int i){
         int n=0;
         for(int s=0; s<seccions.size(); s++){
-            Seccio seccioActual = seccions.get(s);
-            if( i < n + seccioActual.getNumVersos()){
-                return seccioActual.getVersAt(i - n);
+            Frase fraseActual = seccions.get(s);
+            if( i < n + fraseActual.getNumVersos()){
+                return fraseActual.getVersAt(i - n);
             }
-            n += seccioActual.getNumVersos();
+            n += fraseActual.getNumVersos();
         }
         return null;
     }
@@ -44,7 +44,7 @@ public class Estrofa {
 
     public ArrayList<Vers> getVersos(){
         ArrayList<Vers> versos = new ArrayList<>();
-        for(Seccio s : seccions){
+        for(Frase s : seccions){
             versos.addAll(s.versos);
         }
         return versos;
@@ -52,8 +52,8 @@ public class Estrofa {
 
     public void printEstrofa(){
         System.out.println("\nEstrofa #"+ numero + " ("+seccions.size()+ " seccions):");
-        for(Seccio seccio : seccions){
-            seccio.printSeccio();
+        for(Frase frase : seccions){
+            frase.printSeccio();
         }
         System.out.println();
     }

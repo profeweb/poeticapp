@@ -2,13 +2,13 @@ package parser;
 
 import java.util.ArrayList;
 
-public class Seccio {
+public class Frase {
 
     int numSeccio;
     boolean finalAmbPunt;
     ArrayList<Vers> versos;
 
-    public Seccio(int n){
+    public Frase(int n){
         this.numSeccio = n;
         this.versos = new ArrayList<>();
     }
