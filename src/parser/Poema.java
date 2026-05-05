@@ -1,8 +1,13 @@
 package parser;
 
 import processing.core.PApplet;
+import processing.core.PConstants;
 
 import java.util.ArrayList;
+
+import static processing.core.PApplet.*;
+import static processing.core.PConstants.PI;
+import static processing.core.PConstants.TWO_PI;
 
 public class Poema {
 
@@ -56,8 +61,8 @@ public class Poema {
         return maxParaules;
     }
 
-    public float mitjanaParaulesVersPoema(){
-        int sumaParaules = 0;
+    public float getMitjanaParaulesVersPoema(){
+        float sumaParaules = 0;
         for(Estrofa estrofa : estrofes){
             for(Vers vers : estrofa.getVersos()){
                 sumaParaules += vers.getNumParaules();
@@ -97,44 +102,95 @@ public class Poema {
     }
 
 
-    public void dibuixaEstrofesBloc(PApplet p5, float x, float y, float w, float h, int colorEstrofa, int colorVers, float mitjanaPoemari, int maxParaulesVers){
+    public void dibuixaEstrofesBloc(PApplet p5, float x, float y, float w, float h, int colorEstrofa, int colorVers, float mitjanaPoemari, float mitjanaPoema, int maxParaulesVers){
 
         p5.pushStyle();
         p5.textSize(24); p5.fill(0);
         p5.textAlign(p5.CENTER, p5.BOTTOM);
-        p5.text(numero, x + w/2, y - 25);
+        p5.text("P" + numero, x + w/2, y - 25);
         p5.textSize(18); p5.fill(100);
         p5.text(titol.substring(0, 15) + "...", x + w/2, y);
+        p5.textSize(14); p5.fill(0, 0, 255);
+        p5.text(nf(mitjanaPoema, 0, 2) +" paraules / vers (poema)", x + w/2, y + 25);
 
-        float yEstrofa = y;
+        float xMitjaPoemari = x + 25 + p5.map(mitjanaPoemari, 0, maxParaulesVers, 0, w-50);
+        float xMitjaPoema = x + 25 + p5.map(mitjanaPoema, 0, maxParaulesVers, 0, w-50);
+
+        float yEstrofa = y + 25;
         for(Estrofa estrofa : estrofes){
+
+            float mitjanaEstrofa = estrofa.getMitjanaParaulesVersosEstrofa();
 
             estrofa.dibuixaVersosEstrofaLinia(p5, x, yEstrofa, w, h, colorEstrofa, colorVers, maxParaulesVers, mitjanaPoemari);
 
-            p5.stroke(255);
-            float xMitja = x + 25 + p5.map(mitjanaPoemari, 0, maxParaulesVers, 0, w-50);
-            p5.line(xMitja, yEstrofa, xMitja, yEstrofa + h * (estrofa.getNumVersos() + 1));
-            yEstrofa += (h * estrofa.getNumVersos() + 1) + 35;
+            p5.stroke(255, 0, 0);
+            p5.line(xMitjaPoemari, yEstrofa, xMitjaPoemari, yEstrofa + h * (estrofa.getNumVersos() + 1));
+
+            p5.stroke(0, 0, 255);
+            p5.line(xMitjaPoema, yEstrofa, xMitjaPoema, yEstrofa + h * (estrofa.getNumVersos() + 1));
+
+            p5.stroke(0, 255, 0);
+            float xMitjaEstrofa = x + 25 + p5.map(mitjanaEstrofa, 0, maxParaulesVers, 0, w-50);
+            p5.line(xMitjaEstrofa, yEstrofa, xMitjaEstrofa, yEstrofa + h * (estrofa.getNumVersos() + 1));
+
+            p5.fill(0, 255, 0); p5.textSize(14);
+            p5.textAlign(p5.CENTER, p5.BOTTOM);
+            p5.text(nf(mitjanaEstrofa, 0, 2) + " paraules / vers (estrofa)", x + w/2, yEstrofa + h * (estrofa.getNumVersos() + 1) + 25);
+
+            yEstrofa += (h * estrofa.getNumVersos() + 1) + 50;
         }
 
         p5.popStyle();
     }
 
 
-    public void dibuixaEstrofesArc(PApplet p5, float x, float y, float minRadi, float maxRadi){
+    public void dibuixaEstrofesArc(PApplet p5, float x, float y, float minRadi, float maxRadi, float angInici, float angFi, float mitjanaPoemari, int maxParaulesVers, int[] colorEstrofa, int colorVers){
 
         p5.pushStyle();
         p5.textSize(24); p5.fill(0);
-        p5.textAlign(p5.CENTER, p5.BOTTOM);
+        p5.textAlign(p5.CENTER, p5.CENTER);
         p5.text(numero, x, y - 25);
         p5.textSize(18); p5.fill(100);
-        p5.text(titol.substring(0, 15) + "...", x, y);
+        p5.text(titol.substring(0, min(15, titol.length())) + "...", x, y);
 
         p5.noFill(); p5.stroke(0);
-        p5.circle(x, y, minRadi*2);
+        p5.circle(x, y, minRadi*1.65f);
 
-
+        float angleVers = (angFi - angInici) / getNumVersos();
+        float angle = angInici;
+        int numEstrofa = 0;
+        for(Estrofa estrofa : estrofes){
+            float angleEstrofa = angleVers * estrofa.getNumVersos();
+            estrofa.dibuixaEstrofaArc(p5, x, y, minRadi, maxRadi, angle , angle +  angleEstrofa, mitjanaPoemari, maxParaulesVers, colorEstrofa[numEstrofa], colorVers);
+            angle += (angleEstrofa);
+            numEstrofa++;
+        }
         p5.popStyle();
+
+        // Dibuixa la mitjana  a nivell de poemari
+        p5.noFill(); p5.stroke(255, 0, 0);
+        float radiMitjana = p5.map(mitjanaPoemari, 0, maxParaulesVers, maxRadi, maxRadi + 300);
+        p5.beginShape();
+        for(int i=0; i<=25; i++){
+            float angleV = p5.lerp(angInici, angFi, i/25f);
+            p5.vertex(x + radiMitjana*cos(angleV), y + radiMitjana*sin(angleV));
+        }
+        p5.endShape();
+
+
+        // Dibuixa la mitjana a nivell de poema
+        float mitjanaPoema = getMitjanaParaulesVersPoema();
+        p5.fill(0, 0, 255);
+        p5.text(mitjanaPoema+ " paraules / vers (poema)", 100, p5.height-100);
+
+        p5.noFill(); p5.stroke(0, 0, 255);
+        float radiMitjana2 = p5.map(mitjanaPoema, 0, maxParaulesVers, maxRadi, maxRadi + 300);
+        p5.beginShape();
+        for(int i=0; i<=25; i++){
+            float angleV = p5.lerp(angInici, angFi, i/25f);
+            p5.vertex(x + radiMitjana2*cos(angleV), y + radiMitjana2*sin(angleV));
+        }
+        p5.endShape();
 
     }
 

@@ -4,6 +4,10 @@ import processing.core.PApplet;
 
 import java.util.ArrayList;
 
+import static processing.core.PApplet.cos;
+import static processing.core.PApplet.sin;
+import static processing.core.PConstants.PI;
+
 public class Estrofa {
 
     int numero;
@@ -52,7 +56,7 @@ public class Estrofa {
         return versos;
     }
 
-    public float calcMaxParaulesVersos(){
+    public float getMaxParaulesVersos(){
         float maxParaules = 0;
         for(Vers vers : getVersos()){
             if(vers.getNumParaules() > maxParaules){
@@ -60,6 +64,14 @@ public class Estrofa {
             }
         }
         return maxParaules;
+    }
+
+    public float getMitjanaParaulesVersosEstrofa(){
+        float numParaules = 0;
+        for(Vers vers : getVersos()){
+            numParaules += vers.getNumParaules();
+        }
+        return numParaules / getNumVersos();
     }
 
     public void printEstrofa(){
@@ -80,13 +92,13 @@ public class Estrofa {
 
         // Número d'estrofa
         p5.fill(colorEstrofa);
-        p5.textSize(28); p5.textAlign(p5.RIGHT, p5.CENTER);
-        p5.text(numero, x-10, y + h/2);
+        p5.textSize(28); p5.textAlign(p5.RIGHT, p5.BOTTOM);
+        p5.text("E"+numero, x-10, y + h/2 - 5);
 
         // Quantitat
         p5.fill(colorEstrofa);
-        p5.textSize(12); p5.textAlign(p5.CENTER, p5.BOTTOM);
-        p5.text(quantitat, x + w/2 , y + h + 18);
+        p5.textSize(12); p5.textAlign(p5.RIGHT, p5.TOP);
+        p5.text(quantitat, x -10 , y + h/2 + 5);
 
         p5.popStyle();
     }
@@ -106,5 +118,57 @@ public class Estrofa {
             vers.dibuixaVersLinea(p5, x + marge , y + h*numVers, gruixa, wLinia, w, colorLina, vers.getNumParaules());
             numVers++;
         }
+    }
+
+
+    public void dibuixaEstrofaArc(PApplet p5, float x, float y, float radiMin, float radiMax, float angleMin, float angleMax, float mitjanaParaules, int maxParaulesVersPoema, int colorEstrofa, int colorVers){
+
+        float migAngle = (angleMin + angleMax) / 2f;
+        float mifRadi = (radiMin + radiMax) /2f;
+        float margeAng = PI/100f;
+        float numPasses = 20;
+
+        p5.pushStyle();
+            p5.fill(colorEstrofa);
+            p5.strokeWeight(1.5f);
+            p5.beginShape();
+                for(float i=0; i<=numPasses; i++) {
+                    float angle = p5.lerp(angleMin + margeAng/2f, angleMax - margeAng/2f, i/numPasses);
+                    p5.vertex(x + radiMin * cos(angle), y + radiMin*sin(angle));
+                }
+
+                for(float i=0; i<=numPasses; i++) {
+                    float angle = p5.lerp(angleMax - margeAng/2f, angleMin + margeAng/2f, i/numPasses);
+                    p5.vertex(x + radiMax * cos(angle), y + radiMax*sin(angle));
+                }
+            p5.endShape(p5.CLOSE);
+            p5.fill(0); p5.textAlign(p5.CENTER, p5.CENTER);
+            p5.text(numero, x + mifRadi * cos(migAngle), y + mifRadi*sin(migAngle));
+
+            for(Vers vers : getVersos()){
+                float angle = (angleMax + angleMin)/2f;
+                if(getPrimerVersEstrofa() != getDarrerVersEstrofa()) {
+                    angle = p5.map(vers.numVers, getPrimerVersEstrofa(), getDarrerVersEstrofa(), angleMin + margeAng / 2f, angleMax - margeAng / 2f);
+                }
+                float radiQuant = p5.map(vers.getNumParaules(), 0, maxParaulesVersPoema, 0, 300);
+                float gruixa = vers.getNumParaules() >= mitjanaParaules ? 2.5f : 1f;
+                int colorRadi = vers.getNumParaules() >= mitjanaParaules ? p5.color(0) : colorVers;
+                vers.dibuixaVersRadial(p5, x, y, radiMax, angle, radiQuant, gruixa, colorRadi, vers.getNumParaules());
+            }
+
+
+            float mitjanaEstrofa = getMitjanaParaulesVersosEstrofa();
+
+
+            p5.noFill(); p5.stroke(0, 255, 0);
+            float radiMitjana2 = p5.map(mitjanaEstrofa, 0, maxParaulesVersPoema, radiMax, radiMax + 300);
+            p5.beginShape();
+            for(int i=0; i<=25; i++){
+                float angleV = p5.lerp(angleMin, angleMax, i/25f);
+                p5.vertex(x + radiMitjana2*cos(angleV), y + radiMitjana2*sin(angleV));
+            }
+            p5.endShape();
+
+        p5.popStyle();
     }
 }

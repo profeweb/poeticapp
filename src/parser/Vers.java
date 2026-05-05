@@ -4,6 +4,9 @@ import processing.core.PApplet;
 
 import java.util.ArrayList;
 
+import static processing.core.PApplet.cos;
+import static processing.core.PApplet.sin;
+
 public class Vers {
 
     int numVers;
@@ -104,6 +107,30 @@ public class Vers {
             p5.fill(color);
             p5.textSize(12); p5.textAlign(p5.RIGHT, p5.CENTER);
             p5.text(quantitat, x + w - 30, y);
+        p5.popStyle();
+    }
+
+    public void dibuixaVersRadial(PApplet p5, float x, float  y, float radiShift, float angle, float radiQuant, float gruixa, int color, int quantitat){
+        p5.pushStyle();
+
+            // Línia
+            p5.stroke(color);
+            p5.strokeWeight(gruixa);
+            p5.strokeCap(p5.ROUND);
+            p5.line(x +  radiShift*cos(angle), y +  radiShift*sin(angle), x +  (radiShift + radiQuant)*cos(angle), y +  (radiShift + radiQuant)*sin(angle));
+
+            // Núm. vers
+            if(numVers%5==0) {
+                p5.fill(0);
+                p5.textSize(12);
+                p5.textAlign(p5.CENTER, p5.CENTER);
+                p5.text(numVers, x +  (radiShift - 15)*cos(angle), y +  (radiShift -15)*sin(angle));
+            }
+
+            // Quantitat
+            p5.fill(color);
+            p5.textSize(12); p5.textAlign(p5.RIGHT, p5.CENTER);
+            p5.text(quantitat, x +  (radiShift + radiQuant + 15)*cos(angle), y +  (radiShift + radiQuant + 15)*sin(angle));
         p5.popStyle();
     }
 
