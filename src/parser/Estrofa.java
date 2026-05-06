@@ -98,7 +98,7 @@ public class Estrofa {
         // Quantitat
         p5.fill(colorEstrofa);
         p5.textSize(12); p5.textAlign(p5.RIGHT, p5.TOP);
-        p5.text(quantitat, x -10 , y + h/2 + 5);
+        p5.text(quantitat, x -15 , y + h/2 + 5);
 
         p5.popStyle();
     }
