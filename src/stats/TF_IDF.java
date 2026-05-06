@@ -1,7 +1,5 @@
 package stats;
 
-import processing.core.PApplet;
-
 import java.io.File;
 import java.util.ArrayList;
 
@@ -14,7 +12,7 @@ public class TF_IDF {
     // Freqüència d'un terme t en un document d: tf(t, d)
     public static float termFreq(String term, File document){
         WordCounter wc = new WordCounter();
-        wc.processDocument(document);
+        wc.processaPoema(document);
         return wc.getCount(term) / wc.getNumTerms();
     }
 
@@ -22,7 +20,7 @@ public class TF_IDF {
     public static float inverseDocFreq(String term, ArrayList<File> documents){
         WordCounter wc = new WordCounter();
         for(File document : documents) {
-            wc.processDocument(document);
+            wc.processaPoema(document);
         }
         int N = wc.getNumDocuments();
         int n = wc.getNumDocumentsContain(term);

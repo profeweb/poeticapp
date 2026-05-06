@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/stats/StopWordsCatala.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stats/TF_IDF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stats/WordCounter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stats/test/Test_TF_IDF.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stats/TermeFreq.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stats/test/Test_TF_IDF_2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Estrofa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Estrofa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema02.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema03.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema04.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema04.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema05.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema05.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stats/StopWordsCatala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/StopWordsCatala.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stats/TF_IDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/TF_IDF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stats/WordCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/WordCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_TF_IDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/test/Test_TF_IDF.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +207,8 @@
       <workItem from="1777960971564" duration="15517000" />
       <workItem from="1777979641830" duration="1952000" />
       <workItem from="1777987545097" duration="14684000" />
-      <workItem from="1778047355475" duration="12316000" />
+      <workItem from="1778047355475" duration="12450000" />
+      <workItem from="1778076980286" duration="6296000" />
     </task>
     <task id="LOCAL-00001" summary="Inicial">
       <created>1772797946480</created>
@@ -511,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1778006986898</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Inicial">
+      <created>1778069437579</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1778069437579</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

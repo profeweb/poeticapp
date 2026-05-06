@@ -160,7 +160,7 @@ public class StopWordsCatala {
             "prop", "lluny", "amunt", "avall", "dins", "fora",
             "davant", "darrere", "dalt", "baix",
             // Temps
-            "ara", "avui", "ahir", "demà", "sempre", "mai",
+            "ara", "avui", "ahir", "demà", "sempre", "mai", "abans", "després",
             "aviat", "tard", "ja", "encara", "tot just",
             "sovint", "de vegades", "a vegades", "ben aviat",
             // Mode
@@ -200,7 +200,7 @@ public class StopWordsCatala {
             // Fer (auxiliar perifràstic)
             "vaig", "vas", "va", "vam", "vau", "van",
             // Dir
-            "dir", "dic", "diu", "dit"
+            "dir", "dic", "diu", "dit", "deien", "diuen"
         ));
     }
 
