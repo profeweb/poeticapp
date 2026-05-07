@@ -1,0 +1,18 @@
+TERME(s): estim, estima, estimar
+NUM CORPUS: 83
+POEMARI biografia : 17
+4: 3, 6: 1, 7: 2, 8: 1, 12: 10, 
+POEMARI el pis de la badia : 13
+5: 1, 6: 7, 22: 1, 24: 1, 25: 1, 27: 1, 28: 1, 
+POEMARI la bellesa de l'home : 8
+5: 1, 7: 1, 12: 3, 13: 3, 
+POEMARI llibre de benaventurances : 18
+1: 5, 3: 1, 5: 7, 15: 1, 20: 1, 22: 1, 24: 2, 
+POEMARI parabola i cla de la cosa humana : 9
+5: 1, 8: 2, 11: 1, 13: 5, 
+POEMARI poemes a nai : 16
+1: 4, 3: 3, 5: 1, 8: 2, 9: 1, 11: 4, 13: 1, 
+POEMARI poemes de l'enyorament : 1
+1: 1, 
+POEMARI poemes ocasionals : 1
+1: 1, 

@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/stats/test/Test_WordSearch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stats/test/Test_Frequencia_Termes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stats/test/Test_WordSearch_2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema05.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema05.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stats/StopWordsCatala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/StopWordsCatala.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stats/TF_IDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/TF_IDF.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stats/WordCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/WordCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_TF_IDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/test/Test_TF_IDF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_TF_IDF_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/test/Test_TF_IDF_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_WordSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/test/Test_WordSearch.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,13 +55,13 @@
       <recent name="gui" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test_TF_IDF_2">
-    <configuration name="StopWordsCatala" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="stats.StopWordsCatala" />
+  <component name="RunManager" selected="Application.Test_Frequencia_Termes">
+    <configuration name="Test_Frequencia_Termes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="stats.test.Test_Frequencia_Termes" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="stats.*" />
+          <option name="PATTERN" value="stats.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -96,19 +95,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_Visual01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual01" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="parser.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Test_WordSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="stats.test.Test_WordSearch" />
       <module name="Poetica" />
@@ -122,13 +108,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test_WordSearch_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="stats.test.Test_WordSearch_2" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="stats.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test_TF_IDF_2" />
+        <item itemvalue="Application.Test_Frequencia_Termes" />
+        <item itemvalue="Application.Test_WordSearch_2" />
         <item itemvalue="Application.Test_WordSearch" />
+        <item itemvalue="Application.Test_TF_IDF_2" />
         <item itemvalue="Application.Test_TF_IDF" />
-        <item itemvalue="Application.StopWordsCatala" />
-        <item itemvalue="Application.Test_Visual01" />
       </list>
     </recent_temporary>
   </component>
@@ -206,7 +205,7 @@
       <workItem from="1777987545097" duration="14684000" />
       <workItem from="1778047355475" duration="12450000" />
       <workItem from="1778076980286" duration="11825000" />
-      <workItem from="1778133737801" duration="10214000" />
+      <workItem from="1778133737801" duration="12917000" />
     </task>
     <task id="LOCAL-00001" summary="Inicial">
       <created>1772797946480</created>
@@ -530,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1778083328974</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Inicial">
+      <created>1778146818767</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1778146818767</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

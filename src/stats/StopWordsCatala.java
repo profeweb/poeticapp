@@ -110,7 +110,7 @@ public class StopWordsCatala {
             // Personals forts
             "jo", "tu", "ell", "ella", "nosaltres", "vosaltres", "ells", "elles", "vós", "vostè", "vostès",
             // Pronoms febles (formes plenes i reduïdes)
-            "em", "me", "m", "et", "t", "es", "se", "s", "el", "l", "la", "li", "ens", "us", "els", "les", "en", "hi", "ho", "n",
+            "em", "me", "m", "et", "t", "te", "es", "se", "s", "el", "l", "la", "li", "ens", "us", "els", "les", "en", "hi", "ho", "n",
             // Relatius
             "que", "qui", "on", "qual",
             // Interrogatius / exclamatius

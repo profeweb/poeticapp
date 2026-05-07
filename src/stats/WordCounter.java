@@ -47,7 +47,7 @@ public class WordCounter {
         return false;
     }
 
-    public void processaPoemaStopWords(File file) {
+    public void processaPoema(File file) {
 
         String[] tokens = getTokens(file);
 
@@ -301,7 +301,7 @@ public class WordCounter {
 
     public float termFreqPoema(String term, File poema){
         WordCounter wcd = new WordCounter();
-        wcd.processaPoemaStopWords(poema);
+        wcd.processaPoema(poema);
         return (float)(wcd.getNumOcurrenciesTerme(term)) / wcd.getNumTerms();
     }
 
