@@ -6,12 +6,13 @@ import stats.TermeFreq;
 import stats.WordCounter;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Test_TF_IDF_2 extends PApplet {
 
-    WordCounter wc;
-    ArrayList<File> documents;
+    WordCounter wcCorpus;
 
     public static void main(String[] args) {
         PApplet.main("stats.test.Test_TF_IDF_2");
@@ -23,41 +24,65 @@ public class Test_TF_IDF_2 extends PApplet {
 
     public void setup(){
 
-        documents = new ArrayList<>();
+        try {
 
-        StopWordsCatala sw = new StopWordsCatala();
+            FileWriter myWriter = new FileWriter("C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\keywords.txt");
 
-        wc = new WordCounter();
 
-        String rutaCareptaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\mariera\\";
-        File carpetaArrel = new File(rutaCareptaArrel);
-        File[] subcarpetes = carpetaArrel.listFiles();
+            wcCorpus = new WordCounter();
 
-        if (subcarpetes != null) {
-            for (File poemari : subcarpetes) {
-                System.out.println("POEMARI: " + poemari.getName());
-                File[] poemes = poemari.listFiles();
-                wc.processaPoemari(poemes);
-                /*
-                if (poemes != null) {
-                    for (File poema : poemes) {
-                        documents.add(poema);
-                        System.out.println("Processant " + poema.getAbsoluteFile());
-                        wc.processaPoema(poema.getAbsoluteFile(), sw);
-                    }
+            String rutaCareptaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\mariera\\";
+            File carpetaArrel = new File(rutaCareptaArrel);
+            File[] subcarpetes = carpetaArrel.listFiles();
+
+            if (subcarpetes != null) {
+                for (File poemari : subcarpetes) {
+                    System.out.println("POEMARI: " + poemari.getName() + "********************************************************");
+                    wcCorpus.processaPoemari(poemari);
                 }
-                System.out.println();
-
-                 */
             }
 
+            System.out.println("DOCUMENTS PROCESSATS:" + wcCorpus.getNumPoemaris());
+            System.out.println("TOTAL TOKENS CORPUS:" + wcCorpus.getNumTerms());
+
+            myWriter.append("TOTAL TOKENS CORPUS:" + wcCorpus.getNumTerms()+"\n");
+
+            for(int numPoemari = 0; numPoemari< wcCorpus.getNumPoemaris(); numPoemari++) {
+
+                File poemari = wcCorpus.getPoemariAt(numPoemari);
+                System.out.println("DOCUMENT: "+ poemari.getAbsolutePath() + " "+poemari.getName());
+                myWriter.append("DOCUMENT: "+ poemari.getName()+"\n");
+
+                WordCounter wcPoemari = new WordCounter();
+                wcPoemari.processaPoemari(poemari);
+                System.out.println("TOTAL TOKENS POEMARI:" + wcPoemari.getNumTerms());
+                myWriter.append("TOTAL TOKENS POEMARI:" + wcPoemari.getNumTerms()+"\n");
+
+
+                myWriter.append("KEYWORDS: ");
+
+                TermeFreq[] claus = wcCorpus.getParaulesClauPoemari(10, wcPoemari);
+                for (TermeFreq clau : claus) {
+                    System.out.print("\t " + clau);
+
+                    myWriter.append("\t " + clau +",");
+
+                }
+                System.out.println();
+                myWriter.append("\n");
+            }
+
+            myWriter.close();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
     }
 
     public void draw(){
         background(255);
-        wc.display(this);
+        wcCorpus.display(this);
         noLoop();
     }
 }

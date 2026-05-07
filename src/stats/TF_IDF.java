@@ -12,18 +12,18 @@ public class TF_IDF {
     // Freqüència d'un terme t en un document d: tf(t, d)
     public static float termFreq(String term, File document){
         WordCounter wc = new WordCounter();
-        wc.processaPoema(document);
-        return wc.getCount(term) / wc.getNumTerms();
+        wc.processaPoemaStopWords(document);
+        return wc.getNumOcurrenciesTerme(term) / wc.getNumTerms();
     }
 
     // Freqüència de Document Invers: df(t,D) = log (N/( n))
     public static float inverseDocFreq(String term, ArrayList<File> documents){
         WordCounter wc = new WordCounter();
         for(File document : documents) {
-            wc.processaPoema(document);
+            wc.processaPoemaStopWords(document);
         }
-        int N = wc.getNumDocuments();
-        int n = wc.getNumDocumentsContain(term);
+        int N = wc.getNumPoemes();
+        int n = wc.getNumPoemesContain(term);
         return log (N/( n));
     }
 

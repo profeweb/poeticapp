@@ -1,0 +1,25 @@
+TOTAL TOKENS CORPUS:5678
+DOCUMENT: biografia
+TOTAL TOKENS POEMARI:1645
+KEYWORDS: 	 parlat(0.0010986835),	 plau(9.766076E-4),	 nord(7.3245564E-4),	 vulguem(7.3245564E-4),	 pruneres(7.3245564E-4),	 bat(7.3245564E-4),	 proïsme(7.3245564E-4),	 parlaré(7.3245564E-4),	 greu(7.3245564E-4),	 nins(7.3245564E-4),
+DOCUMENT: el pis de la badia
+TOTAL TOKENS POEMARI:1740
+KEYWORDS: 	 donaria(0.0012207594),	 diré(0.0010364522),	 copa(7.3245564E-4),	 estança(7.3245564E-4),	 social(7.3245564E-4),	 criatura(7.3245564E-4),	 direcció(7.3245564E-4),	 vessen(7.3245564E-4),	 faria(7.3245564E-4),	 tova(7.3245564E-4),
+DOCUMENT: la bellesa de l'home
+TOTAL TOKENS POEMARI:1450
+KEYWORDS: 	 març(0.0010986835),	 digau(0.0010986835),	 silencis(0.0010986835),	 conró(0.0010986835),	 steen(7.3245564E-4),	 esponjar(7.3245564E-4),	 centímetre(7.3245564E-4),	 asfalt(7.3245564E-4),	 guix(7.3245564E-4),	 bou(7.3245564E-4),
+DOCUMENT: llibre de benaventurances
+TOTAL TOKENS POEMARI:1115
+KEYWORDS: 	 estímuls(7.3245564E-4),	 contemplant(7.3245564E-4),	 embruten(7.3245564E-4),	 contrari(7.3245564E-4),	 àcids(7.3245564E-4),	 final(7.3245564E-4),	 series(7.3245564E-4),	 benaventurats(7.3245564E-4),	 lliurat(5.182261E-4),	 semblar(5.182261E-4),
+DOCUMENT: parabola i cla de la cosa humana
+TOTAL TOKENS POEMARI:1467
+KEYWORDS: 	 llop(0.0010986835),	 deixau(9.105389E-4),	 oferia(7.3245564E-4),	 ferestes(7.3245564E-4),	 precisa(7.3245564E-4),	 possibilitats(7.3245564E-4),	 tengueu(7.3245564E-4),	 prohoms(7.3245564E-4),	 comprendre(7.3245564E-4),	 ferotge(7.3245564E-4),
+DOCUMENT: poemes a nai
+TOTAL TOKENS POEMARI:966
+KEYWORDS: 	 desnú(0.0010986835),	 poden(7.3245564E-4),	 japonès(7.3245564E-4),	 invent(7.3245564E-4),	 sents(7.3245564E-4),	 dorm(7.3245564E-4),	 indecència(7.3245564E-4),	 constel(5.182261E-4),	 espiga(5.182261E-4),	 taques(5.182261E-4),
+DOCUMENT: poemes de l'enyorament
+TOTAL TOKENS POEMARI:494
+KEYWORDS: 	 digues(0.001953215),	 mon(0.0015546783),	 andalús(0.0014649113),	 somniar(0.0010986835),	 matava(0.0010986835),	 detureu(0.0010986835),	 rates(0.0010986835),	 siau(0.0010986835),	 barrancs(0.0010986835),	 pinyades(0.0010986835),
+DOCUMENT: poemes ocasionals
+TOTAL TOKENS POEMARI:904
+KEYWORDS: 	 vós(0.0025635948),	 miró(0.0018311391),	 rafael(0.0014649113),	 joan(0.0012207594),	 alberti(0.0010986835),	 éreu(9.766076E-4),	 descolorida(7.3245564E-4),	 catalana(7.3245564E-4),	 novembre(7.3245564E-4),	 teves(7.3245564E-4),

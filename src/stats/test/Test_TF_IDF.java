@@ -12,6 +12,7 @@ public class Test_TF_IDF extends PApplet {
 
     WordCounter wc;
     ArrayList<File> documents;
+    StopWordsCatala sw;
 
     public static void main(String[] args) {
         PApplet.main("stats.test.Test_TF_IDF");
@@ -25,7 +26,7 @@ public class Test_TF_IDF extends PApplet {
 
         documents = new ArrayList<>();
 
-        StopWordsCatala sw = new StopWordsCatala();
+        sw = new StopWordsCatala();
 
         wc = new WordCounter();
 
@@ -41,7 +42,7 @@ public class Test_TF_IDF extends PApplet {
                     for (File poema : poemes) {
                         documents.add(poema);
                         System.out.println("Processant " + poema.getAbsoluteFile());
-                        wc.processaPoema(poema.getAbsoluteFile(), sw);
+                        wc.processaPoemaStopWords(poema.getAbsoluteFile(), sw);
                     }
                 }
                 System.out.println();
@@ -64,7 +65,6 @@ public class Test_TF_IDF extends PApplet {
                 boolean conte = wc.contains(terme, documentConcret);
                 System.out.println(i + ": " + terme + "(" + wc.getCount(terme) + ") conté:" + conte + ", tf: " + tf + ", tfidf: " + tfidf);
             }
-
              */
 
             /*
@@ -72,11 +72,10 @@ public class Test_TF_IDF extends PApplet {
             System.out.println("Num tortova" + numTortova);
             boolean bTortova = wc.contains("Tortova", documentConcret);
             System.out.println("Conté tortova=" + bTortova);
-
              */
 
             System.out.println("PARAULES CLAU ("+numDocument+"): ");
-            TermeFreq[] claus = wc.getParaulesClauStopWords(10, documentConcret);
+            TermeFreq[] claus = wc.getParaulesClauPoemaStopWords(10, documentConcret, sw);
             for (TermeFreq clau : claus) {
                 System.out.print("\t " + clau);
             }
