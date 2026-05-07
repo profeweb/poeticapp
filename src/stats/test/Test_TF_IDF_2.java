@@ -1,18 +1,16 @@
 package stats.test;
 
 import processing.core.PApplet;
-import stats.StopWordsCatala;
 import stats.TermeFreq;
-import stats.WordCounter;
+import stats.ComptadorParaules;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Test_TF_IDF_2 extends PApplet {
 
-    WordCounter wcCorpus;
+    ComptadorParaules wcCorpus;
 
     public static void main(String[] args) {
         PApplet.main("stats.test.Test_TF_IDF_2");
@@ -29,7 +27,7 @@ public class Test_TF_IDF_2 extends PApplet {
             FileWriter myWriter = new FileWriter("C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\keywords.txt");
 
 
-            wcCorpus = new WordCounter();
+            wcCorpus = new ComptadorParaules();
 
             String rutaCareptaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\mariera\\";
             File carpetaArrel = new File(rutaCareptaArrel);
@@ -53,7 +51,7 @@ public class Test_TF_IDF_2 extends PApplet {
                 System.out.println("DOCUMENT: "+ poemari.getAbsolutePath() + " "+poemari.getName());
                 myWriter.append("DOCUMENT: "+ poemari.getName()+"\n");
 
-                WordCounter wcPoemari = new WordCounter();
+                ComptadorParaules wcPoemari = new ComptadorParaules();
                 wcPoemari.processaPoemari(poemari);
                 System.out.println("TOTAL TOKENS POEMARI:" + wcPoemari.getNumTerms());
                 myWriter.append("TOTAL TOKENS POEMARI:" + wcPoemari.getNumTerms()+"\n");

@@ -5,11 +5,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class StopWordsCatala {
+public class ParaulesBuidesCatala {
 
     private final Set<String> paraulesBuides;
 
-    public StopWordsCatala() {
+    public ParaulesBuidesCatala() {
         Set<String> conjunt = new HashSet<>();
         inicialitzarArticles(conjunt);
         inicialitzarPreposicions(conjunt);
@@ -30,21 +30,9 @@ public class StopWordsCatala {
         return paraulesBuides;
     }
 
-    public Set<String> ambExtres(List<String> extres) {
-        Set<String> ampliat = new HashSet<>(paraulesBuides);
-        extres.stream()
-              .map(this::normalitza)
-              .forEach(ampliat::add);
-        return Collections.unmodifiableSet(ampliat);
-    }
-
-    public int mida() {
+    public int getNumParaulesBuides() {
         return paraulesBuides.size();
     }
-
-    // -------------------------------------------------------------------------
-    // Inicialització per categories
-    // -------------------------------------------------------------------------
 
     /** Articles determinats i indeterminats (formes simples i contractes). */
     private void inicialitzarArticles(Set<String> s) {
@@ -110,11 +98,11 @@ public class StopWordsCatala {
             // Personals forts
             "jo", "tu", "ell", "ella", "nosaltres", "vosaltres", "ells", "elles", "vós", "vostè", "vostès",
             // Pronoms febles (formes plenes i reduïdes)
-            "em", "me", "m", "et", "t", "te", "es", "se", "s", "el", "l", "la", "li", "ens", "us", "els", "les", "en", "hi", "ho", "n",
+            "em", "me", "m", "et", "t", "te", "es", "se", "s", "el", "l", "la", "li", "ens", "us", "els", "les", "en", "hi", "ho", "n", "ne", "vos", "nos",
             // Relatius
             "que", "qui", "on", "qual",
             // Interrogatius / exclamatius
-            "què", "qui", "on", "com", "quan", "quant", "quants", "quanta", "quantes",
+            "què", "qui", "on", "com", "quan", "quant", "quants", "quanta", "quantes", "quin", "quina", "quins", "quines",
             // Indefinits pronominats freqüents
             "res", "ningú", "algú", "alguna", "algunes", "alguns", "tothom", "cadascú", "cadascuna"
         ));
@@ -184,11 +172,11 @@ public class StopWordsCatala {
             // Ser / ésser
             "soc", "ets", "és", "som", "sou", "són",
             "era", "eres", "érem", "éreu", "eren",
-            "fer", "faig", "fa", "fas", "fan", "fui", "fores", "fou", "fórem", "fóreu", "foren", "fet",
+            "fer", "faig", "fa", "fas", "fan", "fui", "fores", "fou", "fórem", "fóreu", "foren", "fet", "fos", "feim",
             "sigui", "siguis", "siguem", "sigueu", "siguin",
             "ser", "ésser", "estat", "estada",
             // Estar
-            "estic", "estàs", "està", "estem", "esteu", "estan",
+            "estic", "estàs", "està", "estem", "estam", "esteu", "estau", "estan",
             "estava", "estaves", "estàvem", "estàveu", "estaven",
             "estar",
             // Tenir
@@ -204,48 +192,11 @@ public class StopWordsCatala {
         ));
     }
 
-    // -------------------------------------------------------------------------
-    // Utilitats internes
-    // -------------------------------------------------------------------------
 
-    /**
-     * Normalitza un token: minúscules i eliminació d'espais superflus.
-     * No elimina diacrítics catalans (accent greu/agut, trema, punt volat)
-     * perquè el català els usa amb valor fonèmic distintiu.
-     */
     private String normalitza(String token) {
         return token.strip().toLowerCase();
     }
 
-    // -------------------------------------------------------------------------
-    // Programa de prova mínim
-    // -------------------------------------------------------------------------
 
-    public static void main(String[] args) {
-        StopWordsCatala sw = new StopWordsCatala();
-
-        System.out.println("=== StopWordsCatala ===");
-        System.out.println("Total paraules buides carregades: " + sw.mida());
-        System.out.println();
-
-        String[] mostres = {
-            "el", "la", "amor", "llum", "de", "silenci",
-            "però", "i", "mar", "per", "ànima", "que",
-            "va", "hem", "ha", "cantar"
-        };
-
-        System.out.printf("%-15s %-10s%n", "Token", "Ignorar?");
-        System.out.println("-".repeat(27));
-        for (String token : mostres) {
-            System.out.printf("%-15s %-10s%n",
-                token,
-                sw.esParaulaBuida(token) ? "✓ sí" : "✗ no");
-        }
-
-        // Exemple d'extensió amb paraules específiques del corpus
-        List<String> extres = List.of("oh", "ah", "ai");
-        Set<String> ampliat = sw.ambExtres(extres);
-        System.out.println("\nConjunt ampliat amb interjeccions: " + ampliat.size() + " paraules");
-    }
 
 }

@@ -1,7 +1,7 @@
 package stats.test;
 
 import processing.core.PApplet;
-import stats.WordCounter;
+import stats.ComptadorParaules;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Test_WordSearch extends PApplet {
 
-    WordCounter wcCorpus;
+    ComptadorParaules wcCorpus;
 
     String rutaCarpetaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\mariera\\";
     String rutaFitxerSortida = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\";
@@ -25,7 +25,7 @@ public class Test_WordSearch extends PApplet {
     public void setup() {
 
         String termeCerca = "home";
-        wcCorpus = new WordCounter();
+        wcCorpus = new ComptadorParaules();
 
         try {
 
@@ -52,7 +52,7 @@ public class Test_WordSearch extends PApplet {
                 File poemari = wcCorpus.getPoemariAt(numPoemari);
                 System.out.println("POEMARI: " + poemari.getAbsolutePath() + " " + poemari.getName());
 
-                WordCounter wcPoemari = new WordCounter();
+                ComptadorParaules wcPoemari = new ComptadorParaules();
                 wcPoemari.processaPoemari(poemari);
                 int numVegadesPoemari = wcPoemari.getNumOcurrenciesTermes(termeCerca);
                 System.out.println("NUM POEMARI: " + numVegadesPoemari);
@@ -62,7 +62,7 @@ public class Test_WordSearch extends PApplet {
                     File[] poemes = poemari.listFiles();
                     int np = 1;
                     for (File poema : poemes) {
-                        WordCounter wcPoema = new WordCounter();
+                        ComptadorParaules wcPoema = new ComptadorParaules();
                         wcPoema.processaPoema(poema);
                         int numVegadesPoema = wcPoema.getNumOcurrenciesTermes(termeCerca);
                         if (numVegadesPoema > 0) {

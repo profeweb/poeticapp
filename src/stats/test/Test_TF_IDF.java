@@ -1,18 +1,18 @@
 package stats.test;
 
 import processing.core.PApplet;
-import stats.StopWordsCatala;
+import stats.ParaulesBuidesCatala;
 import stats.TermeFreq;
-import stats.WordCounter;
+import stats.ComptadorParaules;
 
 import java.io.File;
 import java.util.ArrayList;
 
 public class Test_TF_IDF extends PApplet {
 
-    WordCounter wc;
+    ComptadorParaules wc;
     ArrayList<File> documents;
-    StopWordsCatala sw;
+    ParaulesBuidesCatala sw;
 
     public static void main(String[] args) {
         PApplet.main("stats.test.Test_TF_IDF");
@@ -26,9 +26,9 @@ public class Test_TF_IDF extends PApplet {
 
         documents = new ArrayList<>();
 
-        sw = new StopWordsCatala();
+        sw = new ParaulesBuidesCatala();
 
-        wc = new WordCounter();
+        wc = new ComptadorParaules();
 
         String rutaCareptaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\mariera\\";
         File carpetaArrel = new File(rutaCareptaArrel);
@@ -42,7 +42,7 @@ public class Test_TF_IDF extends PApplet {
                     for (File poema : poemes) {
                         documents.add(poema);
                         System.out.println("Processant " + poema.getAbsoluteFile());
-                        wc.processaPoemaStopWords(poema.getAbsoluteFile(), sw);
+                        wc.processaPoemaParaulesBuides(poema.getAbsoluteFile(), sw);
                     }
                 }
                 System.out.println();
@@ -75,7 +75,7 @@ public class Test_TF_IDF extends PApplet {
              */
 
             System.out.println("PARAULES CLAU ("+numDocument+"): ");
-            TermeFreq[] claus = wc.getParaulesClauPoemaStopWords(10, documentConcret, sw);
+            TermeFreq[] claus = wc.getParaulesClauPoemaParaulesBuides(10, documentConcret, sw);
             for (TermeFreq clau : claus) {
                 System.out.print("\t " + clau);
             }

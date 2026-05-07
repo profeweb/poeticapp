@@ -1,16 +1,16 @@
 package stats.test;
 
 import processing.core.PApplet;
-import stats.StopWordsCatala;
-import stats.WordCounter;
+import stats.ParaulesBuidesCatala;
+import stats.ComptadorParaules;
 
 import java.io.File;
 import java.util.List;
 
 public class Test_Frequencia_Termes extends PApplet {
 
-    WordCounter wc;
-    StopWordsCatala sw;
+    ComptadorParaules wc;
+    ParaulesBuidesCatala sw;
 
     public static void main(String[] args) {
         PApplet.main("stats.test.Test_Frequencia_Termes");
@@ -22,9 +22,9 @@ public class Test_Frequencia_Termes extends PApplet {
 
     public void setup(){
 
-        sw = new StopWordsCatala();
+        sw = new ParaulesBuidesCatala();
 
-        wc = new WordCounter();
+        wc = new ComptadorParaules();
 
         String rutaCareptaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\mariera\\";
         File carpetaArrel = new File(rutaCareptaArrel);
@@ -39,7 +39,7 @@ public class Test_Frequencia_Termes extends PApplet {
                 if (poemes != null) {
                     for (File poema : poemes) {
                         System.out.println("Processant " + poema.getAbsoluteFile());
-                        wc.processaPoemaStopWords(poema.getAbsoluteFile(), sw);
+                        wc.processaPoemaParaulesBuides(poema.getAbsoluteFile(), sw);
                         numDocuments++;
                     }
                 }
