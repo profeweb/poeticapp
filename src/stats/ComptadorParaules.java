@@ -487,4 +487,37 @@ public class ComptadorParaules {
         }
         return termesFreqs;
     }
+
+
+    // Cerques
+
+    public ArrayList<String> termesComencenAmb(String prefix){
+        ArrayList<String> termesPrefix = new ArrayList<>();
+        for(String terme : getTermes()){
+            if(terme.startsWith(prefix.toLowerCase())){
+                termesPrefix.add(terme);
+            }
+        }
+        return termesPrefix;
+    }
+
+    public ArrayList<String> termesAcabenAmb(String sufix){
+        ArrayList<String> termesPrefix = new ArrayList<>();
+        for(String terme : getTermes()){
+            if(terme.endsWith(sufix.toLowerCase())){
+                termesPrefix.add(terme);
+            }
+        }
+        return termesPrefix;
+    }
+
+    public ArrayList<String> termesContenen(String afix){
+        ArrayList<String> termesPrefix = new ArrayList<>();
+        for(String terme : getTermes()){
+            if(terme.contains(afix.toLowerCase())){
+                termesPrefix.add(terme);
+            }
+        }
+        return termesPrefix;
+    }
 }

@@ -31,7 +31,7 @@ public class Test_Nigul_Paraules_Poemari extends PApplet {
 
         wc = new ComptadorParaules();
 
-        String rutaPoemari = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\mariera\\poemes de l'enyorament\\";
+        String rutaPoemari = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\mariera\\llibre de benaventurances\\";
         File carpetaPoemari = new File(rutaPoemari);
         File[] poemes = carpetaPoemari.listFiles();
 
@@ -242,7 +242,7 @@ public class Test_Nigul_Paraules_Poemari extends PApplet {
 
     public void draw(){
         background(255);
-        drawWordCloud(termsFreqs, 100,24, 120);
+        drawWordCloud(termsFreqs, 150,24, 120);
         noLoop();
     }
 }

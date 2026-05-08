@@ -24,7 +24,7 @@ public class Test_WordSearch extends PApplet {
 
     public void setup() {
 
-        String termeCerca = "home";
+        String termeCerca = "cos";
         wcCorpus = new ComptadorParaules();
 
         try {
