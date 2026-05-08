@@ -159,12 +159,12 @@ public class Estrofa {
                 float radiQuant = p5.map(vers.getNumParaules(), 0, maxParaulesVersPoema, 0, 300);
                 float gruixa = vers.getNumParaules() >= mitjanaParaules ? 2.5f : 1f;
                 int colorRadi = vers.getNumParaules() >= mitjanaParaules ? p5.color(0) : colorVers;
+                if(vers.getNumParaules()==1){ colorRadi = p5.color(255); }
                 vers.dibuixaVersRadial(p5, x, y, radiMax, angle, radiQuant, gruixa, colorRadi, vers.getNumParaules());
             }
 
 
             float mitjanaEstrofa = getMitjanaParaulesVersosEstrofa();
-
 
             p5.noFill(); p5.stroke(0, 255, 0);
             float radiMitjana2 = p5.map(mitjanaEstrofa, 0, maxParaulesVersPoema, radiMax, radiMax + 300);
@@ -177,4 +177,5 @@ public class Estrofa {
 
         p5.popStyle();
     }
+
 }

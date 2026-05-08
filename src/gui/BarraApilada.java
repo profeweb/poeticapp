@@ -24,7 +24,7 @@ public class BarraApilada extends Barra{
 
         float percX = this.x + this.w/2;
         float percY = this.y + this.h/2 + 20;
-        String percentage = p5.nf(this.percentatge, 2, 2);
+        String percentage = p5.nf(this.percentatge * 100, 2, 2);
         p5.fill(0); p5.textAlign(p5.CENTER); p5.textSize(18);
         p5.text(percentage+"%", percX, percY);
 

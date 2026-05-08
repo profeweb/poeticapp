@@ -40,17 +40,19 @@ public class DiagramaBarresApilat extends DiagramaApilat{
     // Dibuixa el Diagrama de Barres
 
     public void display(PApplet p5){
+
+        p5.pushStyle();
+
         for(int pila = 0; pila<piles.length; pila++){
             for(int categoria=0; categoria<categories.length; categoria++) {
                 barres[pila][categoria].display(p5);
             }
 
-            p5.pushStyle();
             p5.textSize(24); p5.fill(0); p5.textAlign(p5.CENTER);
             p5.text(piles[pila], this.x + wBar/2f + wBar*pila, this.y + this.h + 25);
-            p5.popStyle();
+            p5.text(p5.nf(totalValors[pila], 0, 2), this.x + wBar/2f + wBar*pila, this.y + this.h - (this.totalValors[pila] / this.maxValor) * h - 25);
         }
 
-
+        p5.popStyle();
     }
 }

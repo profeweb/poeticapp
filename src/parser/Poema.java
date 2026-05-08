@@ -147,6 +147,8 @@ public class Poema {
     public void dibuixaEstrofesArc(PApplet p5, float x, float y, float minRadi, float maxRadi, float angInici, float angFi, float mitjanaPoemari, int maxParaulesVers, int[] colorEstrofa, int colorVers){
 
         p5.pushStyle();
+
+        // Número i títol del Poema
         p5.textSize(24); p5.fill(0);
         p5.textAlign(p5.CENTER, p5.CENTER);
         p5.text("P" + numero, x, y - 25);

@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gui/BarraApilada.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/DiagramaApilat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/DiagramaBarresApilat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/test/TestDiagramaBarresApilat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stats/test/Test_Prefixos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/DiagramaLiniesApilat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/test/TestDiagramaLiniesApilat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/ComptadorParaules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/ComptadorParaules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_Nigul_Paraules_Poemari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/test/Test_Nigul_Paraules_Poemari.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_WordSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/test/Test_WordSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/BarraApilada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BarraApilada.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/DiagramaBarresApilat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DiagramaBarresApilat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/PuntDades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/PuntDades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Estrofa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Estrofa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Poema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poema.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +56,7 @@
       <recent name="parser.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestDiagramaBarresApilat">
+  <component name="RunManager" selected="Application.TestDiagramaLiniesApilat">
     <configuration name="TestDiagramaBarres" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.test.TestDiagramaBarres" />
       <module name="Poetica" />
@@ -84,12 +83,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_Nigul_Paraules_Poemari" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="stats.test.Test_Nigul_Paraules_Poemari" />
+    <configuration name="TestDiagramaLiniesApilat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestDiagramaLiniesApilat" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="stats.test.*" />
+          <option name="PATTERN" value="gui.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,11 +124,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestDiagramaLiniesApilat" />
         <item itemvalue="Application.TestDiagramaBarresApilat" />
         <item itemvalue="Application.TestDiagramaBarres" />
         <item itemvalue="Application.Test_Prefixos" />
         <item itemvalue="Application.Test_WordSearch" />
-        <item itemvalue="Application.Test_Nigul_Paraules_Poemari" />
       </list>
     </recent_temporary>
   </component>
@@ -209,14 +208,7 @@
       <workItem from="1778076980286" duration="11825000" />
       <workItem from="1778133737801" duration="14319000" />
       <workItem from="1778168689026" duration="9717000" />
-      <workItem from="1778221016383" duration="2389000" />
-    </task>
-    <task id="LOCAL-00001" summary="Inicial">
-      <created>1772797946480</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1772797946480</updated>
+      <workItem from="1778221016383" duration="6831000" />
     </task>
     <task id="LOCAL-00002" summary="Inicial">
       <created>1772801955291</created>
@@ -554,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1778175788549</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Inicial">
+      <created>1778223431948</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1778223431948</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
