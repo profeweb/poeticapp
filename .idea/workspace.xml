@@ -2,14 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gui/DiagramaLiniesApilat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/test/TestDiagramaLiniesApilat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jsoup_1_21_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/library.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/diec/Categoria.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/diec/DiecWebRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/BarraApilada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BarraApilada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/DiagramaBarresApilat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DiagramaBarresApilat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/PuntDades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/PuntDades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Estrofa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Estrofa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Poema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poetica.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Poetica.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/test/TestDiagramaLiniesApilat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/test/TestDiagramaLiniesApilat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +40,9 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tonim/Desktop/Downloads/claude-code-jetbrains-plugin-0.1.14-beta.zip&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tonim/Documents/libs/jsoup-1.21.2.jar&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -56,7 +57,7 @@
       <recent name="parser.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestDiagramaLiniesApilat">
+  <component name="RunManager" selected="Application.diec.DiecWebRequest">
     <configuration name="TestDiagramaBarres" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.test.TestDiagramaBarres" />
       <module name="Poetica" />
@@ -109,12 +110,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_WordSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="stats.test.Test_WordSearch" />
+    <configuration name="diec.DiecWebRequest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="diec.DiecWebRequest" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="stats.test.*" />
+          <option name="PATTERN" value="diec.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,11 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.diec.DiecWebRequest" />
         <item itemvalue="Application.TestDiagramaLiniesApilat" />
         <item itemvalue="Application.TestDiagramaBarresApilat" />
         <item itemvalue="Application.TestDiagramaBarres" />
         <item itemvalue="Application.Test_Prefixos" />
-        <item itemvalue="Application.Test_WordSearch" />
       </list>
     </recent_temporary>
   </component>
@@ -208,14 +209,9 @@
       <workItem from="1778076980286" duration="11825000" />
       <workItem from="1778133737801" duration="14319000" />
       <workItem from="1778168689026" duration="9717000" />
-      <workItem from="1778221016383" duration="6831000" />
-    </task>
-    <task id="LOCAL-00002" summary="Inicial">
-      <created>1772801955291</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1772801955291</updated>
+      <workItem from="1778221016383" duration="7836000" />
+      <workItem from="1778256277324" duration="5817000" />
+      <workItem from="1778310038088" duration="1837000" />
     </task>
     <task id="LOCAL-00003" summary="Inicial">
       <created>1772815897617</created>
@@ -553,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1778223431948</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Inicial">
+      <created>1778237744099</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1778237744099</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
