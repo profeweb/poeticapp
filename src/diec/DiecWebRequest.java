@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
 
 public class DiecWebRequest {
 
@@ -16,12 +17,16 @@ public class DiecWebRequest {
     public static void main(String[] args) {
 
         try {
-            String word = "casa";
-            System.out.println("Word ID: " + getWordID(word));
-            System.out.println(getMeaningWord(word));
+            String word = "àcids";
+            //System.out.println("Word ID: " + getWordID(word));
+            //System.out.println(getMeaningWord(word));
+            String primeraLinea = getMeaningWord(word).split("\n")[1];  // Primera acepció
+            System.out.println("PRIMERA LINEA: \n" + primeraLinea);
 
-            Categoria.CategoriaGramatical cg = Categoria.CategoriaGramatical.fromHTML(getMeaningWord(word));
-            System.out.println(cg.getNomCatala());
+            ArrayList<Categoria.CategoriaGramatical> cgs = Categoria.CategoriaGramatical.obteCategoriesDeHTML(primeraLinea);
+            for(Categoria.CategoriaGramatical cg : cgs) {
+                System.out.println(cg.getNomCatala());
+            }
         }
         catch(IOException e){
 
@@ -55,14 +60,66 @@ public class DiecWebRequest {
 
 
             String outputWebWord = response.toString();
-            //System.out.println(outputWebWord);
+            String outputWebWordIndex = response.toString();
+            System.out.println(outputWebWord);
 
-            String keyWord = "GetDefinition('";
-            int indexID = outputWebWord.indexOf(keyWord) + keyWord.length();
-            int indexEndID = outputWebWord.substring(indexID).indexOf("')");
-            String idWord = outputWebWord.substring(indexID, indexID + indexEndID);
-            System.out.println("ID WORD: " + idWord);
-            return idWord;
+            String keyWord = "onclick=\"GetDefinition('";
+            ArrayList<Integer> indexos = new ArrayList<>();
+            int removedChars = 0;
+            while(outputWebWordIndex.indexOf(keyWord)!=-1){
+                int index = outputWebWordIndex.indexOf(keyWord);
+                indexos.add(index +  removedChars);
+                outputWebWordIndex = outputWebWordIndex.substring(index+ keyWord.length());
+                removedChars += index + keyWord.length();
+            }
+            if(indexos.size()>0) {
+                String idWord = null;
+                for (int i = 0; i < indexos.size(); i++) {
+                    String part = outputWebWord.substring(indexos.get(i));
+                    int indexStartWord = part.indexOf(">");
+                    int indexEndWord = part.indexOf("</a>");
+                    String checkWord = part.substring(indexStartWord + 1, indexEndWord).trim();
+                    System.out.println("CHECKING WORD: " + checkWord);
+                    if (checkWord.equals(word)) {
+                        int indexID = indexos.get(i) + keyWord.length();
+                        int indexEndID = outputWebWord.substring(indexID).indexOf("')");
+                        idWord = outputWebWord.substring(indexID, indexID + indexEndID);
+                        System.out.println("ID WORD: " + idWord);
+                        break;
+                    }
+                }
+
+                // Amb superíndexos
+                if (idWord == null) {
+                    //¹
+
+                    for (int i = 0; i < indexos.size(); i++) {
+                        String part = outputWebWord.substring(indexos.get(i));
+                        int indexStartWord = part.indexOf(">");
+                        int indexEndWord = part.indexOf("</a>");
+                        String checkWord = part.substring(indexStartWord + 1, indexEndWord);
+                        System.out.println("CHECKING WORD: " + checkWord);
+                        if (checkWord.equals(word + "¹")) {
+                            int indexID = indexos.get(i) + keyWord.length();
+                            int indexEndID = outputWebWord.substring(indexID).indexOf("')");
+                            idWord = outputWebWord.substring(indexID, indexID + indexEndID);
+                            System.out.println("ID WORD: " + idWord);
+                            break;
+                        }
+                    }
+                }
+
+                // Plurals o derivats
+                if (idWord == null) {
+                    int indexID = indexos.get(0) + keyWord.length();
+                    int indexEndID = outputWebWord.substring(indexID).indexOf("')");
+                    idWord = outputWebWord.substring(indexID, indexID + indexEndID);
+                }
+
+
+                return idWord;
+            }
+            return null;
         }
         else {
             return null;
