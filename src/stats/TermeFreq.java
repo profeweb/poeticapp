@@ -1,6 +1,6 @@
 package stats;
 
-public class TermeFreq {
+public class TermeFreq implements Comparable {
 
     String terme;
     float frequencia;
@@ -21,5 +21,11 @@ public class TermeFreq {
     @Override
     public String toString() {
         return terme + '(' + frequencia + ')';
+    }
+
+    @Override
+    public int compareTo(Object altre) {
+        float freqAltre = ((TermeFreq)altre).getFrequencia();
+        return (int) (this.getFrequencia() - freqAltre);
     }
 }

@@ -1,5 +1,7 @@
 package diec;
 
+import stats.TermeFreq;
+
 import java.util.ArrayList;
 
 public class Categoria {
@@ -71,7 +73,7 @@ public class Categoria {
         }
 
         // Retorna categoria a partir de la resposta a la consulta HTTP a la web del DIEC
-        public static CategoriaGramatical obteCategoriaDeHTML(String html) {
+        public static CategoriaGramatical obteCategoriaDelHTML(String html) {
 
             if (html == null || html.isBlank()) return DESCONEGUT;
 
@@ -82,7 +84,7 @@ public class Categoria {
         }
 
         // Retorna categories a partir de la resposta a la consulta HTTP a la web del DIEC
-        public static ArrayList<CategoriaGramatical> obteCategoriesDeHTML(String html) {
+        public static ArrayList<CategoriaGramatical> obteCategoriesDelHTML(String html) {
 
             ArrayList<CategoriaGramatical> categories = new ArrayList<>();
 
@@ -235,7 +237,7 @@ public class Categoria {
         }
 
         // Retorna categoria a partir de la resposta a la consulta HTTP a la web del DIEC
-        public static CategoriaTematica obteCategoriaDeHTML(String html) {
+        public static CategoriaTematica obteCategoriaDelHTML(String html) {
 
             if (html == null || html.isBlank()) return DESCONEGUT;
 
@@ -246,7 +248,7 @@ public class Categoria {
         }
 
         // Retorna categories a partir de la resposta a la consulta HTTP a la web del DIEC
-        public static ArrayList<CategoriaTematica> obteCategoriesDeHTML(String html) {
+        public static ArrayList<CategoriaTematica> obteCategoriesDelHTML(String html) {
 
             ArrayList<CategoriaTematica> categories = new ArrayList<>();
 

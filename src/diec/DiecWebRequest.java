@@ -17,15 +17,27 @@ public class DiecWebRequest {
     public static void main(String[] args) {
 
         try {
-            String word = "àcids";
+            String word = "casa";
             //System.out.println("Word ID: " + getWordID(word));
             //System.out.println(getMeaningWord(word));
-            String primeraLinea = getMeaningWord(word).split("\n")[1];  // Primera acepció
+            String html = getMeaningWord(word);
+            String primeraLinea = html.split("\n")[1];  // Primera acepció
             System.out.println("PRIMERA LINEA: \n" + primeraLinea);
 
-            ArrayList<Categoria.CategoriaGramatical> cgs = Categoria.CategoriaGramatical.obteCategoriesDeHTML(primeraLinea);
+            System.out.println("CATEGORIA GRAMATICAL: ");
+            ArrayList<Categoria.CategoriaGramatical> cgs = Categoria.CategoriaGramatical.obteCategoriesDelHTML(primeraLinea);
             for(Categoria.CategoriaGramatical cg : cgs) {
                 System.out.println(cg.getNomCatala());
+            }
+
+            //System.out.println("CATEGORIA TEMÀTICA: ");
+            //Categoria.CategoriaTematica ct1 = Categoria.CategoriaTematica.obteCategoriaDelHTML(primeraLinea);
+            //System.out.println(ct1.getNomCatala());
+
+            System.out.println("CATEGORIES TEMÀTIQUES: ");
+            ArrayList<Categoria.CategoriaTematica> cts = Categoria.CategoriaTematica.obteCategoriesDelHTML(primeraLinea);
+            for(Categoria.CategoriaTematica ct : cts) {
+                System.out.println(ct.getNomCatala());
             }
         }
         catch(IOException e){
@@ -37,18 +49,23 @@ public class DiecWebRequest {
 
     private static String getWordID(String word) throws IOException {
 
+        // Dissenya la URL que pot contenir caràcters especials (accents) en format UTF-8
         StringBuilder encodedWord = new StringBuilder(URLEncoder.encode(word, "UTF-8"));
         URL urlWord = new URL(GET_URL_WORD + encodedWord);
         System.out.println(urlWord);
+
+        // Dissenya la petició HTTP
         HttpURLConnection con = (HttpURLConnection) urlWord.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", USER_AGENT);
         con.setRequestProperty("Accept-Charset", "UTF-8");
-
         int responseCode = con.getResponseCode();
+        //System.out.println("GET Response Code :: " + responseCode);
 
-        System.out.println("GET Response Code :: " + responseCode);
+        // Si la resposta a la petició HTPP és un èxit
         if (responseCode == HttpURLConnection.HTTP_OK) { // success
+
+            // Llegeix les línies de la resposta
             BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
             String inputLine;
             StringBuffer response = new StringBuffer();
@@ -63,6 +80,7 @@ public class DiecWebRequest {
             String outputWebWordIndex = response.toString();
             System.out.println(outputWebWord);
 
+            // Cerca les posicions on apareixen les definicions dels termes
             String keyWord = "onclick=\"GetDefinition('";
             ArrayList<Integer> indexos = new ArrayList<>();
             int removedChars = 0;
@@ -72,7 +90,11 @@ public class DiecWebRequest {
                 outputWebWordIndex = outputWebWordIndex.substring(index+ keyWord.length());
                 removedChars += index + keyWord.length();
             }
+
+
             if(indexos.size()>0) {
+
+                // Apareixen més d'un terme (derivats)
                 String idWord = null;
                 for (int i = 0; i < indexos.size(); i++) {
                     String part = outputWebWord.substring(indexos.get(i));
@@ -80,6 +102,8 @@ public class DiecWebRequest {
                     int indexEndWord = part.indexOf("</a>");
                     String checkWord = part.substring(indexStartWord + 1, indexEndWord).trim();
                     System.out.println("CHECKING WORD: " + checkWord);
+
+                    // Comprova que és el terme cercat (i no un derivat).
                     if (checkWord.equals(word)) {
                         int indexID = indexos.get(i) + keyWord.length();
                         int indexEndID = outputWebWord.substring(indexID).indexOf("')");
@@ -89,9 +113,8 @@ public class DiecWebRequest {
                     }
                 }
 
-                // Amb superíndexos
+                // Si no l'ha trobat, ho comprova amb superíndexos
                 if (idWord == null) {
-                    //¹
 
                     for (int i = 0; i < indexos.size(); i++) {
                         String part = outputWebWord.substring(indexos.get(i));
@@ -109,14 +132,12 @@ public class DiecWebRequest {
                     }
                 }
 
-                // Plurals o derivats
+                // Si no l'ha trobat, ho comprova amb plurals o derivats (n'gafa el 1r).
                 if (idWord == null) {
                     int indexID = indexos.get(0) + keyWord.length();
                     int indexEndID = outputWebWord.substring(indexID).indexOf("')");
                     idWord = outputWebWord.substring(indexID, indexID + indexEndID);
                 }
-
-
                 return idWord;
             }
             return null;
@@ -127,16 +148,23 @@ public class DiecWebRequest {
     }
 
     public static String getMeaningWord(String word) throws IOException{
+
+        // Obté l'identificador del terme de cerca
         String idWord = getWordID(word);
+
         if(idWord!=null){
+            // Dissenya la URL i la petició HTTP
             URL url = new URL(GET_URL_ID + idWord);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("GET");
             con.setRequestProperty("User-Agent", USER_AGENT);
             int responseCode = con.getResponseCode();
-
             System.out.println("GET Response Code :: " + responseCode);
+
+            // Si la resposta és d'èxit
             if (responseCode == HttpURLConnection.HTTP_OK) { // success
+
+                // Llegeix la reposta línia per línia
                 BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
                 String inputLine;
                 StringBuffer response = new StringBuffer();
@@ -147,7 +175,7 @@ public class DiecWebRequest {
                 in.close();
 
 
-                // print result
+                // Descarta les línies que no contenen la definició del terme
 
                 String output = response.toString().replace("<br xmlns:fo=\"http://www.w3.org/1999/XSL/Format\">", "\n");
                 int indexStartDefinition = output.indexOf("<div id=\"Definition\" class=\"resultDefinition\">");
