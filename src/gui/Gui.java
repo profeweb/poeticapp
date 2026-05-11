@@ -1,7 +1,12 @@
 package gui;
 
+import parser.Autor;
+import parser.DadesPoemaris;
+import parser.Poemari;
 import processing.core.PApplet;
 import processing.core.PImage;
+
+import java.util.ArrayList;
 
 import static gui.Mides.*;
 
@@ -53,14 +58,20 @@ public class Gui {
     int colorAutor, colorLlibre, colorPoema, colorVisuals;
 
     // Hooks
-    String autorSeleccionat;
+    ArrayList<Autor> autors;
+    ArrayList<Poemari> poemaris;
+    Autor autorSeleccionat;
 
-    public Gui(PApplet p5){
+    public Gui(PApplet p5, ArrayList<Autor> autors){
         this.p5 = p5;
+        this.autors = autors;
+        this.poemaris = autors.get(0).getPoemaris();
+        this.autorSeleccionat = autors.get(0);
         setMedia(p5);
         setElementsGUI();
         setPantalles();
         this.currentPantalla = pantallaInici;
+
     }
 
     public void setMedia(PApplet p5){
@@ -83,7 +94,8 @@ public class Gui {
 
         taulaAutors = new TaulaPaginada(300, 540, 600, 500);
         String[] colsAutors1 = { "Autor", "Any"};
-        String[][] dadesAutors1 = {{"1", "2"}, {"1", "2"}, {"1", "2"},{"1", "2"},{"1", "2"},{"1", "2"},{"1", "2"},{"1", "2"},{"1", "2"},{"1", "2"},{"1", "2"},};
+        String[][] dadesAutors1 = DadesPoemaris.getAutorsInfo(autors);
+        System.out.println("1:?" + dadesAutors1.length);
         float[] midesAutors1 = {75, 25};
         taulaAutors.setTitols(colsAutors1);
         taulaAutors.setDades(dadesAutors1);
@@ -94,8 +106,9 @@ public class Gui {
 
         taulaResumAutor = new TaulaPaginada(300, 540, p5.width-350, 500);
         String[] cols = { "Títol", "Any", "Poemes", "Estrofes", "Versos", "Paraules", "Síl·labes"};
-        String[][] dades = {{"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"}, {"1", "2", "3", "4", "5", "6", "7"},
-        };
+        String[][] dades = DadesPoemaris.getAutorInfo(autorSeleccionat);
+        DadesPoemaris.printArray2D(dades);
+        p5.println("NUM DADES: " +  dades.length + " x " + dades[0].length);
         float[] mides = {40, 10, 10, 10, 10, 10, 10};
         taulaResumAutor.setTitols(cols);
         taulaResumAutor.setDades(dades);
@@ -106,7 +119,8 @@ public class Gui {
 
         taulaLlibres = new TaulaPaginada(950, 540, 920, 500);
         String[] colsTaulaLlibre1 = { "Llibre", "Any", "Poemes", "Autor"};
-        String[][] dadesTaulaLlibre1 = {{"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"}, {"1", "2", "3", "4"},};
+        String[][] dadesTaulaLlibre1 = DadesPoemaris.getLlibresInfo(poemaris);
+
         float[] midesTaulaLlibre1 = {40, 10, 10, 40};
         taulaLlibres.setTitols(colsTaulaLlibre1);
         taulaLlibres.setDades(dadesTaulaLlibre1);

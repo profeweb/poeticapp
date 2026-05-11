@@ -2,10 +2,150 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/diec/ConsultaWebDIEC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/Autor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/amor i Derivats.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/stats/amor i Derivats.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/estimaDerivats.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/stats/estimaDerivats.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/home.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/stats/home.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/keywords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/stats/keywords.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/biografia/poema01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1948)/poema01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/biografia/poema02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1948)/poema02.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/biografia/poema03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1948)/poema03.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/biografia/poema04.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1948)/poema04.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/biografia/poema05.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1948)/poema05.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/biografia/poema06.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1948)/poema06.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/biografia/poema07.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1948)/poema07.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/biografia/poema08.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1948)/poema08.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/biografia/poema09.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1948)/poema09.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/biografia/poema10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1948)/poema10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/biografia/poema11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1948)/poema11.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/biografia/poema12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1948)/poema12.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/biografia/poema13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1948)/poema13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema02.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema03.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema04.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema04.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema05.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema05.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema06.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema06.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema07.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema07.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema08.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema08.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema09.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema09.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema11.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema12.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema14.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema15.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema16.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema17.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema18.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema18.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema19.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema19.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema20.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema20.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema21.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema21.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema22.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema22.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema23.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema23.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema24.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema24.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema25.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema25.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema26.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema26.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema27.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema27.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema28.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema28.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema29.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema29.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/el pis de la badia/poema30.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/el pis de la badia/poema30.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/la bellesa de l'home/poema01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/la bellesa de l'home/poema01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/la bellesa de l'home/poema02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/la bellesa de l'home/poema02.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/la bellesa de l'home/poema03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/la bellesa de l'home/poema03.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/la bellesa de l'home/poema04.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/la bellesa de l'home/poema04.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/la bellesa de l'home/poema05.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/la bellesa de l'home/poema05.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/la bellesa de l'home/poema06.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/la bellesa de l'home/poema06.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/la bellesa de l'home/poema07.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/la bellesa de l'home/poema07.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/la bellesa de l'home/poema08.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/la bellesa de l'home/poema08.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/la bellesa de l'home/poema09.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/la bellesa de l'home/poema09.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/la bellesa de l'home/poema10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/la bellesa de l'home/poema10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/la bellesa de l'home/poema11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/la bellesa de l'home/poema11.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/la bellesa de l'home/poema12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/la bellesa de l'home/poema12.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/la bellesa de l'home/poema13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/la bellesa de l'home/poema13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema02.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema03.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema04.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema04.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema05.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema05.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema06.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema06.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema07.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema07.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema08.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema08.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema09.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema09.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema11.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema12.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema14.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema15.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema15.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema16.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema16.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema17.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema17.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema18.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema18.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema19.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema19.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema20.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema20.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema21.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema21.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema22.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema22.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema23.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema23.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema24.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema24.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema25.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema25.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/llibre de benaventurances/poema26.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/llibre de benaventurances/poema26.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/parabola i cla de la cosa humana/poema01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/parabola i cla de la cosa humana/poema01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/parabola i cla de la cosa humana/poema02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/parabola i cla de la cosa humana/poema02.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/parabola i cla de la cosa humana/poema03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/parabola i cla de la cosa humana/poema03.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/parabola i cla de la cosa humana/poema04.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/parabola i cla de la cosa humana/poema04.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/parabola i cla de la cosa humana/poema05.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/parabola i cla de la cosa humana/poema05.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/parabola i cla de la cosa humana/poema06.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/parabola i cla de la cosa humana/poema06.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/parabola i cla de la cosa humana/poema07.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/parabola i cla de la cosa humana/poema07.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/parabola i cla de la cosa humana/poema08.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/parabola i cla de la cosa humana/poema08.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/parabola i cla de la cosa humana/poema09.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/parabola i cla de la cosa humana/poema09.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/parabola i cla de la cosa humana/poema10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/parabola i cla de la cosa humana/poema10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/parabola i cla de la cosa humana/poema11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/parabola i cla de la cosa humana/poema11.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/parabola i cla de la cosa humana/poema12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/parabola i cla de la cosa humana/poema12.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/parabola i cla de la cosa humana/poema13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/parabola i cla de la cosa humana/poema13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes a nai/poema01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes a nai/poema01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes a nai/poema02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes a nai/poema02.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes a nai/poema03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes a nai/poema03.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes a nai/poema04.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes a nai/poema04.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes a nai/poema05.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes a nai/poema05.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes a nai/poema06.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes a nai/poema06.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes a nai/poema07.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes a nai/poema07.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes a nai/poema08.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes a nai/poema08.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes a nai/poema09.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes a nai/poema09.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes a nai/poema10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes a nai/poema10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes a nai/poema11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes a nai/poema11.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes a nai/poema12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes a nai/poema12.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes a nai/poema13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes a nai/poema13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes de l'enyorament/poema01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes de l'enyorament/poema01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes de l'enyorament/poema02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes de l'enyorament/poema02.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes de l'enyorament/poema03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes de l'enyorament/poema03.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes de l'enyorament/poema04.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes de l'enyorament/poema04.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes de l'enyorament/poema05.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes de l'enyorament/poema05.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes de l'enyorament/poema06.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes de l'enyorament/poema06.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes de l'enyorament/poema07.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes de l'enyorament/poema07.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes de l'enyorament/poema08.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes de l'enyorament/poema08.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes de l'enyorament/poema09.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes de l'enyorament/poema09.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes de l'enyorament/poema10.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes de l'enyorament/poema10.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes de l'enyorament/poema11.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes de l'enyorament/poema11.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes de l'enyorament/poema12.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes de l'enyorament/poema12.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes de l'enyorament/poema13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes de l'enyorament/poema13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes de l'enyorament/poema14.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes de l'enyorament/poema14.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes ocasionals/poema01.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema02.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes ocasionals/poema02.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes ocasionals/poema03.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema04.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes ocasionals/poema04.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/mariera/poemes ocasionals/poema05.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes ocasionals/poema05.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/nai.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/stats/nai.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/vida.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/stats/vida.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/diec/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diec/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/diec/DiecWebRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diec/DiecWebRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/TermeFreq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/TermeFreq.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/diec/DiecWebRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Taula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Taula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Poema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Poemari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poemari.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +186,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tonim\Documents\CODE\Poetica\data\stats" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="gui.test" />
       <recent name="gui" />
@@ -53,9 +196,9 @@
       <recent name="parser.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.diec.DiecWebRequest">
-    <configuration name="TestDIEC2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="diec.TestDIEC2" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="ConsultaWebDIEC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="diec.ConsultaWebDIEC" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
@@ -67,15 +210,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDiagramaBarresApilat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.test.TestDiagramaBarresApilat" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -106,8 +243,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="diec.DiecWebRequest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="diec.DiecWebRequest" />
+    <configuration name="diec.TestDIEC2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="diec.TestDIEC2" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
@@ -121,11 +258,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.diec.DiecWebRequest" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ConsultaWebDIEC" />
         <item itemvalue="Application.Test_Nigul_Paraules_Poemari" />
-        <item itemvalue="Application.TestDIEC2" />
+        <item itemvalue="Application.diec.TestDIEC2" />
         <item itemvalue="Application.TestDiagramaLiniesApilat" />
-        <item itemvalue="Application.TestDiagramaBarresApilat" />
       </list>
     </recent_temporary>
   </component>
@@ -211,14 +348,8 @@
       <workItem from="1778341276619" duration="6781000" />
       <workItem from="1778353352616" duration="662000" />
       <workItem from="1778398207217" duration="3826000" />
-      <workItem from="1778479776530" duration="1708000" />
-    </task>
-    <task id="LOCAL-00005" summary="Inicial">
-      <created>1772825697058</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1772825697058</updated>
+      <workItem from="1778479776530" duration="11231000" />
+      <workItem from="1778496582147" duration="6510000" />
     </task>
     <task id="LOCAL-00006" summary="Inicial">
       <created>1772825862335</created>
@@ -556,7 +687,14 @@
       <option name="project" value="LOCAL" />
       <updated>1778427452667</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Inicial">
+      <created>1778481506538</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1778481506538</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

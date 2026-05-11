@@ -29,12 +29,17 @@ public class Taula extends GuiElement {
     public void setDades(String[][] d){
         this.dadesTaula = d;
         this.numFiles = d.length;
-        if(d.length % (this.numFiles -1)==0){
-            this.numTotalPagines = (d.length / (this.numFiles -1)) -1;
+
+        if(d.length <= this.numFiles){
+            this.numTotalPagines = 1;
+        }
+        else if(d.length % this.numFiles == 0){
+            this.numTotalPagines = (d.length / this.numFiles);
         }
         else {
-            this.numTotalPagines = (d.length / (this.numFiles -1)) ;
+            this.numTotalPagines = (d.length / this.numFiles) + 1 ;
         }
+
         this.numFiles = d.length + 1;
     }
 
@@ -49,7 +54,7 @@ public class Taula extends GuiElement {
     }
 
     public void paginaSeguent(){
-        if(this.paginaActual < this.numTotalPagines){
+        if(this.paginaActual < this.numTotalPagines-1){
             this.paginaActual++;
         }
     }
@@ -99,8 +104,10 @@ public class Taula extends GuiElement {
                     p5.text(titolsTaula[c], xCol + 10, y + (r+1)*rowHeight - 10);
                 }
                 else{
-                    int k = (numFiles -1)* paginaActual + (r-1);
-                    if(k< dadesTaula.length){
+                    int dr = r - 1;
+                    int k = (numFiles - 1) * paginaActual + dr;
+                    if(k < dadesTaula.length && dadesTaula[k][c]!=null){
+                        //System.out.println(k +" : " + c);
                         p5.textFont(fonts.getFontSecundaria());
                         p5.text(dadesTaula[k][c], xCol + 10, y + (r+1)*rowHeight - 10);
                     }
@@ -111,7 +118,7 @@ public class Taula extends GuiElement {
 
         // Informació de la Pàgina
         p5.fill(0);
-        p5.text("Pag: "+(this.paginaActual +1)+" / "+(this.numTotalPagines +1), x, y + h + 50);
+        p5.text("Pag: "+(this.paginaActual +1)+" / "+(this.numTotalPagines), x, y + h + 50);
 
         p5.popStyle();
     }

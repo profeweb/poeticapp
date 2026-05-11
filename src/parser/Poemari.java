@@ -24,10 +24,44 @@ public class Poemari {
 
     public int getNumPoemes(){ return this.poemes.size(); }
 
+    public int getNumEstrofes(){
+        int num = 0;
+        for(Poema poema : poemes){
+            num += poema.getNumEstrofes();
+        }
+        return num;
+    }
+
     public int getNumVersos(){
         int num = 0;
         for(Poema poema : poemes){
             num += poema.getNumVersos();
+        }
+        return num;
+    }
+
+    public int getNumParaules(){
+        int num = 0;
+        for(Poema poema : poemes) {
+            for (Estrofa estrofa : poema.getEstrofes()) {
+                for (Vers vers : estrofa.getVersos()) {
+                    num += vers.getNumParaules();
+                }
+            }
+        }
+        return num;
+    }
+
+    public int getNumSilabes(){
+        int num = 0;
+        for(Poema poema : poemes){
+            for(Estrofa estrofa : poema.getEstrofes()){
+                for(Vers vers : estrofa.getVersos()){
+                    for(Token paraula : vers.getParaules()){
+                        num += ((Paraula) paraula).getNumSilabes();
+                    }
+                }
+            }
         }
         return num;
     }
