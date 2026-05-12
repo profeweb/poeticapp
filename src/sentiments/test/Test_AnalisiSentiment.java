@@ -1,6 +1,7 @@
 package sentiments.test;
 
 import sentiments.AnalisiSentiments;
+import sentiments.DiccionariSentiments;
 import sentiments.TokenAnalitzat;
 import sentiments.VersAnalitzat;
 
@@ -27,71 +28,18 @@ public class Test_AnalisiSentiment {
                         "la llibertat floreix, joia per a tots,\n" +
                         "i la vida és l'única pau del cor.";
 
-        AnalisiSentiments tagger = new AnalisiSentiments();
+        DiccionariSentiments diccionariSentiments = new DiccionariSentiments();
+        diccionariSentiments.imprimeix();
 
-        List<List<VersAnalitzat>> estrofes    = tagger.analitzaPoema(POEMA);
-        List<VersAnalitzat>       totalsVersos = estrofes.stream()
-                .flatMap(Collection::stream)
-                .collect(Collectors.toList());
-
-
-        System.out.println("  Analisi de Sentiments  —  Poesia Catalana (Lexicon-Based)");
-        System.out.printf("  Lexic: %d paraules  |  Negadors: %d  |  Modificadors: %d%n",
-                tagger.lexic.size(), tagger.negadors.size(), tagger.modificadors.size());
-
-
-        System.out.println("[ LEXIC DE POLARITATS (mostra) ]");
-
-        // Paraules molt positives
-        System.out.print("  Molt pos (>=+1.5): ");
-        tagger.lexic.entrySet().stream()
-            .filter(e -> e.getValue() >= 1.5)
-            .sorted((a, b) -> Double.compare(b.getValue(), a.getValue()))
-            .limit(8)
-            .forEach(e -> System.out.printf("%s(%.1f) ", e.getKey(), e.getValue()));
-        System.out.println();
-
-        // Paraules positives
-        System.out.print("  Positiu (+0.5/+1.4): ");
-        tagger.lexic.entrySet().stream()
-            .filter(e -> e.getValue() >= 0.5 && e.getValue() < 1.5)
-            .limit(8)
-            .forEach(e -> System.out.printf("%s(%.1f) ", e.getKey(), e.getValue()));
-        System.out.println();
-
-        // Paraules negatives
-        System.out.print("  Negatiu (-0.5/-1.4): ");
-        tagger.lexic.entrySet().stream()
-            .filter(e -> e.getValue() <= -0.5 && e.getValue() > -1.5)
-            .limit(8)
-            .forEach(e -> System.out.printf("%s(%.1f) ", e.getKey(), e.getValue()));
-        System.out.println();
-
-        // Paraules molt negatives
-        System.out.print("  Molt neg (<=-1.5): ");
-        tagger.lexic.entrySet().stream()
-            .filter(e -> e.getValue() <= -1.5)
-            .sorted(Comparator.comparingDouble(Map.Entry::getValue))
-            .limit(8)
-            .forEach(e -> System.out.printf("%s(%.1f) ", e.getKey(), e.getValue()));
-        System.out.println();
-
-        System.out.print("  Negadors: ");
-        tagger.negadors.forEach(n -> System.out.print(n + " "));
-        System.out.println();
-
-        System.out.print("  Modificadors: ");
-        tagger.modificadors.forEach((k, v) -> System.out.printf("%s(x%.1f) ", k, v));
-        System.out.println("\n");
-
-
+        AnalisiSentiments analisiSentiments = new AnalisiSentiments(diccionariSentiments);
+        analisiSentiments.analitzaPoema(POEMA);
 
 
         System.out.println("[ ANALISI DE SENTIMENT PER VERS ]");
         System.out.printf("  neg <--------- 0 ---------> pos%n%n");
 
         int numEstrofa = 0;
-        for (List<VersAnalitzat> estrofa : estrofes) {
+        for (List<VersAnalitzat> estrofa : analisiSentiments.estrofes) {
             numEstrofa++;
             double mitjaEstrofa = estrofa.stream()
                     .mapToDouble(VersAnalitzat::getPuntuacio).average().orElse(0.0);
@@ -133,12 +81,11 @@ public class Test_AnalisiSentiment {
         }
 
 
-
         System.out.println("[ TAULA DE TOKENS LEXICALS IDENTIFICATS ]");
         System.out.printf("  %-20s  %-6s  %-6s  %-6s  %-14s  %s%n",
             "Token original", "Base", "Factor", "Final", "Rol", "Vers");
 
-        for (VersAnalitzat rv : totalsVersos) {
+        for (VersAnalitzat rv : analisiSentiments.totalsVersos) {
             for (TokenAnalitzat t : rv.getTokens()) {
                 if (t.getRol() == AnalisiSentiments.Rol.NEUTRE) continue;  // oculta els neutres
                 String signe = t.getPuntuacioFinal() >= 0 ? "+" : "";
@@ -157,7 +104,7 @@ public class Test_AnalisiSentiment {
 
         System.out.println("[ TOP PARAULES PER POLARITAT FINAL ]");
 
-        List<TokenAnalitzat> lexicals = totalsVersos.stream()
+        List<TokenAnalitzat> lexicals = analisiSentiments.totalsVersos.stream()
             .flatMap(rv -> rv.getTokens().stream())
             .filter(t -> t.getRol() == AnalisiSentiments.Rol.LEXIC)
             .collect(Collectors.toList());
@@ -190,7 +137,7 @@ public class Test_AnalisiSentiment {
         System.out.println("  Eix X: Puntuacio  |  neg <---[0]---> pos  |  Eix Y: Vers");
         System.out.printf("  %-4s |%-40s| %s%n", "Vers", "     -2   -1    0   +1   +2", "Score");
 
-        for (VersAnalitzat rv : totalsVersos) {
+        for (VersAnalitzat rv : analisiSentiments.totalsVersos) {
             System.out.printf("  V%-2d  |%s| %+.2f  %s%n",
                 rv.getNumero(),
                 barraSentiment(rv.getPuntuacio()),
@@ -201,21 +148,21 @@ public class Test_AnalisiSentiment {
 
         System.out.println("[ RESUM GLOBAL DEL POEMA ]");
 
-        double puntGlobal = totalsVersos.stream()
+        double puntGlobal = analisiSentiments.totalsVersos.stream()
             .mapToDouble(VersAnalitzat::getPuntuacio).average().orElse(0.0);
         AnalisiSentiments.Sentiment sentGlobal = AnalisiSentiments.Sentiment.de(puntGlobal);
 
-        System.out.printf("  Versos analitzats   : %d%n", totalsVersos.size());
+        System.out.printf("  Versos analitzats   : %d%n", analisiSentiments.totalsVersos.size());
         System.out.printf("  Tokens totals       : %d%n",
-            totalsVersos.stream().mapToInt(rv -> rv.getTokens().size()).sum());
+                analisiSentiments.totalsVersos.stream().mapToInt(rv -> rv.getTokens().size()).sum());
         System.out.printf("  Tokens al lexic     : %d%n",
-            totalsVersos.stream().flatMap(rv -> rv.getTokens().stream())
+                analisiSentiments.totalsVersos.stream().flatMap(rv -> rv.getTokens().stream())
                 .filter(t -> t.getRol() == AnalisiSentiments.Rol.LEXIC).count());
         System.out.printf("  Negadors detectats  : %d%n",
-            totalsVersos.stream().flatMap(rv -> rv.getTokens().stream())
+                analisiSentiments.totalsVersos.stream().flatMap(rv -> rv.getTokens().stream())
                 .filter(t -> t.getRol() == AnalisiSentiments.Rol.NEGADOR).count());
         System.out.printf("  Intensificadors     : %d%n",
-            totalsVersos.stream().flatMap(rv -> rv.getTokens().stream())
+                analisiSentiments.totalsVersos.stream().flatMap(rv -> rv.getTokens().stream())
                 .filter(t -> t.getRol() == AnalisiSentiments.Rol.INTENSIFICADOR).count());
         System.out.println();
         System.out.printf("  Puntuacio global    : %+.3f%n", puntGlobal);
@@ -227,7 +174,7 @@ public class Test_AnalisiSentiment {
 
         // Distribució per categoría
         System.out.println("  Distribucio de versos per categoria:");
-        Map<AnalisiSentiments.Sentiment, Long> dist = totalsVersos.stream()
+        Map<AnalisiSentiments.Sentiment, Long> dist = analisiSentiments.totalsVersos.stream()
             .collect(Collectors.groupingBy(VersAnalitzat::getSentiment, Collectors.counting()));
         for (AnalisiSentiments.Sentiment s : AnalisiSentiments.Sentiment.values()) {
             long c = dist.getOrDefault(s, 0L);
@@ -239,18 +186,18 @@ public class Test_AnalisiSentiment {
         }
 
         // Rang de puntuació
-        OptionalDouble max = totalsVersos.stream()
+        OptionalDouble max = analisiSentiments.totalsVersos.stream()
             .mapToDouble(VersAnalitzat::getPuntuacio).max();
-        OptionalDouble min = totalsVersos.stream()
+        OptionalDouble min = analisiSentiments.totalsVersos.stream()
             .mapToDouble(VersAnalitzat::getPuntuacio).min();
         System.out.printf("%n  Vers mes positiu    : %+.2f  (V%d)%n",
             max.orElse(0),
-            totalsVersos.stream()
+                analisiSentiments.totalsVersos.stream()
                 .max(Comparator.comparingDouble(VersAnalitzat::getPuntuacio))
                 .map(VersAnalitzat::getNumero).orElse(0));
         System.out.printf("  Vers mes negatiu    : %+.2f  (V%d)%n",
             min.orElse(0),
-            totalsVersos.stream()
+                analisiSentiments.totalsVersos.stream()
                 .min(Comparator.comparingDouble(VersAnalitzat::getPuntuacio))
                 .map(VersAnalitzat::getNumero).orElse(0));
     }
