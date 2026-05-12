@@ -2,27 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/ner/DiccionariEntitats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ner/EntitatNomenada.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ner/EntradaDiccionari.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ner/EtiquetadorEntitats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ner/TokenEtiquetat.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ner/test/Test_NER_01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sentiments/AnalisiSentiments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sentiments/TokenAnalitzat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sentiments/VersAnalitzat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sentiments/test/Test_AnalisiSentiment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes ocasionals/poema01.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes ocasionals/poema01.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes ocasionals/poema03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes ocasionals/poema03.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes ocasionals/poema04.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/poemes ocasionals/poema04.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/test/Test_Visual01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/test/Test_Visual02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/test/Test_Visual03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual03.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_Frequencia_Termes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/test/Test_Frequencia_Termes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_Nigul_Paraules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/test/Test_Nigul_Paraules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_Nigul_Paraules_Poemari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/test/Test_Nigul_Paraules_Poemari.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_Prefixos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/test/Test_Prefixos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_TF_IDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/test/Test_TF_IDF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_WordSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/test/Test_WordSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_WordSearch_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stats/test/Test_WordSearch_2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,10 +57,23 @@
       <recent name="parser.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test_Prefixos">
+  <component name="RunManager" selected="Application.Test_AnalisiSentiment">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Poetica" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test_AnalisiSentiment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sentiments.test.Test_AnalisiSentiment" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="sentiments.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -107,19 +104,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_Visual02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual02" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="parser.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Test_Visual03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual03" />
       <module name="Poetica" />
@@ -135,11 +119,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test_AnalisiSentiment" />
         <item itemvalue="Application.Test_Prefixos" />
         <item itemvalue="Application.Test_NER_01" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Test_Visual03" />
-        <item itemvalue="Application.Test_Visual02" />
       </list>
     </recent_temporary>
   </component>
@@ -227,14 +211,7 @@
       <workItem from="1778398207217" duration="3826000" />
       <workItem from="1778479776530" duration="11231000" />
       <workItem from="1778496582147" duration="7101000" />
-      <workItem from="1778570690664" duration="8512000" />
-    </task>
-    <task id="LOCAL-00007" summary="Inicial">
-      <created>1773996308543</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1773996308543</updated>
+      <workItem from="1778570690664" duration="10557000" />
     </task>
     <task id="LOCAL-00008" summary="Inicial">
       <created>1774266186942</created>
@@ -572,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1778504239768</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Inicial">
+      <created>1778579555903</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1778579555903</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
