@@ -11,7 +11,7 @@ public class Test_WordSearch_2 extends PApplet {
 
     ComptadorParaules wcCorpus;
 
-    String rutaCarpetaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\mariera\\";
+    String rutaCarpetaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\Miquel Àngel Riera (1930)\\";
     String rutaFitxerSortida = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\";
 
     public static void main(String[] args) {
@@ -24,7 +24,7 @@ public class Test_WordSearch_2 extends PApplet {
 
     public void setup() {
 
-        String[] termesCerca = {"vida"};
+        String[] termesCerca = {"mà", "mans"};
         String nomFitxer = termesCerca[0] + (termesCerca.length > 1 ? " i Derivats" : "");
         System.out.println(nomFitxer);
 

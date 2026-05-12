@@ -511,6 +511,14 @@ public class ComptadorParaules {
         return termesPrefix;
     }
 
+    public ArrayList<String> termesAcabenAmb(String ... sufixos){
+        ArrayList<String> termesSufix = new ArrayList<>();
+        for(String sufix : sufixos){
+            termesSufix.addAll(termesAcabenAmb(sufix));
+        }
+        return termesSufix;
+    }
+
     public ArrayList<String> termesContenen(String afix){
         ArrayList<String> termesPrefix = new ArrayList<>();
         for(String terme : getTermes()){

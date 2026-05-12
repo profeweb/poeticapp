@@ -26,7 +26,7 @@ public class Test_Frequencia_Termes extends PApplet {
 
         wc = new ComptadorParaules();
 
-        String rutaCareptaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\mariera\\";
+        String rutaCareptaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\Miquel Àngel Riera (1930)\\";
         File carpetaArrel = new File(rutaCareptaArrel);
         File[] subcarpetes = carpetaArrel.listFiles();
 

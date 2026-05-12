@@ -15,7 +15,7 @@ public class Test_Visual01 extends PApplet {
 
     public void setup(){
         poemari = new Poemari("Poemes a Nai", "MA Rieria", 1988);
-        poemari.parsePoemes(5, "data/poems/mariera/poemes a nai/");
+        poemari.parsePoemes(5, "data/poems/Miquel Àngel Riera (1930)/poemes a nai/");
     }
 
     public void draw(){

@@ -31,7 +31,7 @@ public class Test_Nigul_Paraules_Poemari extends PApplet {
 
         wc = new ComptadorParaules();
 
-        String rutaPoemari = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\mariera\\llibre de benaventurances\\";
+        String rutaPoemari = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\Miquel Àngel Riera (1930)\\llibre de benaventurances\\";
         File carpetaPoemari = new File(rutaPoemari);
         File[] poemes = carpetaPoemari.listFiles();
 

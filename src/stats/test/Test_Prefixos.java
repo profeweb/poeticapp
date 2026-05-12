@@ -6,6 +6,7 @@ import stats.ParaulesBuidesCatala;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Test_Prefixos extends PApplet {
@@ -27,7 +28,7 @@ public class Test_Prefixos extends PApplet {
 
         wc = new ComptadorParaules();
 
-        String rutaCareptaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\mariera\\";
+        String rutaCareptaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\Miquel Àngel Riera (1930)\\";
         File carpetaArrel = new File(rutaCareptaArrel);
         File[] subcarpetes = carpetaArrel.listFiles();
 
@@ -50,9 +51,18 @@ public class Test_Prefixos extends PApplet {
 
         System.out.println("POEMES PROCESSATS:" +numDocuments);
 
+        System.out.println("\nTERMES AMB PREFIX estim-:" );
         ArrayList<String> termesPrefix = wc.termesComencenAmb("estim");
         for(int i=0; i<termesPrefix.size(); i++){
-            System.out.println(termesPrefix.get(i));
+            System.out.println(termesPrefix.get(i) + "\t");
+        }
+
+        System.out.println("\nTERMES AMB SUFIX -íssim:" );
+        String[] sufixos = {"íssim", "íssima"};
+        ArrayList<String> termesSufix = wc.termesAcabenAmb(sufixos);
+        Collections.sort(termesSufix);
+        for(int i=0; i<termesSufix.size(); i++){
+            System.out.println(termesSufix.get(i));
         }
 
     }

@@ -11,7 +11,7 @@ public class Test_WordSearch extends PApplet {
 
     ComptadorParaules wcCorpus;
 
-    String rutaCarpetaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\mariera\\";
+    String rutaCarpetaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\Miquel Àngel Riera (1930)\\";
     String rutaFitxerSortida = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\";
 
     public static void main(String[] args) {
