@@ -14,37 +14,6 @@ public class ConsultaWebDIEC {
     private static final String GET_URL_TERME   = "https://dlc.iec.cat/Results?DecEntradaText=";
     private static final String GET_URL_ID      = "https://dlc.iec.cat/Results/PrintAccepcio?id=";
 
-    public static void main(String[] args) {
-
-        try {
-
-            String word = "casa";
-            String html = obteSignificatTerme(word);
-            String primeraLinea = html.split("\n")[1];  // Primera acepció
-            System.out.println("PRIMERA LINEA: \n" + primeraLinea);
-
-            System.out.println("CATEGORIA GRAMATICAL: ");
-            ArrayList<Categoria.CategoriaGramatical> cgs = Categoria.CategoriaGramatical.obteCategoriesDelHTML(primeraLinea);
-            for(Categoria.CategoriaGramatical cg : cgs) {
-                System.out.println(cg.getNomCatala());
-            }
-
-            //System.out.println("CATEGORIA TEMÀTICA: ");
-            //Categoria.CategoriaTematica ct1 = Categoria.CategoriaTematica.obteCategoriaDelHTML(primeraLinea);
-            //System.out.println(ct1.getNomCatala());
-
-            System.out.println("CATEGORIES TEMÀTIQUES: ");
-            ArrayList<Categoria.CategoriaTematica> cts = Categoria.CategoriaTematica.obteCategoriesDelHTML(primeraLinea);
-            for(Categoria.CategoriaTematica ct : cts) {
-                System.out.println(ct.getNomCatala());
-            }
-        }
-        catch(IOException e){
-
-        }
-
-    }
-
     private static HttpURLConnection creaConnexioHttpTermeDIEC(String terme) throws IOException{
         StringBuilder termeCodificat = new StringBuilder(URLEncoder.encode(terme, "UTF-8"));
         URL urlTerme = new URL(GET_URL_TERME + termeCodificat);
