@@ -27,11 +27,11 @@ public class MenuApp extends Menu {
         SubMenu sb3 = new SubMenu("Visualitzacions", 10, y + 500, w-20, 350);
         sb3.setColors(colors);
         sb3.setFonts(fonts);
-        sb3.afegirOpcioMenu("Quantitatives", 0x1F600);
-        sb3.afegirOpcioMenu("Qualitatives", 0x1F600);
-        sb3.afegirOpcioMenu("Relacionals", 0x1F600);
-        sb3.afegirOpcioMenu("Temàtiques", 0x1F600);
-        sb3.afegirOpcioMenu("Cronològiques", 0x1F600);
+        sb3.afegirOpcioMenu("Quantitats", 0x1F600);
+        sb3.afegirOpcioMenu("Qualitats", 0x1F600);
+        sb3.afegirOpcioMenu("Relacions", 0x1F600);
+        sb3.afegirOpcioMenu("Temes", 0x1F600);
+        sb3.afegirOpcioMenu("Temps", 0x1F600);
         sb3.afegirOpcioMenu("Altres", 0x1F600);
         subMenus.add(sb3);
 

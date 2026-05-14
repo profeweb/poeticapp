@@ -10,7 +10,6 @@ import java.util.ArrayList;
 public class Main extends PApplet {
 
     Gui gui;
-
     ArrayList<Autor> autors;
 
     public static void main(String[] args) {

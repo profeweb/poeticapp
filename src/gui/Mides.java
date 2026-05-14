@@ -15,7 +15,7 @@ public class Mides {
 
     // BOTONS
     public static final float TEXT_BOTO = 75;
-    public static final float TEXT_ICONA_BOTO = 45;
+    public static final float TEXT_ICONA_BOTO = 25;
     public static final float GRUIX_BOTO = 3.5f;
     public static final float AMPLE_BOTO = 100;
     public static final float AMPLE_BOTO_MENU = 300;
