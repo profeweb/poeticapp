@@ -11,12 +11,12 @@ public class TokenAnalitzat {
 
         public TokenAnalitzat(String original, String forma,
                               double base, double factor, AnalisiSentiments.Rol rol) {
-            this.original      = original;
-            this.forma         = forma;
-            this.puntuacioBase = base;
-            this.factor        = factor;
+            this.original       = original;
+            this.forma          = forma;
+            this.puntuacioBase  = base;
+            this.factor         = factor;
             this.puntuacioFinal = base * factor;
-            this.rol           = rol;
+            this.rol            = rol;
         }
 
         public String getOriginal()       { return original;       }

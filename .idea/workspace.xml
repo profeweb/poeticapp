@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sentiments/DiccionariSentiments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/silabes/ComptadorSilabes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sentiments/AnalisiSentiments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/AnalisiSentiments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sentiments/test/Test_AnalisiSentiment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/test/Test_AnalisiSentiment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ner/test/Test_NER_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/test/Test_NER_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/test/ComptadorSilabesCatala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silabes/test/Test_ComptadorSilabesCatala.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sentiments/TokenAnalitzat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/TokenAnalitzat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +39,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tonim/Documents/libs/jsoup-1.21.2.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tonim/Desktop&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -56,7 +57,7 @@
       <recent name="parser.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test_AnalisiSentiment">
+  <component name="RunManager" selected="Application.silabes.test.Test_ComptadorSilabesCatala">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Poetica" />
@@ -103,12 +104,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_Visual03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual03" />
+    <configuration name="silabes.test.Test_ComptadorSilabesCatala" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="silabes.test.Test_ComptadorSilabesCatala" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="parser.test.*" />
+          <option name="PATTERN" value="silabes.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,11 +119,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.silabes.test.Test_ComptadorSilabesCatala" />
+        <item itemvalue="Application.Test_NER_01" />
         <item itemvalue="Application.Test_AnalisiSentiment" />
         <item itemvalue="Application.Test_Prefixos" />
-        <item itemvalue="Application.Test_NER_01" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Test_Visual03" />
       </list>
     </recent_temporary>
   </component>
@@ -210,14 +211,10 @@
       <workItem from="1778398207217" duration="3826000" />
       <workItem from="1778479776530" duration="11231000" />
       <workItem from="1778496582147" duration="7101000" />
-      <workItem from="1778570690664" duration="13092000" />
-    </task>
-    <task id="LOCAL-00009" summary="Inicial">
-      <created>1774345235198</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1774345235198</updated>
+      <workItem from="1778570690664" duration="13376000" />
+      <workItem from="1778608737206" duration="600000" />
+      <workItem from="1778740100387" duration="6143000" />
+      <workItem from="1778770303389" duration="414000" />
     </task>
     <task id="LOCAL-00010" summary="Inicial">
       <created>1774346524636</created>
@@ -555,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1778581417151</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Inicial">
+      <created>1778584022856</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1778584022856</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
