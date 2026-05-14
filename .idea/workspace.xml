@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/diec/test/Test_DIEC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/diec/ConsultaWebDIEC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diec/ConsultaWebDIEC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Boto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Boto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/BotoIcona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotoIcona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Fonts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Fonts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Mides.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Mides.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/TarjaResum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/TarjaResum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Taula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Taula.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +63,7 @@
       <recent name="parser.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test_DIEC">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Poetica" />
@@ -119,8 +125,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test_DIEC" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Test_DIEC" />
         <item itemvalue="Application.silabes.test.Test_ComptadorSilabesCatala" />
         <item itemvalue="Application.Test_NER_01" />
         <item itemvalue="Application.Test_AnalisiSentiment" />
@@ -214,14 +220,7 @@
       <workItem from="1778570690664" duration="13376000" />
       <workItem from="1778608737206" duration="600000" />
       <workItem from="1778740100387" duration="6143000" />
-      <workItem from="1778770303389" duration="2886000" />
-    </task>
-    <task id="LOCAL-00012" summary="Inicial">
-      <created>1774598888870</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1774598888870</updated>
+      <workItem from="1778770303389" duration="6179000" />
     </task>
     <task id="LOCAL-00013" summary="Inicial">
       <created>1774599812736</created>
@@ -559,7 +558,14 @@
       <option name="project" value="LOCAL" />
       <updated>1778772784013</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Inicial">
+      <created>1778773243990</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1778773243990</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -121,7 +121,7 @@ public class Gui {
         String[] colsTaulaLlibre1 = { "Llibre", "Any", "Poemes", "Autor"};
         String[][] dadesTaulaLlibre1 = DadesPoemaris.getLlibresInfo(poemaris);
 
-        float[] midesTaulaLlibre1 = {50, 10, 10, 30};
+        float[] midesTaulaLlibre1 = {40, 10, 20, 30};
         taulaLlibres.setTitols(colsTaulaLlibre1);
         taulaLlibres.setDades(dadesTaulaLlibre1);
         taulaLlibres.setMidaColumnes(midesTaulaLlibre1);

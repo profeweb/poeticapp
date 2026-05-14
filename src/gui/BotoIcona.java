@@ -27,8 +27,15 @@ public class BotoIcona extends Boto {
         p5.pushStyle();
         p5.fill(255, 100, 100);
         p5.textFont(this.fonts.getFontEmoji());
-        p5.textSize(TEXT_ICONA_BOTO); p5.textAlign(p5.LEFT, p5.CENTER);
-        p5.text(new String(Character.toChars(codiIcona)), this.x + 10, this.y + this.h/2 - 2);
+        p5.textSize(midaTextEmojiBoto);
+        if(textBoto.equals("")) {
+            p5.textAlign(p5.CENTER, p5.CENTER);
+            p5.text(new String(Character.toChars(codiIcona)), this.x + this.w / 2f, this.y + this.h / 2 - 2);
+        }
+        else {
+            p5.textAlign(p5.LEFT, p5.CENTER);
+            p5.text(new String(Character.toChars(codiIcona)), this.x + 10, this.y + this.h / 2 - 2);
+        }
         p5.popStyle();
     }
 }

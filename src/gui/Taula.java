@@ -100,16 +100,19 @@ public class Taula extends GuiElement {
             xCol = x;
             for(int c = 0; c< numColumnes; c++){
                 if(r==0){
-                    p5.textFont(fonts.getFontPrimaria());
-                    p5.text(titolsTaula[c], xCol + 10, y + (r+1)*rowHeight - 10);
+                    p5.textFont(fonts.getFontCapçaleraTaula());
+                    p5.textSize(Mides.midaCapçaleraTaula);
+                    p5.textAlign(p5.LEFT, p5.BOTTOM);
+                    p5.text(titolsTaula[c], xCol + 10, y + (r+1)*rowHeight - 0);
                 }
                 else{
                     int dr = r - 1;
                     int k = (numFiles - 1) * paginaActual + dr;
                     if(k < dadesTaula.length && dadesTaula[k][c]!=null){
-                        //System.out.println(k +" : " + c);
-                        p5.textFont(fonts.getFontSecundaria());
-                        p5.text(dadesTaula[k][c], xCol + 10, y + (r+1)*rowHeight - 10);
+                        p5.textFont(fonts.getFontFilaTaula());
+                        p5.textSize(Mides.midaFilaTaula);
+                        p5.textAlign(p5.LEFT, p5.BOTTOM);
+                        p5.text(dadesTaula[k][c], xCol + 10, y + (r+1)*rowHeight - 5);
                     }
                 }
                 xCol += w* midaColumnes[c]/100.0;
@@ -118,7 +121,10 @@ public class Taula extends GuiElement {
 
         // Informació de la Pàgina
         p5.fill(0);
-        p5.text("Pag: "+(this.paginaActual +1)+" / "+(this.numTotalPagines), x, y + h + 50);
+        p5.textFont(fonts.getFontPeuTaula());
+        p5.textSize(Mides.midaPeuTaula);
+        p5.textAlign(p5.LEFT, p5.TOP);
+        p5.text("Pàg: "+(this.paginaActual +1)+" / "+(this.numTotalPagines), x, y + h + 5);
 
         p5.popStyle();
     }

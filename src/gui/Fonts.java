@@ -17,11 +17,13 @@ public class Fonts {
 
     // Estableix les fonts de l'App
     public void setFonts(PApplet p5){
-        this.fonts = new PFont[4];
-        this.fonts[0] = p5.createFont("data/fonts/Astila.ttf", midaTitol);
-        this.fonts[1] = p5.createFont("data/fonts/GameOver.ttf", midaSubtitol);
-        this.fonts[2] = p5.createFont("data/fonts/Graffiti.ttf", midaParagraf);
-        this.fonts[3] = p5.createFont("data/fonts/NotoEmoji-Bold.ttf", TEXT_BOTO);
+        this.fonts = new PFont[6];
+        this.fonts[0] = p5.createFont("data/fonts/Roboto.ttf", midaTitol);
+        this.fonts[1] = p5.createFont("data/fonts/OpenSans.ttf", midaSubtitol);
+        this.fonts[2] = p5.createFont("data/fonts/OpenSans-Italic.ttf", midaParagraf);
+        this.fonts[3] = p5.createFont("data/fonts/Astila.ttf", TEXT_BOTO);
+        this.fonts[4] = p5.createFont("data/fonts/NotoEmoji-Bold.ttf", TEXT_BOTO);
+        this.fonts[5] = p5.createFont("data/fonts/GameOver.ttf", TEXT_BOTO);
     }
 
     // Getter del número de fonts
@@ -46,11 +48,25 @@ public class Fonts {
 
     // Getter del la font emoji
     public PFont getFontEmoji(){
-        return  this.fonts[3];
+        return  this.fonts[4];
     }
 
     // Getter de la font i-èssima
     public PFont getFontAt(int i){
         return this.fonts[i];
     }
+
+
+    // Getters de la font de la taula
+    public PFont getFontCapçaleraTaula(){ return this.fonts[0]; }
+    public PFont getFontFilaTaula(){ return this.fonts[1]; }
+    public PFont getFontPeuTaula(){ return this.fonts[1]; }
+
+    // Getters de la font del resum
+    public PFont getFontResumNivell1(){ return this.fonts[0]; }
+    public PFont getFontResumNivell2(){ return this.fonts[1]; }
+    public PFont getFontResumNivell3(){ return this.fonts[2]; }
+
+    // Getters de la font del botó
+    public PFont getFontTextBoto(){ return this.fonts[5];}
 }

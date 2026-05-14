@@ -7,6 +7,11 @@ public class Mides {
     public static float midaSubtitol = 54;
     public static float midaParagraf = 18;
 
+    // TEXT TAULA
+    public static float midaCapçaleraTaula = 34;
+    public static float midaFilaTaula = 18;
+    public static float midaPeuTaula = 14;
+
     public static final float TEXT_INFO_GUI = 34;
 
 
@@ -39,14 +44,15 @@ public class Mides {
 
     // TARJA, TARJA_RESUM
     public static final float TEXT_NUM = 80f;
-    public static final float TEXT_TITOL = 50f;
-    public static final float TEXT_SUBTITOL = 40f;
+    public static final float TEXT_TITOL = 48;
+    public static final float TEXT_SUBTITOL = 34;
     public static final float TEXT_NIVELL1 = 80f;
     public static final float TEXT_NIVELL2 = 50f;
     public static final float TEXT_NIVELL3 = 25f;
 
     // CODIS EMOJI
     public static final float BOTO_FAVORIT = 50f;
+    public static final float midaTextEmojiBoto = 34f;
     public static final float MARGE_FAVORIT = 10f;
     public static final int CODI_FAVORIT = 0x1F600 + 54;
     public static final int CODI_NO_FAVORIT = 0x1F600 + 66;
