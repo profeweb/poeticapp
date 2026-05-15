@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/diec/AnalitzadorCategories.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/diec/test/Test_Categories_Tematiques.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/diec/test/Test_Categories_Tematiques_Poema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1970)/poema13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1970)/poema13.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/La bellesa de l'home (1972)/poema13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/La bellesa de l'home (1972)/poema13.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ner/DiccionariEntitats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/DiccionariEntitats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ner/TokenEtiquetat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/TokenEtiquetat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Terme.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/diec/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diec/Categoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Poemari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poemari.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,14 +55,14 @@
       <recent name="silabes" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="diec.test" />
       <recent name="lema.test" />
       <recent name="gui.test" />
       <recent name="gui" />
       <recent name="stats.test" />
-      <recent name="parser.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test_Lemas_01">
+  <component name="RunManager" selected="Application.Test_Categories_Tematiques_Poema">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Poetica" />
@@ -70,8 +70,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_DIEC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="diec.test.Test_DIEC" />
+    <configuration name="Test_Categories_Tematiques" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="diec.test.Test_Categories_Tematiques" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="diec.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test_Categories_Tematiques_Poema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="diec.test.Test_Categories_Tematiques_Poema" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
@@ -109,26 +122,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="silabes.test.Test_ComptadorSilabesCatala" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="silabes.test.Test_ComptadorSilabesCatala" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="silabes.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test_Categories_Tematiques_Poema" />
+        <item itemvalue="Application.Test_Categories_Tematiques" />
         <item itemvalue="Application.Test_Lemas_01" />
         <item itemvalue="Application.Test_DIccionariLemes" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Test_DIEC" />
-        <item itemvalue="Application.silabes.test.Test_ComptadorSilabesCatala" />
       </list>
     </recent_temporary>
   </component>
@@ -222,14 +222,7 @@
       <workItem from="1778770303389" duration="6364000" />
       <workItem from="1778825243916" duration="5907000" />
       <workItem from="1778834891299" duration="803000" />
-      <workItem from="1778841549376" duration="5189000" />
-    </task>
-    <task id="LOCAL-00016" summary="Inicial">
-      <created>1774809555590</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1774809555590</updated>
+      <workItem from="1778841549376" duration="10105000" />
     </task>
     <task id="LOCAL-00017" summary="Inicial">
       <created>1775983295315</created>
@@ -567,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1778842356503</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Inicial">
+      <created>1778848685119</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1778848685119</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

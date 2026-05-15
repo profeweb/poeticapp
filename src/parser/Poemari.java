@@ -24,6 +24,8 @@ public class Poemari {
 
     public int getNumPoemes(){ return this.poemes.size(); }
 
+    public ArrayList<Poema> getPoemes(){ return this.poemes; }
+
     public int getNumEstrofes(){
         int num = 0;
         for(Poema poema : poemes){

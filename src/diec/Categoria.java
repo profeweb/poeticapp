@@ -128,7 +128,7 @@ public class Categoria {
         DRET        ("DR", "dret"),
         // E
         ECO        ("ECO", "oficines"),
-        ECONOMIA_TEORIA        ("ECT", "teroia econòmica"),
+        ECONOMIA_TEORIA        ("ECT", "teoria econòmica"),
         ECONOMIA_DOMESTICA        ("ED", "economia domèstica"),
         ENGINYERIA_ELECTRICA        ("EE", "enginyeria elèctrica"),
         ENGINYERIA_INDUSTRIAL        ("EI", "enginyeria industrial"),
@@ -251,7 +251,7 @@ public class Categoria {
             ArrayList<CategoriaTematica> categories = new ArrayList<>();
 
             for (CategoriaTematica categoria : values()) {
-                if (html.indexOf(categoria.abreviatura)!=-1 && !categoria.equals(DESCONEGUT)) {
+                if (html!=null && html.indexOf(categoria.abreviatura)!=-1 && !categoria.equals(DESCONEGUT)) {
                     categories.add(categoria);
                 }
             }
