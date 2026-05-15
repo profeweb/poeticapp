@@ -1,5 +1,7 @@
 package diec;
 
+import stats.ParaulesBuidesCatala;
+
 import java.util.ArrayList;
 
 public class Categoria {
@@ -218,12 +220,12 @@ public class Categoria {
         public String getAbreviatura() { return abreviatura; }
         public String getNomCatala()   { return nomCatala; }
 
-        // Retrona categoria a partir de l'abreviatura
-        public static CategoriaTematica obteCategoriaDeAbreviatura(String abrev) {
+        // Retorna categoria a partir de l'abreviatura
+        public static CategoriaTematica obteCategoriaDeAbreviatura(String abreviatura) {
 
-            if (abrev == null || abrev.isBlank()) return DESCONEGUT;
+            if (abreviatura == null || abreviatura.isBlank()) return DESCONEGUT;
 
-            String normalized = abrev.trim().toLowerCase();
+            String normalized = abreviatura.trim().toLowerCase();
             for (CategoriaTematica categoria : values()) {
                 if (categoria.abreviatura.equalsIgnoreCase(normalized)) return categoria;
             }

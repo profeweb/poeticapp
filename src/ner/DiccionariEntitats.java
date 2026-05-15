@@ -71,9 +71,11 @@ public class DiccionariEntitats {
 
         // Noms de persona (expressions compostes primer)
         afegeixEntitatPER("Miquel Àngel Riera");
+        afegeixEntitatPER("Miquel Àngel");
         afegeixEntitatPER("Joan Miró");
         afegeixEntitatPER("Joan Pau Picasso XIII");
         afegeixEntitatPER("Rafael Alberti");
+        afegeixEntitatPER("Pablo Neruda");
         afegeixEntitatPER("Maria Teresa");
         afegeixEntitatPER("Maria del Mar");
         afegeixEntitatPER("Pau Casals");
@@ -81,15 +83,19 @@ public class DiccionariEntitats {
         afegeixEntitatPER("Antoni Vivaldi");
         afegeixEntitatPER("Anna Magdalena Bach");
         afegeixEntitatPER("Juan Ruiz");
+        afegeixEntitatPER("Jan Steen");
         afegeixEntitatPER("Ramon Casas");
         afegeixEntitatPER("Albert Schweitzer");
         afegeixEntitatPER("George Lance");
         afegeixEntitatPER("la tia Clara");
+        afegeixEntitatPER("Compte Olinos");
 
         // Noms de persona simples (un sol token; menys prioritat que els composts)
         afegeixEntitatPER("Nai");
         afegeixEntitatPER("Roser");
         afegeixEntitatPER("Miquel");
+        afegeixEntitatPER("miquelangelejar");
+        afegeixEntitatPER("emmiquelada");
         afegeixEntitatPER("Apol·lònia");
         afegeixEntitatPER("Rafael");
         afegeixEntitatPER("Gianna");
@@ -118,6 +124,10 @@ public class DiccionariEntitats {
         afegeixEntitatLOC("Sa Coma");
         afegeixEntitatLOC("Cala Virgili");
         afegeixEntitatLOC("Tancat de la Torre");
+        afegeixEntitatLOC("Mar de Solís");
+        afegeixEntitatLOC("Río de la Plata");
+        afegeixEntitatLOC("Carrer d'Artà");
+        afegeixEntitatLOC("Pis de la badia");
 
         // Noms simples
         afegeixEntitatLOC("Miamar");
@@ -129,6 +139,10 @@ public class DiccionariEntitats {
         afegeixEntitatLOC("Beget");
         afegeixEntitatLOC("Porqueres");
         afegeixEntitatLOC("Besalú");
+        afegeixEntitatLOC("Cadis");
+        afegeixEntitatLOC("Atlàntic");
+        afegeixEntitatLOC("Paranà");
+        afegeixEntitatLOC("Espanya");
 
 
         // ORG: Organitzacions ───────────────────────────────────────────
@@ -137,19 +151,19 @@ public class DiccionariEntitats {
         afegeixEntitatORG("Palau de la Música");
 
         // Noms simples
-        afegeixEntitatORG("Generalitat");
+        afegeixEntitatORG("Veritat");
+        afegeixEntitatORG("Dolor");
+        afegeixEntitatORG("Equilibri");
+        afegeixEntitatORG("Persona-Trista");
 
         // MISC: Miscel·lani ─────────────────────────────────────────────
-
-        // Obres literàries destacades
-        afegeixEntitatMISC("Cants Espirituals");
-
-        // Festivitats i commemoracions
-        afegeixEntitatMISC("Diada Nacional");
-
-        // Éssers llegendaris i religiosos
         afegeixEntitatMISC("Sant Joan Sebastià");
+        afegeixEntitatMISC("Pentecostès");
+        afegeixEntitatMISC("Gènesi");
+        afegeixEntitatMISC("Fariseus");
+        afegeixEntitatMISC("Florantins");
         afegeixEntitatMISC("Déu");
+        afegeixEntitatMISC("Déus");
         afegeixEntitatMISC("Crist");
     }
 
