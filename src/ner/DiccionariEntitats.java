@@ -33,8 +33,24 @@ public class DiccionariEntitats {
     //  CONSTRUCCIÓ DEL DICCIONARI
 
     /** Afegeix (o sobreescriu) una expressió al diccionari. */
-    private void afegeix(String expressio, EntitatNomenada.TipusEntitat tipus) {
+    private void afegeixEntitat(String expressio, EntitatNomenada.TipusEntitat tipus) {
         diccionari.put(expressio, tipus);   // clau = expressió original (respecta la capitalització)
+    }
+
+    private void afegeixEntitatPER(String expressio) {
+        afegeixEntitat(expressio, EntitatNomenada.TipusEntitat.PER);
+    }
+
+    private void afegeixEntitatLOC(String expressio) {
+        afegeixEntitat(expressio, EntitatNomenada.TipusEntitat.LOC);
+    }
+
+    private void afegeixEntitatORG(String expressio) {
+        afegeixEntitat(expressio, EntitatNomenada.TipusEntitat.ORG);
+    }
+
+    private void afegeixEntitatMISC(String expressio) {
+        afegeixEntitat(expressio, EntitatNomenada.TipusEntitat.MISC);
     }
 
     /** Construeix la llista d'entrades ordenada per a la cerca greedy. */
@@ -54,61 +70,87 @@ public class DiccionariEntitats {
         // PER: Persones ─────────────────────────────────────────────────
 
         // Noms de persona (expressions compostes primer)
-        afegeix("Miquel Àngel Riera",        EntitatNomenada.TipusEntitat.PER);
-        afegeix("Joan Miró",        EntitatNomenada.TipusEntitat.PER);
-        afegeix("Rafael Alberti",   EntitatNomenada.TipusEntitat.PER);
-        afegeix("Maria Teresa",     EntitatNomenada.TipusEntitat.PER);
-        afegeix("Maria del Mar",     EntitatNomenada.TipusEntitat.PER);
-        afegeix("Pau Casals",     EntitatNomenada.TipusEntitat.PER);
+        afegeixEntitatPER("Miquel Àngel Riera");
+        afegeixEntitatPER("Joan Miró");
+        afegeixEntitatPER("Joan Pau Picasso XIII");
+        afegeixEntitatPER("Rafael Alberti");
+        afegeixEntitatPER("Maria Teresa");
+        afegeixEntitatPER("Maria del Mar");
+        afegeixEntitatPER("Pau Casals");
+        afegeixEntitatPER("Wolfgang Amadeus");
+        afegeixEntitatPER("Antoni Vivaldi");
+        afegeixEntitatPER("Anna Magdalena Bach");
+        afegeixEntitatPER("Juan Ruiz");
+        afegeixEntitatPER("Ramon Casas");
+        afegeixEntitatPER("Albert Schweitzer");
+        afegeixEntitatPER("George Lance");
+        afegeixEntitatPER("la tia Clara");
 
         // Noms de persona simples (un sol token; menys prioritat que els composts)
-        afegeix("Nai",                 EntitatNomenada.TipusEntitat.PER);
-        afegeix("Roser",                 EntitatNomenada.TipusEntitat.PER);
-        afegeix("Miquel",                 EntitatNomenada.TipusEntitat.PER);
-        afegeix("Apol·lònia",                 EntitatNomenada.TipusEntitat.PER);
-        afegeix("Rafael",              EntitatNomenada.TipusEntitat.PER);
-        afegeix("Gianna",              EntitatNomenada.TipusEntitat.PER);
-        afegeix("Panda",              EntitatNomenada.TipusEntitat.PER);
-        afegeix("Tomassi",              EntitatNomenada.TipusEntitat.PER);
-        afegeix("Quatrucci",              EntitatNomenada.TipusEntitat.PER);
-        afegeix("Maïa",              EntitatNomenada.TipusEntitat.PER);
-        afegeix("Duca",              EntitatNomenada.TipusEntitat.PER);
+        afegeixEntitatPER("Nai");
+        afegeixEntitatPER("Roser");
+        afegeixEntitatPER("Miquel");
+        afegeixEntitatPER("Apol·lònia");
+        afegeixEntitatPER("Rafael");
+        afegeixEntitatPER("Gianna");
+        afegeixEntitatPER("Panda");
+        afegeixEntitatPER("Tomassi");
+        afegeixEntitatPER("Quatrucci");
+        afegeixEntitatPER("Maïa");
+        afegeixEntitatPER("Duca");
+        afegeixEntitatPER("Tàpies");
+        afegeixEntitatPER("Miró");
+        afegeixEntitatPER("Modigliani");
+        afegeixEntitatPER("Botticelli");
+        afegeixEntitatPER("Buonarroti");
+        afegeixEntitatPER("Mengs");
+        afegeixEntitatPER("Meyfren");
+        afegeixEntitatPER("Clavé");
+        afegeixEntitatPER("Vayreda");
 
 
         // LOC: Llocs geogràfics ─────────────────────────────────────────
 
         // Expressions compostes (han d'anar al mapa abans que les simples)
-        afegeix("Jardí Botànic",         EntitatNomenada.TipusEntitat.LOC);
-        afegeix("Sant Feliu de Rocabruna",         EntitatNomenada.TipusEntitat.LOC);
+        afegeixEntitatLOC("Jardí Botànic");
+        afegeixEntitatLOC("Sant Feliu de Rocabruna");
+        afegeixEntitatLOC("Sant Joan de les Abadesses");
+        afegeixEntitatLOC("Sa Coma");
+        afegeixEntitatLOC("Cala Virgili");
+        afegeixEntitatLOC("Tancat de la Torre");
 
         // Noms simples
-        afegeix("Miamar",             EntitatNomenada.TipusEntitat.LOC);
-        afegeix("Tortova",             EntitatNomenada.TipusEntitat.LOC);
-        afegeix("Roma",             EntitatNomenada.TipusEntitat.LOC);
-        afegeix("Molló",             EntitatNomenada.TipusEntitat.LOC);
-        afegeix("Beget",             EntitatNomenada.TipusEntitat.LOC);
+        afegeixEntitatLOC("Miamar");
+        afegeixEntitatLOC("Tortova");
+        afegeixEntitatLOC("Justaní");
+        afegeixEntitatLOC("Roma");
+        afegeixEntitatLOC("Urbino");
+        afegeixEntitatLOC("Molló");
+        afegeixEntitatLOC("Beget");
+        afegeixEntitatLOC("Porqueres");
+        afegeixEntitatLOC("Besalú");
 
 
         // ORG: Organitzacions ───────────────────────────────────────────
 
         // Expressions compostes
-        afegeix("Palau de la Música",    EntitatNomenada.TipusEntitat.ORG);
+        afegeixEntitatORG("Palau de la Música");
 
         // Noms simples
-        afegeix("Generalitat",           EntitatNomenada.TipusEntitat.ORG);
+        afegeixEntitatORG("Generalitat");
 
         // MISC: Miscel·lani ─────────────────────────────────────────────
 
         // Obres literàries destacades
-        afegeix("Cants Espirituals",     EntitatNomenada.TipusEntitat.MISC);
+        afegeixEntitatMISC("Cants Espirituals");
 
         // Festivitats i commemoracions
-        afegeix("Diada Nacional",        EntitatNomenada.TipusEntitat.MISC);
+        afegeixEntitatMISC("Diada Nacional");
 
         // Éssers llegendaris i religiosos
-        afegeix("Drac",                  EntitatNomenada.TipusEntitat.MISC);
-        afegeix("Déu",                   EntitatNomenada.TipusEntitat.MISC);
-        afegeix("Crist",                 EntitatNomenada.TipusEntitat.MISC);
+        afegeixEntitatMISC("Sant Joan Sebastià");
+        afegeixEntitatMISC("Déu");
+        afegeixEntitatMISC("Crist");
     }
 
 

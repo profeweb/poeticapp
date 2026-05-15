@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lema/DiccionariLemesCatalà.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lema/DiccionariLemesCatalà.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lema/ResultatToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lema/ResultatToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lema/test/Test_Lemas_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lema/test/Test_Lemas_01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ner/EntitatNomenada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/EntitatNomenada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ner/EtiquetadorEntitats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/EtiquetadorEntitats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1970)/poema13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Biografia (1970)/poema13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/La bellesa de l'home (1972)/poema13.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/La bellesa de l'home (1972)/poema13.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ner/DiccionariEntitats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/DiccionariEntitats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ner/TokenEtiquetat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/TokenEtiquetat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Terme.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,14 +222,7 @@
       <workItem from="1778770303389" duration="6364000" />
       <workItem from="1778825243916" duration="5907000" />
       <workItem from="1778834891299" duration="803000" />
-      <workItem from="1778841549376" duration="566000" />
-    </task>
-    <task id="LOCAL-00015" summary="Inicial">
-      <created>1774619477993</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1774619477993</updated>
+      <workItem from="1778841549376" duration="5189000" />
     </task>
     <task id="LOCAL-00016" summary="Inicial">
       <created>1774809555590</created>
@@ -567,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1778831084934</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Inicial">
+      <created>1778842356503</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1778842356503</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
