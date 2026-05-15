@@ -2,6 +2,7 @@ package ner;
 
 public class EntitatNomenada {
 
+
     public enum TipusEntitat {
         PER  ("Persona"),
         LOC  ("Lloc geogràfic"),

@@ -30,6 +30,7 @@ public class EtiquetadorEntitats {
         System.out.println("[ ETIQUETATGE BIO — VERS PER VERS ]");
         System.out.printf("  %-28s %-12s%n", "TOKEN", "ETIQUETA BIO");
         for (String linia : linies) {
+
             if (linia.isBlank()) { System.out.println(); continue; }
 
             numVersos++;
@@ -257,10 +258,12 @@ public class EtiquetadorEntitats {
         System.out.printf("  Versos processats               : %3d%n", numVersos);
         System.out.printf("  Tokens totals                   : %3d%n", nTotal);
         System.out.printf("  Entitats reconegudes            : %3d%n", nB);
+
         for (EntitatNomenada.TipusEntitat te : EntitatNomenada.TipusEntitat.values()) {
             long c = comptesPerTipus.getOrDefault(te.name(), 0L);
             if (c > 0) System.out.printf("    %-5s                         : %3d%n", te.name(), c);
         }
+
         System.out.printf("  Tokens etiquetats B+I           : %3d%n", nBIO);
         System.out.printf("  Tokens fora d'entitat (O)       : %3d%n", nO);
         System.out.printf("  Cobertura NER                   : %5.1f%%%n", 100.0 * nBIO / nTotal);

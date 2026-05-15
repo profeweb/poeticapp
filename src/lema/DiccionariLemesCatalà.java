@@ -6,7 +6,6 @@ import java.util.*;
 
 public class DiccionariLemesCatalà {
 
-    private static final char   BOM = '\uFEFF';
     private static final Locale CA  = Locale.forLanguageTag("ca");
 
     Set<String> conjuntLemes;

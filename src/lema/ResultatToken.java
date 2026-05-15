@@ -1,6 +1,7 @@
 package lema;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ResultatToken {
 
@@ -20,6 +21,11 @@ public class ResultatToken {
     }
 
     public String toString(){
-        return lemaPreferit + "(" + estat.toString() + ")";
+        if(estat==Estat.AMBIGU){
+            return lemaPreferit + " (" + estat + ") : " + lemes.stream().collect(Collectors.joining(", "))+".";
+        }
+        else {
+            return lemaPreferit + " (" + estat + ")";
+        }
     }
 }
