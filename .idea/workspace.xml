@@ -2,14 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/lema/DiccionariLemesCatalà.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lema/Lematitzador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lema/ResultatToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lema/test/Test_DIccionariLemes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lema/test/Test_Lemas_01.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Boto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Boto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/BotoIcona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotoIcona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/EntradaCercador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/EntradaCercador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/EntradaText.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/EntradaText.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Fonts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Fonts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/MenuApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MenuApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Mides.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Mides.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/TarjaResum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/TarjaResum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/SubMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/SubMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Taula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Taula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Titulars.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Titulars.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,29 +65,17 @@
       <recent name="silabes" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="lema.test" />
       <recent name="gui.test" />
       <recent name="gui" />
       <recent name="stats.test" />
       <recent name="parser.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Test_Lemas_01">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Poetica" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test_AnalisiSentiment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sentiments.test.Test_AnalisiSentiment" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sentiments.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -97,12 +93,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_NER_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ner.test.Test_NER_01" />
+    <configuration name="Test_DIccionariLemes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lema.test.Test_DIccionariLemes" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ner.test.*" />
+          <option name="PATTERN" value="lema.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test_Lemas_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lema.test.Test_Lemas_01" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="lema.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -125,11 +134,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test_Lemas_01" />
+        <item itemvalue="Application.Test_DIccionariLemes" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Test_DIEC" />
         <item itemvalue="Application.silabes.test.Test_ComptadorSilabesCatala" />
-        <item itemvalue="Application.Test_NER_01" />
-        <item itemvalue="Application.Test_AnalisiSentiment" />
       </list>
     </recent_temporary>
   </component>
@@ -220,14 +229,8 @@
       <workItem from="1778570690664" duration="13376000" />
       <workItem from="1778608737206" duration="600000" />
       <workItem from="1778740100387" duration="6143000" />
-      <workItem from="1778770303389" duration="6179000" />
-    </task>
-    <task id="LOCAL-00013" summary="Inicial">
-      <created>1774599812736</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1774599812736</updated>
+      <workItem from="1778770303389" duration="6364000" />
+      <workItem from="1778825243916" duration="5016000" />
     </task>
     <task id="LOCAL-00014" summary="Inicial">
       <created>1774610850989</created>
@@ -565,7 +568,14 @@
       <option name="project" value="LOCAL" />
       <updated>1778773243990</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Inicial">
+      <created>1778777841574</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1778777841574</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

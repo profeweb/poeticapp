@@ -39,11 +39,11 @@ public class SubMenu extends GuiElement{
 
     public void display(PApplet p5){
         p5.pushStyle();
-        p5.textFont(fonts.getFontSecundaria());
+        p5.textFont(fonts.getFontCapçaleraSubMenu());
         p5.fill(colors.getColorPrimari());
-        p5.textSize(Mides.midaSubtitol);
+        p5.textSize(Mides.midaTextCapçaleraSubMenu);
         p5.textAlign(p5.LEFT, p5.BOTTOM);
-        p5.text(this.titol, this.x, this.y - margeVertical);
+        p5.text(this.titol, this.x + margeVertical, this.y - margeVertical);
         for(BotoIcona boto: botons){
             boto.display(p5);
         }

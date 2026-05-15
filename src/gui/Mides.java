@@ -8,9 +8,21 @@ public class Mides {
     public static float midaParagraf = 18;
 
     // TEXT TAULA
-    public static float midaCapçaleraTaula = 34;
-    public static float midaFilaTaula = 18;
-    public static float midaPeuTaula = 14;
+    public static float midaTextCapçaleraTaula = 34;
+    public static float midaTextFilaTaula = 18;
+    public static float midaTextPeuTaula = 14;
+
+    // TEXT MENU
+    public static float midaTextCapçaleraMenu = 34;
+    public static float midaTextCapçaleraSubMenu = 18;
+
+    // TEXT TITULARS
+    public static float midaTextTitutar = 34;
+    public static float midaTextSubTitular = 18;
+
+    // ENTRADA TEXT
+    public static float midaTextEtiqueta = 58;
+    public static float midaTextEntrada = 24;
 
     public static final float TEXT_INFO_GUI = 34;
 

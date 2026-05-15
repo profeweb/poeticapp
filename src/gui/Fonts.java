@@ -18,12 +18,12 @@ public class Fonts {
     // Estableix les fonts de l'App
     public void setFonts(PApplet p5){
         this.fonts = new PFont[6];
-        this.fonts[0] = p5.createFont("data/fonts/Roboto.ttf", midaTitol);
-        this.fonts[1] = p5.createFont("data/fonts/OpenSans.ttf", midaSubtitol);
-        this.fonts[2] = p5.createFont("data/fonts/OpenSans-Italic.ttf", midaParagraf);
-        this.fonts[3] = p5.createFont("data/fonts/Astila.ttf", TEXT_BOTO);
-        this.fonts[4] = p5.createFont("data/fonts/NotoEmoji-Bold.ttf", TEXT_BOTO);
-        this.fonts[5] = p5.createFont("data/fonts/GameOver.ttf", TEXT_BOTO);
+        this.fonts[0] = p5.createFont("data/fonts/Roboto.ttf", 250);
+        this.fonts[1] = p5.createFont("data/fonts/OpenSans.ttf", 250);
+        this.fonts[2] = p5.createFont("data/fonts/OpenSans-Italic.ttf", 250);
+        this.fonts[3] = p5.createFont("data/fonts/Astila.ttf", 250);
+        this.fonts[4] = p5.createFont("data/fonts/NotoEmoji-Bold.ttf", 250);
+        this.fonts[5] = p5.createFont("data/fonts/GameOver.ttf", 250);
     }
 
     // Getter del número de fonts
@@ -69,4 +69,16 @@ public class Fonts {
 
     // Getters de la font del botó
     public PFont getFontTextBoto(){ return this.fonts[5];}
+
+    // Getters de la font del menu
+    public PFont getFontCapçaleraMenu(){ return this.fonts[2]; }
+    public PFont getFontCapçaleraSubMenu(){ return this.fonts[1]; }
+
+    // Getters de les fonts dels titulars
+    public PFont getFontTitular(){ return this.fonts[0]; }
+    public PFont getFontSubTitular(){ return this.fonts[2]; }
+
+    // Getters de les fonts de l'entrada de text
+    public PFont getFontEtiquetaEntradaText(){ return this.fonts[5];}
+    public PFont getFontEntradaText(){ return this.fonts[1];}
 }

@@ -55,9 +55,15 @@ public class Titulars extends GuiElement {
 
         for(int i=0; i<titulars.length; i++){
             p5.fill(0);
-            p5.textAlign(p5.LEFT);
-            p5.textFont(fonts.getFontAt(i));
-            p5.textSize(Mides.midaSubtitol);
+            p5.textAlign(p5.LEFT, p5.BOTTOM);
+            if(i==0) {
+                p5.textFont(fonts.getFontTitular());
+                p5.textSize(midaTextTitutar);
+            }
+            else {
+                p5.textFont(fonts.getFontSubTitular());
+                p5.textSize(midaTextSubTitular);
+            }
             p5.text(titulars[i], x, y + i*stepY);
         }
 

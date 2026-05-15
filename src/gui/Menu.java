@@ -38,17 +38,18 @@ public class Menu extends GuiElement {
 
             // Titol
             p5.fill(colors.getColorEntradaTextText());
-            p5.textFont(fonts.getFontTerciaria());
-            p5.textAlign(p5.CENTER);
+            p5.textFont(fonts.getFontCapçaleraMenu());
+            p5.textSize(Mides.midaTextCapçaleraMenu);
+            p5.textAlign(p5.CENTER, p5.CENTER);
             p5.text(titol, x + w/2, y);
 
             // Logo
             if(logo!=null){
                 p5.shapeMode(p5.CENTER);
-                p5.shape(logo, x + w/2, h + 50, 200, 200);
+                p5.shape(logo, x + w/2, y-100, 120, 120);
             }
             else{
-                p5.circle(x + w/2, y - 80, 100);
+                p5.circle(x + w/2, y-100, 120);
             }
 
         p5.popStyle();

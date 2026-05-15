@@ -58,15 +58,16 @@ public class EntradaText extends GuiElement {
 
         // Text
         p5.fill(colors.getColorEntradaTextText());
-        p5.textSize(TEXT_ENTRADA);
         p5.textAlign(p5.LEFT, p5.CENTER);
-        p5.textFont(fonts.getFontSecundaria());
+        p5.textFont(fonts.getFontEntradaText());
+        p5.textSize(Mides.midaTextEntrada);
         p5.text(text, x + 5, y + h - TEXT_ENTRADA);
 
         // Etiqueta
         p5.fill(colors.getColorEntradaTextText());
         p5.textAlign(p5.RIGHT, p5.CENTER);
-        p5.textFont(fonts.getFontSecundaria());
+        p5.textFont(fonts.getFontEtiquetaEntradaText());
+        p5.textSize(Mides.midaTextEtiqueta);
         p5.text(textEtiqueta, x - 15, y + h - TEXT_ENTRADA);
         p5.popStyle();
     }

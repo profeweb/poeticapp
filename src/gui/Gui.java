@@ -246,7 +246,7 @@ public class Gui {
         botonsLlibre.setColorsFonts(colors, fonts);
         botonsLlibre.setBotons("RESUM", "OBRA", "VISUALITZACIONS");
 
-        menuApp = new MenuApp(10, 200, 250, 840);
+        menuApp = new MenuApp(10, 200, 270, 840);
         menuApp.setColorsFonts(colors, fonts);
         menuApp.setMenuApp();
 
