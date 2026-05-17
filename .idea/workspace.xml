@@ -2,27 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/comptes/test/Test_ParaulesBuides_JSON_01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sentiments/test/Test_AnalisiSentiment_JSON.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/diec/test/Test_Termes_Categoriea_Tematica_Poema.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/diccionaris/paraules_buides_ca.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/diccionaris/paraules_buides_ca.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/diec/AnalitzadorCategories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diec/AnalitzadorCategories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/diec/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diec/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/diec/test/Test_Categories_Tematiques_Poema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diec/test/Test_Categories_Tematiques_Poema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sentiments/DiccionariSentiments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/DiccionariSentiments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/ComptadorParaules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/ComptadorParaules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/ParaulaNigul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/ParaulaNigul.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/ParaulesBuidesCatala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/ParaulesBuidesCatala.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/TF_IDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/TF_IDF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/TermeFreq.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/TermeFreq.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_Frequencia_Termes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/test/Test_Frequencia_Termes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_Nigul_Paraules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/test/Test_Nigul_Paraules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_Nigul_Paraules_Poemari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/test/Test_Nigul_Paraules_Poemari.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_Prefixos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/test/Test_Prefixos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_TF_IDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/test/Test_TF_IDF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_TF_IDF_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/test/Test_TF_IDF_2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_WordSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/test/Test_WordSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stats/test/Test_WordSearch_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/test/Test_WordSearch_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lema/test/Test_DIccionariLemes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lema/test/Test_DIccionariLemes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lema/test/Test_Lemas_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lema/test/Test_Lemas_01.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,14 +59,14 @@
       <recent name="silabes" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="diec.test" />
       <recent name="sentiments.test" />
       <recent name="stats.test" />
       <recent name="ner.test" />
-      <recent name="diec.test" />
       <recent name="lema.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test_AnalisiSentiment_JSON">
+  <component name="RunManager" selected="Application.Test_Termes_Categoriea_Tematica_Poema">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Poetica" />
@@ -90,12 +74,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_AnalisiSentiment_JSON" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sentiments.test.Test_AnalisiSentiment_JSON" />
+    <configuration name="Test_Categories_Tematiques_Poema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="diec.test.Test_Categories_Tematiques_Poema" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sentiments.test.*" />
+          <option name="PATTERN" value="diec.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -103,12 +87,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_NER_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ner.test.Test_NER_01" />
+    <configuration name="Test_Lemas_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lema.test.Test_Lemas_01" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ner.test.*" />
+          <option name="PATTERN" value="lema.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,12 +100,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_NER_JSON_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ner.test.Test_NER_JSON_01" />
+    <configuration name="Test_Termes_Categoriea_Tematica_Poema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="diec.test.Test_Termes_Categoriea_Tematica_Poema" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ner.test.*" />
+          <option name="PATTERN" value="diec.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -129,8 +113,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_ParaulesBuides_JSON_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="comptes.test.Test_ParaulesBuides_JSON_01" />
+    <configuration name="Test_WordSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="comptes.test.Test_WordSearch" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
@@ -144,11 +128,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test_AnalisiSentiment_JSON" />
-        <item itemvalue="Application.comptes.test.Test_ParaulesBuides_JSON_01" />
-        <item itemvalue="Application.Test_NER_JSON_01" />
-        <item itemvalue="Application.Test_NER_01" />
+        <item itemvalue="Application.Test_Termes_Categoriea_Tematica_Poema" />
+        <item itemvalue="Application.Test_Categories_Tematiques_Poema" />
+        <item itemvalue="Application.Test_WordSearch" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Test_Lemas_01" />
       </list>
     </recent_temporary>
   </component>
@@ -248,14 +232,7 @@
       <workItem from="1778959201044" duration="105000" />
       <workItem from="1779001248791" duration="4031000" />
       <workItem from="1779005372436" duration="458000" />
-      <workItem from="1779005900007" duration="3356000" />
-    </task>
-    <task id="LOCAL-00022" summary="Inicial">
-      <created>1776852894013</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1776852894013</updated>
+      <workItem from="1779005900007" duration="5520000" />
     </task>
     <task id="LOCAL-00023" summary="Inicial">
       <created>1776878371192</created>
@@ -593,7 +570,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779006662002</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Inicial">
+      <created>1779009462835</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1779009462835</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -9,6 +9,8 @@ import comptes.ParaulesBuidesCatala;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 
 import static diec.ConsultaWebDIEC.obteSignificatTerme;
 
@@ -55,6 +57,19 @@ public class AnalitzadorCategories {
         return cgs;
     }
 
+    public static Set<String> consultaTermesCategoriaTematicaVers(Vers vers, Categoria.CategoriaTematica categoriaTematica, ParaulesBuidesCatala paraulesBuidesCatala) throws IOException{
+        Set<String> termes = new HashSet<>();
+        for(Token token : vers.getTokensTipus(Token.Tipus.PARAULA)){
+            if(!paraulesBuidesCatala.esParaulaBuida(token.getValor())) {
+                ArrayList<Categoria.CategoriaTematica> categoriesToken = consultaCategoriesTemàtiquesTerme(token.getValor());
+                if(categoriesToken.contains(categoriaTematica)){
+                    termes.add(token.getValor());
+                }
+            }
+        }
+        return termes;
+    }
+
     public static HashMap<Categoria.CategoriaTematica, Integer> consultaFreqTemesVers(Vers vers, ParaulesBuidesCatala paraulesBuidesCatala) throws IOException {
         HashMap<Categoria.CategoriaTematica, Integer> cgs = new HashMap<>();
         for(Token token : vers.getTokensTipus(Token.Tipus.PARAULA)){
@@ -62,9 +77,9 @@ public class AnalitzadorCategories {
                 ArrayList<Categoria.CategoriaTematica> categoriesToken = consultaCategoriesTemàtiquesTerme(token.getValor());
                 if (categoriesToken != null) {
                     for (Categoria.CategoriaTematica tema : categoriesToken) {
-                        if(tema.getNomCatala().equals("música")) {
+                        //if(tema.getNomCatala().equals("música")) {
                             System.out.println("Terme: " + token.getValor() + " (" + tema + ")");
-                        }
+                        //}
                         if (cgs.containsKey(tema)) {
                             int noucompte = cgs.get(tema) + 1;
                             cgs.replace(tema, noucompte);
@@ -94,6 +109,21 @@ public class AnalitzadorCategories {
             cgsVers.forEach((clau, valor) -> cgs.merge(clau, valor, Integer::sum));
         }
         return cgs;
+    }
+
+    public static Set<String> consultaTermesCategoriaTematicaPoema(Poema poema, Categoria.CategoriaTematica categoriaTematica, ParaulesBuidesCatala paraulesBuidesCatala) throws IOException{
+        Set<String> termes = new HashSet<>();
+        for(Vers vers : poema.getVersos()) {
+            for (Token token : vers.getTokensTipus(Token.Tipus.PARAULA)) {
+                if (!paraulesBuidesCatala.esParaulaBuida(token.getValor())) {
+                    ArrayList<Categoria.CategoriaTematica> categoriesToken = consultaCategoriesTemàtiquesTerme(token.getValor());
+                    if (categoriesToken!=null && categoriesToken.contains(categoriaTematica)) {
+                        termes.add(token.getValor());
+                    }
+                }
+            }
+        }
+        return termes;
     }
 
     public static HashMap<Categoria.CategoriaTematica, Integer> consultaFreqTemesPoemari(Poemari poemari) throws IOException {
