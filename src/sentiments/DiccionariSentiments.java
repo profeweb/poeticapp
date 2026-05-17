@@ -1,6 +1,5 @@
 package sentiments;
 
-import ner.DiccionariEntitats;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -203,9 +202,9 @@ public class DiccionariSentiments {
 
         JSONObject arrel = new JSONObject(contingut);
 
-        int totalLexic = carregaLexic(arrel);
-        int totalNegadors = carregaNegadors(arrel);
-        int totalMods = carregaModificadors(arrel);
+        int totalLexic      = carregaLexic(arrel);
+        int totalNegadors   = carregaNegadors(arrel);
+        int totalMods       = carregaModificadors(arrel);
 
         System.out.printf("Diccionari de sentiments carregat:%n" +
             "  Lexic:        %4d entrades%n" +
@@ -223,20 +222,6 @@ public class DiccionariSentiments {
 
         for (int i = 0; i < array.length(); i++) {
             JSONObject entrada = array.getJSONObject(i);
-
-            // Valida camp "paraula"
-            if (!entrada.has(CLAU_PARAULA) || entrada.getString(CLAU_PARAULA).isBlank()) {
-                System.err.printf("Avís lexic[%d]: camp \"%s\" absent, s'ignora.%n",
-                        i, CLAU_PARAULA);
-                continue;
-            }
-
-            // Valida camp "puntuacio"
-            if (!entrada.has(CLAU_PUNTUACIO)) {
-                System.err.printf("Avís lexic[%d]: camp \"%s\" absent, s'ignora.%n",
-                        i, CLAU_PUNTUACIO);
-                continue;
-            }
 
             String paraula   = entrada.getString(CLAU_PARAULA).trim();
             double puntuacio = entrada.getDouble(CLAU_PUNTUACIO);
@@ -278,20 +263,7 @@ public class DiccionariSentiments {
 
             String paraula = entrada.getString(CLAU_PARAULA).trim();
             double factor  = entrada.getDouble(CLAU_FACTOR);
-
-            // Validació semàntica del factor
-            if (factor <= 0) {
-                System.err.printf("Avís modificadors[%d, \"%s\"]: factor %.2f invàlid " +
-                        "(ha de ser > 0), s'ignora.%n", i, paraula, factor);
-                continue;
-            }
-
-            // Anotació del rol per a la traçabilitat (opcional, no altera la lògica)
             String rol = entrada.has(CLAU_ROL) ? entrada.getString(CLAU_ROL) : "DESCONEGUT";
-            if (factor >= 1.0 && rol.equals("DIMINUIDOR")) {
-                System.err.printf("Avís modificadors[%d, \"%s\"]: factor %.2f >= 1.0 però " +
-                        "rol és DIMINUIDOR.%n", i, paraula, factor);
-            }
 
             String clau = DiccionariSentiments.normalitza(paraula);
             modificadors.put(clau, factor);

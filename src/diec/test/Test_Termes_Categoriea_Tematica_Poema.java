@@ -11,8 +11,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
-import static diec.AnalitzadorCategories.consultaTermesCategoriaTematicaPoema;
-import static diec.AnalitzadorCategories.consultaTermesCategoriaTematicaVers;
+import static diec.AnalitzadorCategories.*;
 
 public class Test_Termes_Categoriea_Tematica_Poema {
 
@@ -27,16 +26,22 @@ public class Test_Termes_Categoriea_Tematica_Poema {
             Poema p1 = poemari.getPoemaAt(0);
             Vers v1 = p1.getVersAt(0);
 
-            Categoria.CategoriaTematica c = Categoria.CategoriaTematica.LEXIC_COMU;
+            Categoria.CategoriaTematica c = Categoria.CategoriaTematica.ART;
             System.out.println("\nTERMES DE LA CATEGORIA " + c + " EN EL VERS");
-            Set<String> termesCategoria = consultaTermesCategoriaTematicaVers(v1, c, paraulesBuidesCatala);
+            Set<String> termesCategoria = consultaTermesCategoriaTematicaVers(v1,paraulesBuidesCatala, c);
             for(String terme : termesCategoria){
                 System.out.println(terme);
             }
 
             System.out.println("\nTERMES DE LA CATEGORIA " + c + " EN EL POEMA");
-            Set<String> termesCategoriaPoema = consultaTermesCategoriaTematicaPoema(p1, c, paraulesBuidesCatala);
+            Set<String> termesCategoriaPoema = consultaTermesCategoriaTematicaPoema(p1, paraulesBuidesCatala, c);
             for(String terme : termesCategoriaPoema){
+                System.out.println(terme);
+            }
+
+            System.out.println("\nTERMES DE LA CATEGORIA " + c + " EN EL POEMARI");
+            Set<String> termesCategoriaPoemari = consultaTermesCategoriesTematiquesPoemari(poemari, paraulesBuidesCatala, c, Categoria.CategoriaTematica.ARQUITECTURA);
+            for(String terme : termesCategoriaPoemari){
                 System.out.println(terme);
             }
 

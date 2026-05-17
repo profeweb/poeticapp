@@ -19,12 +19,12 @@ public class ParaulaNigul {
         }
 
         // Comprova si el rectangle d'aquesta paraula se solapa amb un altre
-        public boolean overlaps(float ox, float oy, float ow, float oh) {
-            float padding = 6; // marge mínim entre paraules (px)
-            return !(ox + ow + padding < x        ||
-                    ox - padding      > x + w    ||
-                    oy + oh + padding < y        ||
-                    oy - padding      > y + h);
+        public boolean solapament(float ox, float oy, float ow, float oh) {
+            float marge = 6; // marge mínim entre paraules (px)
+            return !(ox + ow + marge < x        ||
+                    ox - marge      > x + w    ||
+                    oy + oh + marge < y        ||
+                    oy - marge      > y + h);
         }
 
 }

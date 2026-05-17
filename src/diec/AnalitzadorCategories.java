@@ -57,13 +57,29 @@ public class AnalitzadorCategories {
         return cgs;
     }
 
-    public static Set<String> consultaTermesCategoriaTematicaVers(Vers vers, Categoria.CategoriaTematica categoriaTematica, ParaulesBuidesCatala paraulesBuidesCatala) throws IOException{
+    public static Set<String> consultaTermesCategoriaTematicaVers(Vers vers, ParaulesBuidesCatala paraulesBuidesCatala, Categoria.CategoriaTematica categoriaTematica) throws IOException{
         Set<String> termes = new HashSet<>();
         for(Token token : vers.getTokensTipus(Token.Tipus.PARAULA)){
             if(!paraulesBuidesCatala.esParaulaBuida(token.getValor())) {
                 ArrayList<Categoria.CategoriaTematica> categoriesToken = consultaCategoriesTemàtiquesTerme(token.getValor());
-                if(categoriesToken.contains(categoriaTematica)){
+                if(categoriesToken!=null && categoriesToken.contains(categoriaTematica)){
                     termes.add(token.getValor());
+                }
+            }
+        }
+        return termes;
+    }
+
+    public static Set<String> consultaTermesCategoriesTematiquesVers(Vers vers, ParaulesBuidesCatala paraulesBuidesCatala, Categoria.CategoriaTematica ... categoriesTematiques) throws IOException{
+        Set<String> termes = new HashSet<>();
+        for(Token token : vers.getTokensTipus(Token.Tipus.PARAULA)){
+            if(!paraulesBuidesCatala.esParaulaBuida(token.getValor())) {
+                ArrayList<Categoria.CategoriaTematica> categoriesToken = consultaCategoriesTemàtiquesTerme(token.getValor());
+                for(Categoria.CategoriaTematica categoriaTematica : categoriesTematiques) {
+                    if (categoriesToken!=null && categoriesToken.contains(categoriaTematica)) {
+                        termes.add(token.getValor());
+                        break;
+                    }
                 }
             }
         }
@@ -111,16 +127,23 @@ public class AnalitzadorCategories {
         return cgs;
     }
 
-    public static Set<String> consultaTermesCategoriaTematicaPoema(Poema poema, Categoria.CategoriaTematica categoriaTematica, ParaulesBuidesCatala paraulesBuidesCatala) throws IOException{
+    public static Set<String> consultaTermesCategoriaTematicaPoema(Poema poema, ParaulesBuidesCatala paraulesBuidesCatala, Categoria.CategoriaTematica categoriaTematica) throws IOException{
         Set<String> termes = new HashSet<>();
         for(Vers vers : poema.getVersos()) {
-            for (Token token : vers.getTokensTipus(Token.Tipus.PARAULA)) {
-                if (!paraulesBuidesCatala.esParaulaBuida(token.getValor())) {
-                    ArrayList<Categoria.CategoriaTematica> categoriesToken = consultaCategoriesTemàtiquesTerme(token.getValor());
-                    if (categoriesToken!=null && categoriesToken.contains(categoriaTematica)) {
-                        termes.add(token.getValor());
-                    }
-                }
+            Set<String> termesVers = consultaTermesCategoriaTematicaVers(vers, paraulesBuidesCatala, categoriaTematica);
+            if(termesVers!=null){
+                termes.addAll(termesVers);
+            }
+        }
+        return termes;
+    }
+
+    public static Set<String> consultaTermesCategoriesTematiquesPoema(Poema poema, ParaulesBuidesCatala paraulesBuidesCatala, Categoria.CategoriaTematica ... categoriesTematiques) throws IOException{
+        Set<String> termes = new HashSet<>();
+        for(Vers vers : poema.getVersos()) {
+            Set<String> termesVers = consultaTermesCategoriesTematiquesVers(vers, paraulesBuidesCatala, categoriesTematiques);
+            if(termesVers!=null){
+                termes.addAll(termesVers);
             }
         }
         return termes;
@@ -144,5 +167,27 @@ public class AnalitzadorCategories {
 
         }
         return cgs;
+    }
+
+    public static Set<String> consultaTermesCategoriaTematicaPoemari(Poemari poemari, ParaulesBuidesCatala paraulesBuidesCatala, Categoria.CategoriaTematica categoriaTematica) throws IOException{
+        Set<String> termes = new HashSet<>();
+        for(Poema poema : poemari.getPoemes()) {
+            Set<String> termesPoema = consultaTermesCategoriaTematicaPoema(poema, paraulesBuidesCatala, categoriaTematica);
+            if(termesPoema!=null) {
+                termes.addAll(termesPoema);
+            }
+        }
+        return termes;
+    }
+
+    public static Set<String> consultaTermesCategoriesTematiquesPoemari(Poemari poemari, ParaulesBuidesCatala paraulesBuidesCatala, Categoria.CategoriaTematica ... categoriesTematiques) throws IOException{
+        Set<String> termes = new HashSet<>();
+        for(Poema poema : poemari.getPoemes()) {
+            Set<String> termesPoema = consultaTermesCategoriesTematiquesPoema(poema, paraulesBuidesCatala, categoriesTematiques);
+            if(termesPoema!=null) {
+                termes.addAll(termesPoema);
+            }
+        }
+        return termes;
     }
 }

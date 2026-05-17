@@ -1,5 +1,10 @@
 package sentiments;
 
+import parser.Estrofa;
+import parser.Poema;
+import parser.Token;
+import parser.Vers;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -35,13 +40,13 @@ public class AnalisiSentiments {
         /** Símbol ASCII de 3 caràcters per a la sortida compacta. */
         public String simbol() {
             return switch (this) {
-                case MOLT_POSITIU -> "[++]";
-                case POSITIU      -> "[ +]";
-                case LLEU_POSITIU -> "[ ~]";
-                case NEUTRE       -> "[ 0]";
-                case LLEU_NEGATIU -> "[ ~]";
-                case NEGATIU      -> "[ -]";
-                case MOLT_NEGATIU -> "[--]";
+                case MOLT_POSITIU -> "[+++]";
+                case POSITIU      -> "[ ++]";
+                case LLEU_POSITIU -> "[  +]";
+                case NEUTRE       -> "[  0]";
+                case LLEU_NEGATIU -> "[  -]";
+                case NEGATIU      -> "[ --]";
+                case MOLT_NEGATIU -> "[---]";
             };
         }
     }
@@ -151,11 +156,60 @@ public class AnalisiSentiments {
         return new VersAnalitzat(numero, text, resultat);
     }
 
+    public VersAnalitzat analitzaVers(Vers vers) {
+
+        List<TokenAnalitzat> resultat = new ArrayList<>();
+
+        int    finestraNegacio = 0;   // tokens que resten de negació activa
+        double factorMod       = 1.0; // factor pendent (intensificador/diminuïdor)
+
+        for (Token token: vers.getParaules()) {
+            if (token.getValor().isEmpty()) continue;
+            String forma = normalitza(token.getValor());
+            if (forma.isEmpty()) continue;
+
+            boolean esNegador      = diccionariSentiments.negadors.contains(forma);
+            boolean esModificador  = diccionariSentiments.modificadors.containsKey(forma);
+            boolean alLexic        = diccionariSentiments.lexic.containsKey(forma);
+
+            if (esNegador) {
+                // ── Negador ─────────────────────────────────────────────
+                finestraNegacio = FINESTRA_NEGACIO;
+                resultat.add(new TokenAnalitzat(token.getValor(), forma, 0.0, 1.0, Rol.NEGADOR));
+
+            } else if (esModificador) {
+                // ── Intensificador o Diminuïdor ─────────────────────────
+                factorMod = diccionariSentiments.modificadors.get(forma);
+                Rol rol   = (factorMod > 1.0) ? Rol.INTENSIFICADOR : Rol.DIMINUIDOR;
+                resultat.add(new TokenAnalitzat(token.getValor(), forma, 0.0, factorMod, rol));
+
+            } else if (alLexic) {
+                // ── Token lexical amb puntuació ──────────────────────────
+                double base      = diccionariSentiments.lexic.get(forma);
+                double signe     = (finestraNegacio > 0) ? -1.0 : 1.0;
+                double factorFin = signe * factorMod;
+
+                resultat.add(new TokenAnalitzat(token.getValor(), forma, base, factorFin, Rol.LEXIC));
+
+                factorMod = 1.0;                         // consumeix el modificador pendent
+                if (finestraNegacio > 0) finestraNegacio--;
+
+            } else {
+                // ── Token neutre (no al lexicó) ──────────────────────────
+                if (finestraNegacio > 0) finestraNegacio--;
+                // El factorMod NO es reset: persisteix fins al proper token lexical
+                resultat.add(new TokenAnalitzat(token.getValor(), forma, 0.0, 1.0, Rol.NEUTRE));
+            }
+        }
+
+        return new VersAnalitzat(vers.getNumVers(), vers.getText(), resultat);
+    }
+
      public void analitzaPoema(String text) {
 
         this.estrofes    = new ArrayList<>();
 
-        List<VersAnalitzat>       estrofaActual = new ArrayList<>();
+        List<VersAnalitzat> estrofaActual = new ArrayList<>();
 
         int numVers = 0;
 
@@ -172,6 +226,62 @@ public class AnalisiSentiments {
         if (!estrofaActual.isEmpty()) estrofes.add(estrofaActual);
 
          totalsVersos = estrofes.stream().flatMap(Collection::stream).collect(Collectors.toList());
+    }
+
+    public void analitzaPoema(Poema poema) {
+
+        this.estrofes    = new ArrayList<>();
+
+        for (Estrofa estrofa : poema.getEstrofes()) {
+            List<VersAnalitzat> estrofaActual = new ArrayList<>();
+            for(Vers vers : estrofa.getVersos()){
+                estrofaActual.add(analitzaVers(vers.getText(), vers.getNumVers()));
+            }
+            if (!estrofaActual.isEmpty()) estrofes.add(estrofaActual);
+        }
+
+        totalsVersos = estrofes.stream().flatMap(Collection::stream).collect(Collectors.toList());
+    }
+
+
+    public ArrayList<TokenAnalitzat> topLexicPositives(int num){
+
+        ArrayList<TokenAnalitzat> lexicPositius = new ArrayList<>();
+
+        List<TokenAnalitzat> lexicals = totalsVersos.stream()
+            .flatMap(rv -> rv.getTokens().stream())
+            .filter(t -> t.getRol() == AnalisiSentiments.Rol.LEXIC)
+            .collect(Collectors.toList());
+
+        lexicals.stream()
+                .filter(t -> t.getPuntuacioFinal() > 0)
+                .sorted(Comparator.comparingDouble(TokenAnalitzat::getPuntuacioFinal).reversed())
+                .limit(num)
+                .forEach(t -> {
+                    lexicPositius.add(t);
+                });
+
+        return lexicPositius;
+    }
+
+    public ArrayList<TokenAnalitzat> topLexicNegatives(int num){
+
+        ArrayList<TokenAnalitzat> lexicPositius = new ArrayList<>();
+
+        List<TokenAnalitzat> lexicals = totalsVersos.stream()
+                .flatMap(rv -> rv.getTokens().stream())
+                .filter(t -> t.getRol() == AnalisiSentiments.Rol.LEXIC)
+                .collect(Collectors.toList());
+
+        lexicals.stream()
+                .filter(t -> t.getPuntuacioFinal() < 0)
+                .sorted(Comparator.comparingDouble(TokenAnalitzat::getPuntuacioFinal).reversed())
+                .limit(num)
+                .forEach(t -> {
+                    lexicPositius.add(t);
+                });
+
+        return lexicPositius;
     }
 
 }

@@ -145,7 +145,7 @@ public class Test_Nigul_Paraules extends PApplet {
                 // Comprova solapament amb totes les paraules ja col·locades
                 boolean overlapping = false;
                 for (ParaulaNigul pw : placed) {
-                    if (pw.overlaps(tryX, tryY, wordW, wordH)) {
+                    if (pw.solapament(tryX, tryY, wordW, wordH)) {
                         overlapping = true;
                         break;
                     }
