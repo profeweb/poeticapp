@@ -33,7 +33,7 @@ public class DadesPoemaris {
         int numAutor = 0;
         for(Autor autor : autors){
             info[numAutor][0] = autor.getNom();
-            info[numAutor][1] = String.valueOf(autor.getNumPoemaris());
+            info[numAutor][1] = String.valueOf(autor.any);
             numAutor++;
         }
         return info;

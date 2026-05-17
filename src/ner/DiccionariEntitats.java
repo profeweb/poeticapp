@@ -1,6 +1,14 @@
 package ner;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -14,6 +22,10 @@ public class DiccionariEntitats {
      * Valor: tipus d'entitat
      */
 
+    private static final String CAMP_ARREL = "entitats";
+    private static final String CAMP_TEXT  = "text";
+    private static final String CAMP_TIPUS = "tipus";
+
     private final Map<String, EntitatNomenada.TipusEntitat> diccionari;
 
     /**
@@ -25,6 +37,12 @@ public class DiccionariEntitats {
     public DiccionariEntitats() {
         diccionari = new LinkedHashMap<>();
         construeixDiccionari();
+        construeixEntrades();
+    }
+
+    public DiccionariEntitats(String rutaJSON) {
+        diccionari = new LinkedHashMap<>();
+        carregaDesDeJSON(this, rutaJSON);
         construeixEntrades();
     }
 
@@ -55,10 +73,13 @@ public class DiccionariEntitats {
 
     /** Construeix la llista d'entrades ordenada per a la cerca greedy. */
     private void construeixEntrades() {
+
         entrades = new ArrayList<>();
+
         for (Map.Entry<String, EntitatNomenada.TipusEntitat> e : diccionari.entrySet()) {
             entrades.add(new EntradaDiccionari(e.getKey(), e.getValue()));
         }
+
         // Ordena per longitud descendent → longest-match-first
         entrades.sort((a, b) -> Integer.compare(b.longitud(), a.longitud()));
     }
@@ -88,7 +109,7 @@ public class DiccionariEntitats {
         afegeixEntitatPER("Albert Schweitzer");
         afegeixEntitatPER("George Lance");
         afegeixEntitatPER("la tia Clara");
-        afegeixEntitatPER("Compte Olinos");
+        afegeixEntitatPER("Comte Olinos");
 
         // Noms de persona simples (un sol token; menys prioritat que els composts)
         afegeixEntitatPER("Nai");
@@ -147,9 +168,6 @@ public class DiccionariEntitats {
 
         // ORG: Organitzacions ───────────────────────────────────────────
 
-        // Expressions compostes
-        afegeixEntitatORG("Palau de la Música");
-
         // Noms simples
         afegeixEntitatORG("Veritat");
         afegeixEntitatORG("Dolor");
@@ -165,8 +183,62 @@ public class DiccionariEntitats {
         afegeixEntitatMISC("Déu");
         afegeixEntitatMISC("Déus");
         afegeixEntitatMISC("Crist");
+
     }
 
+
+
+    public static void carregaDesDeJSON(DiccionariEntitats diccionari,String rutaFitxer) {
+
+        Path path = Paths.get(rutaFitxer);
+
+        try {
+            // Llegim tot el fitxer com a String UTF-8
+            String contingutJSON = Files.readString(path, StandardCharsets.UTF_8);
+
+            // Processa el fitxer JSON i afegeix
+            processaJSON(diccionari, contingutJSON);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    private static void processaJSON(DiccionariEntitats diccionari,String contingut) {
+
+        // 1. Construeix l'objecte arrel
+        JSONObject arrel = new JSONObject(contingut);
+
+        // 2. Obté l'array d'entitats
+        JSONArray arrayEntitats = arrel.getJSONArray(CAMP_ARREL);
+
+        int comptador = 0;
+
+        // 3. Itera cada entrada de l'array
+        for (int i = 0; i < arrayEntitats.length(); i++) {
+
+            JSONObject entrada = arrayEntitats.getJSONObject(i);
+
+            // 4. Llegeix els camps "text" i "tipus"
+            String text = entrada.getString(CAMP_TEXT).trim();
+            String tipusStr = entrada.getString(CAMP_TIPUS).trim().toUpperCase();
+
+            // 5. Afegeix al diccionari segons el tipus
+            switch (tipusStr) {
+                case "PER": diccionari.afegeixEntitatPER(text); break;
+                case "LOC": diccionari.afegeixEntitatLOC(text); break;
+                case "ORG": diccionari.afegeixEntitatORG(text); break;
+                case "MISC": diccionari.afegeixEntitatMISC(text); break;
+            }
+            comptador++;
+        }
+
+        // 6. Reconstrueix la llista ordenada per longest-match-first
+        diccionari.construeixEntrades();
+
+        System.out.printf("Diccionari actualitzat: %d entitat(s) carregada(s) des del JSON.%n", comptador);
+    }
 
 
     public void imprimeixEntradesDiccionari(){

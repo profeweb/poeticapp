@@ -66,10 +66,23 @@ public class Mides {
     public static final float BOTO_FAVORIT = 50f;
     public static final float midaTextEmojiBoto = 34f;
     public static final float MARGE_FAVORIT = 10f;
+
     public static final int CODI_FAVORIT = 0x1F600 + 54;
     public static final int CODI_NO_FAVORIT = 0x1F600 + 66;
     public static final int CODI_SEGUENT = 0x1F600 + 1265;
     public static final int CODI_ANTERIOR = 0x1F600 + 1266;
     public static final int CODI_ICONA_CERCADOR = 0x1F600 + 1266;
+
+    public static final int CODI_INICI = 0x1F600 + 54;
+    public static final int CODI_EXPLORAR = 0x1F600 + 54;
+    public static final int CODI_FAVORITS = 0x1F600 + 54;
+    public static final int CODI_AUTORS = 0x1F600 + 54;
+    public static final int CODI_LLIBRES = 0x1F600 + 54;
+    public static final int CODI_POEMES = 0x1F600 + 54;
+    public static final int CODI_QUANTITATS = 0x1F600 + 54;
+    public static final int CODI_QUALITATS = 0x1F600 + 54;
+    public static final int CODI_RELACIONS = 0x1F600 + 54;
+    public static final int CODI_TEMPS = 0x1F600 + 54;
+    public static final int CODI_ALTRES = 0x1F600 + 54;
 
 }

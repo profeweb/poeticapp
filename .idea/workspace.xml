@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/diec/test/Test_Categories_Gramaticals.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/json_20240303.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libs/json-20240303.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ner/test/Test_NER_JSON_01.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/diec/AnalitzadorCategories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diec/AnalitzadorCategories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/diec/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diec/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/diec/test/Test_Categories_Tematiques_Poema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diec/test/Test_Categories_Tematiques_Poema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Poetica.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Poetica.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Mides.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Mides.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ner/DiccionariEntitats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/DiccionariEntitats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ner/test/Test_NER_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/test/Test_NER_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sentiments/DiccionariSentiments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/DiccionariSentiments.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,48 +40,47 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tonim/Desktop&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tonim/Documents/CODE/Poetica/libs/json-20240303.jar&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\tonim\Documents\CODE\Poetica\data\diccionaris" />
       <recent name="C:\Users\tonim\Documents\CODE\Poetica\data\stats" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="silabes" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ner.test" />
       <recent name="diec.test" />
       <recent name="lema.test" />
       <recent name="gui.test" />
       <recent name="gui" />
-      <recent name="stats.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test_Categories_Gramaticals">
-    <configuration name="Test_Categories_Gramaticals" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="diec.test.Test_Categories_Gramaticals" />
+  <component name="RunManager" selected="Application.Test_NER_JSON_01">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="diec.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_Categories_Tematiques" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="diec.test.Test_Categories_Tematiques" />
+    <configuration name="Test_Categories_Gramaticals" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="diec.test.Test_Categories_Gramaticals" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
@@ -102,12 +105,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_DIccionariLemes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lema.test.Test_DIccionariLemes" />
+    <configuration name="Test_NER_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ner.test.Test_NER_01" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lema.test.*" />
+          <option name="PATTERN" value="ner.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,12 +118,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_Lemas_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="lema.test.Test_Lemas_01" />
+    <configuration name="Test_NER_JSON_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ner.test.Test_NER_JSON_01" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lema.test.*" />
+          <option name="PATTERN" value="ner.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,11 +133,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test_NER_JSON_01" />
+        <item itemvalue="Application.Test_NER_01" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Test_Categories_Gramaticals" />
         <item itemvalue="Application.Test_Categories_Tematiques_Poema" />
-        <item itemvalue="Application.Test_Categories_Tematiques" />
-        <item itemvalue="Application.Test_Lemas_01" />
-        <item itemvalue="Application.Test_DIccionariLemes" />
       </list>
     </recent_temporary>
   </component>
@@ -229,14 +232,12 @@
       <workItem from="1778825243916" duration="5907000" />
       <workItem from="1778834891299" duration="803000" />
       <workItem from="1778841549376" duration="11192000" />
-      <workItem from="1778858699900" duration="4203000" />
-    </task>
-    <task id="LOCAL-00018" summary="Inicial">
-      <created>1776452044872</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1776452044872</updated>
+      <workItem from="1778858699900" duration="8039000" />
+      <workItem from="1778912505904" duration="317000" />
+      <workItem from="1778959201044" duration="105000" />
+      <workItem from="1779001248791" duration="4031000" />
+      <workItem from="1779005372436" duration="458000" />
+      <workItem from="1779005900007" duration="654000" />
     </task>
     <task id="LOCAL-00019" summary="Inicial">
       <created>1776533563140</created>
@@ -574,7 +575,14 @@
       <option name="project" value="LOCAL" />
       <updated>1778856244002</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Inicial">
+      <created>1778865574319</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1778865574320</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

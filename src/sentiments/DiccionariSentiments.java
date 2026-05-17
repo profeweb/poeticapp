@@ -1,6 +1,8 @@
 package sentiments;
 
 import ner.DiccionariEntitats;
+import processing.data.JSONArray;
+import processing.data.JSONObject;
 
 import java.util.*;
 
@@ -167,6 +169,66 @@ public class DiccionariSentiments {
         modificadors.put("gairebé",        0.6);
         modificadors.put("lleugerament",   0.4);
     }
+
+    /*
+    private static void processaJSON(DiccionariEntitats diccionari,
+                                     String contingut)
+            throws JSONException {
+
+        // 1. Construeix l'objecte arrel
+        JSONObject arrel = new JSONObject();
+
+        // 2. Obté l'array d'entitats
+        if (!arrel.has(CAMP_ARREL)) {
+            throw new JSONException(
+                "El JSON no conté la clau arrel esperada: \"" + CAMP_ARREL + "\"");
+        }
+        JSONArray arrayEntitats = arrel.getJSONArray(CAMP_ARREL);
+
+        int comptador = 0;
+
+        // 3. Itera cada entrada de l'array
+        for (int i = 0; i < arrayEntitats.length(); i++) {
+
+            JSONObject entrada = arrayEntitats.getJSONObject(i);
+
+            // 4a. Llegeix el camp "text"
+            if (!entrada.has(CAMP_TEXT) || entrada.getString(CAMP_TEXT).isBlank()) {
+                System.err.printf("Avís [entrada %d]: camp \"%s\" absent o buit, s'ignora.%n",
+                        i, CAMP_TEXT);
+                continue;
+            }
+            String text = entrada.getString(CAMP_TEXT).trim();
+
+            // 4b. Llegeix el camp "tipus"
+            if (!entrada.has(CAMP_TIPUS) || entrada.getString(CAMP_TIPUS).isBlank()) {
+                System.err.printf("Avís [entrada %d, text=\"%s\"]: camp \"%s\" absent o buit," +
+                        " s'ignora.%n", i, text, CAMP_TIPUS);
+                continue;
+            }
+            String tipusStr = entrada.getString(CAMP_TIPUS).trim().toUpperCase();
+
+            // 5. Afegeix al diccionari segons el tipus
+            switch (tipusStr) {
+                case "PER"  -> diccionari.afegeixEntitatPER(text);
+                case "LOC"  -> diccionari.afegeixEntitatLOC(text);
+                case "ORG"  -> diccionari.afegeixEntitatORG(text);
+                case "MISC" -> diccionari.afegeixEntitatMISC(text);
+                default -> System.err.printf(
+                        "Avís [entrada %d, text=\"%s\"]: tipus desconegut \"%s\", s'ignora.%n",
+                        i, text, tipusStr);
+            }
+            comptador++;
+        }
+
+        // 6. Reconstrueix la llista ordenada per longest-match-first
+        diccionari.construeixEntrades();
+
+        System.out.printf("Diccionari actualitzat: %d entitat(s) carregada(s) des del JSON.%n",
+                comptador);
+    }
+
+     */
 
     public void imprimeixLexic(float minFactor, float maxFactor, String text, int numLexics){
         System.out.print(text +" ["+minFactor+", "+maxFactor+"]: ");
