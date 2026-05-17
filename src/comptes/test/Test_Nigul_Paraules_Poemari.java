@@ -1,10 +1,10 @@
-package stats.test;
+package comptes.test;
 
 import processing.core.PApplet;
-import stats.ComptadorParaules;
-import stats.ParaulaNigul;
-import stats.ParaulesBuidesCatala;
-import stats.TermeFreq;
+import comptes.ComptadorParaules;
+import comptes.ParaulaNigul;
+import comptes.ParaulesBuidesCatala;
+import comptes.TermeFreq;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -18,7 +18,7 @@ public class Test_Nigul_Paraules_Poemari extends PApplet {
     ArrayList<TermeFreq> termsFreqs;
 
     public static void main(String[] args) {
-        PApplet.main("stats.test.Test_Nigul_Paraules_Poemari");
+        PApplet.main("comptes.test.Test_Nigul_Paraules_Poemari");
     }
 
     public void settings(){

@@ -1,4 +1,4 @@
-package stats;
+package comptes;
 
 public class TermeFreq implements Comparable {
 

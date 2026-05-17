@@ -1,9 +1,9 @@
-package stats.test;
+package comptes.test;
 
 import processing.core.PApplet;
-import stats.ParaulesBuidesCatala;
-import stats.TermeFreq;
-import stats.ComptadorParaules;
+import comptes.ParaulesBuidesCatala;
+import comptes.TermeFreq;
+import comptes.ComptadorParaules;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class Test_TF_IDF extends PApplet {
     ParaulesBuidesCatala sw;
 
     public static void main(String[] args) {
-        PApplet.main("stats.test.Test_TF_IDF");
+        PApplet.main("comptes.test.Test_TF_IDF");
     }
 
     public void settings(){

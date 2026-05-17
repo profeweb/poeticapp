@@ -1,16 +1,5 @@
 {
-  "_meta": {
-    "llengua":    "català",
-    "versio":     "2.0",
-    "descripcio": "Paraules buides (stop words) del català agrupades per categoria gramatical.",
-    "categories": [
-      "ARTICLE", "PREPOSICIO", "CONJUNCIO", "PRONOM",
-      "DETERMINANT", "ADVERBI", "AUXILIAR"
-    ]
-  },
-
   "paraules_buides": [
-
     {
       "tipus": "ARTICLE",
       "termes": [

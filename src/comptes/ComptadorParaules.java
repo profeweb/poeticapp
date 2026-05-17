@@ -1,4 +1,4 @@
-package stats;
+package comptes;
 
 import processing.core.PApplet;
 

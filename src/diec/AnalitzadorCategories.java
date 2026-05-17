@@ -4,7 +4,7 @@ import parser.Poema;
 import parser.Poemari;
 import parser.Token;
 import parser.Vers;
-import stats.ParaulesBuidesCatala;
+import comptes.ParaulesBuidesCatala;
 
 import java.io.IOException;
 import java.util.ArrayList;

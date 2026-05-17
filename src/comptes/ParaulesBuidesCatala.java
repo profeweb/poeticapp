@@ -1,11 +1,27 @@
-package stats;
+package comptes;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class ParaulesBuidesCatala {
+
+    private static final String CLAU_ARREL  = "paraules_buides";
+
+    /** Clau del nom de categoria dins cada objecte del grup. */
+    private static final String CLAU_TIPUS  = "tipus";
+
+    /** Clau de l'array de termes dins cada objecte del grup. */
+    private static final String CLAU_TERMES = "termes";
 
     private final Set<String> paraulesBuides;
 
@@ -21,6 +37,24 @@ public class ParaulesBuidesCatala {
         this.paraulesBuides = Collections.unmodifiableSet(conjunt);
     }
 
+    public ParaulesBuidesCatala(String rutaJSON) {
+
+        Path path = Paths.get(rutaJSON);
+
+        try {
+            // Llegim tot el fitxer com a String UTF-8
+            String contingutJSON = Files.readString(path, StandardCharsets.UTF_8);
+
+            // Processa el fitxer JSON i afegeix
+            Set<String> paraulesBuidesJSON = processaJSON(contingutJSON);
+            this.paraulesBuides = Collections.unmodifiableSet(paraulesBuidesJSON);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
     public boolean esParaulaBuida(String token) {
         if (token == null || token.isBlank()) return true;
         return paraulesBuides.contains(normalitza(token));
@@ -32,6 +66,36 @@ public class ParaulesBuidesCatala {
 
     public int getNumParaulesBuides() {
         return paraulesBuides.size();
+    }
+
+    private void carregaDesDeJSON(String rutaJSON){
+
+    }
+
+    private Set<String> processaJSON(String contingut) {
+
+        // ── Pas 1: construeix l'arrel ──────────────────────────────────────
+        JSONObject arrel = new JSONObject(contingut);
+
+        // ── Pas 2: obté l'array de grups ──────────────────────────────────
+        JSONArray arrayGrups = arrel.getJSONArray(CLAU_ARREL);
+
+        Set<String> paraulesBuidesJSON = new HashSet<>();
+
+        // ── Pas 3: itera sobre cada grup ──────────────────────────────────
+        for (int i = 0; i < arrayGrups.length(); i++) {
+
+            JSONObject grup = arrayGrups.getJSONObject(i);
+            JSONArray arrayTermes = grup.getJSONArray(CLAU_TERMES);
+
+            // ── 3c: itera sobre cada terme de l'array ──────────────────────
+            for (int j = 0; j < arrayTermes.length(); j++) {
+                String terme = arrayTermes.getString(j);
+                paraulesBuidesJSON.add(normalitza(terme));
+            }
+        }
+
+        return paraulesBuidesJSON;
     }
 
     /** Articles determinats i indeterminats (formes simples i contractes). */
@@ -79,13 +143,11 @@ public class ParaulesBuidesCatala {
             // Subordinants condicionals
             "si", "sempre que", "tret que", "llevat que",
             // Subordinants concessives
-            "tot i que", "malgrat que", "per bé que", "encara que",
-            "si bé",
+            "tot i que", "malgrat que", "per bé que", "encara que", "si bé",
             // Subordinants finals
             "perquè", "a fi que", "per tal que",
             // Subordinants temporals
-            "quan", "mentre", "fins que", "des que", "tan bon punt",
-            "un cop", "cada vegada que",
+            "quan", "mentre", "fins que", "des que", "tan bon punt", "un cop", "cada vegada que",
             // Subordinants completives i relatives
             "que", "qui", "el qual", "la qual", "els quals", "les quals",
             "on", "com", "quan"

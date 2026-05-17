@@ -1,13 +1,12 @@
-package stats.test;
+package comptes.test;
 
 import processing.core.PApplet;
-import stats.ComptadorParaules;
-import stats.ParaulesBuidesCatala;
+import comptes.ComptadorParaules;
+import comptes.ParaulesBuidesCatala;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 public class Test_Prefixos extends PApplet {
 
@@ -15,7 +14,7 @@ public class Test_Prefixos extends PApplet {
     ParaulesBuidesCatala sw;
 
     public static void main(String[] args) {
-        PApplet.main("stats.test.Test_Prefixos");
+        PApplet.main("comptes.test.Test_Prefixos");
     }
 
     public void settings(){

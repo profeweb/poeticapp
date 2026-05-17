@@ -1,8 +1,8 @@
-package stats.test;
+package comptes.test;
 
 import processing.core.PApplet;
-import stats.ParaulesBuidesCatala;
-import stats.ComptadorParaules;
+import comptes.ParaulesBuidesCatala;
+import comptes.ComptadorParaules;
 
 import java.io.File;
 import java.util.List;
@@ -13,7 +13,7 @@ public class Test_Frequencia_Termes extends PApplet {
     ParaulesBuidesCatala sw;
 
     public static void main(String[] args) {
-        PApplet.main("stats.test.Test_Frequencia_Termes");
+        PApplet.main("comptes.test.Test_Frequencia_Termes");
     }
 
     public void settings(){

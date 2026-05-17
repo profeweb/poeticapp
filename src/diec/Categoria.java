@@ -1,7 +1,5 @@
 package diec;
 
-import stats.ParaulesBuidesCatala;
-
 import java.util.ArrayList;
 
 public class Categoria {

@@ -4,14 +4,11 @@ import diec.AnalitzadorCategories;
 import diec.Categoria;
 import parser.Poema;
 import parser.Poemari;
-import parser.Vers;
-import stats.ParaulesBuidesCatala;
+import comptes.ParaulesBuidesCatala;
 
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
-
-import static diec.ConsultaWebDIEC.obteSignificatTerme;
 
 public class Test_Categories_Tematiques_Poema {
 

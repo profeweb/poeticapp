@@ -1,13 +1,13 @@
-package stats.test;
+package comptes.test;
 
 import processing.core.PApplet;
-import stats.ComptadorParaules;
+import comptes.ComptadorParaules;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Test_WordSearch extends PApplet {
+public class Test_WordSearch_2 extends PApplet {
 
     ComptadorParaules wcCorpus;
 
@@ -15,7 +15,7 @@ public class Test_WordSearch extends PApplet {
     String rutaFitxerSortida = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\";
 
     public static void main(String[] args) {
-        PApplet.main("stats.test.Test_WordSearch");
+        PApplet.main("comptes.test.Test_WordSearch_2");
     }
 
     public void settings(){
@@ -24,12 +24,20 @@ public class Test_WordSearch extends PApplet {
 
     public void setup() {
 
-        String termeCerca = "cos";
+        String[] termesCerca = {"mà", "mans"};
+        String nomFitxer = termesCerca[0] + (termesCerca.length > 1 ? " i Derivats" : "");
+        System.out.println(nomFitxer);
+
         wcCorpus = new ComptadorParaules();
 
         try {
 
-            FileWriter myWriter = new FileWriter(rutaFitxerSortida + termeCerca +".txt");
+            FileWriter myWriter = new FileWriter(rutaFitxerSortida + nomFitxer +".txt");
+            myWriter.append("TERME(S): ");
+            for(String terme : termesCerca){
+                myWriter.append(terme +"\t");
+            }
+            myWriter.append("\n");
 
             File carpetaArrel = new File(rutaCarpetaArrel);
             File[] subcarpetes = carpetaArrel.listFiles();
@@ -43,7 +51,7 @@ public class Test_WordSearch extends PApplet {
             }
 
 
-            int numVegadesCorpus = wcCorpus.getNumOcurrenciesTermes(termeCerca);
+            int numVegadesCorpus = wcCorpus.getNumOcurrenciesTermes(termesCerca);
             System.out.println("NUM CORPUS: " + numVegadesCorpus);
             myWriter.append("NUM CORPUS: " + numVegadesCorpus+"\n");
 
@@ -54,7 +62,7 @@ public class Test_WordSearch extends PApplet {
 
                 ComptadorParaules wcPoemari = new ComptadorParaules();
                 wcPoemari.processaPoemari(poemari);
-                int numVegadesPoemari = wcPoemari.getNumOcurrenciesTermes(termeCerca);
+                int numVegadesPoemari = wcPoemari.getNumOcurrenciesTermes(termesCerca);
                 System.out.println("NUM POEMARI: " + numVegadesPoemari);
                 myWriter.append("POEMARI " + poemari.getName()+" : " + numVegadesPoemari+"\n");
 
@@ -64,7 +72,7 @@ public class Test_WordSearch extends PApplet {
                     for (File poema : poemes) {
                         ComptadorParaules wcPoema = new ComptadorParaules();
                         wcPoema.processaPoema(poema);
-                        int numVegadesPoema = wcPoema.getNumOcurrenciesTermes(termeCerca);
+                        int numVegadesPoema = wcPoema.getNumOcurrenciesTermes(termesCerca);
                         if (numVegadesPoema > 0) {
                             System.out.print(np + ": " + numVegadesPoema + ", ");
                             myWriter.append(np + ": " + numVegadesPoema + ", ");
@@ -87,7 +95,6 @@ public class Test_WordSearch extends PApplet {
 
         public void draw(){
         background(255);
-        //wc.display(this);
         noLoop();
     }
 }

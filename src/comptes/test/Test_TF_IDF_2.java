@@ -1,8 +1,8 @@
-package stats.test;
+package comptes.test;
 
 import processing.core.PApplet;
-import stats.TermeFreq;
-import stats.ComptadorParaules;
+import comptes.TermeFreq;
+import comptes.ComptadorParaules;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -13,7 +13,7 @@ public class Test_TF_IDF_2 extends PApplet {
     ComptadorParaules wcCorpus;
 
     public static void main(String[] args) {
-        PApplet.main("stats.test.Test_TF_IDF_2");
+        PApplet.main("comptes.test.Test_TF_IDF_2");
     }
 
     public void settings(){
