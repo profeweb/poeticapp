@@ -1,13 +1,10 @@
 package parser;
 
 import processing.core.PApplet;
-import processing.core.PConstants;
 
 import java.util.ArrayList;
 
 import static processing.core.PApplet.*;
-import static processing.core.PConstants.PI;
-import static processing.core.PConstants.TWO_PI;
 
 public class Poema {
 
@@ -73,6 +70,16 @@ public class Poema {
         return sumaParaules / getNumVersos();
     }
 
+    public float getMitjanaLletresVersPoema(){
+        float sumaLletres = 0;
+        for(Estrofa estrofa : estrofes){
+            for(Vers vers : estrofa.getVersos()){
+                sumaLletres += vers.getNumLletres();
+            }
+        }
+        return sumaLletres / getNumVersos();
+    }
+
     public ArrayList<Vers> getVersos(){
         ArrayList<Vers> versos = new ArrayList<>();
         for(Estrofa estrofa : estrofes){
@@ -104,7 +111,7 @@ public class Poema {
     }
 
 
-    public void dibuixaEstrofesBloc(PApplet p5, float x, float y, float w, float h, int colorEstrofa, int colorVers, float mitjanaPoemari, float mitjanaPoema, int maxParaulesVers){
+    public void dibuixaNumParaulesEstrofesBloc(PApplet p5, float x, float y, float w, float h, int colorEstrofa, int colorVers, float mitjanaPoemari, float mitjanaPoema, int maxParaulesVers){
 
         p5.pushStyle();
         p5.textSize(24); p5.fill(0);
@@ -123,7 +130,7 @@ public class Poema {
 
             float mitjanaEstrofa = estrofa.getMitjanaParaulesVersosEstrofa();
 
-            estrofa.dibuixaVersosEstrofaLinia(p5, x, yEstrofa, w, h, colorEstrofa, colorVers, maxParaulesVers, mitjanaPoemari);
+            estrofa.dibuixaNumParaulesVersosEstrofaLinia(p5, x, yEstrofa, w, h, colorEstrofa, colorVers, maxParaulesVers, mitjanaPoemari);
 
             p5.stroke(255, 0, 0);
             p5.line(xMitjaPoemari, yEstrofa, xMitjaPoemari, yEstrofa + h * (estrofa.getNumVersos() + 1));
@@ -138,6 +145,47 @@ public class Poema {
             p5.fill(0, 255, 0); p5.textSize(14);
             p5.textAlign(p5.CENTER, p5.BOTTOM);
             p5.text(nf(mitjanaEstrofa, 0, 2) + " paraules / vers (estrofa)", x + w/2, yEstrofa + h * (estrofa.getNumVersos() + 1) + 25);
+
+            yEstrofa += (h * estrofa.getNumVersos() + 1) + 50;
+        }
+
+        p5.popStyle();
+    }
+
+    public void dibuixaNumLletresEstrofesBloc(PApplet p5, float x, float y, float w, float h, int colorEstrofa, int colorVers, float mitjanaPoemari, float mitjanaPoema, int maxLletresVers){
+
+        p5.pushStyle();
+        p5.textSize(24); p5.fill(0);
+        p5.textAlign(p5.CENTER, p5.BOTTOM);
+        p5.text("P" + numero, x + w/2, y - 25);
+        p5.textSize(18); p5.fill(100);
+        p5.text(titol.substring(0, 15) + "...", x + w/2, y);
+        p5.textSize(14); p5.fill(0, 0, 255);
+        p5.text(nf(mitjanaPoema, 0, 2) +" lletres / vers (poema)", x + w/2, y + 25);
+
+        float xMitjaPoemari = x + 25 + p5.map(mitjanaPoemari, 0, maxLletresVers, 0, w-50);
+        float xMitjaPoema = x + 25 + p5.map(mitjanaPoema, 0, maxLletresVers, 0, w-50);
+
+        float yEstrofa = y + 25;
+        for(Estrofa estrofa : estrofes){
+
+            float mitjanaEstrofa = estrofa.getMitjanaLletresVersosEstrofa();
+
+            estrofa.dibuixaNumLletresVersosEstrofaLinia(p5, x, yEstrofa, w, h, colorEstrofa, colorVers, maxLletresVers, mitjanaPoemari);
+
+            p5.stroke(255, 0, 0);
+            p5.line(xMitjaPoemari, yEstrofa, xMitjaPoemari, yEstrofa + h * (estrofa.getNumVersos() + 1));
+
+            p5.stroke(0, 0, 255);
+            p5.line(xMitjaPoema, yEstrofa, xMitjaPoema, yEstrofa + h * (estrofa.getNumVersos() + 1));
+
+            p5.stroke(0, 255, 0);
+            float xMitjaEstrofa = x + 25 + p5.map(mitjanaEstrofa, 0, maxLletresVers, 0, w-50);
+            p5.line(xMitjaEstrofa, yEstrofa, xMitjaEstrofa, yEstrofa + h * (estrofa.getNumVersos() + 1));
+
+            p5.fill(0, 255, 0); p5.textSize(14);
+            p5.textAlign(p5.CENTER, p5.BOTTOM);
+            p5.text(nf(mitjanaEstrofa, 0, 2) + " lletres / vers (estrofa)", x + w/2, yEstrofa + h * (estrofa.getNumVersos() + 1) + 25);
 
             yEstrofa += (h * estrofa.getNumVersos() + 1) + 50;
         }

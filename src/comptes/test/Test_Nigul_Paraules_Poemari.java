@@ -31,7 +31,7 @@ public class Test_Nigul_Paraules_Poemari extends PApplet {
 
         wc = new ComptadorParaules();
 
-        String rutaPoemari = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\Miquel Àngel Riera (1930)\\llibre de benaventurances\\";
+        String rutaPoemari = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\Miquel Àngel Riera (1930)\\Llibre de Benaventurances (1977)\\";
         File carpetaPoemari = new File(rutaPoemari);
         File[] poemes = carpetaPoemari.listFiles();
 
@@ -51,9 +51,9 @@ public class Test_Nigul_Paraules_Poemari extends PApplet {
         });
     }
 
-    int freqToColor(float normFreq) {
+    int freqAColor(float normFreq) {
         // normFreq ∈ [0, 1]:  0 = poc freqüent · 1 = molt freqüent
-        int[] palette = {
+        int[] paletaColors = {
                 color(100, 180, 220),   // blau clar   (baix)
                 color( 80, 160, 130),   // verd menta
                 color(240, 200,  60),   // groc daurat
@@ -61,17 +61,17 @@ public class Test_Nigul_Paraules_Poemari extends PApplet {
                 color(200,  40,  60)    // vermell fosc (alt)
         };
 
-        float scaled = normFreq * (palette.length - 1);
+        float scaled = normFreq * (paletaColors.length - 1);
         int   idx    = (int) scaled;
         float t      = scaled - idx;
 
-        if (idx >= palette.length - 1) return palette[palette.length - 1];
+        if (idx >= paletaColors.length - 1) return paletaColors[paletaColors.length - 1];
 
         // Interpolació lineal entre dos colors de la paleta
-        return lerpColor(palette[idx], palette[idx + 1], t);
+        return lerpColor(paletaColors[idx], paletaColors[idx + 1], t);
     }
 
-    public void drawWordCloud(ArrayList<TermeFreq> termes, int numParaules, float minSize, float maxSize) {
+    public void dibuixaNigulParaules(ArrayList<TermeFreq> termes, int numParaules, float minSize, float maxSize) {
 
         if (termes == null || termes.isEmpty()) return;
 
@@ -105,7 +105,7 @@ public class Test_Nigul_Paraules_Poemari extends PApplet {
             //float normFreq = (tf.getFrequencia() - minFreq) / freqRange;
             float normFreq = (log(tf.getFrequencia() + 1) - logMin) / freqRange;
             float fs       = map(normFreq, 0, 1, minSize, maxSize);
-            int col      = freqToColor(normFreq);
+            int col      = freqAColor(normFreq);
 
             textFont(createFont("Georgia", fs));
             textSize(fs);
@@ -192,7 +192,7 @@ public class Test_Nigul_Paraules_Poemari extends PApplet {
             float t        = px / barW;                           // posició lineal [0,1]
             float logVal   = logMin + t * (logMax - logMin);      // valor log interpolat
             float normFreq = (logVal - logMin) / (logMax == logMin ? 1 : logMax - logMin);
-            stroke(freqToColor(normFreq));
+            stroke(freqAColor(normFreq));
             line(x + px, y, x + px, y + barH);
         }
 
@@ -242,7 +242,7 @@ public class Test_Nigul_Paraules_Poemari extends PApplet {
 
     public void draw(){
         background(255);
-        drawWordCloud(termsFreqs, 150,24, 120);
+        dibuixaNigulParaules(termsFreqs, 150,24, 120);
         noLoop();
     }
 }

@@ -74,6 +74,14 @@ public class Estrofa {
         return numParaules / getNumVersos();
     }
 
+    public float getMitjanaLletresVersosEstrofa(){
+        float numLletres = 0;
+        for(Vers vers : getVersos()){
+            numLletres += vers.getNumLletres();
+        }
+        return numLletres / getNumVersos();
+    }
+
     public void printEstrofa(){
         System.out.println("\nEstrofa #"+ numero + " ("+ frases.size()+ " frases):");
         for(Frase frase : frases){
@@ -103,7 +111,7 @@ public class Estrofa {
         p5.popStyle();
     }
 
-    public void dibuixaVersosEstrofaLinia(PApplet p5, float x, float y, float w, float h, int colorEstrofa, int colorVers, int maxParaulesVersPoema, float mitjanaParaules){
+    public void dibuixaNumParaulesVersosEstrofaLinia(PApplet p5, float x, float y, float w, float h, int colorEstrofa, int colorVers, int maxParaulesVersPoema, float mitjanaParaules){
 
         float marge = 25;
 
@@ -116,6 +124,23 @@ public class Estrofa {
             float gruixa = vers.getNumParaules() >= mitjanaParaules ? 3 : 1.5f;
             int colorLina = vers.getNumParaules() == maxParaulesVersPoema ? p5.color(0) : colorVers;
             vers.dibuixaVersLinea(p5, x + marge , y + h*numVers, gruixa, wLinia, w, colorLina, vers.getNumParaules());
+            numVers++;
+        }
+    }
+
+    public void dibuixaNumLletresVersosEstrofaLinia(PApplet p5, float x, float y, float w, float h, int colorEstrofa, int colorVers, int maxLletresVersPoema, float mitjanaLletres){
+
+        float marge = 25;
+
+        float he = h * (getNumVersos() + 1);
+        dibuixaEstrofa(p5, x, y, w, he, colorEstrofa, getNumVersos());
+
+        int numVers = 1;
+        for(Vers vers : getVersos()){
+            float wLinia = p5.map(vers.getNumLletres(), 0, maxLletresVersPoema, 0, w - 2*marge);
+            float gruixa = vers.getNumLletres() >= mitjanaLletres ? 3 : 1.5f;
+            int colorLina = vers.getNumLletres() == maxLletresVersPoema ? p5.color(0) : colorVers;
+            vers.dibuixaVersLinea(p5, x + marge , y + h*numVers, gruixa, wLinia, w, colorLina, vers.getNumLletres());
             numVers++;
         }
     }

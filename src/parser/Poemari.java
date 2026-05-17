@@ -119,6 +119,20 @@ public class Poemari {
         return maxParaules;
     }
 
+    public int getMaxLletresVersosPoemari(){
+        int maxLletres = 0;
+        for(Poema poema : poemes){
+            for(Estrofa estrofa : poema.estrofes){
+                for(Vers vers: estrofa.getVersos()){
+                    if(vers.getNumLletres() > maxLletres){
+                        maxLletres = vers.getNumLletres();
+                    }
+                }
+            }
+        }
+        return maxLletres;
+    }
+
     public float getMitjanaParaulesVersosPoemari(){
         int numParaules =  0;
         int numVersos = 0;
@@ -133,6 +147,20 @@ public class Poemari {
         return (float)numParaules / numVersos;
     }
 
+    public float getMitjanaLletresVersosPoemari(){
+        int numLletres =  0;
+        int numVersos = 0;
+        for(Poema poema : poemes){
+            for(Estrofa estrofa : poema.estrofes){
+                for(Vers vers: estrofa.getVersos()){
+                    numLletres += vers.getText().length();
+                    numVersos++;
+                }
+            }
+        }
+        return (float)numLletres / numVersos;
+    }
+
     public void printInfo(){
         System.out.println("\nPoemari "+ titol +" (" + autor + ". "+any+"):\n");
         for(Poema poema : this.poemes){
@@ -140,13 +168,13 @@ public class Poemari {
         }
     }
 
-    public void dibuixaPoemesBlocs(PApplet p5, float x, float y, float w, float h, int colorEstrofa, int colorVers){
+    public void dibuixaNumParaulesPoemesBlocs(PApplet p5, float x, float y, float w, float h, int colorEstrofa, int colorVers){
 
         float mitjanaParaulesPoemari = getMitjanaParaulesVersosPoemari();
         int maxParaules = getMaxParaulesVersosPoemari();
         float xPoema = x;
         for(Poema poema : poemes){
-            poema.dibuixaEstrofesBloc(p5, xPoema, y + 80 , w, h, colorEstrofa, colorVers, mitjanaParaulesPoemari, poema.getMitjanaParaulesVersPoema(), maxParaules);
+            poema.dibuixaNumParaulesEstrofesBloc(p5, xPoema, y + 80 , w, h, colorEstrofa, colorVers, mitjanaParaulesPoemari, poema.getMitjanaParaulesVersPoema(), maxParaules);
             xPoema += w + 75;
         }
 
@@ -158,6 +186,27 @@ public class Poemari {
         // Dibuixa Text de Mitjana per Poemari
         p5.fill(255, 0, 0); p5.textSize(18);
         p5.text(nf(mitjanaParaulesPoemari, 0, 2) + " paraules / vers (llibre)", (x + xPoema)/2f, y + 24);
+        p5.popStyle();
+    }
+
+    public void dibuixaNumLletresPoemesBlocs(PApplet p5, float x, float y, float w, float h, int colorEstrofa, int colorVers){
+
+        float mitjanaLletresPoemari = getMitjanaLletresVersosPoemari();
+        int maxLletres = getMaxLletresVersosPoemari();
+        float xPoema = x;
+        for(Poema poema : poemes){
+            poema.dibuixaNumLletresEstrofesBloc(p5, xPoema, y + 80 , w, h, colorEstrofa, colorVers, mitjanaLletresPoemari, poema.getMitjanaLletresVersPoema(), maxLletres);
+            xPoema += w + 75;
+        }
+
+        p5.pushStyle();
+        p5.fill(0); p5.textSize(48);
+        p5.textAlign(p5.CENTER, p5.BOTTOM);
+        p5.text(titol, (x + xPoema)/2f, y);
+
+        // Dibuixa Text de Mitjana per Poemari
+        p5.fill(255, 0, 0); p5.textSize(18);
+        p5.text(nf(mitjanaLletresPoemari, 0, 2) + " lletres / vers (llibre)", (x + xPoema)/2f, y + 24);
         p5.popStyle();
     }
 

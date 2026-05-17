@@ -9,7 +9,7 @@ public class Test_Lemas_01 {
     //github.com/michmech/lemmatization-lists/blob/master/lemmatization-ca.txt
     public static final String fitxer = "data/diccionaris/lemmatization-ca.txt";
 
-    public static String[] paraules = {"cantaria", "espardenyes", "donaria", "ahgh", "ser", "caps", "cans"};
+    public static String[] paraules = {"cantaria", "espardenyes", "donaria", "ah", "ser", "caps", "cans"};
 
     public static void main(String[] args) {
 

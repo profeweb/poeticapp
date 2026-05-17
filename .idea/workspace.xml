@@ -2,15 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sentiments/test/Test_Visualitza_AnalisiSentiment_01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumLletres_01.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/comptes/ParaulaNigul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/ParaulaNigul.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/comptes/test/Test_Nigul_Paraules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/test/Test_Nigul_Paraules.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/comptes/test/Test_Nigul_Paraules_Poemari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/test/Test_Nigul_Paraules_Poemari.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/diec/AnalitzadorCategories.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diec/AnalitzadorCategories.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/diec/test/Test_Termes_Categoriea_Tematica_Poema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diec/test/Test_Termes_Categoriea_Tematica_Poema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sentiments/AnalisiSentiments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/AnalisiSentiments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sentiments/DiccionariSentiments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/DiccionariSentiments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comptes/test/Test_Prefixos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/test/Test_Prefixos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comptes/test/Test_WordSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/test/Test_CercaParaula_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comptes/test/Test_WordSearch_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/test/Test_CercaParaula_02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lema/test/Test_Lemas_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lema/test/Test_Lemas_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Estrofa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Estrofa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Poema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Poemari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poemari.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/test/Test_Visual01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/test/Test_Visual02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual02.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sentiments/test/Test_Visualitza_AnalisiSentiment_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/test/Test_Visualitza_AnalisiSentiment_01.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,68 +67,16 @@
       <recent name="silabes" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="parser.test" />
       <recent name="sentiments.test" />
       <recent name="diec.test" />
       <recent name="stats.test" />
       <recent name="ner.test" />
-      <recent name="lema.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test_AnalisiSentiment_JSON">
-    <configuration name="Test_AnalisiSentiment_JSON" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sentiments.test.Test_AnalisiSentiment_JSON" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sentiments.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test_Categories_Tematiques_Poema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="diec.test.Test_Categories_Tematiques_Poema" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="diec.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test_Termes_Categoriea_Tematica_Poema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="diec.test.Test_Termes_Categoriea_Tematica_Poema" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="diec.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test_Visualitza_AnalisiSentiment_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sentiments.test.Test_Visualitza_AnalisiSentiment_01" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sentiments.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test_WordSearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="comptes.test.Test_WordSearch" />
+  <component name="RunManager" selected="Application.Test_CercaParaula_02">
+    <configuration name="Test_CercaParaula_02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="comptes.test.Test_CercaParaula_02" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
@@ -136,13 +88,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test_Nigul_Paraules_Poemari" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="comptes.test.Test_Nigul_Paraules_Poemari" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="comptes.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test_Prefixos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="comptes.test.Test_Prefixos" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="comptes.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test_Visual02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual02" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parser.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test_Visual_NumLletres_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual_NumLletres_01" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parser.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test_AnalisiSentiment_JSON" />
-        <item itemvalue="Application.Test_Visualitza_AnalisiSentiment_01" />
-        <item itemvalue="Application.Test_Termes_Categoriea_Tematica_Poema" />
-        <item itemvalue="Application.Test_Categories_Tematiques_Poema" />
-        <item itemvalue="Application.Test_WordSearch" />
+        <item itemvalue="Application.Test_CercaParaula_02" />
+        <item itemvalue="Application.comptes.test.Test_Prefixos" />
+        <item itemvalue="Application.comptes.test.Test_Nigul_Paraules_Poemari" />
+        <item itemvalue="Application.Test_Visual02" />
+        <item itemvalue="Application.Test_Visual_NumLletres_01" />
       </list>
     </recent_temporary>
   </component>
@@ -243,14 +247,7 @@
       <workItem from="1779001248791" duration="4031000" />
       <workItem from="1779005372436" duration="458000" />
       <workItem from="1779005900007" duration="7574000" />
-      <workItem from="1779037294006" duration="2951000" />
-    </task>
-    <task id="LOCAL-00024" summary="Inicial">
-      <created>1776878946751</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1776878946751</updated>
+      <workItem from="1779037294006" duration="6104000" />
     </task>
     <task id="LOCAL-00025" summary="Inicial">
       <created>1776960462298</created>
@@ -588,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779011608977</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="Inicial">
+      <created>1779040391897</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1779040391899</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

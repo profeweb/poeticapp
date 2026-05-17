@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Test_WordSearch_2 extends PApplet {
+public class Test_CercaParaula_02 extends PApplet {
 
     ComptadorParaules wcCorpus;
 
@@ -15,7 +15,7 @@ public class Test_WordSearch_2 extends PApplet {
     String rutaFitxerSortida = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\";
 
     public static void main(String[] args) {
-        PApplet.main("comptes.test.Test_WordSearch_2");
+        PApplet.main("comptes.test.Test_CercaParaula_02");
     }
 
     public void settings(){

@@ -19,7 +19,7 @@ public class Test_Visual02 extends PApplet {
         poemari = new Poemari("Poemes a Nai", "MA Rieria", 1988);
         //poemari.parsePoemes(13, "data/poems/mariera/poemes a nai/");
         //poemari.parsePoemes(13, "data/poems/mariera/biografia/");
-        poemari.parsePoemes(30, "data/poems/Miquel Àngel Riera (1930)/el pis de la badia/");
+        poemari.parsePoemes(30, "data/poems/Miquel Àngel Riera (1930)/El pis de la badia (1993)/");
         poemari.getPoemaAt(numPoema).printInfo();
 
         System.out.println("MITJANA PARAULES: " + poemari.getMitjanaParaulesVersosPoemari());

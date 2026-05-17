@@ -10,8 +10,8 @@ import java.util.Collections;
 
 public class Test_Prefixos extends PApplet {
 
-    ComptadorParaules wc;
-    ParaulesBuidesCatala sw;
+    ComptadorParaules comptadorParaules;
+    ParaulesBuidesCatala paraulesBuidesCatala;
 
     public static void main(String[] args) {
         PApplet.main("comptes.test.Test_Prefixos");
@@ -23,9 +23,9 @@ public class Test_Prefixos extends PApplet {
 
     public void setup(){
 
-        sw = new ParaulesBuidesCatala();
+        paraulesBuidesCatala = new ParaulesBuidesCatala();
 
-        wc = new ComptadorParaules();
+        comptadorParaules = new ComptadorParaules();
 
         String rutaCareptaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\Miquel Àngel Riera (1930)\\";
         File carpetaArrel = new File(rutaCareptaArrel);
@@ -40,7 +40,7 @@ public class Test_Prefixos extends PApplet {
                 if (poemes != null) {
                     for (File poema : poemes) {
                         System.out.println("Processant " + poema.getAbsoluteFile());
-                        wc.processaPoemaParaulesBuides(poema.getAbsoluteFile(), sw);
+                        comptadorParaules.processaPoemaParaulesBuides(poema.getAbsoluteFile(), paraulesBuidesCatala);
                         numDocuments++;
                     }
                 }
@@ -51,14 +51,14 @@ public class Test_Prefixos extends PApplet {
         System.out.println("POEMES PROCESSATS:" +numDocuments);
 
         System.out.println("\nTERMES AMB PREFIX estim-:" );
-        ArrayList<String> termesPrefix = wc.termesComencenAmb("estim");
+        ArrayList<String> termesPrefix = comptadorParaules.termesComencenAmb("estim");
         for(int i=0; i<termesPrefix.size(); i++){
             System.out.println(termesPrefix.get(i) + "\t");
         }
 
         System.out.println("\nTERMES AMB SUFIX -íssim:" );
         String[] sufixos = {"íssim", "íssima"};
-        ArrayList<String> termesSufix = wc.termesAcabenAmb(sufixos);
+        ArrayList<String> termesSufix = comptadorParaules.termesAcabenAmb(sufixos);
         Collections.sort(termesSufix);
         for(int i=0; i<termesSufix.size(); i++){
             System.out.println(termesSufix.get(i));
