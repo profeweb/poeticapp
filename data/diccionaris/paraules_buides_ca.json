@@ -1,0 +1,138 @@
+{
+  "_meta": {
+    "llengua":    "català",
+    "versio":     "2.0",
+    "descripcio": "Paraules buides (stop words) del català agrupades per categoria gramatical.",
+    "categories": [
+      "ARTICLE", "PREPOSICIO", "CONJUNCIO", "PRONOM",
+      "DETERMINANT", "ADVERBI", "AUXILIAR"
+    ]
+  },
+
+  "paraules_buides": [
+
+    {
+      "tipus": "ARTICLE",
+      "termes": [
+        "el", "la", "els", "les", "l",
+        "es", "sa", "ses", "s", "so", "sos",
+        "en", "na", "n",
+        "un", "una", "uns", "unes",
+        "lo", "los",
+        "al", "als", "del", "dels"
+      ]
+    },
+
+    {
+      "tipus": "PREPOSICIO",
+      "termes": [
+        "a", "amb", "de", "d", "des", "en", "entre", "fins",
+        "per", "per a", "pel", "pels", "sense", "sobre", "sota", "cap",
+        "contra", "davant", "darrere", "durant", "envers",
+        "excepte", "fora", "malgrat", "mitjançant", "segons",
+        "tret", "vers", "via",
+        "a causa de", "a fi de", "a través de", "al llarg de",
+        "d'acord amb", "davant de", "darrere de", "dins de",
+        "fora de", "gràcies a", "junt amb", "prop de"
+      ]
+    },
+
+    {
+      "tipus": "CONJUNCIO",
+      "termes": [
+        "i", "e", "ni", "o", "u", "però", "sinó", "mes",
+        "ara", "bé", "doncs", "llavors", "tanmateix",
+        "perquè", "com que", "atès que", "ja que", "puix",
+        "si", "sempre que", "tret que", "llevat que",
+        "tot i que", "malgrat que", "per bé que", "encara que", "si bé",
+        "a fi que", "per tal que",
+        "quan", "mentre", "fins que", "des que", "tan bon punt",
+        "un cop", "cada vegada que",
+        "que", "qui", "el qual", "la qual", "els quals", "les quals",
+        "on", "com"
+      ]
+    },
+
+    {
+      "tipus": "PRONOM",
+      "termes": [
+        "jo", "tu", "ell", "ella", "nosaltres", "vosaltres",
+        "ells", "elles", "vós", "vostè", "vostès",
+        "em", "me", "m", "et", "t", "te", "es", "se", "s",
+        "el", "l", "la", "li", "ens", "us", "els", "les",
+        "en", "hi", "ho", "n", "ne", "vos", "nos",
+        "que", "qui", "on", "qual",
+        "què", "quant", "quants", "quanta", "quantes",
+        "quin", "quina", "quins", "quines",
+        "res", "ningú", "algú", "alguna", "algunes", "alguns",
+        "tothom", "cadascú", "cadascuna"
+      ]
+    },
+
+    {
+      "tipus": "DETERMINANT",
+      "termes": [
+        "aquest", "aquesta", "aquests", "aquestes",
+        "aquell", "aquella", "aquells", "aquelles",
+        "aqueix", "aqueixa", "aqueixos", "aqueixes",
+        "això", "allò", "açò",
+        "meu", "meua", "meva", "meus", "meves",
+        "teu", "teua", "teva", "teus", "teves",
+        "seu", "seua", "seva", "seus", "seves",
+        "nostre", "nostra", "nostres",
+        "vostre", "vostra", "vostres",
+        "ma", "mi", "mon", "ta", "ton", "sa", "son",
+        "tot", "tota", "tots", "totes",
+        "altre", "altra", "altres",
+        "mateix", "mateixa", "mateixos", "mateixes",
+        "algun", "alguna", "alguns", "algunes", "qualque",
+        "cap", "cada", "qualsevol", "qualssevol", "res",
+        "ambdós", "ambdues", "cert", "certa",
+        "poc", "poca", "pocs", "poques",
+        "bastant", "bastants", "prou",
+        "diversos", "diferents",
+        "un", "una", "dos", "dues", "tres", "quatre", "cinc",
+        "primer", "primera", "segon", "segona", "tercer"
+      ]
+    },
+
+    {
+      "tipus": "ADVERBI",
+      "termes": [
+        "aquí", "allí", "allà", "ací", "on", "arreu",
+        "prop", "lluny", "amunt", "avall", "dins", "fora",
+        "davant", "darrere", "dalt", "baix",
+        "ara", "avui", "ahir", "demà", "sempre", "mai",
+        "abans", "després", "aviat", "tard", "ja", "encara",
+        "tot just", "sovint", "de vegades", "a vegades", "ben aviat",
+        "bé", "mal", "així", "com", "tal", "igualment",
+        "tanmateix", "també", "tampoc",
+        "molt", "poc", "gens", "prou", "força", "massa",
+        "tan", "tant", "tanta", "tants", "tantes", "més", "menys",
+        "sí", "no", "potser", "segurament", "certament",
+        "efectivament", "pas"
+      ]
+    },
+
+    {
+      "tipus": "AUXILIAR",
+      "termes": [
+        "soc", "ets", "és", "som", "sou", "són",
+        "era", "eres", "érem", "éreu", "eren",
+        "ser", "ésser", "estat", "estada",
+        "sigui", "siguis", "siguem", "sigueu", "siguin",
+        "estic", "estàs", "està", "estem", "estam", "esteu", "estau", "estan",
+        "estava", "estaves", "estàvem", "estàveu", "estaven", "estar",
+        "tenc", "tens", "té", "tenim", "teniu", "tenen",
+        "he", "has", "ha", "hem", "heu", "han",
+        "havia", "havies", "havíem", "havíeu", "havien",
+        "hagut", "haver",
+        "vaig", "vas", "va", "vam", "vau", "van",
+        "fer", "faig", "fa", "fas", "fan",
+        "fui", "fores", "fou", "fórem", "fóreu", "foren",
+        "fet", "fos", "feim",
+        "dir", "dic", "diu", "dit", "deien", "diuen"
+      ]
+    }
+  ]
+}
