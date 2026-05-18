@@ -22,6 +22,10 @@ public class Poemari {
         this.poemes = new ArrayList<>();
     }
 
+    public String getTitol(){ return  this.titol; }
+    public String getAutor(){ return  this.autor; }
+    public int getAny(){ return  this.any; }
+
     public int getNumPoemes(){ return this.poemes.size(); }
 
     public ArrayList<Poema> getPoemes(){ return this.poemes; }

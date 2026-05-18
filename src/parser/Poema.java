@@ -24,6 +24,8 @@ public class Poema {
         this.estrofes = new ArrayList<>();
     }
 
+    public String getTitol(){ return  this.titol; }
+
     public void setTitol(String titol){ this.titol = titol; }
 
     public ArrayList<Estrofa> getEstrofes(){ return this.estrofes; }
