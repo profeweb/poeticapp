@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/visuals/Visuals_Cites_Parsed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/visuals/Visuals_Enunciacions_Parsed.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/visuals/Visuals_Simbols.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/visuals/Visuals_Simbols_Parsed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Poema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Poemari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poemari.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visuals/Visuals_Simbols.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visuals/Visuals_Simbols.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +63,7 @@
       <recent name="stats.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Visuals_Enunciacions_Parsed">
+  <component name="RunManager" selected="Application.Visuals_Simbols">
     <configuration name="Test_CercaParaula_02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="comptes.test.Test_CercaParaula_02" />
       <module name="Poetica" />
@@ -136,10 +131,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Visuals_Simbols" />
+        <item itemvalue="Application.Visuals_Simbols_Parsed" />
         <item itemvalue="Application.Visuals_Enunciacions_Parsed" />
         <item itemvalue="Application.Visuals_Cites_Parsed" />
-        <item itemvalue="Application.Visuals_Simbols_Parsed" />
-        <item itemvalue="Application.Visuals_Simbols" />
         <item itemvalue="Application.Test_CercaParaula_02" />
       </list>
     </recent_temporary>
@@ -242,14 +237,8 @@
       <workItem from="1779005372436" duration="458000" />
       <workItem from="1779005900007" duration="7574000" />
       <workItem from="1779037294006" duration="6434000" />
-      <workItem from="1779087516951" duration="11037000" />
-    </task>
-    <task id="LOCAL-00026" summary="Inicial">
-      <created>1776979028204</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1776979028204</updated>
+      <workItem from="1779087516951" duration="11175000" />
+      <workItem from="1779170663850" duration="6067000" />
     </task>
     <task id="LOCAL-00027" summary="Inicial">
       <created>1777026299014</created>
@@ -587,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779043607207</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Inicial">
+      <created>1779109059357</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1779109059358</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
