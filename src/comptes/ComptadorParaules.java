@@ -239,6 +239,7 @@ public class ComptadorParaules {
             for(File poema : poemes) {
                 if (poemaConteTerme(term, poema)) {
                     num++;
+                    break;
                 }
             }
         }
@@ -314,8 +315,8 @@ public class ComptadorParaules {
         return (float)(cpPoemari.getNumOcurrenciesTerme(term)) / cpPoemari.getNumTerms();
     }
 
-    public float freqTermePoemari(String term, ComptadorParaules wcPoemari){
-        return (float)(wcPoemari.getNumOcurrenciesTerme(term)) / getNumTerms();
+    public static float freqTermePoemari(String term, ComptadorParaules wcPoemari){
+        return ((float) wcPoemari.getNumOcurrenciesTerme(term)) / wcPoemari.getNumTerms();
     }
 
     public float freqTermePoemaParaulesBuides(String term, File poema, ParaulesBuidesCatala paraulesBuidesCatala){
@@ -335,21 +336,21 @@ public class ComptadorParaules {
         return log (N/((float) n));
     }
 
-    public float freqPoemariInvers(String term){
+    public double freqPoemariInvers(String term){
         int N = getNumPoemaris();
         int n = getNumPoemarisContenenTerme(term);
-        return log (N/((float) n));
+        return Math.log ((double) N /((double) n));
     }
 
     public float tfIdfPoema(String term, File poema){
         return freqTermePoema(term, poema) * freqPoemaInvers(term);
     }
 
-    public float tfIdfPoemari(String term, File carpetaPoemari){
+    public double tfIdfPoemari(String term, File carpetaPoemari){
         return freqTermePoemari(term, carpetaPoemari) * freqPoemariInvers(term);
     }
 
-    public float tfIdfPoemari(String term, ComptadorParaules wcPoemari){
+    public double tfIdfPoemari(String term, ComptadorParaules wcPoemari){
         return freqTermePoemari(term, wcPoemari) * freqPoemariInvers(term);
     }
 
@@ -357,7 +358,7 @@ public class ComptadorParaules {
         return freqTermePoemaParaulesBuides(term, poema, swc) * freqPoemaInvers(term);
     }
 
-    public float tfIdfPoemariParaulesBuides(String term, ComptadorParaules wcPoemari){
+    public double tfIdfPoemariParaulesBuides(String term, ComptadorParaules wcPoemari){
         return freqTermePoemariParaulesBuides(term, wcPoemari) * freqPoemariInvers(term);
     }
 
@@ -440,7 +441,7 @@ public class ComptadorParaules {
         for(String terme : termesPoemari){
 
 
-            float tfIdfTerme = tfIdfPoemariParaulesBuides(terme, wcPoemari);
+            double tfIdfTerme = tfIdfPoemariParaulesBuides(terme, wcPoemari);
             int i=0;
             while(i<paraulesClau.length && paraulesClau[i]!=null && paraulesClau[i].frequencia > tfIdfTerme){
                 i++;
@@ -449,7 +450,7 @@ public class ComptadorParaules {
                 for(int k=paraulesClau.length-1; k>i; k--){
                     paraulesClau[k] = paraulesClau[k-1];
                 }
-                paraulesClau[i] = new TermeFreq(terme, tfIdfTerme);
+                paraulesClau[i] = new TermeFreq(terme, (float)tfIdfTerme);
             }
 
         }
@@ -464,7 +465,7 @@ public class ComptadorParaules {
 
         for(String terme : termesPoemari){
 
-            float tfIdfTerme = tfIdfPoemari(terme, wcPoemari);
+            double tfIdfTerme = tfIdfPoemari(terme, wcPoemari);
             int i=0;
             while(i<paraulesClau.length && paraulesClau[i]!=null && paraulesClau[i].frequencia > tfIdfTerme){
                 i++;
@@ -473,7 +474,7 @@ public class ComptadorParaules {
                 for(int k=paraulesClau.length-1; k>i; k--){
                     paraulesClau[k] = paraulesClau[k-1];
                 }
-                paraulesClau[i] = new TermeFreq(terme, tfIdfTerme);
+                paraulesClau[i] = new TermeFreq(terme, (float)tfIdfTerme);
             }
         }
         return paraulesClau;

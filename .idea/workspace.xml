@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/comptes/test/Test_ParaulesClau.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/comptes/test/Test_TF.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/comptes/test/Test_Terme_poemari.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visuals/Visuals_Simbols.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visuals/Visuals_Simbols.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Poemes a Nai (1960)/poema05.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Poemes a Nai (1960)/poema05.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comptes/ComptadorParaules.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/ComptadorParaules.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +44,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tonim/Documents/CODE/Poetica/libs/json-20240303.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tonim/Documents/CODE/Poetica/data/poems/Miquel Àngel Riera (1930)/Poemes a Nai (1960)&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -49,23 +53,49 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\tonim\Documents\CODE\Poetica\data\diccionaris" />
       <recent name="C:\Users\tonim\Documents\CODE\Poetica\data\stats" />
+      <recent name="C:\Users\tonim\Documents\CODE\Poetica\data\diccionaris" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="silabes" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="comptes.test" />
       <recent name="visuals" />
       <recent name="parser.test" />
       <recent name="sentiments.test" />
       <recent name="diec.test" />
-      <recent name="stats.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Visuals_Simbols">
-    <configuration name="Test_CercaParaula_02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="comptes.test.Test_CercaParaula_02" />
+  <component name="RunManager" selected="Application.Test_TF">
+    <configuration name="Test_ParaulesClau" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="comptes.test.Test_ParaulesClau" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="comptes.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test_TF" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="comptes.test.Test_TF" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="comptes.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test_Terme_poemari" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="comptes.test.Test_Terme_poemari" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
@@ -79,32 +109,6 @@
     </configuration>
     <configuration name="Visuals_Cites_Parsed" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Cites_Parsed" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="visuals.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Visuals_Enunciacions_Parsed" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Enunciacions_Parsed" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="visuals.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Visuals_Simbols" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Simbols" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
@@ -131,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Visuals_Simbols" />
-        <item itemvalue="Application.Visuals_Simbols_Parsed" />
-        <item itemvalue="Application.Visuals_Enunciacions_Parsed" />
+        <item itemvalue="Application.Test_TF" />
+        <item itemvalue="Application.Test_ParaulesClau" />
+        <item itemvalue="Application.Test_Terme_poemari" />
         <item itemvalue="Application.Visuals_Cites_Parsed" />
-        <item itemvalue="Application.Test_CercaParaula_02" />
+        <item itemvalue="Application.Visuals_Simbols_Parsed" />
       </list>
     </recent_temporary>
   </component>
@@ -238,21 +242,10 @@
       <workItem from="1779005900007" duration="7574000" />
       <workItem from="1779037294006" duration="6434000" />
       <workItem from="1779087516951" duration="11175000" />
-      <workItem from="1779170663850" duration="6067000" />
-    </task>
-    <task id="LOCAL-00027" summary="Inicial">
-      <created>1777026299014</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1777026299015</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Inicial">
-      <created>1777028640148</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1777028640148</updated>
+      <workItem from="1779170663850" duration="13889000" />
+      <workItem from="1779189732355" duration="596000" />
+      <workItem from="1779199789025" duration="6570000" />
+      <workItem from="1779208558416" duration="983000" />
     </task>
     <task id="LOCAL-00029" summary="Inicial">
       <created>1777051831696</created>
@@ -583,7 +576,21 @@
       <option name="project" value="LOCAL" />
       <updated>1779109059358</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Inicial">
+      <created>1779176987553</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1779176987554</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Inicial">
+      <created>1779177089078</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1779177089078</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
