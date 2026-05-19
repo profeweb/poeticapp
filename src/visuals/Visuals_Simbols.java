@@ -61,6 +61,8 @@ public class Visuals_Simbols extends PApplet {
                 p5.line(xTros, y, xTros + llargTros * factor, y);
 
                 if(posPunt == vers.length()-1){
+                    int colSimbol = colorSimbol(this, partVers, posPunt);
+                    p5.fill(colSimbol); p5.noStroke();
                     p5.circle(xTros + llargTros * factor + 7.5f, y, 5);
                 }
 
