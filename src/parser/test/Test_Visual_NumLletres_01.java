@@ -1,6 +1,7 @@
 package parser.test;
 
 import parser.Poemari;
+import parser.Visualitzacions;
 import processing.core.PApplet;
 
 public class Test_Visual_NumLletres_01 extends PApplet {
@@ -20,7 +21,8 @@ public class Test_Visual_NumLletres_01 extends PApplet {
 
     public void draw(){
         background(255);
-        poemari.dibuixaNumLletresPoemesBlocs(this, 75, 75, 300, 15, color(200), color(200, 100, 100));
+        //poemari.dibuixaNumLletresPoemesBlocs(this, 75, 75, 300, 15, color(200), color(200, 100, 100));
+        Visualitzacions.dibuixaNumLletresPoemariBlocs(this, poemari,75, 75, 300, 15, color(200), color(200, 100, 100));
 
     }
 }

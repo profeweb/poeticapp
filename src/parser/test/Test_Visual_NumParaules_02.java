@@ -1,16 +1,17 @@
 package parser.test;
 
 import parser.Poemari;
+import parser.Visualitzacions;
 import processing.core.PApplet;
 
-public class Test_Visual02 extends PApplet {
+public class Test_Visual_NumParaules_02 extends PApplet {
 
     Poemari poemari;
     int[] colors;
     int numPoema = 12;
 
     public static void main(String[] args) {
-        PApplet.main("parser.test.Test_Visual02");
+        PApplet.main("parser.test.Test_Visual_NumParaules_02");
     }
 
     public void settings(){ size(1920, 1080); }
@@ -43,7 +44,9 @@ public class Test_Visual02 extends PApplet {
         float angInic   = numPoema%2 == 0 ? PI : PI;
         float angFi     = numPoema%2 ==0  ? 0 : TWO_PI;
 
-        poemari.getPoemaAt(numPoema).dibuixaEstrofesArc(this, width/2, height/2, 120, 200, angInic, angFi, mitjanaParaulesVers, maxParaulesVers, colors, color(200, 100, 100));
+        Visualitzacions.dibuixaEstrofesArc(this, poemari.getPoemaAt(numPoema), Visualitzacions.QUANTITAT.PARAULES, width/2, height/2, 120, 200, angInic, angFi, mitjanaParaulesVers, maxParaulesVers, colors, color(200, 100, 100));
+
+        //poemari.getPoemaAt(numPoema).dibuixaEstrofesArc(this, width/2, height/2, 120, 200, angInic, angFi, mitjanaParaulesVers, maxParaulesVers, colors, color(200, 100, 100));
 
     }
 

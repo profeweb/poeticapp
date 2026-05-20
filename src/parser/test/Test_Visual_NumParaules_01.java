@@ -1,14 +1,15 @@
 package parser.test;
 
 import parser.Poemari;
+import parser.Visualitzacions;
 import processing.core.PApplet;
 
-public class Test_Visual01 extends PApplet {
+public class Test_Visual_NumParaules_01 extends PApplet {
 
     Poemari poemari;
 
     public static void main(String[] args) {
-        PApplet.main("parser.test.Test_Visual01");
+        PApplet.main("parser.test.Test_Visual_NumParaules_01");
     }
 
     public void settings(){ size(1920, 1080); }
@@ -20,7 +21,6 @@ public class Test_Visual01 extends PApplet {
 
     public void draw(){
         background(255);
-        poemari.dibuixaNumParaulesPoemesBlocs(this, 75, 75, 300, 15, color(200), color(200, 100, 100));
-
+        Visualitzacions.dibuixaNumParaulesPoemariBlocs(this, poemari,75, 75, 300, 15, color(200), color(200, 100, 100));
     }
 }

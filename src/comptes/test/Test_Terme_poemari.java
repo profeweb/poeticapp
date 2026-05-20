@@ -32,7 +32,7 @@ public class Test_Terme_poemari extends PApplet {
             }
         }
 
-        String terme = "nai";
+        String terme = "mà";
         int numPoemari = 5;
 
         System.out.println("TERME: " + terme);

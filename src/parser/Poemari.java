@@ -148,7 +148,7 @@ public class Poemari {
                 }
             }
         }
-        return (float)numParaules / numVersos;
+        return ((float)numParaules) / numVersos;
     }
 
     public float getMitjanaLletresVersosPoemari(){
@@ -162,7 +162,7 @@ public class Poemari {
                 }
             }
         }
-        return (float)numLletres / numVersos;
+        return ((float)numLletres) / numVersos;
     }
 
     public void printInfo(){
@@ -170,48 +170,6 @@ public class Poemari {
         for(Poema poema : this.poemes){
             poema.printInfo();
         }
-    }
-
-    public void dibuixaNumParaulesPoemesBlocs(PApplet p5, float x, float y, float w, float h, int colorEstrofa, int colorVers){
-
-        float mitjanaParaulesPoemari = getMitjanaParaulesVersosPoemari();
-        int maxParaules = getMaxParaulesVersosPoemari();
-        float xPoema = x;
-        for(Poema poema : poemes){
-            poema.dibuixaNumParaulesEstrofesBloc(p5, xPoema, y + 80 , w, h, colorEstrofa, colorVers, mitjanaParaulesPoemari, poema.getMitjanaParaulesVersPoema(), maxParaules);
-            xPoema += w + 75;
-        }
-
-        p5.pushStyle();
-        p5.fill(0); p5.textSize(48);
-        p5.textAlign(p5.CENTER, p5.BOTTOM);
-        p5.text(titol, (x + xPoema)/2f, y);
-
-        // Dibuixa Text de Mitjana per Poemari
-        p5.fill(255, 0, 0); p5.textSize(18);
-        p5.text(nf(mitjanaParaulesPoemari, 0, 2) + " paraules / vers (llibre)", (x + xPoema)/2f, y + 24);
-        p5.popStyle();
-    }
-
-    public void dibuixaNumLletresPoemesBlocs(PApplet p5, float x, float y, float w, float h, int colorEstrofa, int colorVers){
-
-        float mitjanaLletresPoemari = getMitjanaLletresVersosPoemari();
-        int maxLletres = getMaxLletresVersosPoemari();
-        float xPoema = x;
-        for(Poema poema : poemes){
-            poema.dibuixaNumLletresEstrofesBloc(p5, xPoema, y + 80 , w, h, colorEstrofa, colorVers, mitjanaLletresPoemari, poema.getMitjanaLletresVersPoema(), maxLletres);
-            xPoema += w + 75;
-        }
-
-        p5.pushStyle();
-        p5.fill(0); p5.textSize(48);
-        p5.textAlign(p5.CENTER, p5.BOTTOM);
-        p5.text(titol, (x + xPoema)/2f, y);
-
-        // Dibuixa Text de Mitjana per Poemari
-        p5.fill(255, 0, 0); p5.textSize(18);
-        p5.text(nf(mitjanaLletresPoemari, 0, 2) + " lletres / vers (llibre)", (x + xPoema)/2f, y + 24);
-        p5.popStyle();
     }
 
 }

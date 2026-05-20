@@ -1,7 +1,7 @@
 package parser.test;
 
-import parser.Poema;
 import parser.Poemari;
+import parser.Visualitzacions;
 import processing.core.PApplet;
 
 public class Test_Visual03 extends PApplet {
@@ -18,7 +18,7 @@ public class Test_Visual03 extends PApplet {
 
     public void setup(){
         poemari = new Poemari("Poemes a Nai", "MA Rieria", 1988);
-        poemari.parsePoemes(13, "data/poems/Miquel Àngel Riera (1930)/poemes a nai/");
+        poemari.parsePoemes(13, "data/poems/Miquel Àngel Riera (1930)/Poemes a Nai (1960)/");
         poemari.getPoemaAt(numPoema).printInfo();
 
         System.out.println("MITJANA PARAULES: " + poemari.getMitjanaParaulesVersosPoemari());
@@ -44,9 +44,10 @@ public class Test_Visual03 extends PApplet {
         for(int np=0; np<poemari.getNumPoemes(); np++) {
             int numVersosPoema = poemari.getPoemaAt(np).getNumVersos();
             float angFi = angInici + angleVers * numVersosPoema;
-            poemari.getPoemaAt(np).dibuixaEstrofesArc(this, width / 2, height / 2, 120, 300, angInici, angFi, mitjanaParaulesVers, maxParaulesVers, colors, color(200, 100, 100));
+            Visualitzacions.dibuixaEstrofesArc(this, poemari.getPoemaAt(np), Visualitzacions.QUANTITAT.PARAULES,width / 2, height / 2, 120, 300, angInici, angFi, mitjanaParaulesVers, maxParaulesVers, colors, color(200, 100, 100));
             angInici += angleVers * numVersosPoema;
         }
+
     }
 
     public void keyPressed(){
