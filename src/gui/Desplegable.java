@@ -2,7 +2,7 @@ package gui;
 
 import processing.core.PApplet;
 
-import static gui.Mides.TEXT_ENTRADA;
+import static gui.Mides.*;
 
 public class Desplegable extends GuiElement {
 
@@ -13,7 +13,7 @@ public class Desplegable extends GuiElement {
     boolean desplegat = false;  // Plegat / Desplegat
     boolean activat;           // Abilitat / desabilitat
 
-    float lineSpace = 15;      // Espai entre línies
+    float lineSpace = 8; //15;      // Espai entre línies
 
     public Desplegable(String[] texts, float x, float y, float w, float h){
         super(x, y, w, h);
@@ -43,19 +43,22 @@ public class Desplegable extends GuiElement {
         p5.stroke(0); p5.strokeWeight(2); p5.fill(255);
         p5.rect(this.x, this.y, this.w, this.h, 5);
 
-        p5.fill(this.colors.getColorPrimari());
+        p5.fill(this.colors.getColorSecundari());
         p5.rect(x + w - h, y, h, h, 5);
 
         p5.fill(0); p5.stroke(0);
         p5.triangle(x + w - h + 10, y+10, x + w -h/2, y + 25, x + w - 10 , y+10);
 
         p5.fill(0); p5.textSize(14);
-        p5.textAlign(p5.LEFT);
-        p5.text(this.opcioSeleccionada, x + 10, y + 20);
+        p5.textAlign(p5.LEFT, p5.CENTER);
+        p5.textFont(fonts.getFontTextDesplegable());
+        p5.textSize(midaTextDesplegable);
+        p5.text(this.opcioSeleccionada, x + 10, y + h/2);
 
         if(this.desplegat){
 
-            p5.fill(this.colors.getColorPrimari()); p5.stroke(0);
+            p5.fill(255);
+            p5.stroke(0);
             p5.rect(x, y+h, w, (h + lineSpace)* opcions.length);
 
             for(int i = 0; i< opcions.length; i++){
@@ -66,6 +69,9 @@ public class Desplegable extends GuiElement {
                 }
 
                 p5.fill(0);
+                p5.textAlign(p5.LEFT, p5.CENTER);
+                p5.textFont(fonts.getFontTextDesplegable());
+                p5.textSize(midaTextDesplegable);
                 p5.text(opcions[i], x + 10, y + h + 25 + (h + lineSpace)*i);
             }
         }
@@ -74,8 +80,10 @@ public class Desplegable extends GuiElement {
         // Etiqueta
         p5.fill(colors.getColorEntradaTextText());
         p5.textAlign(p5.RIGHT, p5.CENTER);
-        p5.textFont(fonts.getFontSecundaria());
-        p5.text(textEtiqueta, x - 15, y + h - TEXT_ENTRADA);
+        p5.textFont(fonts.getFontEtiquetaDesplegable());
+        p5.textSize(midatTextEtiquetaDesplegable);
+        p5.textAlign(p5.RIGHT, p5.CENTER);
+        p5.text(textEtiqueta, x - 15, y + h/2);
         p5.popStyle();
 
 

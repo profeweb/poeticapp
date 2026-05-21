@@ -40,7 +40,6 @@ public class Autor {
 
     // Dades estadistiques
 
-
     public int getNumPoemaris(){ return this.poemaris.size(); }
 
     public int getPrimerPoemari(){

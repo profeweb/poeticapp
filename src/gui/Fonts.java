@@ -81,4 +81,14 @@ public class Fonts {
     // Getters de les fonts de l'entrada de text
     public PFont getFontEtiquetaEntradaText(){ return this.fonts[5];}
     public PFont getFontEntradaText(){ return this.fonts[1];}
+
+    // Geters de les fonts de la tarja
+    public PFont getFontNumTarja(){ return this.fonts[5];}
+    public PFont getFontTitolTarja(){ return this.fonts[1];}
+    public PFont getFontSubtitolTarja(){ return this.fonts[2];}
+    public PFont getFontPaginacioGraellaTarja(){ return this.fonts[1];}
+
+    // Desplegable
+    public PFont getFontEtiquetaDesplegable(){ return this.fonts[5];}
+    public PFont getFontTextDesplegable(){ return this.fonts[1];}
 }

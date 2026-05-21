@@ -14,6 +14,8 @@ public class Paraula extends Token{
 
     public int getNumSilabes(){ return this.numSilabes; }
 
+    public void setNumSilabes(int numSilabes){ this.numSilabes = numSilabes; }
+
     public void printToken(){
         System.out.print("Paraula: " + valor + " \t");
     }

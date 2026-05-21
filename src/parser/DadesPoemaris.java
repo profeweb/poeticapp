@@ -4,6 +4,114 @@ import java.util.ArrayList;
 
 public class DadesPoemaris {
 
+    // Estadístiques Poemaris +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    public static int getNumAutors(ArrayList<Autor> autors){ return autors.size(); }
+
+    public static int getNumPoemaris(ArrayList<Autor> autors){
+        int num = 0;
+        for(Autor autor : autors){
+            num += autor.getNumPoemaris();
+        }
+        return num;
+    }
+
+    public static int getNumPoemes(ArrayList<Autor> autors){
+        int num = 0;
+        for(Autor autor : autors){
+            for(Poemari poemari: autor.getPoemaris()){
+                num += poemari.getNumPoemes();
+            }
+        }
+        return num;
+    }
+
+    public static int getNumEstrofes(ArrayList<Autor> autors){
+        int num = 0;
+        for(Autor autor : autors){
+            for(Poemari poemari: autor.getPoemaris()){
+                for(Poema poema : poemari.getPoemes()) {
+                    num += poema.getNumEstrofes();
+                }
+            }
+        }
+        return num;
+    }
+
+    public static int getNumVersos(ArrayList<Autor> autors){
+        int num = 0;
+        for(Autor autor : autors){
+            for(Poemari poemari: autor.getPoemaris()){
+                for(Poema poema : poemari.getPoemes()) {
+                    num += poema.getNumVersos();
+                }
+            }
+        }
+        return num;
+    }
+
+    public static int getMinAnyAutors(ArrayList<Autor> autors){
+        int minAny = Integer.MAX_VALUE;
+        for(Autor autor : autors){
+            if(autor.getAny() < minAny){
+                minAny = autor.getAny();
+            }
+        }
+        return minAny;
+    }
+
+    public static int getMaxAnyAutors(ArrayList<Autor> autors){
+        int maxAny = Integer.MIN_VALUE;
+        for(Autor autor : autors){
+            if(autor.getAny() > maxAny){
+                maxAny = autor.getAny();
+            }
+        }
+        return maxAny;
+    }
+
+    public static float getMitjanaLlibresAutors(ArrayList<Autor> autors){
+        float numLlibres = 0;
+        for(Autor autor : autors){
+            numLlibres += autor.getNumPoemaris();
+        }
+        return numLlibres / autors.size();
+    }
+
+    public static float getMitjanaPoemesAutors(ArrayList<Autor> autors){
+        float num = 0;
+        for(Autor autor : autors){
+            for(Poemari poemari: autor.getPoemaris()){
+                num += poemari.getNumPoemes();
+            }
+        }
+        return num / autors.size();
+    }
+
+    public static float getMitjanaEstrofesPoemes(ArrayList<Autor> autors){
+        float numEstrofes = 0, numPoemes = 0;
+        for(Autor autor : autors){
+            for(Poemari poemari: autor.getPoemaris()){
+                numEstrofes += poemari.getNumEstrofes();
+                numPoemes += poemari.getNumPoemes();
+            }
+        }
+        return numEstrofes / numPoemes;
+    }
+
+    public static float getMitjanaVersosEstrofes(ArrayList<Autor> autors){
+        float numEstrofes = 0, numVersos = 0;
+        for(Autor autor : autors){
+            for(Poemari poemari: autor.getPoemaris()){
+                numEstrofes += poemari.getNumEstrofes();
+                numVersos += poemari.getNumVersos();
+            }
+        }
+        return numVersos/ numEstrofes;
+    }
+
+    // Dades Poemaris ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
     public static ArrayList<String> getAutors(ArrayList<Poemari> poemaris){
         ArrayList<String> autors = new ArrayList<>();
         for(Poemari poemari: poemaris){
@@ -26,7 +134,6 @@ public class DadesPoemaris {
         }
         return info;
     }
-
 
     public static String[][] getAutorsInfo(ArrayList<Autor> autors){
         String[][] info = new String[autors.size()][2];

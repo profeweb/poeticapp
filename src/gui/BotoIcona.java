@@ -34,7 +34,7 @@ public class BotoIcona extends Boto {
         }
         else {
             p5.textAlign(p5.LEFT, p5.CENTER);
-            p5.text(new String(Character.toChars(codiIcona)), this.x + 10, this.y + this.h / 2 - 2);
+            p5.text(new String(Character.toChars(codiIcona)), this.x + 10, this.y + this.h / 2f - 3.5f);
         }
         p5.popStyle();
     }

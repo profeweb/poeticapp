@@ -99,23 +99,25 @@ public class Tarja extends GuiElement {
 
         // Número
         p5.fill(0);
-        p5.textFont(fonts.getFontSecundaria());
-        p5.textSize(TEXT_NUM);
-        p5.text(this.num, this.x + this.margeEsq, this.y + TEXT_NUM / 2f);
+        p5.textFont(fonts.getFontNumTarja());
+        p5.textSize(midaNumeroTarja);
+        p5.textAlign(p5.LEFT, p5.TOP);
+        p5.text(this.num, this.x + this.margeEsq, this.y + 5);
 
         // Text Títol
         p5.fill(0);
-        p5.textFont(fonts.getFontPrimaria());
-        p5.textAlign(p5.LEFT, p5.BOTTOM);
-        p5.textSize(TEXT_TITOL);
-        p5.text(this.titol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL*1.5f);
+        p5.textFont(fonts.getFontTitolTarja());
+        p5.textAlign(p5.LEFT, p5.TOP);
+        p5.textSize(midaTitolTarja);
+        p5.text(this.titol, this.x + this.margeEsq, this.y + this.h + 5);
 
         // Text Subtítol
         if(mostraSubtitol) {
             p5.fill(50);
-            p5.textFont(fonts.getFontSecundaria());
-            p5.textSize(TEXT_SUBTITOL);
-            p5.text(this.subtitol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL * 1.5f + TEXT_SUBTITOL / 10f);
+            p5.textAlign(p5.LEFT, p5.TOP);
+            p5.textFont(fonts.getFontSubtitolTarja());
+            p5.textSize(midaSubtitolTarja);
+            p5.text(this.subtitol, this.x + this.margeEsq, this.y + this.h + 50);
         }
 
         // Boto Favorit
@@ -143,21 +145,24 @@ public class Tarja extends GuiElement {
 
         // Número
         p5.fill(0);
-        p5.textFont(fonts.getFontSecundaria());
-        p5.textSize(TEXT_NUM);
-        p5.text(this.num, this.x + this.margeEsq, this.y + TEXT_NUM / 2f);
+        p5.textFont(fonts.getFontNumTarja());
+        p5.textSize(midaNumeroTarja);
+        p5.textAlign(p5.LEFT, p5.TOP);
+        p5.text(this.num, this.x + this.margeEsq, this.y + 5);
 
         // Text Títol
         p5.fill(0);
-        p5.textFont(fonts.getFontPrimaria());
-        p5.textSize(TEXT_TITOL);
-        p5.text(this.titol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL/1.25f);
+        p5.textFont(fonts.getFontTitolTarja());
+        p5.textAlign(p5.LEFT, p5.TOP);
+        p5.textSize(midaTitolTarja);
+        p5.text(this.titol, this.x + this.margeEsq, this.y + this.h + 5);
 
         // Text Subtítol
         p5.fill(50);
-        p5.textFont(fonts.getFontSecundaria());
-        p5.textSize(TEXT_SUBTITOL);
-        p5.text(this.subtitol, this.x + this.margeEsq, this.y + this.h + TEXT_TITOL/1.5f + TEXT_SUBTITOL/1.5f);
+        p5.textAlign(p5.LEFT, p5.TOP);
+        p5.textFont(fonts.getFontSubtitolTarja());
+        p5.textSize(midaSubtitolTarja);
+        p5.text(this.subtitol, this.x + this.margeEsq, this.y + this.h + 50);
 
         // Boto Favorit
         if(this.bFavorit!=null){

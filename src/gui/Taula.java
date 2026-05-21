@@ -8,7 +8,7 @@ public class Taula extends GuiElement {
     String[][] dadesTaula;    // Dades de la taula
     float[] midaColumnes;    // Amplades de les columnes (%)
 
-    int numColumnes, numFiles;  // Número de files i columnes
+    int numColumnes, numFilesPagina;  // Número de files i columnes
 
     int paginaActual;
     int numTotalPagines;
@@ -27,23 +27,21 @@ public class Taula extends GuiElement {
     }
 
     public void setDades(String[][] d){
-        this.dadesTaula = d;
-        this.numFiles = d.length;
 
-        if(d.length <= this.numFiles){
+        this.dadesTaula = d;
+
+        if(d.length <= this.numFilesPagina){
             this.numTotalPagines = 1;
         }
-        else if(d.length % this.numFiles == 0){
-            this.numTotalPagines = (d.length / this.numFiles);
+        else if(d.length % this.numFilesPagina == 0){
+            this.numTotalPagines = (d.length / this.numFilesPagina);
         }
         else {
-            this.numTotalPagines = (d.length / this.numFiles) + 1 ;
+            this.numTotalPagines = (d.length / this.numFilesPagina) + 1 ;
         }
-
-        this.numFiles = d.length + 1;
     }
 
-    public void setNumFilesPagina(int numFiles){ this.numFiles  = numFiles + 1; }
+    public void setNumFilesPagina(int numFiles){ this.numFilesPagina = numFiles; }
 
     public void setValueAt(String value, int nr, int nc){
         this.dadesTaula[nr][nc] = value;
@@ -73,31 +71,20 @@ public class Taula extends GuiElement {
         p5.fill(200, 50); p5.stroke(0); p5.strokeWeight(3);
         p5.rect(x, y, w, h, 5);
 
-        float rowHeight = h / numFiles;
+        float rowHeight = h / (numFilesPagina);
 
         // Dibuixa files
         p5.stroke(0);
-        for(int r = 1; r < numFiles; r++){
+        for(int r = 1; r < numFilesPagina; r++){
             if(r==1){ p5.strokeWeight(3); }
             else {    p5.strokeWeight(1); }
             p5.line(x, y + r*rowHeight, x + w, y + r*rowHeight);
         }
 
-        // Dibuixa Columnes
-
-        float xCol = x;
-        /*
-        for(int c = 0; c< numColumnes; c++){
-            xCol += w* midaColumnes[c]/100.0;
-            p5.line(xCol, y, xCol, y + h);
-        }
-
-         */
-
         // Dibuixa textos
         p5.fill(0); p5.textSize(24);
-        for(int r = 0; r < numFiles; r++){
-            xCol = x;
+        for(int r = 0; r < numFilesPagina; r++){
+            float xCol = x;
             for(int c = 0; c< numColumnes; c++){
                 if(r==0){
                     p5.textFont(fonts.getFontCapçaleraTaula());
@@ -106,8 +93,8 @@ public class Taula extends GuiElement {
                     p5.text(titolsTaula[c], xCol + 10, y + (r+1)*rowHeight - 0);
                 }
                 else{
-                    int dr = r - 1;
-                    int k = (numFiles - 1) * paginaActual + dr;
+                    int dr = r-1;
+                    int k = (numFilesPagina - 1) * paginaActual + dr;
                     if(k < dadesTaula.length && dadesTaula[k][c]!=null){
                         p5.textFont(fonts.getFontFilaTaula());
                         p5.textSize(Mides.midaTextFilaTaula);

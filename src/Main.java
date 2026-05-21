@@ -66,10 +66,27 @@ public class Main extends PApplet {
                 }
                 autors.add(autor);
             }
+
+
+            afegeixAutors();
             println("DONE! "+ autors.size());
 
         String[][] info = DadesPoemaris.getAutorsInfo(autors);
         DadesPoemaris.printArray2D(info);
+    }
+
+    public void afegeixAutors(){
+        autors.add(new Autor("Miquel Costa i Llobera", 1854));
+        autors.add(new Autor("Joan Alcover", 1854));
+        autors.add(new Autor("Maria Antònia Salvà", 1869));
+        autors.add(new Autor("Bartomeu Rosselló-Pòrcel", 1913));
+        autors.add(new Autor("Josep Maria Llompart", 1925));
+        autors.add(new Autor("Blai Bonet", 1926));
+        autors.add(new Autor("Bartomeu Fiol", 1933));
+        autors.add(new Autor("Ponç Pons", 1956));
+        autors.add(new Autor("Antònia Vicens", 1941));
+        autors.add(new Autor("Damià Huguet", 1946));
+        autors.add(new Autor("Sebastià Alzamora", 1972));
     }
 
     public void draw(){

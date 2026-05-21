@@ -2,18 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/parser/Visualitzacions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumLletres_02.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/comptes/test/Test_Terme_poemari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/test/Test_Terme_poemari.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Estrofa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Estrofa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Poema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Poemari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poemari.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Vers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Vers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/test/Test_Visual01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumParaules_01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/test/Test_Visual02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumParaules_02.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/test/Test_Visual03.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual03.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumLletres_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumLletres_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/BotoIcona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotoIcona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Desplegable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Desplegable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Fonts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Fonts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/GraellaTarja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/GraellaTarja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Gui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/MenuApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MenuApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Mides.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Mides.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/ResumApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ResumApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Tarja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Tarja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Taula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Taula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Autor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Autor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Paraula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Paraula.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,23 +43,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/tonim/Desktop/MA RIERA",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tonim/Desktop/MA RIERA&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tonim\Documents\CODE\Poetica\data\stats" />
@@ -73,22 +76,16 @@
       <recent name="diec.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test_Visual03">
-    <configuration name="Test_Visual03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual03" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="parser.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_Visual_NumLletres_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual_NumLletres_01" />
+    <configuration name="Test_Visual03" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual03" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
@@ -141,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Test_Visual03" />
         <item itemvalue="Application.Test_Visual_NumLletres_02" />
         <item itemvalue="Application.Test_Visual_NumParaules_02" />
         <item itemvalue="Application.parser.test.Test_Visual_NumParaules_01" />
-        <item itemvalue="Application.parser.test.Test_Visual_NumLletres_01" />
       </list>
     </recent_temporary>
   </component>
@@ -252,14 +249,9 @@
       <workItem from="1779189732355" duration="596000" />
       <workItem from="1779199789025" duration="6570000" />
       <workItem from="1779208558416" duration="3821000" />
-      <workItem from="1779257932850" duration="13401000" />
-    </task>
-    <task id="LOCAL-00030" summary="Inicial">
-      <created>1777057420266</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1777057420266</updated>
+      <workItem from="1779257932850" duration="14634000" />
+      <workItem from="1779289308559" duration="2049000" />
+      <workItem from="1779355411239" duration="8865000" />
     </task>
     <task id="LOCAL-00031" summary="Inicial">
       <created>1777058105555</created>
@@ -597,7 +589,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779209679176</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Inicial">
+      <created>1779277224033</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1779277224034</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

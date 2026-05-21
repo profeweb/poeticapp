@@ -24,6 +24,18 @@ public class Mides {
     public static float midaTextEtiqueta = 58;
     public static float midaTextEntrada = 24;
 
+
+    // TEXT TARJA
+    public static float midaNumeroTarja = 58;
+    public static float midaTitolTarja = 28;
+    public static float midaSubtitolTarja = 18;
+    public static float midaTitolGraellaTarja = 48;
+    public static float midaPaginacioGraellaTarja = 24;
+
+    // TEXT DESPLEGABLE
+    public static float midatTextEtiquetaDesplegable = 48;
+    public static float midaTextDesplegable = 24;
+
     public static final float TEXT_INFO_GUI = 34;
 
 
@@ -67,22 +79,23 @@ public class Mides {
     public static final float midaTextEmojiBoto = 34f;
     public static final float MARGE_FAVORIT = 10f;
 
-    public static final int CODI_FAVORIT = 0x1F600 + 54;
-    public static final int CODI_NO_FAVORIT = 0x1F600 + 66;
-    public static final int CODI_SEGUENT = 0x1F600 + 1265;
-    public static final int CODI_ANTERIOR = 0x1F600 + 1266;
-    public static final int CODI_ICONA_CERCADOR = 0x1F600 + 1266;
+    public static final int CODI_FAVORIT = 0x1F600 + 13;
+    public static final int CODI_NO_FAVORIT = 0x1F600  -751;
+    public static final int CODI_SEGUENT = 0x1F600 -197;
+    public static final int CODI_ANTERIOR = 0x1F600 - 198;
+    public static final int CODI_ICONA_CERCADOR = 0x1F600 - 243;
 
-    public static final int CODI_INICI = 0x1F600 + 54;
-    public static final int CODI_EXPLORAR = 0x1F600 + 54;
-    public static final int CODI_FAVORITS = 0x1F600 + 54;
-    public static final int CODI_AUTORS = 0x1F600 + 54;
-    public static final int CODI_LLIBRES = 0x1F600 + 54;
-    public static final int CODI_POEMES = 0x1F600 + 54;
-    public static final int CODI_QUANTITATS = 0x1F600 + 54;
-    public static final int CODI_QUALITATS = 0x1F600 + 54;
-    public static final int CODI_RELACIONS = 0x1F600 + 54;
-    public static final int CODI_TEMPS = 0x1F600 + 54;
-    public static final int CODI_ALTRES = 0x1F600 + 54;
+    public static final int CODI_INICI = 0x1F600 - 350;
+    public static final int CODI_EXPLORAR = 0x1F600 - 243;
+    public static final int CODI_FAVORITS = 0x1F600 - 361;
+    public static final int CODI_AUTORS = 0x1F600 - 408;
+    public static final int CODI_LLIBRES = 0x1F600 - 298;
+    public static final int CODI_POEMES = 0x1F600 - 292;
+    public static final int CODI_QUANTITATS = 0x1F600 - 222;
+    public static final int CODI_QUALITATS = 0x1F600 - 234;
+    public static final int CODI_RELACIONS = 0x1F600 - 233;
+    public static final int CODI_TEMES = 0x1F600 + 1001;
+    public static final int CODI_TEMPS = 0x1F600 - 175;
+    public static final int CODI_ALTRES = 0x1F600 + 1005;
 
 }
