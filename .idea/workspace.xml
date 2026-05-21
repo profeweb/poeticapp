@@ -4,19 +4,8 @@
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/BotoIcona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotoIcona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Desplegable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Desplegable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Fonts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Fonts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/GraellaTarja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/GraellaTarja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/MenuApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/MenuApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Mides.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Mides.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/ResumApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ResumApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Tarja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Tarja.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Taula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Taula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Autor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Autor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Paraula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Paraula.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,14 +240,8 @@
       <workItem from="1779208558416" duration="3821000" />
       <workItem from="1779257932850" duration="14634000" />
       <workItem from="1779289308559" duration="2049000" />
-      <workItem from="1779355411239" duration="8865000" />
-    </task>
-    <task id="LOCAL-00031" summary="Inicial">
-      <created>1777058105555</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1777058105555</updated>
+      <workItem from="1779355411239" duration="9192000" />
+      <workItem from="1779371114524" duration="503000" />
     </task>
     <task id="LOCAL-00032" summary="Inicial">
       <created>1777360504784</created>
@@ -596,7 +579,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779277224034</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Inicial">
+      <created>1779365112118</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1779365112119</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

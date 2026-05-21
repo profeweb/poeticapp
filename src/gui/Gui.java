@@ -61,7 +61,7 @@ public class Gui {
     // Hooks
     ArrayList<Autor> autors;
     ArrayList<Poemari> poemaris;
-    Autor autorSeleccionat;
+    public Autor autorSeleccionat;
 
     public Gui(PApplet p5, ArrayList<Autor> autors){
         this.p5 = p5;
@@ -303,10 +303,10 @@ public class Gui {
 
         resumAutor = new ResumAutor(300, 260, p5.width-350, 200);
         resumAutor.setColorsFonts(colors, fonts);
-        ((ResumAutor)resumAutor).setResumLlibres(12, 1856, 2010);
-        ((ResumAutor)resumAutor).setResumPoemes(28, 12);
-        ((ResumAutor)resumAutor).setResumEstrofes(256, 12);
-        ((ResumAutor)resumAutor).setResumVersos(13873, 234);
+        ((ResumAutor)resumAutor).setResumLlibres(getNumPoemaris(autorSeleccionat), 1856, 2010);
+        ((ResumAutor)resumAutor).setResumPoemes(getNumPoemes(autorSeleccionat), 12);
+        ((ResumAutor)resumAutor).setResumEstrofes(getNumEstrofes(autorSeleccionat), 12);
+        ((ResumAutor)resumAutor).setResumVersos(getNumVersos(autorSeleccionat), 234);
 
         resumLlibre = new ResumLlibre(300, 260, p5.width-350, 200);
         resumLlibre.setColorsFonts(colors, fonts);

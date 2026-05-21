@@ -110,6 +110,38 @@ public class DadesPoemaris {
         return numVersos/ numEstrofes;
     }
 
+    public static int getNumPoemaris(Autor autor){
+        return autor.getNumPoemaris();
+    }
+
+    public static int getNumPoemes(Autor autor){
+        int num = 0;
+        for(Poemari poemari : autor.getPoemaris()){
+            num += poemari.getNumPoemes();
+        }
+        return num;
+    }
+
+    public static int getNumEstrofes(Autor autor){
+        int num = 0;
+        for(Poemari poemari : autor.getPoemaris()){
+            for(Poema poema : poemari.getPoemes()) {
+                num += poema.getNumEstrofes();
+            }
+        }
+        return num;
+    }
+
+    public static int getNumVersos(Autor autor){
+        int num = 0;
+        for(Poemari poemari : autor.getPoemaris()){
+            for(Poema poema : poemari.getPoemes()) {
+                num += poema.getNumVersos();
+            }
+        }
+        return num;
+    }
+
     // Dades Poemaris ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     public static ArrayList<String> getAutors(ArrayList<Poemari> poemaris){
