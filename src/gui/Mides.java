@@ -71,6 +71,7 @@ public class Mides {
     public static final float TEXT_TITOL = 48;
     public static final float TEXT_SUBTITOL = 34;
     public static final float TEXT_NIVELL1 = 80f;
+    public static final float TEXT_NIVELL1_LLARG = 36f;
     public static final float TEXT_NIVELL2 = 50f;
     public static final float TEXT_NIVELL3 = 25f;
 

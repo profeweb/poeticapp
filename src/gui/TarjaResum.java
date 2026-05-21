@@ -8,6 +8,7 @@ public class TarjaResum extends GuiElement {
     
     String[] textos;
     float margeEsq = 25;
+    boolean textLlarg = false;
 
     public TarjaResum(float x, float y, float w, float h){
         super(x, y, w, h);
@@ -24,6 +25,8 @@ public class TarjaResum extends GuiElement {
         this.textos[1] = t2;
         this.textos[2] = t3;
     }
+
+    public void setTextLlarg(boolean b){ this.textLlarg = b; }
     
     public void display(PApplet p5){
         p5.pushStyle();
@@ -41,7 +44,7 @@ public class TarjaResum extends GuiElement {
         // Text nivell 1
         p5.fill(0);
         p5.textFont(fonts.getFontResumNivell1());
-        p5.textSize(TEXT_NIVELL1);
+        p5.textSize(textLlarg ? TEXT_NIVELL1_LLARG: TEXT_NIVELL1);
         p5.textAlign(p5.LEFT, p5.CENTER);
         p5.text(this.textos[1], this.x + this.margeEsq, this.y + this.h/2);
 

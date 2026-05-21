@@ -62,12 +62,14 @@ public class Gui {
     ArrayList<Autor> autors;
     ArrayList<Poemari> poemaris;
     public Autor autorSeleccionat;
+    Poemari poemariSeleccionat;
 
     public Gui(PApplet p5, ArrayList<Autor> autors){
         this.p5 = p5;
         this.autors = autors;
         this.poemaris = autors.get(0).getPoemaris();
         this.autorSeleccionat = autors.get(0);
+        this.poemariSeleccionat = this.poemaris.get(0);
         setMedia(p5);
         setElementsGUI();
         setPantalles();
@@ -303,17 +305,18 @@ public class Gui {
 
         resumAutor = new ResumAutor(300, 260, p5.width-350, 200);
         resumAutor.setColorsFonts(colors, fonts);
-        ((ResumAutor)resumAutor).setResumLlibres(getNumPoemaris(autorSeleccionat), 1856, 2010);
-        ((ResumAutor)resumAutor).setResumPoemes(getNumPoemes(autorSeleccionat), 12);
-        ((ResumAutor)resumAutor).setResumEstrofes(getNumEstrofes(autorSeleccionat), 12);
-        ((ResumAutor)resumAutor).setResumVersos(getNumVersos(autorSeleccionat), 234);
+        ((ResumAutor)resumAutor).setResumLlibres(getNumPoemaris(autorSeleccionat), getMinAnyAutor(autorSeleccionat), getMaxAnyAutor(autorSeleccionat));
+        ((ResumAutor)resumAutor).setResumPoemes(getNumPoemes(autorSeleccionat), getMitjanaPoemesLlibre(autorSeleccionat));
+        ((ResumAutor)resumAutor).setResumEstrofes(getNumEstrofes(autorSeleccionat), getMitjanaEstrofesPoema(autorSeleccionat));
+        ((ResumAutor)resumAutor).setResumVersos(getNumVersos(autorSeleccionat), getMitjanaVersosEstrofa(autorSeleccionat));
 
         resumLlibre = new ResumLlibre(300, 260, p5.width-350, 200);
         resumLlibre.setColorsFonts(colors, fonts);
-        ((ResumLlibre)resumLlibre).setResumAutor("Nom de l'autor", 1856, 2010);
-        ((ResumLlibre)resumLlibre).setResumPoemes(28, 12);
-        ((ResumLlibre)resumLlibre).setResumEstrofes(256, 12);
-        ((ResumLlibre)resumLlibre).setResumVersos(13873, 234);
+        ((ResumLlibre)resumLlibre).setResumAutor(poemariSeleccionat.getAutor(), getMinAnyAutor(autorSeleccionat), getMaxAnyAutor(autorSeleccionat));
+        ((ResumLlibre)resumLlibre).setResumPoemes(poemariSeleccionat.getNumPoemes(), getMitjanaPoemesLlibre(autorSeleccionat));
+        ((ResumLlibre)resumLlibre).setResumEstrofes(poemariSeleccionat.getNumEstrofes(), getMitjanaEstrofesPoema(poemariSeleccionat));
+        ((ResumLlibre)resumLlibre).setResumVersos(poemariSeleccionat.getNumVersos(), getMitjanaVersosEstrofes(poemariSeleccionat));
+        resumLlibre.resums[0].setTextLlarg(true);
 
         resumPoema = new ResumPoema(300, 260, p5.width-350, 200);
         resumPoema.setColorsFonts(colors, fonts);

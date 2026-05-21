@@ -110,8 +110,30 @@ public class DadesPoemaris {
         return numVersos/ numEstrofes;
     }
 
+    // Estadístiques Autor/a +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
     public static int getNumPoemaris(Autor autor){
         return autor.getNumPoemaris();
+    }
+
+    public static int getMinAnyAutor(Autor autor){
+        int minAny = Integer.MAX_VALUE;
+        for(Poemari poemari : autor.getPoemaris()){
+            if(poemari.getAny() < minAny){
+                minAny = poemari.getAny();
+            }
+        }
+        return minAny;
+    }
+
+    public static int getMaxAnyAutor(Autor autor){
+        int maxAny = Integer.MIN_VALUE;
+        for(Poemari poemari : autor.getPoemaris()){
+            if(poemari.getAny() > maxAny){
+                maxAny = poemari.getAny();
+            }
+        }
+        return maxAny;
     }
 
     public static int getNumPoemes(Autor autor){
@@ -140,6 +162,57 @@ public class DadesPoemaris {
             }
         }
         return num;
+    }
+
+    public static float getMitjanaPoemesLlibre(Autor autor){
+        float num = 0;
+        for(Poemari poemari : autor.getPoemaris()){
+            num += poemari.getNumPoemes();
+        }
+        return num / autor.getNumPoemaris();
+    }
+
+    public static float getMitjanaEstrofesPoema(Autor autor){
+        float numEstrofes = 0, numPoemes = 0;
+        for(Poemari poemari : autor.getPoemaris()){
+            for(Poema poema : poemari.getPoemes()) {
+                numEstrofes += poema.getNumEstrofes();
+                numPoemes++;
+            }
+        }
+        return numEstrofes / numPoemes;
+    }
+
+    public static float getMitjanaVersosEstrofa(Autor autor){
+        float numEstrofes = 0, numVersos = 0;
+        for(Poemari poemari : autor.getPoemaris()){
+            for(Poema poema : poemari.getPoemes()) {
+                for(Estrofa estrofa: poema.getEstrofes()) {
+                    numEstrofes++;
+                    numVersos+= estrofa.getNumVersos();
+                }
+            }
+        }
+        return numVersos / numEstrofes;
+    }
+
+    // Estadístiques Poemari ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    public static float getMitjanaEstrofesPoema(Poemari poemari){
+        float num = 0;
+        for(Poema poema : poemari.getPoemes()){
+            num += poema.getNumEstrofes();
+        }
+        return num / poemari.getNumPoemes();
+    }
+
+    public static float getMitjanaVersosEstrofes(Poemari poemari){
+        float numEstrofes = 0, numVersos = 0;
+        for(Poema poema : poemari.getPoemes()){
+            numEstrofes += poema.getNumEstrofes();
+            numVersos += poema.getNumVersos();
+        }
+        return numVersos / numEstrofes;
     }
 
     // Dades Poemaris ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
