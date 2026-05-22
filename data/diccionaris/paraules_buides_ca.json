@@ -53,7 +53,7 @@
         "que", "qui", "on", "qual",
         "què", "quant", "quants", "quanta", "quantes",
         "quin", "quina", "quins", "quines",
-        "res", "ningú", "algú", "alguna", "algunes", "alguns",
+        "res", "ningú", "algú", "alguna", "algunes", "alguns", "quelcom",
         "tothom", "cadascú", "cadascuna"
       ]
     },
@@ -96,7 +96,7 @@
         "tot just", "sovint", "de vegades", "a vegades", "ben aviat",
         "bé", "mal", "així", "com", "tal", "igualment",
         "tanmateix", "també", "tampoc",
-        "molt", "poc", "gens", "prou", "força", "massa",
+        "molt", "poc", "gens", "prou", "força", "massa", "només",
         "tan", "tant", "tanta", "tants", "tantes", "més", "menys",
         "sí", "no", "potser", "segurament", "certament",
         "efectivament", "pas"
@@ -115,12 +115,12 @@
         "tenc", "tens", "té", "tenim", "teniu", "tenen",
         "he", "has", "ha", "hem", "heu", "han",
         "havia", "havies", "havíem", "havíeu", "havien",
-        "hagut", "haver",
-        "vaig", "vas", "va", "vam", "vau", "van",
+        "hagut", "haver", "hauria", "hauries", "hauríem", "hauríeu","haurien",
+        "vaig", "vas", "vares", "va", "vam", "vau", "van",
         "fer", "faig", "fa", "fas", "fan",
         "fui", "fores", "fou", "fórem", "fóreu", "foren",
         "fet", "fos", "feim",
-        "dir", "dic", "diu", "dit", "deien", "diuen"
+        "dir", "dic", "diu", "dit", "deien", "diuen", "digués", "digau"
       ]
     }
   ]

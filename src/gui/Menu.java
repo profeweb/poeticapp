@@ -1,6 +1,7 @@
 package gui;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 import processing.core.PShape;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 public class Menu extends GuiElement {
 
     String titol;
-    PShape logo;
+    PImage logo;
     ArrayList<SubMenu> subMenus;
     int[] opcioSeleccionada;
 
@@ -23,7 +24,7 @@ public class Menu extends GuiElement {
         opcioSeleccionada[1] = -1;
     }
 
-    public void setLogo(PShape logo){ this.logo = logo; }
+    public void setLogo(PImage logo){ this.logo = logo; }
 
     public void afegirSubMenu(SubMenu subMenu){
         this.subMenus.add(subMenu);
@@ -45,8 +46,8 @@ public class Menu extends GuiElement {
 
             // Logo
             if(logo!=null){
-                p5.shapeMode(p5.CENTER);
-                p5.shape(logo, x + w/2, y-100, 120, 120);
+                p5.imageMode(p5.CENTER);
+                p5.image(logo, x + w/2, y-100, 120, 120);
             }
             else{
                 p5.circle(x + w/2, y-100, 120);

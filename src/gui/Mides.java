@@ -28,7 +28,7 @@ public class Mides {
 
     // TEXT TARJA
     public static float midaNumeroTarja = 58;
-    public static float midaTitolTarja = 28;
+    public static float midaTitolTarja = 24;
     public static float midaSubtitolTarja = 18;
     public static float midaTitolGraellaTarja = 48;
     public static float midaPaginacioGraellaTarja = 24;

@@ -24,6 +24,24 @@ public class Estrofa {
         return  num;
     }
 
+    public int getNumParaules(){
+        int num = 0;
+        for(Vers vers : getVersos()){
+            num += vers.getNumParaules();
+        }
+        return num;
+    }
+
+    public int getNumSillabes(){
+        int num = 0;
+        for(Vers vers : getVersos()){
+            for(Token token : vers.getParaules()) {
+                num += ((Paraula) token).getNumSilabes();
+            }
+        }
+        return num;
+    }
+
     public int getPrimerVersEstrofa(){ return this.frases.get(0).getPrimerVersFrase(); }
 
     public int getDarrerVersEstrofa(){ return this.frases.get(frases.size()-1).getDarrerVersFrase(); }

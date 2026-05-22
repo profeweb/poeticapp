@@ -16,12 +16,11 @@ public class Colors {
         this.colors = new int[6];
 
         this.colors[0] = p5.color(0xFF000000);
-
-        this.colors[1] = p5.color(0xFF53599A);
-        this.colors[2] = p5.color(0xFF6D9DC5);
-        this.colors[3] = p5.color(0xFF80DED9);
-        this.colors[4] = p5.color(0xFFAEECEF);
-        this.colors[5] = p5.color(0xFF068D9D);
+        this.colors[1] = p5.color(0xFF53599A); // 0xFF53599A
+        this.colors[2] = p5.color(0xFF6D9DC5); // 0xFF6D9DC5
+        this.colors[3] = p5.color(0xFF80DED9); // 0xFF80DED9
+        this.colors[4] = p5.color(0xFFAEECEF); // 0xFFAEECEF
+        this.colors[5] = p5.color(0xFF068D9D); // 0xFF068D9D
     }
 
     // Getter del número de colors
@@ -55,6 +54,7 @@ public class Colors {
     public int getColorBotoFarcimentDesactivat(){ return this.colors[1]; }
     public int getColorBotoFarcimentFora(){ return this.colors[2]; }
     public int getColorBotoFarcimentDins(){ return this.colors[3]; }
+    public int getColorIconaBoto(){ return this.colors[4]; }
 
 
     // COLORS ENTRADA TEXT

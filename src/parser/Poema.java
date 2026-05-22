@@ -24,6 +24,8 @@ public class Poema {
         this.estrofes = new ArrayList<>();
     }
 
+    public int getNumero(){ return this.numero; }
+
     public String getTitol(){ return  this.titol; }
 
     public void setTitol(String titol){ this.titol = titol; }
@@ -38,6 +40,24 @@ public class Poema {
             num += estrofa.getNumVersos();
         }
         return  num;
+    }
+
+    public int getNumParaules(){
+       int num = 0;
+       for(Vers vers : getVersos()){
+           num += vers.getNumParaules();
+       }
+       return num;
+    }
+
+    public int getNumSillabes(){
+        int num = 0;
+        for(Vers vers : getVersos()){
+            for(Token token : vers.getParaules()) {
+                num += ((Paraula)token).getNumSilabes();
+            }
+        }
+        return num;
     }
 
     public int getMaxVersosEstrofes(){

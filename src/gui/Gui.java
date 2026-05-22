@@ -57,7 +57,7 @@ public class Gui {
     // MEDIA
     Colors colors;
     Fonts fonts;
-    PImage imgAutor, imgLlibre, imgPoema, imgVisuals;
+    PImage imgAutor, imgLlibre, imgPoema, imgVisuals, imgLogo;
     public SelectorImatge selectorImatgeAutor, selectorImatgeLlibre;
     int colorAutor, colorLlibre, colorPoema, colorVisuals;
 
@@ -86,12 +86,13 @@ public class Gui {
         this.colors = new Colors(p5);
         this.fonts = new Fonts(p5);
 
-        this.imgAutor = p5.loadImage("data/img/autor.png");
+        this.imgAutor = p5.loadImage("data/img/imgAutor.png");
         this.imgLlibre = p5.loadImage("data/img/llibre.png");
         this.imgPoema = p5.loadImage("data/img/poema.png");
         this.imgVisuals = p5.loadImage("data/img/poema.png");
+        this.imgLogo = p5.loadImage("data/img/logoPoetica.png");
 
-        colorAutor = p5.color(250, 220, 200);
+        colorAutor = p5.color(255, 255, 200);
         colorLlibre = p5.color(200, 250, 150);
         colorPoema = p5.color(150, 200, 250);
         colorVisuals= p5.color(150, 150, 250);
@@ -102,78 +103,66 @@ public class Gui {
 
         taulaAutors = new TaulaPaginada(300, 540, 600, 500);
         String[] colsAutors1 = { "Autor", "Any"};
-        String[][] dadesAutors1 = DadesPoemaris.getAutorsInfo(autors);
-        System.out.println("1:?" + dadesAutors1.length);
         float[] midesAutors1 = {75, 25};
         taulaAutors.setTitols(colsAutors1);
         taulaAutors.setNumFilesPagina(10);
-        taulaAutors.setDades(dadesAutors1);
+        taulaAutors.setDades(DadesPoemaris.getAutorsInfo(autors));
         taulaAutors.setMidaColumnes(midesAutors1);
         taulaAutors.setColorsFonts(colors, fonts);
         taulaAutors.setBotonsPaginacio();
 
         taulaResumAutor = new TaulaPaginada(300, 540, p5.width-350, 500);
         String[] cols = { "Títol", "Any", "Poemes", "Estrofes", "Versos", "Paraules", "Síl·labes"};
-        String[][] dades = DadesPoemaris.getAutorInfo(autorSeleccionat);
-        DadesPoemaris.printArray2D(dades);
-        p5.println("NUM DADES: " +  dades.length + " x " + dades[0].length);
         float[] mides = {40, 10, 10, 10, 10, 10, 10};
         taulaResumAutor.setTitols(cols);
         taulaResumAutor.setNumFilesPagina(10);
-        taulaResumAutor.setDades(dades);
+        taulaResumAutor.setDades(DadesPoemaris.getAutorInfo(autorSeleccionat));
         taulaResumAutor.setMidaColumnes(mides);
         taulaResumAutor.setColorsFonts(colors, fonts);
         taulaResumAutor.setBotonsPaginacio();
 
         taulaLlibres = new TaulaPaginada(950, 540, 920, 500);
         String[] colsTaulaLlibre1 = { "Llibre", "Any", "Poemes", "Autor"};
-        String[][] dadesTaulaLlibre1 = DadesPoemaris.getLlibresInfo(poemaris);
-
         float[] midesTaulaLlibre1 = {40, 10, 20, 30};
         taulaLlibres.setTitols(colsTaulaLlibre1);
         taulaLlibres.setNumFilesPagina(10);
-        taulaLlibres.setDades(dadesTaulaLlibre1);
+        taulaLlibres.setDades(DadesPoemaris.getLlibresInfo(poemaris));
         taulaLlibres.setMidaColumnes(midesTaulaLlibre1);
         taulaLlibres.setColorsFonts(colors, fonts);
         taulaLlibres.setBotonsPaginacio();
 
         taulaResumLlibre = new TaulaPaginada(300, 540, p5.width-350, 500);
         String[] colsTaulaLlibre = { "Poema", "Número", "Estrofes", "Versos", "Paraules", "Síl·labes"};
-        String[][] dadesTaulaLlibre = {{"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"}, {"1", "2", "3", "4", "5", "6"},};
         float[] midesTaulaLlibre = {50, 10, 10, 10, 10, 10};
         taulaResumLlibre.setTitols(colsTaulaLlibre);
         taulaResumLlibre.setNumFilesPagina(10);
-        taulaResumLlibre.setDades(dadesTaulaLlibre);
+        taulaResumLlibre.setDades(getLlibreInfo(poemariSeleccionat));
         taulaResumLlibre.setMidaColumnes(midesTaulaLlibre);
         taulaResumLlibre.setColorsFonts(colors, fonts);
         taulaResumLlibre.setBotonsPaginacio();
 
         taulaResumPoema = new TaulaPaginada(300, 540, p5.width-350, 500);
         String[] colsTaulaPoema = { "Estrofa", "Número", "Versos", "Paraules", "Síl·labes"};
-        String[][] dadesTaulaPoema = {{"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"}, {"1", "2", "3", "4", "5"},};
         float[] midesTaulaPoema = {60, 10, 10, 10, 10};
         taulaResumPoema.setTitols(colsTaulaPoema);
         taulaResumPoema.setNumFilesPagina(10);
-        taulaResumPoema.setDades(dadesTaulaPoema);
+        taulaResumPoema.setDades(getPoemaInfo(poemaSeleccionat));
         taulaResumPoema.setMidaColumnes(midesTaulaPoema);
         taulaResumPoema.setColorsFonts(colors, fonts);
         taulaResumPoema.setBotonsPaginacio();
 
-        // LLISTES AUTCOMPLETAR /////////////////////////////////////////////////////////////////////////////
+        // LLISTES AUTOCOMPLETAR /////////////////////////////////////////////////////////////////////////////
 
-        String[] opcionsAutors = {"Autor A", "Autor B", "Autor C", "Autor D"};
-        llistaAutors = new EntradaTextLlista("Autor", opcionsAutors, 400, 150, AMPLE_ENTRADA_LLISTA, ALT_ENTRADA_LLISTA);
+        llistaAutors = new EntradaTextLlista("Autor", getNomsAutors(autors), 400, 150, AMPLE_ENTRADA_LLISTA, ALT_ENTRADA_LLISTA);
         llistaAutors.setColorsFonts(colors, fonts);
 
-        llistaAutorLlibre = new EntradaTextLlista("Autor", opcionsAutors, 1100, 300, AMPLE_ENTRADA_LLISTA, ALT_ENTRADA_LLISTA);
+        llistaAutorLlibre = new EntradaTextLlista("Autor", getNomsAutors(autors), 1100, 300, AMPLE_ENTRADA_LLISTA, ALT_ENTRADA_LLISTA);
         llistaAutorLlibre.setColorsFonts(colors, fonts);
 
-        String[] opcionsLlibres = {"Llibre A", "Llibre B", "Llibre C", "Llibre D"};
-        llistaLlibres = new EntradaTextLlista("Llibre", opcionsLlibres, 800, 150, AMPLE_ENTRADA_LLISTA, ALT_ENTRADA_LLISTA);
+        llistaLlibres = new EntradaTextLlista("Llibre", getTitolsPoemaris(autorSeleccionat), 800, 150, AMPLE_ENTRADA_LLISTA, ALT_ENTRADA_LLISTA);
         llistaLlibres.setColorsFonts(colors, fonts);
 
-        String[] opcionsPoemes = {"Poema A", "Poema B", "Poema C", "Poema D"};
-        llistaPoemes = new EntradaTextLlista("Poema", opcionsPoemes, 1200, 150, AMPLE_ENTRADA_LLISTA, ALT_ENTRADA_LLISTA);
+        llistaPoemes = new EntradaTextLlista("Poema", getTitolsPoemes(poemariSeleccionat), 1200, 150, AMPLE_ENTRADA_LLISTA, ALT_ENTRADA_LLISTA);
         llistaPoemes.setColorsFonts(colors, fonts);
 
 
@@ -251,6 +240,7 @@ public class Gui {
 
         menuApp = new MenuApp(10, 200, 270, 840);
         menuApp.setColorsFonts(colors, fonts);
+        menuApp.setLogo(imgLogo);
         menuApp.setMenuApp();
 
         // EXPLORADOR ////////////////////////////////////////////////////////////////////////////
@@ -320,10 +310,12 @@ public class Gui {
 
         resumPoema = new ResumPoema(300, 260, p5.width-350, 200);
         resumPoema.setColorsFonts(colors, fonts);
-        ((ResumPoema)resumPoema).setResumAutor("Nom de l'autor", 1856, 2010);
-        ((ResumPoema)resumPoema).setResumLlibre("Títol del llibre", 15);
-        ((ResumPoema)resumPoema).setResumEstrofes(256, 12);
-        ((ResumPoema)resumPoema).setResumVersos(13873, 234);
+        ((ResumPoema)resumPoema).setResumAutor(autorSeleccionat.getNom(), getMinAnyAutor(autorSeleccionat), getMaxAnyAutor(autorSeleccionat));
+        ((ResumPoema)resumPoema).setResumLlibre(poemariSeleccionat.getTitol(), getNumPoemaris(autorSeleccionat));
+        ((ResumPoema)resumPoema).setResumEstrofes(poemariSeleccionat.getNumEstrofes(), poemaSeleccionat.getMaxVersosEstrofes());
+        ((ResumPoema)resumPoema).setResumVersos(poemariSeleccionat.getNumVersos(), poemariSeleccionat.getMaxLletresVersosPoemari());
+        resumPoema.resums[0].setTextLlarg(true);
+        resumPoema.resums[1].setTextLlarg(true);
 
         resumApp = new ResumApp(300, 260, p5.width-350, 200);
         resumApp.setColorsFonts(colors, fonts);
@@ -340,6 +332,7 @@ public class Gui {
     public void setPantalles(){
         pantallaInici = new Pantalla(PANTALLA.INICI);
         pantallaInici.addElements(menuApp, entradaCercador, resumApp, botoAfegirAutor, botoAfegirLlibre, taulaAutors, taulaLlibres);
+        pantallaInici.addElement(new Titol(posTitularX - 60, posTitularY + 120, colors, fonts, "Resum General"));
         pantallaInici.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_INICI, "Inici", "Poètica"));
 
         pantallaExplorar = new Pantalla(PANTALLA.EXPLORAR);
@@ -397,7 +390,7 @@ public class Gui {
         pantallaLlibreEdita.addElements(menuApp, entradaCercador, botonsLlibre, selectorImatgeLlibre, llistaAutorLlibre, entradaTitolLlibre, entradaAnyLlibre, botoGuardar, titolLlibre);
         pantallaLlibreEdita.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_LLIBRES, "Llibre", "Edita"));
 
-        String textTitolPoema = poemaSeleccionat.getTitol().substring(0, min(8, poemaSeleccionat.getTitol().length()));
+        String textTitolPoema = poemaSeleccionat.getNumero() + " - " + poemaSeleccionat.getTitol().substring(0, min(25, poemaSeleccionat.getTitol().length()));
         titolPoema = new Titol(posTitularX - 60, posTitularY + 120, colors, fonts, textTitolPoema);
         pantallaPoemaResum = new Pantalla(PANTALLA.POEMA_RESUM);
         pantallaPoemaResum.addElements(menuApp, entradaCercador, botoEditarPoema, resumPoema, taulaResumPoema, titolPoema);
@@ -436,7 +429,7 @@ public class Gui {
     public GraellaTarja setGraella(String[][] dades, String titol, PImage img, int colorFons, int numFiles, int numColumnes, float x, float y, float w, float h){
         GraellaTarja graella = new GraellaTarja(numFiles, numColumnes, x, y, w, h);
         graella.setData(dades);
-        graella.ordenaTargesPerTitolAsc();
+        //graella.ordenaTargesPerTitolAsc();
         graella.setTitol(titol);
         graella.setColorsFonts(colors, fonts);
         graella.setTarges(p5);

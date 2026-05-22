@@ -25,7 +25,7 @@ public class BotoIcona extends Boto {
 
         // Icona
         p5.pushStyle();
-        p5.fill(255, 100, 100);
+        p5.fill(colors.getColorIconaBoto());
         p5.textFont(this.fonts.getFontEmoji());
         p5.textSize(midaTextEmojiBoto);
         if(textBoto.equals("")) {

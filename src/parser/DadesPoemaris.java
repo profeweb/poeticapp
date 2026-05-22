@@ -2,11 +2,23 @@ package parser;
 
 import java.util.ArrayList;
 
+import static java.lang.Math.min;
+
 public class DadesPoemaris {
 
     // Estadístiques Poemaris +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     public static int getNumAutors(ArrayList<Autor> autors){ return autors.size(); }
+
+    public static String[] getNomsAutors(ArrayList<Autor> autors){
+        String[] noms = new String[autors.size()];
+        int numAutor = 0;
+        for(Autor autor: autors){
+            noms[numAutor] = autor.getNom();
+            numAutor++;
+        }
+        return noms;
+    }
 
     public static int getNumPoemaris(ArrayList<Autor> autors){
         int num = 0;
@@ -116,6 +128,16 @@ public class DadesPoemaris {
         return autor.getNumPoemaris();
     }
 
+    public static String[] getTitolsPoemaris(Autor autor){
+        String[] titols = new String[autor.getNumPoemaris()];
+        int numPoemari = 0;
+        for(Poemari poemari : autor.getPoemaris()){
+            titols[numPoemari] = poemari.getTitol().substring(0, min(15, poemari.getTitol().length()));
+            numPoemari++;
+        }
+        return titols;
+    }
+
     public static int getMinAnyAutor(Autor autor){
         int minAny = Integer.MAX_VALUE;
         for(Poemari poemari : autor.getPoemaris()){
@@ -198,6 +220,16 @@ public class DadesPoemaris {
 
     // Estadístiques Poemari ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+    public static String[] getTitolsPoemes(Poemari poemari){
+        String[] titols = new String[poemari.getNumPoemes()];
+        int numPoema = 0;
+        for(Poema poema : poemari.getPoemes()){
+            titols[numPoema] = poema.getNumero() + ". " + poema.getTitol().substring(0, min(10, poema.getTitol().length()));
+            numPoema++;
+        }
+        return titols;
+    }
+
     public static float getMitjanaEstrofesPoema(Poemari poemari){
         float num = 0;
         for(Poema poema : poemari.getPoemes()){
@@ -270,7 +302,6 @@ public class DadesPoemaris {
         return info;
     }
 
-
     public int[] getResumLlibresAutor(Autor autor){
         int[] resum = new int[3];
         resum[0] = autor.getNumPoemaris();
@@ -278,7 +309,6 @@ public class DadesPoemaris {
         resum[2] = autor.getDarrerPoemari();
         return resum;
     }
-
 
     public static String[][] getLlibresAutorsInfo(ArrayList<Autor> autors){
         String[][] info = new String[getNumPoemaris(autors)][2];
@@ -299,11 +329,43 @@ public class DadesPoemaris {
         for(Autor autor : autors){
             for(Poemari poemari : autor.getPoemaris()) {
                 for(Poema poema : poemari.getPoemes()) {
-                    info[numPoema][0] = poema.numero + " - " + poemari.getTitol();
-                    info[numPoema][1] = autor.getNom();
+                    String textPoema = poema.getVersAt(0).text;
+                    info[numPoema][0] = poema.numero + ". " + textPoema.substring(0, min(20, textPoema.length())) +" ...";
+                    info[numPoema][1] = poemari.getTitol();
                     numPoema++;
                 }
             }
+        }
+        return info;
+    }
+
+    // Dades Poemari
+    public static String[][] getLlibreInfo(Poemari poemari){
+        String[][] info = new String[poemari.getNumPoemes()][6];
+        int numPoema = 0;
+        for(Poema poema : poemari.getPoemes()){
+            info[numPoema][0] = poema.getTitol();
+            info[numPoema][1] = String.valueOf(poema.numero);
+            info[numPoema][2] = String.valueOf(poema.getNumEstrofes());
+            info[numPoema][3] = String.valueOf(poema.getNumVersos());
+            info[numPoema][4] = String.valueOf(poema.getNumParaules());
+            info[numPoema][5] = String.valueOf(poema.getNumSillabes());
+            numPoema++;
+        }
+        return info;
+    }
+
+    // Dades Poemari
+    public static String[][] getPoemaInfo(Poema poema){
+        String[][] info = new String[poema.getNumEstrofes()][5];
+        int numPoema = 0;
+        for(Estrofa estrofa : poema.getEstrofes()){
+            info[numPoema][0] = estrofa.getVersAt(0).text + " ...";
+            info[numPoema][1] = String.valueOf(estrofa.numero);
+            info[numPoema][2] = String.valueOf(estrofa.getNumVersos());
+            info[numPoema][3] = String.valueOf(estrofa.getNumParaules());
+            info[numPoema][4] = String.valueOf(estrofa.getNumSillabes());
+            numPoema++;
         }
         return info;
     }
@@ -318,7 +380,8 @@ public class DadesPoemaris {
         ((ResumAutor)resumAutor).setResumVersos(13873, 234);
          */
 
-    //}
+    //
+    // }
 
     public static void printArray2D(String[][] info){
         for(int i=0; i<info.length; i++){

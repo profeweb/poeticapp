@@ -56,7 +56,7 @@ public class EntradaCercador extends EntradaText{
 
         // Icona
         p5.pushStyle();
-        p5.fill(255, 100, 100);
+        p5.fill(colors.getColorIconaBoto());
         p5.textFont(this.fonts.getFontEmoji());
         p5.textSize(TEXT_ICONA_BOTO); p5.textAlign(p5.LEFT, p5.CENTER);
         p5.text(new String(Character.toChars(CODI_ICONA_CERCADOR)), this.x + 10, this.y + this.h/2 - 2);

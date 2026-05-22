@@ -69,10 +69,6 @@ public class Main extends PApplet {
 
 
             afegeixAutors();
-            println("DONE! "+ autors.size());
-
-        String[][] info = DadesPoemaris.getAutorsInfo(autors);
-        DadesPoemaris.printArray2D(info);
     }
 
     public void afegeixAutors(){
