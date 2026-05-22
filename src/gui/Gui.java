@@ -2,6 +2,7 @@ package gui;
 
 import parser.Autor;
 import parser.DadesPoemaris;
+import parser.Poema;
 import parser.Poemari;
 import processing.core.PApplet;
 import processing.core.PImage;
@@ -9,6 +10,7 @@ import processing.core.PImage;
 import java.util.ArrayList;
 
 import static gui.Mides.*;
+import static java.lang.Math.min;
 import static parser.DadesPoemaris.*;
 
 public class Gui {
@@ -42,6 +44,7 @@ public class Gui {
     BotoOpcioGrup opcionsCercador;
 
     Resum resumAutor, resumLlibre, resumPoema, resumApp;
+    Titol titolAutor, titolLlibre, titolPoema;
 
     MenuApp menuApp;
 
@@ -61,8 +64,9 @@ public class Gui {
     // Hooks
     ArrayList<Autor> autors;
     ArrayList<Poemari> poemaris;
-    public Autor autorSeleccionat;
+    Autor autorSeleccionat;
     Poemari poemariSeleccionat;
+    Poema poemaSeleccionat;
 
     public Gui(PApplet p5, ArrayList<Autor> autors){
         this.p5 = p5;
@@ -70,6 +74,7 @@ public class Gui {
         this.poemaris = autors.get(0).getPoemaris();
         this.autorSeleccionat = autors.get(0);
         this.poemariSeleccionat = this.poemaris.get(0);
+        this.poemaSeleccionat = this.poemariSeleccionat.getPoemaAt(0);
         setMedia(p5);
         setElementsGUI();
         setPantalles();
@@ -175,26 +180,21 @@ public class Gui {
         // GRAELLES ///////////////////////////////////////////////////////////////////////////////////////////
 
         // Graella Autors 1 linea
-        String[][] dadesAutorsResum = { {"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
-        graellaAutorsFavorits = setGraella(dadesAutorsResum, "Autors", imgAutor, colorAutor, 1, 5, 310, 300, 1550, 292);
+        graellaAutorsFavorits = setGraella(getAutorsInfo(autors), "Autors", imgAutor, colorAutor, 1, 5, 310, 300, 1550, 292);
         graellaAutorsFavorits.amagaSubtitols();
 
         // Graella Llibres 1 línea
-        String[][] dadesLlibresResum = { {"a", "d1"},{"f", "d1"},{"b", "d1"},{"g", "d1"},{"c", "d1"},{"k", "d1"},{"d", "d1"},{"v", "d1"},{"e", "d1"} };
-        graellaLlibresFavorits = setGraella(dadesLlibresResum, "Llibres", imgLlibre, colorLlibre, 1, 5, 310, 730, 1550, 292);
+        graellaLlibresFavorits = setGraella(getLlibresAutorsInfo(autors), "Llibres", imgLlibre, colorLlibre, 1, 5, 310, 730, 1550, 292);
         graellaLlibresFavorits.amagaSubtitols();
 
         // Graella Autors 2 lineas
-        String[][] dadesAutors = { {"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
-        graellaAutors = setGraella(dadesAutors, "Autors",imgAutor,colorAutor, 2, 5, 310, 300, 1550, 600);
+        graellaAutors = setGraella(getAutorsInfo(autors), "Autors",imgAutor,colorAutor, 2, 5, 310, 300, 1550, 600);
 
         // Graella Llibres 2 líneas
-        String[][] dadesLlibres= { {"a", "d1"},{"f", "d1"},{"b", "d1"},{"g", "d1"},{"c", "d1"},{"k", "d1"},{"d", "d1"},{"v", "d1"},{"e", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
-        graellaLlibres = setGraella(dadesLlibres, "Llibres",imgLlibre,colorLlibre, 2, 5, 310, 300, 1550, 600);
+        graellaLlibres = setGraella(getLlibresAutorsInfo(autors), "Llibres",imgLlibre,colorLlibre, 2, 5, 310, 300, 1550, 600);
 
         // Graella Poemes 2 líneas
-        String[][] dadesPoemes= { {"a", "d1"},{"f", "d1"},{"b", "d1"},{"g", "d1"},{"c", "d1"},{"k", "d1"},{"d", "d1"},{"v", "d1"},{"e", "d1"},{"t1", "d1"},{"t1", "d1"},{"t1", "d1"} };
-        graellaPoemes = setGraella(dadesPoemes, "Poemes",imgPoema,colorPoema, 2, 5, 310, 300, 1550, 600);
+        graellaPoemes = setGraella(getPoemesAutorsInfo(autors), "Poemes",imgPoema,colorPoema, 2, 5, 310, 300, 1550, 600);
 
         // Graella Visuals 2 líneas
         graellaVisualitzacions = setGraellaVisuals(dadesVisuals, "Quantitativa", "Visuals Quantitatius", imgVisuals, colorVisuals, 2, 5, 310, 300, 1550, 600);
@@ -363,44 +363,48 @@ public class Gui {
         pantallaPoemes.addElements(menuApp,entradaCercador, llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar, graellaPoemes);
         pantallaPoemes.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_POEMES, "Poemes", "Poètica"));
 
+        titolAutor = new Titol(posTitularX - 60, posTitularY + 120, colors, fonts, autorSeleccionat.getNom());
         pantallaAutorResum = new Pantalla(PANTALLA.AUTOR_RESUM);
-        pantallaAutorResum.addElements(menuApp, entradaCercador, botoEditarAutor, botonsAutor, resumAutor, taulaResumAutor);
+        pantallaAutorResum.addElements(menuApp, entradaCercador, botoEditarAutor, botonsAutor, resumAutor, taulaResumAutor, titolAutor);
         pantallaAutorResum.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_AUTORS, "Autor", "Resum"));
 
         pantallaAutorObra = new Pantalla(PANTALLA.AUTOR_OBRA);
-        pantallaAutorObra.addElements(menuApp, entradaCercador, botoAfegirLlibre, botonsAutor, graellaLlibres);
+        pantallaAutorObra.addElements(menuApp, entradaCercador, botoAfegirLlibre, botonsAutor, graellaLlibres, titolAutor);
         pantallaAutorObra.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_AUTORS, "Autor", "Obra"));
 
         pantallaAutorVisual = new Pantalla(PANTALLA.AUTOR_VISUAL);
-        pantallaAutorVisual.addElements(menuApp, entradaCercador, botonsAutor, graellaVisualitzacions);
+        pantallaAutorVisual.addElements(menuApp, entradaCercador, botonsAutor, graellaVisualitzacions, titolAutor);
         pantallaAutorVisual.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_AUTORS, "Autor", "Visualitzacions"));
 
         pantallaAutorEdita = new Pantalla(PANTALLA.AUTOR_EDITA);
-        pantallaAutorEdita.addElements(menuApp, entradaCercador, botonsAutor, entradaNomAutor, entradaAnyAutor, selectorImatgeAutor, botoGuardar);
+        pantallaAutorEdita.addElements(menuApp, entradaCercador, botonsAutor, entradaNomAutor, entradaAnyAutor, selectorImatgeAutor, botoGuardar, titolAutor);
         pantallaAutorEdita.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_AUTORS, "Autor", "Edita"));
 
+        titolLlibre = new Titol(posTitularX - 60, posTitularY + 120, colors, fonts, poemariSeleccionat.getTitol());
         pantallaLlibreResum = new Pantalla(PANTALLA.LLIBRE_RESUM);
-        pantallaLlibreResum.addElements(menuApp, entradaCercador, botoEditarLlibre, botonsLlibre, resumLlibre, taulaResumLlibre);
+        pantallaLlibreResum.addElements(menuApp, entradaCercador, botoEditarLlibre, botonsLlibre, resumLlibre, taulaResumLlibre, titolLlibre);
         pantallaLlibreResum.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_LLIBRES, "Llibre", "Resum"));
 
         pantallaLlibreObra = new Pantalla(PANTALLA.LLIBRE_OBRA);
-        pantallaLlibreObra.addElements(menuApp, entradaCercador, botoAfegirPoema, botonsLlibre, graellaPoemes);
+        pantallaLlibreObra.addElements(menuApp, entradaCercador, botoAfegirPoema, botonsLlibre, graellaPoemes, titolLlibre);
         pantallaLlibreObra.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_LLIBRES, "Llibre", "Obra"));
 
         pantallaLlibreVisual = new Pantalla(PANTALLA.LLIBRE_VISUAL);
-        pantallaLlibreVisual.addElements(menuApp, entradaCercador, botonsAutor);
+        pantallaLlibreVisual.addElements(menuApp, entradaCercador, botonsAutor, titolLlibre);
         pantallaLlibreVisual.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_LLIBRES, "Llibre", "Visualitzacions"));
 
         pantallaLlibreEdita = new Pantalla(PANTALLA.LLIBRE_EDITA);
-        pantallaLlibreEdita.addElements(menuApp, entradaCercador, botonsLlibre, selectorImatgeLlibre, llistaAutorLlibre, entradaTitolLlibre, entradaAnyLlibre, botoGuardar);
+        pantallaLlibreEdita.addElements(menuApp, entradaCercador, botonsLlibre, selectorImatgeLlibre, llistaAutorLlibre, entradaTitolLlibre, entradaAnyLlibre, botoGuardar, titolLlibre);
         pantallaLlibreEdita.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_LLIBRES, "Llibre", "Edita"));
 
+        String textTitolPoema = poemaSeleccionat.getTitol().substring(0, min(8, poemaSeleccionat.getTitol().length()));
+        titolPoema = new Titol(posTitularX - 60, posTitularY + 120, colors, fonts, textTitolPoema);
         pantallaPoemaResum = new Pantalla(PANTALLA.POEMA_RESUM);
-        pantallaPoemaResum.addElements(menuApp, entradaCercador, botoEditarPoema, resumPoema, taulaResumPoema);
+        pantallaPoemaResum.addElements(menuApp, entradaCercador, botoEditarPoema, resumPoema, taulaResumPoema, titolPoema);
         pantallaPoemaResum.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_POEMES, "Poema", "Resum"));
 
         pantallaPoemaEdita = new Pantalla(PANTALLA.POEMA_EDITA);
-        pantallaPoemaEdita.addElements(menuApp, entradaCercador);
+        pantallaPoemaEdita.addElements(menuApp, entradaCercador, titolPoema);
         pantallaPoemaEdita.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_POEMES, "Poema", "Edita"));
 
         pantallaQuantitatives = new Pantalla(PANTALLA.QUANTITATIVES);

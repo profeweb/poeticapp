@@ -1,7 +1,6 @@
 package gui.test;
 
 import gui.Colors;
-import gui.DiagramaBarres;
 import gui.DiagramaLinies;
 import gui.Fonts;
 import processing.core.PApplet;
@@ -35,7 +34,7 @@ public class TestDiagramaLinies extends PApplet {
 
         db.setValors(valors);
         db.setCategories(titols);
-        db.setColors(colorBarres);
+        db.setColorsCategories(colorBarres);
         db.setPunts();
     }
 

@@ -1,7 +1,6 @@
 package gui.test;
 
 import gui.Colors;
-import gui.DiagramaBarres;
 import gui.DiagramaSectors;
 import gui.Fonts;
 import processing.core.PApplet;
@@ -35,7 +34,7 @@ public class TestDiagramaSectors extends PApplet {
 
         diagramaSectors.setValors(valors);
         diagramaSectors.setCategories(titols);
-        diagramaSectors.setColors(colorBarres);
+        diagramaSectors.setColorsCategories(colorBarres);
         diagramaSectors.setSectors();
     }
 

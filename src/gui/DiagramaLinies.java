@@ -5,6 +5,8 @@ import processing.core.PApplet;
 public class DiagramaLinies extends Diagrama {
 
     PuntDades[] punts;
+    Eix eixHoritzontal;
+    float espaiX;
 
     public DiagramaLinies(float x, float y, float w, float h) {
         super(x, y, w, h);
@@ -14,7 +16,7 @@ public class DiagramaLinies extends Diagrama {
 
         punts = new PuntDades[this.valors.length];
 
-        float espaiX = w / (float) this.valors.length;
+        espaiX = w / (float) this.valors.length;
 
         for(int i=0; i<punts.length; i++){
 
@@ -30,6 +32,14 @@ public class DiagramaLinies extends Diagrama {
         }
     }
 
+    public void setEixHoritzontal(String titolEix){
+        eixHoritzontal = new Eix(x, y + h, w, h);
+        eixHoritzontal.setLlegenda(titolEix);
+        eixHoritzontal.setFonts(fonts);
+        eixHoritzontal.categories = this.categories;
+        eixHoritzontal.espaiX = this.espaiX;
+    }
+
     // Dibuixa el Diagrama de Línies
 
     public void display(PApplet p5){
@@ -41,6 +51,7 @@ public class DiagramaLinies extends Diagrama {
         }
 
         // Eix qualitatiu
+        eixHoritzontal.display(p5);
 
         // Eix quantitatiu
 

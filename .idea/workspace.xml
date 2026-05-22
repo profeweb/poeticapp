@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/gui/Titol.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/visuals/DiagramaLinies_Anys.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Diagrama.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Diagrama.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/DiagramaLinies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DiagramaLinies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Eix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Eix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/GraellaTarja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/GraellaTarja.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Gui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Mides.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Mides.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/ResumAutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ResumAutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/ResumLlibre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ResumLlibre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/TarjaResum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/TarjaResum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/test/TestDiagramaBarres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/test/TestDiagramaBarres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/test/TestDiagramaLinies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/test/TestDiagramaLinies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/test/TestDiagramaSectors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/test/TestDiagramaSectors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,10 +74,36 @@
       <recent name="diec.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.DiagramaLinies_Anys">
+    <configuration name="DiagramaLinies_Anys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="visuals.DiagramaLinies_Anys" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="visuals.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Poetica" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDiagramaLinies" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestDiagramaLinies" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -89,38 +121,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_Visual_NumLletres_02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual_NumLletres_02" />
+    <configuration name="Visuals_Simbols_Parsed" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Simbols_Parsed" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="parser.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test_Visual_NumParaules_02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual_NumParaules_02" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="parser.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="parser.test.Test_Visual_NumParaules_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual_NumParaules_01" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="parser.test.*" />
+          <option name="PATTERN" value="visuals.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DiagramaLinies_Anys" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.TestDiagramaLinies" />
+        <item itemvalue="Application.Visuals_Simbols_Parsed" />
         <item itemvalue="Application.Test_Visual03" />
-        <item itemvalue="Application.Test_Visual_NumLletres_02" />
-        <item itemvalue="Application.Test_Visual_NumParaules_02" />
-        <item itemvalue="Application.parser.test.Test_Visual_NumParaules_01" />
       </list>
     </recent_temporary>
   </component>
@@ -245,14 +251,8 @@
       <workItem from="1779289308559" duration="2049000" />
       <workItem from="1779355411239" duration="9192000" />
       <workItem from="1779371114524" duration="2279000" />
-      <workItem from="1779384103911" duration="1198000" />
-    </task>
-    <task id="LOCAL-00033" summary="Inicial">
-      <created>1777374729219</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1777374729219</updated>
+      <workItem from="1779384103911" duration="1982000" />
+      <workItem from="1779429854166" duration="9655000" />
     </task>
     <task id="LOCAL-00034" summary="Inicial">
       <created>1777399379643</created>
@@ -590,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779371720540</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Inicial">
+      <created>1779385424593</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1779385424594</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

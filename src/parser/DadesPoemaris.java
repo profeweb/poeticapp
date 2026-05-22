@@ -279,6 +279,35 @@ public class DadesPoemaris {
         return resum;
     }
 
+
+    public static String[][] getLlibresAutorsInfo(ArrayList<Autor> autors){
+        String[][] info = new String[getNumPoemaris(autors)][2];
+        int numPoemari = 0;
+        for(Autor autor : autors){
+            for(Poemari poemari : autor.getPoemaris()) {
+                info[numPoemari][0] = poemari.getTitol();
+                info[numPoemari][1] = poemari.getAutor();
+                numPoemari++;
+            }
+        }
+        return info;
+    }
+
+    public static String[][] getPoemesAutorsInfo(ArrayList<Autor> autors){
+        String[][] info = new String[getNumPoemes(autors)][2];
+        int numPoema = 0;
+        for(Autor autor : autors){
+            for(Poemari poemari : autor.getPoemaris()) {
+                for(Poema poema : poemari.getPoemes()) {
+                    info[numPoema][0] = poema.numero + " - " + poemari.getTitol();
+                    info[numPoema][1] = autor.getNom();
+                    numPoema++;
+                }
+            }
+        }
+        return info;
+    }
+
     //public static float[][] getResumsAutor(ArrayList<Poemari> poemaris, String autor){
         /*
         resumAutor = new ResumAutor(300, 260, p5.width-350, 200);

@@ -16,9 +16,10 @@ public class Mides {
     public static float midaTextCapçaleraMenu = 34;
     public static float midaTextCapçaleraSubMenu = 18;
 
-    // TEXT TITULARS
+    // TEXT TITULARS / TITOLS
     public static float midaTextTitutar = 34;
     public static float midaTextSubTitular = 18;
+    public static float midaTextTitol = 54;
 
     // ENTRADA TEXT
     public static float midaTextEtiqueta = 58;

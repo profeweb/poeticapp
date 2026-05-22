@@ -34,7 +34,7 @@ public class TestDiagramaBarres extends PApplet {
 
         db.setValors(valors);
         db.setCategories(titols);
-        db.setColors(colorBarres);
+        db.setColorsCategories(colorBarres);
         db.setBarres();
     }
 

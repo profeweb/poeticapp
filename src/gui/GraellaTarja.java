@@ -192,7 +192,6 @@ public class GraellaTarja extends GuiElement {
 
     }
 
-
     public void paginaSeguent() {
         if (this.numPaginaActual < this.numTotalPagines-1) {
             this.numPaginaActual++;
@@ -203,6 +202,10 @@ public class GraellaTarja extends GuiElement {
         if (this.numPaginaActual >0) {
             this.numPaginaActual--;
         }
+    }
+
+    public boolean esDarreraPagina(){
+        return numPaginaActual == numTotalPagines - 1;
     }
 
     // Dibuixa taula
@@ -252,7 +255,7 @@ public class GraellaTarja extends GuiElement {
         p5.textSize(midaPaginacioGraellaTarja);
         p5.textAlign(p5.CENTER, p5.BOTTOM);
         int primeraTarja = this.numPaginaActual * numTargesPagina + 1;
-        int darreraTarja = min(dadesTarges.length, (this.numPaginaActual+1) * numTargesPagina -1);
+        int darreraTarja = min(dadesTarges.length, (this.numPaginaActual+1) * numTargesPagina -1) +  (esDarreraPagina() ? 0 : 1);
         String textPaginacio = "(" + primeraTarja + " - " + darreraTarja + ", Pàg: "+(this.numPaginaActual + 1)+" / "+ this.numTotalPagines +")";
         p5.text(textPaginacio, this.x + this.w/2f, this.y - margeHoritzontal);
 

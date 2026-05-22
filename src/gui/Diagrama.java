@@ -44,7 +44,7 @@ public class Diagrama extends GuiElement{
         }
     }
 
-    public void setColors(int[] c){
+    public void setColorsCategories(int[] c){
         this.colors = c;
     }
 
