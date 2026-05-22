@@ -17,7 +17,6 @@ public class Main extends PApplet {
     }
 
     public void settings(){
-        //size(1920, 1080);
         fullScreen();
         smooth(10);
     }
@@ -111,9 +110,8 @@ public class Main extends PApplet {
     }
 
 
-    // Carrega Imatge
+    // Carrega Imatge d'Autor/a
     public void seleccionarImatgeAutor(File selection) {
-        println("SELECCTING AUTOR IMAGE");
         if (selection == null) {
             println("No s'ha seleccionat cap fitxer.");
         } else {
@@ -121,8 +119,8 @@ public class Main extends PApplet {
         }
     }
 
+    // Carrega Imatge de Poemari
     public void seleccionarImatgeLlibre(File selection) {
-        println("SELECCTING BOOK IMAGE");
         if (selection == null) {
             println("No s'ha seleccionat cap fitxer.");
         } else {

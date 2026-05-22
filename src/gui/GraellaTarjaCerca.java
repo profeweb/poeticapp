@@ -125,16 +125,16 @@ public class GraellaTarjaCerca extends GuiElement {
 
         if(titol!=null){
             p5.fill(0);
-            p5.textFont(fonts.getFontPrimaria());
-            p5.textSize(TEXT_INFO_GUI);
+            p5.textFont(fonts.getFontTitolTarja());
+            p5.textSize(TEXT_TITOL_TARJACERCA);
             p5.textAlign(p5.LEFT);
             p5.text(titol, x, y - margeHoritzontal);
         }
 
         // Informació de la Pàgina
         p5.fill(0);
-        p5.textFont(fonts.getFontSecundaria());
-        p5.textSize(TEXT_INFO_GUI);
+        p5.textFont(fonts.getFontPaginacioGraellaTarja());
+        p5.textSize(midaPaginacioGraellaTarja);
         p5.textAlign(p5.RIGHT, p5.BOTTOM);
         String textPaginacio = "(" + (this.numPaginaActual * numTargesPagina +1 ) + " - " + ((this.numPaginaActual+1) * numTargesPagina -1)+ ", Pag: "+(this.numPaginaActual + 1)+" / "+ this.numTotalPagines +")";
         p5.text(textPaginacio, this.x + w, this.y - margeHoritzontal);

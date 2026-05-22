@@ -28,7 +28,7 @@ public class Pantalla {
     public void display(PApplet p5){
 
         p5.fill(0);
-        p5.text(pantallaNom.toString(), 600, 100);
+        //p5.text(pantallaNom.toString(), 600, 100);
 
         for(GuiElement element: elements){
             element.display(p5);

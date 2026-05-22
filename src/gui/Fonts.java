@@ -69,6 +69,7 @@ public class Fonts {
 
     // Getters de la font del botó
     public PFont getFontTextBoto(){ return this.fonts[5];}
+    public PFont getFontTextBotoOpcio(){ return this.fonts[5];}
 
     // Getters de la font del menu
     public PFont getFontCapçaleraMenu(){ return this.fonts[2]; }
@@ -87,8 +88,13 @@ public class Fonts {
     public PFont getFontTitolTarja(){ return this.fonts[1];}
     public PFont getFontSubtitolTarja(){ return this.fonts[2];}
     public PFont getFontPaginacioGraellaTarja(){ return this.fonts[1];}
+    public PFont getFontNumTarjaCerca(){ return this.fonts[5]; }
+    public PFont getFontDetallTarjaCerca(){return this.fonts[1]; }
+    public PFont getFontVersTarjaCerca(){return this.fonts[2]; }
 
     // Desplegable
     public PFont getFontEtiquetaDesplegable(){ return this.fonts[5];}
     public PFont getFontTextDesplegable(){ return this.fonts[1];}
+
+    // Tarja
 }

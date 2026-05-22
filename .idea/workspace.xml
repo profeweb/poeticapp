@@ -2,21 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/comptes/test/Test_ParaulesClauSenseParaulesBuides.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/diccionaris/paraules_buides_ca.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/diccionaris/paraules_buides_ca.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/BotoIcona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotoIcona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Colors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Colors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/EntradaCercador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/EntradaCercador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/BotoOpcio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BotoOpcio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Fonts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Fonts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/GraellaTarjaCerca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/GraellaTarjaCerca.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/Mides.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Mides.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Estrofa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Estrofa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/ParserPoema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ParserPoema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Poema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Pantalla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Pantalla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/TarjaCerca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/TarjaCerca.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/test/TestBotoOpcio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/test/TestBotoOpcio.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,14 +252,7 @@
       <workItem from="1779384103911" duration="1982000" />
       <workItem from="1779429854166" duration="16530000" />
       <workItem from="1779456445217" duration="9020000" />
-      <workItem from="1779468670022" duration="671000" />
-    </task>
-    <task id="LOCAL-00036" summary="Inicial">
-      <created>1777454581701</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1777454581701</updated>
+      <workItem from="1779468670022" duration="4093000" />
     </task>
     <task id="LOCAL-00037" summary="Inicial">
       <created>1777467964692</created>
@@ -602,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779444540422</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Inicial">
+      <created>1779469351925</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1779469351926</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

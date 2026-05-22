@@ -8,8 +8,8 @@ public class BotoOpcio extends Seleccionable {
         super(x, y, d, d);
     }
 
-    public BotoOpcio(String text, float x, float y, float w, float h) {
-        super(text, x, y, w, h);
+    public BotoOpcio(String text, float x, float y, float d) {
+        super(text, x, y, d, d);
     }
 
     public void display(PApplet p5){
@@ -35,11 +35,11 @@ public class BotoOpcio extends Seleccionable {
         }
 
         // Dibuixa el text
-        p5.textFont(fonts.getFontSecundaria());
+        p5.textFont(fonts.getFontTextBotoOpcio());
         p5.fill(colors.getColorBotoContorn());
-        p5.textSize(Mides.midaSubtitol);
+        p5.textSize(Mides.midaTextBotoOpcio);
         p5.textAlign(p5.RIGHT, p5.CENTER);
-        p5.text(textOpcio, this.x - w/2f - 15, this.y);
+        p5.text(textOpcio, this.x - w/2f - 15, this.y -5);
 
         p5.popStyle();
     }

@@ -253,10 +253,10 @@ public class Gui {
         entradaCercadorGlobal.setEsborraEnConfirmar(false);
 
 
-        BotoOpcio opcioTerme = new BotoOpcio("Terme", 500, 325, 50, 50);
+        BotoOpcio opcioTerme = new BotoOpcio("Terme", 500, 325, midaCercleBotoOpcio);
         opcioTerme.setColorsFonts(colors, fonts);
 
-        BotoOpcio opcioLema = new BotoOpcio("Lema", 680, 325, 50, 50);
+        BotoOpcio opcioLema = new BotoOpcio("Lema", 680, 325, midaCercleBotoOpcio);
         opcioLema.setColorsFonts(colors, fonts);
 
         opcionsCercador = new BotoOpcioGrup(2);
@@ -267,7 +267,6 @@ public class Gui {
                 {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
                 {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
                 {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
-                /*
                 {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
                 {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
                 {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
@@ -277,8 +276,6 @@ public class Gui {
                 {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
                 {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
                 {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
-
-                 */
                 {"Poema", "Llibre", "Autor", "12", "56", "versosssssssssssssssssssssssss"},
 
         };
@@ -373,7 +370,7 @@ public class Gui {
         pantallaAutorEdita.addElements(menuApp, entradaCercador, botonsAutor, entradaNomAutor, entradaAnyAutor, selectorImatgeAutor, botoGuardar, titolAutor);
         pantallaAutorEdita.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_AUTORS, "Autor", "Edita"));
 
-        titolLlibre = new Titol(posTitularX - 60, posTitularY + 120, colors, fonts, poemariSeleccionat.getTitol());
+        titolLlibre = new Titol(posTitularX - 60, posTitularY + 120, colors, fonts, poemariSeleccionat.getTitol() + " ("+poemariSeleccionat.getAny()+")");
         pantallaLlibreResum = new Pantalla(PANTALLA.LLIBRE_RESUM);
         pantallaLlibreResum.addElements(menuApp, entradaCercador, botoEditarLlibre, botonsLlibre, resumLlibre, taulaResumLlibre, titolLlibre);
         pantallaLlibreResum.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_LLIBRES, "Llibre", "Resum"));

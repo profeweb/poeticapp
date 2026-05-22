@@ -75,6 +75,14 @@ public class Mides {
     public static final float TEXT_NIVELL1_LLARG = 36f;
     public static final float TEXT_NIVELL2 = 50f;
     public static final float TEXT_NIVELL3 = 25f;
+    public static final float TEXT_NUM_TARJACERCA = 80f;
+    public static final float TEXT_DETALL_TARJACERCA = 24f;
+    public static final float TEXT_VERS_TARJACERCA = 18f;
+    public static final float TEXT_TITOL_TARJACERCA = 34f;
+
+    // BOTO D'OPCIÖ
+    public static final float midaTextBotoOpcio = 58f;
+    public static final float midaCercleBotoOpcio = 30f;
 
     // CODIS EMOJI
     public static final float BOTO_FAVORIT = 50f;
