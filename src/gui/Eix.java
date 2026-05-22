@@ -32,7 +32,8 @@ public class Eix extends GuiElement {
         // Ticks
         for(int i=0; i< categories.length; i++){
             float xTick = this.x + espaiX*i + espaiX/2;
-            p5.line(xTick, y -5, xTick, y + 5);
+            p5.line(xTick, y - 5, xTick, y + 5);
+            p5.textAlign(p5.CENTER, p5.CENTER);
             p5.text(categories[i], xTick, y + 15);
         }
 

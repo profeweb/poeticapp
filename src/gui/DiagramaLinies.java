@@ -6,6 +6,7 @@ public class DiagramaLinies extends Diagrama {
 
     PuntDades[] punts;
     Eix eixHoritzontal;
+    EixQuantitatiu eixVertical;
     float espaiX;
 
     public DiagramaLinies(float x, float y, float w, float h) {
@@ -40,6 +41,13 @@ public class DiagramaLinies extends Diagrama {
         eixHoritzontal.espaiX = this.espaiX;
     }
 
+    public void setEixVertical(String titolEix, int numMarques){
+        eixVertical = new EixQuantitatiu(x, y +h, h);
+        eixVertical.setFonts(fonts);
+        eixVertical.setLlegenda(titolEix);
+        eixVertical.setNumMarques(numMarques);
+    }
+
     // Dibuixa el Diagrama de Línies
 
     public void display(PApplet p5){
@@ -54,6 +62,7 @@ public class DiagramaLinies extends Diagrama {
         eixHoritzontal.display(p5);
 
         // Eix quantitatiu
+        eixVertical.display(p5);
 
     }
 

@@ -35,6 +35,7 @@ public class DiagramaLinies_Anys extends PApplet {
         dl.setPunts();
 
         dl.setEixHoritzontal("Eix Horitzontal");
+        dl.setEixVertical("Eix Vertical", 10);
     }
 
     public void draw(){
