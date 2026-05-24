@@ -137,6 +137,20 @@ public class Poemari {
         return maxLletres;
     }
 
+    public int getMaxSillabesVersosPoemari(){
+        int maxSillabes = 0;
+        for(Poema poema : poemes){
+            for(Estrofa estrofa : poema.estrofes){
+                for(Vers vers: estrofa.getVersos()){
+                    if(vers.getNumSillabes() > maxSillabes){
+                        maxSillabes = vers.getNumSillabes();
+                    }
+                }
+            }
+        }
+        return maxSillabes;
+    }
+
     public float getMitjanaParaulesVersosPoemari(){
         int numParaules =  0;
         int numVersos = 0;
@@ -163,6 +177,20 @@ public class Poemari {
             }
         }
         return ((float)numLletres) / numVersos;
+    }
+
+    public float getMitjanaSillabesVersosPoemari(){
+        int numSillabes =  0;
+        int numVersos = 0;
+        for(Poema poema : poemes){
+            for(Estrofa estrofa : poema.estrofes){
+                for(Vers vers: estrofa.getVersos()){
+                    numSillabes += vers.getNumSillabes();
+                    numVersos++;
+                }
+            }
+        }
+        return ((float)numSillabes) / numVersos;
     }
 
     public void printInfo(){

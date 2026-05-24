@@ -9,6 +9,15 @@ public class Visualitzacions {
 
     public enum QUANTITAT { PARAULES, LLETRES, SILABES };
 
+    public static String getText(QUANTITAT quantitat){
+        switch (quantitat){
+            case PARAULES: return "paraules";
+            case LLETRES: return "lleters";
+            case SILABES: return "síl.labes";
+            default: return "";
+        }
+    }
+
     // VISUALITZACIONS QUANTITATIVES *********************************************************************************
 
     public static void dibuixaVersLinea(PApplet p5, Vers vers, float x, float y, float gruixa, float wLinia, float w, int color, int quantitat){
@@ -342,9 +351,9 @@ public class Visualitzacions {
 
 
         // Dibuixa la mitjana a nivell de poema
-        float mitjanaPoema = quantitat == QUANTITAT.PARAULES ? poema.getMitjanaParaulesVersPoema() : poema.getMitjanaLletresVersPoema();
+        float mitjanaPoema = poema.getMitjanaQuantitatPoema(quantitat);
         p5.fill(0, 0, 255);
-        String etiqueta = quantitat == QUANTITAT.PARAULES ? "paraules" : "lletres";
+        String etiqueta = Visualitzacions.getText(quantitat);
         p5.text(nf(mitjanaPoema, 0, 2) + " " + etiqueta + "/vers (Poema)", 100, p5.height-100);
 
         p5.noFill(); p5.stroke(0, 0, 255);

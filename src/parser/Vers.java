@@ -45,6 +45,14 @@ public class Vers {
         return num;
     }
 
+    public int getNumSillabes(){
+        int num = 0;
+        for(Token paraula : getParaules()){
+            num += ((Paraula)paraula).getNumSilabes();
+        }
+        return num;
+    }
+
     public int getNumCaracters(){
         int num = 0;
         for(Token token: tokens){

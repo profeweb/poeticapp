@@ -102,6 +102,31 @@ public class Poema {
         return sumaLletres / getNumVersos();
     }
 
+    public float getMitjanaSillabesVersPoema(){
+        float sumaSillabes = 0;
+        for(Estrofa estrofa : estrofes){
+            for(Vers vers : estrofa.getVersos()){
+                sumaSillabes += vers.getNumSillabes();
+            }
+        }
+        return sumaSillabes / getNumVersos();
+    }
+
+    public float getMitjanaQuantitatPoema(Visualitzacions.QUANTITAT quantitat){
+        if(quantitat.equals(Visualitzacions.QUANTITAT.PARAULES)){
+            return getMitjanaParaulesVersPoema();
+        }
+        else if(quantitat.equals(Visualitzacions.QUANTITAT.LLETRES)){
+            return getMitjanaLletresVersPoema();
+        }
+        else if(quantitat.equals(Visualitzacions.QUANTITAT.SILABES)){
+            return getMitjanaSillabesVersPoema();
+        }
+        else {
+            return 0;
+        }
+    }
+
     public ArrayList<Vers> getVersos(){
         ArrayList<Vers> versos = new ArrayList<>();
         for(Estrofa estrofa : estrofes){
