@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gui/NigulaParaules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/comptes/ParaulaNigul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/ParaulaNigul.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visuals/Visuals_Nigul_Paraules_Corpus_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visuals/Visuals_Nigul_Paraules_Corpus_01.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/visuals/Visuals_Nigul_Paraules_Poemari_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visuals/Visuals_Nigul_Paraules_Poemari_01.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -256,14 +252,7 @@
       <workItem from="1779468670022" duration="5583000" />
       <workItem from="1779524948363" duration="3293000" />
       <workItem from="1779603436020" duration="12783000" />
-      <workItem from="1779638108711" duration="3421000" />
-    </task>
-    <task id="LOCAL-00046" summary="Inicial">
-      <created>1778083328974</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1778083328974</updated>
+      <workItem from="1779638108711" duration="3929000" />
     </task>
     <task id="LOCAL-00047" summary="Inicial">
       <created>1778146818767</created>
@@ -601,7 +590,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779619594307</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Inicial">
+      <created>1779641617283</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1779641617284</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -16,7 +16,10 @@ public class Visuals_Nigul_Paraules_Poemari_01 extends PApplet {
     ArrayList<TermeFreq> termsFreqs;
     NigulParaules nigulParaules;
     int[] paletaColors;
+
+    File[] subcarpetes;
     File carpetaPoemari;
+    int numPoemari = 0;
     boolean exportaPDF = false;
 
     int numParaules = 150;
@@ -33,12 +36,20 @@ public class Visuals_Nigul_Paraules_Poemari_01 extends PApplet {
     public void setup(){
 
         paraulesBuidesCatala = new ParaulesBuidesCatala();
-        comptadorParaules = new ComptadorParaules();
 
-        String rutaPoemari = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\Miquel Àngel Riera (1930)\\Llibre de Benaventurances (1977)\\";
-        carpetaPoemari = new File(rutaPoemari);
+        String rutaCarpetaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\Miquel Àngel Riera (1930)\\";
+        File carpetaArrel = new File(rutaCarpetaArrel);
+        subcarpetes = carpetaArrel.listFiles();
+
+        setNigulParaules(numPoemari);
+
+    }
+
+    public void setNigulParaules(int numPoemari){
+        carpetaPoemari = subcarpetes[numPoemari];
         File[] poemes = carpetaPoemari.listFiles();
 
+        comptadorParaules = new ComptadorParaules();
         if (poemes != null) {
             for (File poema : poemes) {
                 comptadorParaules.processaPoemaParaulesBuides(poema.getAbsoluteFile(), paraulesBuidesCatala);
@@ -71,7 +82,7 @@ public class Visuals_Nigul_Paraules_Poemari_01 extends PApplet {
         textFont(createFont("Georgia", 18));
         textSize(18);
         textAlign(CENTER, TOP); fill(0);
-        text("Llibre de Benaventurances (1977)", width/2, 0);
+        text(carpetaPoemari.getName() , width/2, 0);
         nigulParaules.display(this);
         nigulParaules.dibuixaLlegenda(this, "Ocurrències", paletaColors, minMidaText, maxMidaText, width/2f - 110, 50, 220, 18);
 
@@ -79,12 +90,18 @@ public class Visuals_Nigul_Paraules_Poemari_01 extends PApplet {
             endRecord();
             exportaPDF = false;
         }
-
-        noLoop();
     }
 
     public void keyPressed(){
-        if(key=='s' || key=='S'){
+        if(keyCode==UP && numPoemari<subcarpetes.length-1){
+            numPoemari++;
+            setNigulParaules(numPoemari);
+        }
+        else if(keyCode==DOWN && numPoemari>0){
+            numPoemari--;
+            setNigulParaules(numPoemari);
+        }
+        else if(key=='s' || key=='S'){
             exportaPDF = true;
         }
     }
