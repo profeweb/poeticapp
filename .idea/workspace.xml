@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumSillabes_01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/visuals/Visuals_Nigul_Paraules_Corpus_01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/visuals/Visuals_Nigul_Paraules_Poemari_01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/NigulaParaules.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Estrofa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Estrofa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Visualitzacions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Visualitzacions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumParaules_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumParaules_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comptes/ParaulaNigul.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/ParaulaNigul.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visuals/Visuals_Nigul_Paraules_Corpus_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visuals/Visuals_Nigul_Paraules_Corpus_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visuals/Visuals_Nigul_Paraules_Poemari_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visuals/Visuals_Nigul_Paraules_Poemari_01.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,46 +67,7 @@
       <recent name="sentiments.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Visuals_Simbols_Parsed">
-    <configuration name="DiagramaLinies_Anys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="visuals.DiagramaLinies_Anys" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="visuals.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test_Visual_NumSillabes_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual_NumSillabes_01" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="parser.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Visuals_Nigul_Paraules_Corpus_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Nigul_Paraules_Corpus_01" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="visuals.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.visuals.Visuals_Nigul_Paraules_Poemari_01">
     <configuration name="Visuals_Nigul_Paraules_Poemari_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Nigul_Paraules_Poemari_01" />
       <module name="Poetica" />
@@ -122,7 +81,46 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Visuals_Simbols_Parsed" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="visuals.DiagramaLinies_Anys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="visuals.DiagramaLinies_Anys" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="visuals.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="visuals.Visuals_Nigul_Paraules_Corpus_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Nigul_Paraules_Corpus_01" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="visuals.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="visuals.Visuals_Nigul_Paraules_Poemari_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Nigul_Paraules_Poemari_01" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="visuals.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="visuals.Visuals_Simbols_Parsed" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Simbols_Parsed" />
       <module name="Poetica" />
       <extension name="coverage">
@@ -137,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Visuals_Simbols_Parsed" />
-        <item itemvalue="Application.DiagramaLinies_Anys" />
-        <item itemvalue="Application.Visuals_Nigul_Paraules_Corpus_01" />
+        <item itemvalue="Application.visuals.Visuals_Nigul_Paraules_Poemari_01" />
+        <item itemvalue="Application.visuals.Visuals_Nigul_Paraules_Corpus_01" />
         <item itemvalue="Application.Visuals_Nigul_Paraules_Poemari_01" />
-        <item itemvalue="Application.Test_Visual_NumSillabes_01" />
+        <item itemvalue="Application.visuals.Visuals_Simbols_Parsed" />
+        <item itemvalue="Application.visuals.DiagramaLinies_Anys" />
       </list>
     </recent_temporary>
   </component>
@@ -257,21 +255,8 @@
       <workItem from="1779456445217" duration="9020000" />
       <workItem from="1779468670022" duration="5583000" />
       <workItem from="1779524948363" duration="3293000" />
-      <workItem from="1779603436020" duration="12478000" />
-    </task>
-    <task id="LOCAL-00044" summary="Inicial">
-      <created>1778006986898</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1778006986898</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Inicial">
-      <created>1778069437579</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1778069437579</updated>
+      <workItem from="1779603436020" duration="12783000" />
+      <workItem from="1779638108711" duration="3421000" />
     </task>
     <task id="LOCAL-00046" summary="Inicial">
       <created>1778083328974</created>
@@ -602,7 +587,21 @@
       <option name="project" value="LOCAL" />
       <updated>1779615106446</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Inicial">
+      <created>1779619408767</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1779619408767</updated>
+    </task>
+    <task id="LOCAL-00094" summary="Inicial">
+      <created>1779619594307</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1779619594307</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

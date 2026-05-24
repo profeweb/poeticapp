@@ -1,23 +1,25 @@
 package visuals;
 
 import comptes.ComptadorParaules;
-import comptes.ParaulaNigul;
 import comptes.ParaulesBuidesCatala;
 import comptes.TermeFreq;
+import gui.NigulParaules;
 import processing.core.PApplet;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class Visuals_Nigul_Paraules_Corpus_01 extends PApplet {
 
     ComptadorParaules comptadorParaules;
     ParaulesBuidesCatala paraulesBuidesCatala;
     ArrayList<TermeFreq> termsFreqs;
-    File carpetaPoemari;
-    boolean exportaPDF = true;
+    boolean exportaPDF = false;
+
+    NigulParaules nigulParaules;
+    int numParaules = 150;
+    int minMidaText = 10, maxMidaText = 100;
+    int[] paletaColors;
 
     public static void main(String[] args) {
         PApplet.main("visuals.Visuals_Nigul_Paraules_Corpus_01");
@@ -47,202 +49,17 @@ public class Visuals_Nigul_Paraules_Corpus_01 extends PApplet {
         System.out.println("TOTAL TOKENS CORPUS:" + comptadorParaules.getNumTerms());
 
         termsFreqs = comptadorParaules.getTermesFreqs();
-        Collections.sort(termsFreqs, new Comparator<TermeFreq>(){
-            @Override
-            public int compare(TermeFreq o1, TermeFreq o2) {
-                return (int)(o1.getFrequencia() - o2.getFrequencia());
-            }
-        });
-    }
 
-    int freqAColor(float normFreq) {
-        // normFreq ∈ [0, 1]:  0 = poc freqüent · 1 = molt freqüent
-        int[] paletaColors = {
-                color(100, 180, 220),   // blau clar   (baix)
-                color( 80, 160, 130),   // verd menta
-                color(240, 200,  60),   // groc daurat
-                color(230, 120,  40),   // taronja
-                color(200,  40,  60)    // vermell fosc (alt)
-        };
+        paletaColors = new int[5];
+        paletaColors[0] = color(100, 180, 220);   // blau clar   (baix)
+        paletaColors[1] = color( 80, 160, 130);   // verd menta
+        paletaColors[2] = color(240, 200,  60);   // groc daurat
+        paletaColors[3] = color(230, 120,  40);   // taronja
+        paletaColors[4] = color(200,  40,  60);   // vermell fosc (alt)
 
-        float scaled = normFreq * (paletaColors.length - 1);
-        int   idx    = (int) scaled;
-        float t      = scaled - idx;
-
-        if (idx >= paletaColors.length - 1) return paletaColors[paletaColors.length - 1];
-
-        // Interpolació lineal entre dos colors de la paleta
-        return lerpColor(paletaColors[idx], paletaColors[idx + 1], t);
-    }
-
-    public void dibuixaNigulParaules(ArrayList<TermeFreq> termes, int numParaules, float minSize, float maxSize) {
-
-        if (termes == null || termes.isEmpty()) return;
-
-        // ── 1. Ordenar per freqüència descendent ──────────────────────────
-        termes.sort((a, b) -> Float.compare(b.getFrequencia(), a.getFrequencia()));
-
-        // ── 2. Calcular rang de freqüències per normalitzar ───────────────
-        float maxFreq = termes.get(0).getFrequencia();
-        float minFreq = termes.get(numParaules).getFrequencia();
-        float logMax   = log(maxFreq + 1);
-        float logMin   = log(minFreq + 1);   // +1 evita log(0)
-        float freqRange = (logMax == logMin) ? 1 : (logMax - logMin);
-
-        // ── 3. Paràmetres de l'espiral de col·locació ─────────────────────
-        float centerX      = width  / 2.0f;
-        float centerY      = height / 2.0f;
-        float spiralStep   = 0.05f;   // px per iteració de l'espiral
-        float angleStep    = 0.005f;  // radians per iteració
-        int   maxAttempts  = 100000;  // límit d'iteracions per paraula
-
-        ArrayList<ParaulaNigul> placed = new ArrayList<>();
-
-        background(255);
-        textAlign(LEFT, TOP);
-
-        // ── 4. Col·locar cada paraula ──────────────────────────────────────
-        int nt=0;
-        for (TermeFreq tf : termes) {
-            float normFreq = (log(tf.getFrequencia() + 1) - logMin) / freqRange;
-            float fs       = map(normFreq, 0, 1, minSize, maxSize);
-            int col      = freqAColor(normFreq);
-
-            textFont(createFont("Georgia", fs));
-            textSize(fs);
-
-            float wordW = textWidth(tf.getTerme());
-            float wordH = fs * 1.2f; // ascendents + descendents aproximats
-
-            // ── Espiral d'Arquimedes des del centre ────────────────────────
-            float angle  = random(TWO_PI); // angle inicial aleatori → varietat
-            float radius = 0;
-            boolean positioned = false;
-
-            for (int attempt = 0; attempt < maxAttempts; attempt++) {
-                float tryX = centerX + radius * cos(angle) - wordW / 2;
-                float tryY = centerY + radius * sin(angle) - wordH / 2;
-
-                // Comprova que la paraula cabria dins de la finestra
-                if (tryX < 50 || tryY < 50 ||
-                        tryX + wordW > width-50 || tryY + wordH > height-50) {
-                    // Segueix espiral encara que surti: potser un angle diferent hi cap
-                    radius += spiralStep;
-                    angle  += angleStep;
-                    continue;
-                }
-
-                // Comprova solapament amb totes les paraules ja col·locades
-                boolean overlapping = false;
-                for (ParaulaNigul pw : placed) {
-                    if (pw.solapament(tryX, tryY, wordW, wordH)) {
-                        overlapping = true;
-                        break;
-                    }
-                }
-
-                if (!overlapping) {
-                    // ✅ Posició lliure trobada → dibuixar i registrar
-                    placed.add(new ParaulaNigul(tf.getTerme(), tryX, tryY, wordW, wordH, fs, col));
-
-                    // Ombra subtil per llegibilitat
-                    //fill(0, 0, 0, 80);
-                    //text(tf.getTerme(), tryX + 2, tryY + 2);
-
-                    // Text principal
-                    fill(col);
-                    text(tf.getTerme(), tryX, tryY);
-
-                    positioned = true;
-                    break;
-                }
-
-                radius += spiralStep;
-                angle  += angleStep;
-            }
-
-            if (!positioned) {
-                println("Avís: no s'ha pogut col·locar '" + tf.getTerme() + "'");
-            }
-
-            nt++;
-            if(nt>= numParaules){
-                System.out.println("FINAL");
-                break;
-            }
-        }
-
-        textFont(createFont("Georgia", 18));
-        textSize(18);
-        textAlign(CENTER, TOP); fill(0);
-        text("Miquel Àngle Riera", width/2, 0);
-        dibuixaLlegenda((int)minFreq, (int)maxFreq, width/2f - 110, 50, 220, 18);
-    }
-
-    public void dibuixaLlegenda(int minOcc, int maxOcc, float x, float y, float barW, float barH) {
-
-        final int   TICK_COUNT    = 5;    // nombre de marques intermèdies
-        final float TICK_H        = 6;    // alçada de les marques (px)
-        final float LABEL_OFFSET  = 10;   // separació etiqueta–barra (px)
-        final float TITLE_OFFSET  = 18;   // separació títol–barra (px)
-        final float FONT_SIZE_LBL = 11;
-        final float FONT_SIZE_TTL = 12;
-
-
-        // ── 2. Barra de gradient (escala logarítmica, igual que el núvol) ─────
-        float logMin = log(minOcc + 1);
-        float logMax = log(maxOcc + 1);
-
-        for (int px = 0; px < (int) barW; px++) {
-            float t        = px / barW;                           // posició lineal [0,1]
-            float logVal   = logMin + t * (logMax - logMin);      // valor log interpolat
-            float normFreq = (logVal - logMin) / (logMax == logMin ? 1 : logMax - logMin);
-            stroke(freqAColor(normFreq));
-            line(x + px, y, x + px, y + barH);
-        }
-
-        // ── 3. Marc de la barra ───────────────────────────────────────────────
-        noFill();
-        stroke(255, 255, 255, 60);
-        strokeWeight(1);
-        rect(x, y, barW, barH, 2);
-        noStroke();
-
-        // ── 4. Marques i etiquetes numèriques ─────────────────────────────────
-        textFont(createFont("Georgia", FONT_SIZE_LBL));
-        textSize(FONT_SIZE_LBL);
-        textAlign(CENTER, TOP);
-
-        for (int i = 0; i <= TICK_COUNT; i++) {
-            float t        = i / (float) TICK_COUNT;
-            float tickX    = x + t * barW;
-
-            // Valor d'ocurrències corresponent a aquesta posició (escala log inversa)
-            float logVal   = logMin + t * (logMax - logMin);
-            int   occValue = round(exp(logVal) - 1);
-
-            // Marca vertical
-            stroke(50, 180);
-            strokeWeight(1);
-            line(tickX, y + barH, tickX, y + barH + TICK_H);
-            noStroke();
-
-            // Etiqueta numèrica
-            fill(50);
-            text(occValue, tickX, y + barH + LABEL_OFFSET);
-        }
-
-        // ── 5. Títol de la llegenda ───────────────────────────────────────────
-        textFont(createFont("Georgia", FONT_SIZE_TTL));
-        textSize(FONT_SIZE_TTL);
-        textAlign(CENTER, BASELINE);
-        fill(50);
-        text("Ocurrències", x + barW / 2, y - TITLE_OFFSET * 0.3f);
-
-        // Restaurar estat de text
-        textAlign(LEFT, TOP);
-        strokeWeight(1);
-        noStroke();
+        nigulParaules = new NigulParaules(0, 0, width, height);
+        nigulParaules.setTermes(termsFreqs);
+        nigulParaules.situaParaulesNigul(this, numParaules, minMidaText, maxMidaText, paletaColors);
     }
 
     public void draw(){
@@ -253,7 +70,13 @@ public class Visuals_Nigul_Paraules_Corpus_01 extends PApplet {
             beginRecord(PDF, nomPDF);
         }
 
-        dibuixaNigulParaules(termsFreqs, 250,10, 100);
+        textFont(createFont("Georgia", 18));
+        textSize(18);
+        textAlign(CENTER, TOP); fill(0);
+        text("Miquel Àngel Riera", width/2, 0);
+        nigulParaules.display(this);
+        nigulParaules.dibuixaLlegenda(this, "Ocurrències", paletaColors, minMidaText, maxMidaText, width/2f - 110, 50, 220, 18);
+
 
         if(exportaPDF){
             endRecord();
