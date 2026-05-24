@@ -4,6 +4,7 @@ import processing.core.PApplet;
 
 import static processing.core.PApplet.cos;
 import static processing.core.PApplet.sin;
+import static processing.core.PConstants.PI;
 
 public class Sector extends ElementDades {
 
@@ -26,14 +27,24 @@ public class Sector extends ElementDades {
 
             float textX = this.x + (this.w/2f + 50)*cos(migAngle);
             float textY = this.y + (this.w/2f + 50)*sin(migAngle);
-            p5.fill(0); p5.textAlign(p5.CENTER); p5.textSize(24);
+            p5.fill(0);
+            p5.textAlign(migAngle <= PI/2 || migAngle>= 3*PI/2 ? p5.LEFT : p5.RIGHT, p5.CENTER);
+            p5.textSize(24);
             p5.text(this.categoria, textX, textY);
 
             float percX = this.x + (this.w/4)*cos(migAngle);
             float percY = this.y + (this.w/4)*sin(migAngle);
-            String percentage = p5.nf(this.percentatge, 2, 2);
-            p5.fill(255); p5.textAlign(p5.CENTER); p5.textSize(18);
+            String percentage = p5.nf(this.percentatge, 0, 2);
+            p5.fill(255);
+            p5.textAlign(p5.CENTER, p5.CENTER);
+            p5.textSize(18);
             p5.text(percentage+"%", percX, percY);
+
+            float valorX = this.x + (this.w/3)*cos(migAngle);
+            float valorY = this.y + (this.w/3)*sin(migAngle);
+            p5.textSize(24);
+            p5.textAlign(p5.CENTER, p5.CENTER);
+            p5.text(p5.nf(valor, 0, 0), valorX, valorY);
 
         p5.popStyle();
     }

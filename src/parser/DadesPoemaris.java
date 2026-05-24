@@ -1,10 +1,53 @@
 package parser;
 
+import com.jogamp.nativewindow.OffscreenLayerOption;
+
+import java.io.File;
 import java.util.ArrayList;
 
 import static java.lang.Math.min;
 
 public class DadesPoemaris {
+
+    public static ArrayList<Autor> carregaPoemarisAutors(){
+
+        ArrayList<Autor> autors = new ArrayList<>();
+
+        String rutaCarpetaArrel = "C:\\Users\\tonim\\Documents\\CODE\\Poetica\\data\\poems\\";
+        File carpetaArrel = new File(rutaCarpetaArrel);
+        File[] carpetesAutors = carpetaArrel.listFiles();
+        for(File carpetaAutor: carpetesAutors) {
+            int posParentesiObert = carpetaAutor.getName().indexOf("(");
+            int posParentesiTancat = carpetaAutor.getName().indexOf(")");
+            String nomAutor = carpetaAutor.getName().substring(0, posParentesiObert).trim();
+            System.out.println(nomAutor);
+            int anyAutor = Integer.valueOf(carpetaAutor.getName().substring(posParentesiObert + 1, posParentesiTancat).trim());
+            System.out.println(anyAutor);
+            Autor autor = new Autor(nomAutor, anyAutor);
+            File[] carpetesPoemarisAutor = carpetaAutor.listFiles();
+            for (File carpetaPoemari : carpetesPoemarisAutor) {
+
+                int posParentesiObertAnyPoemari = carpetaPoemari.getName().indexOf("(");
+                int posParentesiTancatAnyPoemari = carpetaPoemari.getName().indexOf(")");
+
+                String titolPoemari = carpetaPoemari.getName();
+                int anyPoemari = anyAutor;
+                int numPoemes = carpetaPoemari.listFiles().length;
+
+                if(posParentesiObertAnyPoemari!=-1 && posParentesiTancatAnyPoemari!=-1) {
+                    titolPoemari = carpetaPoemari.getName().substring(0, posParentesiObertAnyPoemari).trim();
+                    anyPoemari = Integer.valueOf(carpetaPoemari.getName().substring(posParentesiObertAnyPoemari + 1, posParentesiTancatAnyPoemari).trim());
+                }
+                System.out.println(titolPoemari + " , " + anyPoemari);
+                Poemari poemari = new Poemari(titolPoemari, nomAutor, anyPoemari);
+                poemari.parsePoemes(numPoemes, rutaCarpetaArrel + carpetaAutor.getName() + "\\" + carpetaPoemari.getName() + "\\");
+                autor.afegirPoemari(poemari);
+            }
+            autors.add(autor);
+        }
+
+        return autors;
+    }
 
     // Estadístiques Poemaris +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -138,6 +181,16 @@ public class DadesPoemaris {
         return titols;
     }
 
+    public static String[] getTitolAnysPoemaris(Autor autor){
+        String[] titols = new String[autor.getNumPoemaris()];
+        int numPoemari = 0;
+        for(Poemari poemari : autor.getPoemaris()){
+            titols[numPoemari] = poemari.getTitol() + "(" + poemari.getAny() +")";
+            numPoemari++;
+        }
+        return titols;
+    }
+
     public static int getMinAnyAutor(Autor autor){
         int minAny = Integer.MAX_VALUE;
         for(Poemari poemari : autor.getPoemaris()){
@@ -184,6 +237,16 @@ public class DadesPoemaris {
             }
         }
         return num;
+    }
+
+    public static float[] getNumVersosPoemaris(Autor autor){
+        float[] numVersos = new float[autor.getNumPoemaris()];
+        int numPoemari = 0;
+        for(Poemari poemari : autor.getPoemaris()){
+            numVersos[numPoemari] = poemari.getNumVersos();
+            numPoemari++;
+        }
+        return numVersos;
     }
 
     public static float getMitjanaPoemesLlibre(Autor autor){

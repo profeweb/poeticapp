@@ -37,5 +37,9 @@ public class DiagramaSectors extends Diagrama {
         for(Sector s : sectors){
             s.display(p5);
         }
+
+        p5.stroke(0); p5.strokeWeight(4);
+        p5.fill(255);
+        p5.circle(x, y, w/6);
     }
 }
