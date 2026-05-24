@@ -85,7 +85,7 @@ public class Visualitzacions {
         float migAngle = (angleMin + angleMax) / 2f;
         float migRadi = (radiMin + radiMax) /2f;
         float margeAng = PI/100f;
-        float numPasses = 20;
+        float numPasses = 50;
 
         p5.pushStyle();
         p5.fill(colorEstrofa);
@@ -125,6 +125,7 @@ public class Visualitzacions {
 
 
         float mitjanaEstrofa = quantitat == QUANTITAT.PARAULES ? estrofa.getMitjanaParaulesVersosEstrofa() : estrofa.getMitjanaLletresVersosEstrofa();
+        p5.println("MITJANA ESTROFA ("+estrofa.numero+"): " + nf(mitjanaEstrofa, 0, 2));
 
         p5.noFill(); p5.stroke(0, 255, 0);
         float radiMitjana2 = p5.map(mitjanaEstrofa, 0, maxParaulesVersPoema, radiMax, radiMax + 300);
@@ -158,7 +159,7 @@ public class Visualitzacions {
 
         // Dibuixa Text de Mitjana per Poemari
         p5.fill(255, 0, 0); p5.textSize(18);
-        p5.text(nf(mitjanaParaulesPoemari, 0, 2) + " paraules / vers (llibre)", (x + xPoema)/2f, y + 24);
+        p5.text(nf(mitjanaParaulesPoemari, 0, 2) + " paraules/vers (Poemari)", (x + xPoema)/2f, y + 24);
         p5.popStyle();
     }
 
@@ -171,7 +172,7 @@ public class Visualitzacions {
         p5.textSize(18); p5.fill(100);
         p5.text(poema.titol.substring(0, 15) + "...", x + w/2, y);
         p5.textSize(14); p5.fill(0, 0, 255);
-        p5.text(nf(mitjanaPoema, 0, 2) +" paraules / vers (poema)", x + w/2, y + 25);
+        p5.text(nf(mitjanaPoema, 0, 2) +" paraules/vers (Poema)", x + w/2, y + 25);
 
         float xMitjaPoemari = x + 25 + p5.map(mitjanaPoemari, 0, maxParaulesVers, 0, w-50);
         float xMitjaPoema = x + 25 + p5.map(mitjanaPoema, 0, maxParaulesVers, 0, w-50);
@@ -195,7 +196,7 @@ public class Visualitzacions {
 
             p5.fill(0, 255, 0); p5.textSize(14);
             p5.textAlign(p5.CENTER, p5.BOTTOM);
-            p5.text(nf(mitjanaEstrofa, 0, 2) + " paraules / vers (estrofa)", x + w/2, yEstrofa + h * (estrofa.getNumVersos() + 1) + 25);
+            p5.text(nf(mitjanaEstrofa, 0, 2) + " paraules/vers (Estrofa)", x + w/2, yEstrofa + h * (estrofa.getNumVersos() + 1) + 25);
 
             yEstrofa += (h * estrofa.getNumVersos() + 1) + 50;
         }
@@ -223,7 +224,7 @@ public class Visualitzacions {
 
         // Dibuixa Text de Mitjana per Poemari
         p5.fill(255, 0, 0); p5.textSize(18);
-        p5.text(nf(mitjanaLletresPoemari, 0, 2) + " lletres / vers (llibre)", (x + xPoema)/2f, y + 24);
+        p5.text(nf(mitjanaLletresPoemari, 0, 2) + " lletres/vers (Poemari)", (x + xPoema)/2f, y + 24);
         p5.popStyle();
     }
 
@@ -260,7 +261,7 @@ public class Visualitzacions {
 
             p5.fill(0, 255, 0); p5.textSize(14);
             p5.textAlign(p5.CENTER, p5.BOTTOM);
-            p5.text(nf(mitjanaEstrofa, 0, 2) + " lletres / vers (estrofa)", x + w/2, yEstrofa + h * (estrofa.getNumVersos() + 1) + 25);
+            p5.text(nf(mitjanaEstrofa, 0, 2) + " lletres/vers (Estrofa)", x + w/2, yEstrofa + h * (estrofa.getNumVersos() + 1) + 25);
 
             yEstrofa += (h * estrofa.getNumVersos() + 1) + 50;
         }
@@ -332,8 +333,9 @@ public class Visualitzacions {
         p5.noFill(); p5.stroke(255, 0, 0);
         float radiMitjana = p5.map(mitjanaPoemari, 0, maxQuantitatVers, maxRadi, maxRadi + 300);
         p5.beginShape();
-        for(int i=0; i<=25; i++){
-            float angleV = p5.lerp(angInici, angFi, i/25f);
+        for(int i=0; i<=50; i++){
+            float angleV = p5.lerp(angInici, angFi, i/50f);
+            p5.strokeWeight(1.5f);
             p5.vertex(x + radiMitjana*cos(angleV), y + radiMitjana*sin(angleV));
         }
         p5.endShape();
@@ -343,13 +345,14 @@ public class Visualitzacions {
         float mitjanaPoema = quantitat == QUANTITAT.PARAULES ? poema.getMitjanaParaulesVersPoema() : poema.getMitjanaLletresVersPoema();
         p5.fill(0, 0, 255);
         String etiqueta = quantitat == QUANTITAT.PARAULES ? "paraules" : "lletres";
-        p5.text(mitjanaPoema + " " + etiqueta + " / vers (poema)", 100, p5.height-100);
+        p5.text(nf(mitjanaPoema, 0, 2) + " " + etiqueta + "/vers (Poema)", 100, p5.height-100);
 
         p5.noFill(); p5.stroke(0, 0, 255);
         float radiMitjana2 = p5.map(mitjanaPoema, 0, maxQuantitatVers, maxRadi, maxRadi + 300);
         p5.beginShape();
-        for(int i=0; i<=25; i++){
-            float angleV = p5.lerp(angInici, angFi, i/25f);
+        for(int i=0; i<=50; i++){
+            float angleV = p5.lerp(angInici, angFi, i/50f);
+            p5.strokeWeight(1.5f);
             p5.vertex(x + radiMitjana2*cos(angleV), y + radiMitjana2*sin(angleV));
         }
         p5.endShape();
