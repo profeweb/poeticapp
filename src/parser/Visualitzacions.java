@@ -235,7 +235,7 @@ public class Visualitzacions {
         p5.textAlign(p5.CENTER, p5.BOTTOM);
         p5.text("P" + poema.numero, x + w/2, y - 25);
         p5.textSize(18); p5.fill(100);
-        p5.text(poema.titol.substring(0, 15) + "...", x + w/2, y);
+        p5.text(poema.titol.substring(0, min(15, poema.titol.length())) + "...", x + w/2, y);
         p5.textSize(14); p5.fill(0, 0, 255);
         p5.text(nf(mitjanaPoema, 0, 2) +" lletres / vers (poema)", x + w/2, y + 25);
 

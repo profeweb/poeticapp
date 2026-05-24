@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Poetica.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Poetica.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/diccionaris/paraules_buides_ca.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/diccionaris/paraules_buides_ca.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Visualitzacions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Visualitzacions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumLletres_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumLletres_01.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumParaules_02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumParaules_02.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +66,7 @@
       <recent name="sentiments.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test_Visual_NumParaules_02">
+  <component name="RunManager" selected="Application.Test_Visual_NumLletres_01">
     <configuration name="DiagramaLinies_Anys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="visuals.DiagramaLinies_Anys" />
       <module name="Poetica" />
@@ -88,12 +87,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestDiagramaLinies" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.test.TestDiagramaLinies" />
+    <configuration name="Test_ParaulesClauSenseParaulesBuides" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="comptes.test.Test_ParaulesClauSenseParaulesBuides" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="gui.test.*" />
+          <option name="PATTERN" value="comptes.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -101,12 +100,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_ParaulesClauSenseParaulesBuides" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="comptes.test.Test_ParaulesClauSenseParaulesBuides" />
+    <configuration name="Test_Visual_NumLletres_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual_NumLletres_01" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="comptes.test.*" />
+          <option name="PATTERN" value="parser.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -129,11 +128,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test_Visual_NumLletres_01" />
         <item itemvalue="Application.Test_Visual_NumParaules_02" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Test_ParaulesClauSenseParaulesBuides" />
         <item itemvalue="Application.DiagramaLinies_Anys" />
-        <item itemvalue="Application.TestDiagramaLinies" />
       </list>
     </recent_temporary>
   </component>
@@ -249,14 +248,7 @@
       <workItem from="1779456445217" duration="9020000" />
       <workItem from="1779468670022" duration="5583000" />
       <workItem from="1779524948363" duration="3293000" />
-      <workItem from="1779603436020" duration="4440000" />
-    </task>
-    <task id="LOCAL-00038" summary="Inicial">
-      <created>1777482361919</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1777482361919</updated>
+      <workItem from="1779603436020" duration="5967000" />
     </task>
     <task id="LOCAL-00039" summary="Inicial">
       <created>1777482510621</created>
@@ -594,7 +586,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779478191768</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Inicial">
+      <created>1779611204790</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1779611204791</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

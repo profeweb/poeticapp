@@ -1,7 +1,6 @@
 package parser.test;
 
 import gui.Fonts;
-import gui.Mides;
 import parser.Poemari;
 import parser.Visualitzacions;
 import processing.core.PApplet;
