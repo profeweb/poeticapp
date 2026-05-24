@@ -94,6 +94,14 @@ public class Estrofa {
         return numLletres / getNumVersos();
     }
 
+    public float getMitjanaSillabesVersosEstrofa(){
+        float numSillabes = 0;
+        for(Vers vers : getVersos()){
+            numSillabes += vers.getNumSillabes();
+        }
+        return numSillabes / getNumVersos();
+    }
+
     public void printEstrofa(){
         System.out.println("\nEstrofa #"+ numero + " ("+ frases.size()+ " frases):");
         for(Frase frase : frases){

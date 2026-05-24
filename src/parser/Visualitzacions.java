@@ -278,6 +278,87 @@ public class Visualitzacions {
         p5.popStyle();
     }
 
+    // BLOCS: número de sil·labes
+    public static void dibuixaNumSillabesPoemariBlocs(PApplet p5, Poemari poemari, float x, float y, float w, float h, int colorEstrofa, int colorVers){
+
+        float mitjanaSillabesPoemari = poemari.getMitjanaSillabesVersosPoemari();
+        int maxSillabes = poemari.getMaxSillabesVersosPoemari();
+        float xPoema = x;
+        for(Poema poema : poemari.poemes){
+            dibuixaNumSillabesEstrofesBloc(p5, poema, xPoema, y + 80 , w, h, colorEstrofa, colorVers, mitjanaSillabesPoemari, poema.getMitjanaSillabesVersPoema(), maxSillabes);
+            xPoema += w + 75;
+        }
+
+        p5.pushStyle();
+        p5.fill(0); p5.textSize(48);
+        p5.textAlign(p5.CENTER, p5.BOTTOM);
+        p5.text(poemari.titol, (x + xPoema)/2f, y);
+
+        // Dibuixa Text de Mitjana per Poemari
+        p5.fill(255, 0, 0); p5.textSize(18);
+        p5.text(nf(mitjanaSillabesPoemari, 0, 2) + " síl.labes/vers (Poemari)", (x + xPoema)/2f, y + 24);
+        p5.popStyle();
+    }
+
+    public static void dibuixaNumSillabesEstrofesBloc(PApplet p5, Poema poema, float x, float y, float w, float h, int colorEstrofa, int colorVers, float mitjanaPoemari, float mitjanaPoema, int maxParaulesVers){
+
+        p5.pushStyle();
+        p5.textSize(24); p5.fill(0);
+        p5.textAlign(p5.CENTER, p5.BOTTOM);
+        p5.text("P" + poema.numero, x + w/2, y - 25);
+        p5.textSize(18); p5.fill(100);
+        p5.text(poema.titol.substring(0, 15) + "...", x + w/2, y);
+        p5.textSize(14); p5.fill(0, 0, 255);
+        p5.text(nf(mitjanaPoema, 0, 2) +" síl.labes/vers (Poema)", x + w/2, y + 25);
+
+        float xMitjaPoemari = x + 25 + p5.map(mitjanaPoemari, 0, maxParaulesVers, 0, w-50);
+        float xMitjaPoema = x + 25 + p5.map(mitjanaPoema, 0, maxParaulesVers, 0, w-50);
+
+        float yEstrofa = y + 25;
+        for(Estrofa estrofa : poema.getEstrofes()){
+
+            float mitjanaEstrofa = estrofa.getMitjanaSillabesVersosEstrofa();
+
+            dibuixaNumSillabesVersosEstrofaLinia(p5, estrofa, x, yEstrofa, w, h, colorEstrofa, colorVers, maxParaulesVers, mitjanaPoemari);
+
+            p5.stroke(255, 0, 0);
+            p5.line(xMitjaPoemari, yEstrofa, xMitjaPoemari, yEstrofa + h * (estrofa.getNumVersos() + 1));
+
+            p5.stroke(0, 0, 255);
+            p5.line(xMitjaPoema, yEstrofa, xMitjaPoema, yEstrofa + h * (estrofa.getNumVersos() + 1));
+
+            p5.stroke(0, 255, 0);
+            float xMitjaEstrofa = x + 25 + p5.map(mitjanaEstrofa, 0, maxParaulesVers, 0, w-50);
+            p5.line(xMitjaEstrofa, yEstrofa, xMitjaEstrofa, yEstrofa + h * (estrofa.getNumVersos() + 1));
+
+            p5.fill(0, 255, 0); p5.textSize(14);
+            p5.textAlign(p5.CENTER, p5.BOTTOM);
+            p5.text(nf(mitjanaEstrofa, 0, 2) + " síl.labes/vers (Estrofa)", x + w/2, yEstrofa + h * (estrofa.getNumVersos() + 1) + 25);
+
+            yEstrofa += (h * estrofa.getNumVersos() + 1) + 50;
+        }
+
+        p5.popStyle();
+    }
+
+    public static void dibuixaNumSillabesVersosEstrofaLinia(PApplet p5, Estrofa estrofa, float x, float y, float w, float h, int colorEstrofa, int colorVers, int maxLletresVersPoema, float mitjanaLletres){
+
+        float marge = 25;
+
+        float he = h * (estrofa.getNumVersos() + 1);
+        dibuixaEstrofaLinea(p5, estrofa, x, y, w, he, colorEstrofa, estrofa.getNumVersos());
+
+        int numVers = 1;
+        for(Vers vers : estrofa.getVersos()){
+            float wLinia = p5.map(vers.getNumSillabes(), 0, maxLletresVersPoema, 0, w - 2*marge);
+            float gruixa = vers.getNumSillabes() >= mitjanaLletres ? 3 : 1.5f;
+            int colorLina = vers.getNumSillabes() == maxLletresVersPoema ? p5.color(0) : colorVers;
+            dibuixaVersLinea(p5, vers, x + marge , y + h*numVers, gruixa, wLinia, w, colorLina, vers.getNumSillabes());
+            numVers++;
+        }
+    }
+
+
     public static void dibuixaNumLletresVersosEstrofaLinia(PApplet p5, Estrofa estrofa, float x, float y, float w, float h, int colorEstrofa, int colorVers, int maxLletresVersPoema, float mitjanaLletres){
 
         float marge = 25;

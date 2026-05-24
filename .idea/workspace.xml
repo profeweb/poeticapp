@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumSillabes_02.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumSillabes_01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/visuals/Visuals_Nigul_Paraules_Corpus_01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/visuals/Visuals_Nigul_Paraules_Poemari_01.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Poema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Poemari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poemari.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Vers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Vers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Estrofa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Estrofa.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/Visualitzacions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Visualitzacions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumParaules_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/test/Test_Visual_NumParaules_01.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,27 +62,33 @@
       <recent name="silabes" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="visuals" />
       <recent name="parser.test" />
       <recent name="comptes.test" />
       <recent name="gui" />
-      <recent name="visuals" />
       <recent name="sentiments.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test_Visual_NumSillabes_02">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Poetica" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test_ParaulesClauSenseParaulesBuides" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="comptes.test.Test_ParaulesClauSenseParaulesBuides" />
+  <component name="RunManager" selected="Application.Visuals_Nigul_Paraules_Corpus_01">
+    <configuration name="Test_Nigul_Paraules_Poemari" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="comptes.test.Test_Nigul_Paraules_Poemari" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="comptes.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test_Visual_NumSillabes_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual_NumSillabes_01" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parser.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -102,12 +109,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="parser.test.Test_Visual_NumLletres_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual_NumLletres_01" />
+    <configuration name="Visuals_Nigul_Paraules_Corpus_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Nigul_Paraules_Corpus_01" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="parser.test.*" />
+          <option name="PATTERN" value="visuals.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,12 +122,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="parser.test.Test_Visual_NumParaules_02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.test.Test_Visual_NumParaules_02" />
+    <configuration name="Visuals_Nigul_Paraules_Poemari_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Nigul_Paraules_Poemari_01" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="parser.test.*" />
+          <option name="PATTERN" value="visuals.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Visuals_Nigul_Paraules_Corpus_01" />
+        <item itemvalue="Application.Visuals_Nigul_Paraules_Poemari_01" />
+        <item itemvalue="Application.Test_Visual_NumSillabes_01" />
+        <item itemvalue="Application.Test_Nigul_Paraules_Poemari" />
         <item itemvalue="Application.Test_Visual_NumSillabes_02" />
-        <item itemvalue="Application.parser.test.Test_Visual_NumLletres_01" />
-        <item itemvalue="Application.parser.test.Test_Visual_NumParaules_02" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Test_ParaulesClauSenseParaulesBuides" />
       </list>
     </recent_temporary>
   </component>
@@ -250,28 +257,7 @@
       <workItem from="1779456445217" duration="9020000" />
       <workItem from="1779468670022" duration="5583000" />
       <workItem from="1779524948363" duration="3293000" />
-      <workItem from="1779603436020" duration="8114000" />
-    </task>
-    <task id="LOCAL-00041" summary="Inicial">
-      <created>1777964734831</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1777964734831</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Inicial">
-      <created>1777981582361</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1777981582361</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Inicial">
-      <created>1778000116643</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1778000116643</updated>
+      <workItem from="1779603436020" duration="12478000" />
     </task>
     <task id="LOCAL-00044" summary="Inicial">
       <created>1778006986898</created>
@@ -595,7 +581,28 @@
       <option name="project" value="LOCAL" />
       <updated>1779612833881</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Inicial">
+      <created>1779614903525</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1779614903525</updated>
+    </task>
+    <task id="LOCAL-00091" summary="Inicial">
+      <created>1779614960188</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1779614960188</updated>
+    </task>
+    <task id="LOCAL-00092" summary="Inicial">
+      <created>1779615106446</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1779615106446</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
