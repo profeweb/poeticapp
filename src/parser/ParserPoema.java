@@ -1,6 +1,6 @@
 package parser;
 
-import silabes.ComptadorSilabes;
+import silabes.ComptadorSillabes;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -115,7 +115,7 @@ public class ParserPoema {
         if (buffer.length() > 0) {
             String textParaula = buffer.toString();
             Paraula paraula = new Paraula(textParaula);
-            paraula.setNumSilabes(ComptadorSilabes.comptaSilabes(textParaula));
+            paraula.setNumSilabes(ComptadorSillabes.comptaSilabes(textParaula));
             vers.tokens.add(paraula);
             buffer.setLength(0);
         }

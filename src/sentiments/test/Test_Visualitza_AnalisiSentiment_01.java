@@ -17,7 +17,7 @@ public class Test_Visualitza_AnalisiSentiment_01 extends PApplet {
 
         Poemari poemari = new Poemari("Poemes a Nai", "MA Rieria", 1988);
         poemari.parsePoemes(13, "data/poems/Miquel Àngel Riera (1930)/El pis de la badia (1993)/");
-        Poema p1 = poemari.getPoemaAt(10);
+        Poema p1 = poemari.getPoemaAt(0);
 
         DiccionariSentiments diccionariSentiments = new DiccionariSentiments();
         diccionariSentiments.imprimeix();

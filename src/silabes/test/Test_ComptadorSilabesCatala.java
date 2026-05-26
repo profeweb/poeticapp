@@ -1,6 +1,6 @@
 package silabes.test;
 
-import static silabes.ComptadorSilabes.comptaSilabes;
+import static silabes.ComptadorSillabes.comptaSilabes;
 
 /**
  * Comptador de síl·labes en català (criteri gràfic).

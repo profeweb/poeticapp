@@ -13,20 +13,37 @@ public class Test_AnalisiSentiment {
     public static void main(String[] args) {
 
         final String POEMA =
-                "A Catalunya, terra bella i plena d'amor,\n" +
-                        "el sol porta alegria i pau al cor,\n" +
-                        "Verdaguer canta amb molta tendresa,\n" +
-                        "i la llum de l'esperança ens abraça.\n" +
-                        "\n" +
-                        "Però la mort i la guerra assolen,\n" +
-                        "l'angoixa i el dolor cremen el cor,\n" +
-                        "no hi ha pau ni joia en la foscor,\n" +
-                        "i la tristesa omple el silenci fred.\n" +
-                        "\n" +
-                        "Però l'esperança torna, bella i forta,\n" +
-                        "la primavera retorna amb molt d'amor,\n" +
-                        "la llibertat floreix, joia per a tots,\n" +
-                        "i la vida és l'única pau del cor.";
+                "Aquell matí de maig inaugural, la vida\n" +
+                        "em posà dins les mans la pedra dels migdies.\n" +
+                        "Eren les tu i jo en punt, al pis de la badia,\n" +
+                        "on havíem pujat tu i jo pelegrinant\n" +
+                        "a tocar enfervorits el tremp de les falzies.\n" +
+                        "De sobte, aquest cos meu, que abans solcaven ombres\n" +
+                        "i un temps de desencís espès que m'ofegava,\n" +
+                        "es va posar expectant com si mai altra cosa\n" +
+                        "no hagués fet que esperar-te. La meva carn mostrava\n" +
+                        "les ferides dels anys igual que un dia abans,\n" +
+                        "eren ben els mateixos la color dels meus ulls,\n" +
+                        "l'empremta dels meus dits, el to de veu i el número\n" +
+                        "del carnet personal que em garanteix ser poble.\n" +
+                        "En un moment que el món sembla posar-se en zel,\n" +
+                        "va succeir quelcom que feu que la poquesa\n" +
+                        "dels fets quotidians de sobte es capgiràs,\n" +
+                        "i així fou prou que tu, convertint en diumenge\n" +
+                        "el que era un dijous trist color de ventegada,\n" +
+                        "sublimassis ran meu d'una manera nova\n" +
+                        "calcant l'estil netíssim de la primera aurora\n" +
+                        "que posares a punt tot just de ser persona.\n" +
+                        "Enmig de ser-ho tant, de tant com existies,\n" +
+                        "et va definir el cos que preferies ser\n" +
+                        "molt més que mantenir-te en forma de concepte,\n" +
+                        "i amb ell arran de mi vaig sentir que escorava\n" +
+                        "la química del meu. I allò que abans jo era\n" +
+                        "una dolça tenalla m'ho va anar esbrossant\n" +
+                        "deixant-me nu, amb l'hàlit dels sers iniciàtics,\n" +
+                        "aquell setze de maig, demostrant-me que un dia\n" +
+                        "nat per ser qualsevol pot acabar no essent-ho\n" +
+                        "quan a partir d'un bes ens ha sotmès un cos.";
 
         DiccionariSentiments diccionariSentiments = new DiccionariSentiments();
         diccionariSentiments.imprimeix();

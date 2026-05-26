@@ -3,7 +3,7 @@ package silabes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ComptadorSilabes {
+public class ComptadorSillabes {
 
     // ── Classificació de vocals ────────────────────────────────────────────
 

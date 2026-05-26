@@ -7,6 +7,7 @@ import static processing.core.PApplet.log;
 
 // https://medium.com/@adityamdk/tf-idf-implementation-in-java-f6c4d1d97e3b
 // term frequency–inverse document frequency
+
 public class TF_IDF {
 
     // Freqüència d'un terme t en un document d: tf(t, d)

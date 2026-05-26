@@ -26,7 +26,7 @@ public class TestBotonsPoema extends PApplet {
         fonts = new Fonts(this);
 
         Poemari poemari = new Poemari("Poemes a Nai", "MA Rieria", 1988);
-        poemari.parsePoemes(13, "data/poems/mariera/poemes a nai/");
+        poemari.parsePoemes(13, "data/poems/Miquel Àngel Riera (1930)/Poemes a Nai (1960)/");
 
         Poema poema = poemari.getPoemaAt(12);
 

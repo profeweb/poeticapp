@@ -121,7 +121,7 @@ public class AnalisiSentiments {
 
             boolean esNegador      = diccionariSentiments.negadors.contains(forma);
             boolean esModificador  = diccionariSentiments.modificadors.containsKey(forma);
-            boolean alLexic        = diccionariSentiments.lexic.containsKey(forma);
+            boolean esLexic        = diccionariSentiments.lexic.containsKey(forma);
 
             if (esNegador) {
                 // ── Negador ─────────────────────────────────────────────
@@ -134,7 +134,7 @@ public class AnalisiSentiments {
                 Rol rol   = (factorMod > 1.0) ? Rol.INTENSIFICADOR : Rol.DIMINUIDOR;
                 resultat.add(new TokenAnalitzat(part, forma, 0.0, factorMod, rol));
 
-            } else if (alLexic) {
+            } else if (esLexic) {
                 // ── Token lexical amb puntuació ──────────────────────────
                 double base      = diccionariSentiments.lexic.get(forma);
                 double signe     = (finestraNegacio > 0) ? -1.0 : 1.0;
@@ -142,7 +142,7 @@ public class AnalisiSentiments {
 
                 resultat.add(new TokenAnalitzat(part, forma, base, factorFin, Rol.LEXIC));
 
-                factorMod = 1.0;                         // consumeix el modificador pendent
+                factorMod = 1.0;  // consumeix el modificador pendent
                 if (finestraNegacio > 0) finestraNegacio--;
 
             } else {

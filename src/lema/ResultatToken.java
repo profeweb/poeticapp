@@ -7,13 +7,12 @@ public class ResultatToken {
 
     enum Estat { TROBAT, AMBIGU, JA_ES_LEMA, DESCONEGUT }
 
-    final String       forma;
-    final String       lemaPreferit;
-    final List<String> lemes;          // tots els lemes possibles
-    final Estat        estat;
+    final String       forma;           // Forma normalitzada del tokem
+    final String       lemaPreferit;    // Lema escollit
+    final List<String> lemes;           // Conjunt de tots els lemes possibles
+    final Estat        estat;           // Resultat de la lematització
 
-    public ResultatToken(String forma, String lemaPreferit,
-                  List<String> lemes, Estat estat) {
+    public ResultatToken(String forma, String lemaPreferit, List<String> lemes, Estat estat) {
         this.forma        = forma;
         this.lemaPreferit = lemaPreferit;
         this.lemes        = lemes;

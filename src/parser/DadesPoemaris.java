@@ -249,6 +249,21 @@ public class DadesPoemaris {
         return numVersos;
     }
 
+    public static float[][] getNumVersosPoemesPoemaris(Autor autor){
+        int numMaxPoemes = autor.getMaxNumPoemes();
+        float[][] numVersosPoemes = new float[autor.getNumPoemaris()][numMaxPoemes];
+        int numPoemari = 0;
+        for(Poemari poemari : autor.getPoemaris()) {
+            int numPoema = 0;
+            for (Poema poema : poemari.getPoemes()){
+                numVersosPoemes[numPoemari][numPoema] = poema.getNumVersos();
+                numPoema++;
+            }
+            numPoemari++;
+        }
+        return numVersosPoemes;
+    }
+
     public static float getMitjanaPoemesLlibre(Autor autor){
         float num = 0;
         for(Poemari poemari : autor.getPoemaris()){

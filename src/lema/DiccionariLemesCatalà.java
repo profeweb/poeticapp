@@ -20,9 +20,7 @@ public class DiccionariLemesCatalà {
         indexFormes  = new HashMap<>(700_000);
         conjuntLemes = new HashSet<>(200_000);
 
-        try (BufferedReader br = new BufferedReader(
-                new InputStreamReader(
-                        new FileInputStream(fitxer), StandardCharsets.UTF_8))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fitxer), StandardCharsets.UTF_8))) {
 
             String linia;
             long   numLinia = 0;

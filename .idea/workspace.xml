@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/visuals/Visuals_VersosPoemaris.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/gui/SectorApilat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/DiagramaSectors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DiagramaSectors.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Sector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Sector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Poemes ocasionals (1981)/poema03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Poemes ocasionals (1981)/poema03.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/comptes/TF_IDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/TF_IDF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/test/TestBotonsPoema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/test/TestBotonsPoema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lema/DiccionariLemesCatalà.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lema/DiccionariLemesCatalà.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lema/ResultatToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lema/ResultatToken.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Autor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Autor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/ParserPoema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ParserPoema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sentiments/AnalisiSentiments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/AnalisiSentiments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sentiments/test/Test_AnalisiSentiment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/test/Test_AnalisiSentiment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sentiments/test/Test_Visualitza_AnalisiSentiment_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/test/Test_Visualitza_AnalisiSentiment_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/silabes/ComptadorSilabes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silabes/ComptadorSillabes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/silabes/test/Test_ComptadorSilabesCatala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silabes/test/Test_ComptadorSilabesCatala.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,13 +77,13 @@
       <recent name="sentiments.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Visuals_VersosPoemaris">
-    <configuration name="Visuals_Nigul_Paraules_Poemari_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Nigul_Paraules_Poemari_01" />
+  <component name="RunManager" selected="Application.TestBotonsPoema">
+    <configuration name="TestBotomsVers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestBotomsVers" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="visuals.*" />
+          <option name="PATTERN" value="gui.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -81,12 +91,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Visuals_VersosPoemaris" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_VersosPoemaris" />
+    <configuration name="TestBotonsPoema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestBotonsPoema" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="visuals.*" />
+          <option name="PATTERN" value="gui.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -94,12 +104,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="visuals.Visuals_Nigul_Paraules_Corpus_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Nigul_Paraules_Corpus_01" />
+    <configuration name="TestDiagramaBarresApilat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestDiagramaBarresApilat" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="visuals.*" />
+          <option name="PATTERN" value="gui.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,12 +117,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="visuals.Visuals_Nigul_Paraules_Poemari_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Nigul_Paraules_Poemari_01" />
+    <configuration name="Test_AnalisiSentiment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sentiments.test.Test_AnalisiSentiment" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="visuals.*" />
+          <option name="PATTERN" value="sentiments.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -120,12 +130,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="visuals.Visuals_Simbols_Parsed" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Simbols_Parsed" />
+    <configuration name="Test_Visualitza_AnalisiSentiment_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sentiments.test.Test_Visualitza_AnalisiSentiment_01" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="visuals.*" />
+          <option name="PATTERN" value="sentiments.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,11 +145,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Visuals_VersosPoemaris" />
-        <item itemvalue="Application.visuals.Visuals_Nigul_Paraules_Poemari_01" />
-        <item itemvalue="Application.visuals.Visuals_Nigul_Paraules_Corpus_01" />
-        <item itemvalue="Application.Visuals_Nigul_Paraules_Poemari_01" />
-        <item itemvalue="Application.visuals.Visuals_Simbols_Parsed" />
+        <item itemvalue="Application.TestBotonsPoema" />
+        <item itemvalue="Application.TestBotomsVers" />
+        <item itemvalue="Application.Test_AnalisiSentiment" />
+        <item itemvalue="Application.Test_Visualitza_AnalisiSentiment_01" />
+        <item itemvalue="Application.TestDiagramaBarresApilat" />
       </list>
     </recent_temporary>
   </component>
@@ -256,14 +266,9 @@
       <workItem from="1779468670022" duration="5583000" />
       <workItem from="1779524948363" duration="3293000" />
       <workItem from="1779603436020" duration="12783000" />
-      <workItem from="1779638108711" duration="6344000" />
-    </task>
-    <task id="LOCAL-00049" summary="Inicial">
-      <created>1778175788549</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1778175788549</updated>
+      <workItem from="1779638108711" duration="9218000" />
+      <workItem from="1779689548004" duration="7347000" />
+      <workItem from="1779775802918" duration="4096000" />
     </task>
     <task id="LOCAL-00050" summary="Inicial">
       <created>1778223431948</created>
@@ -601,7 +606,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779642316385</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Inicial">
+      <created>1779644775222</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1779644775222</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

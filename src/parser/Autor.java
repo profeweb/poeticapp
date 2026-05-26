@@ -42,6 +42,16 @@ public class Autor {
 
     public int getNumPoemaris(){ return this.poemaris.size(); }
 
+    public int getMaxNumPoemes(){
+        int maxPoemes = 0;
+        for(Poemari poemari : getPoemaris()){
+            if(poemari.getNumPoemes() > maxPoemes){
+                maxPoemes = poemari.getNumPoemes();
+            }
+        }
+        return maxPoemes;
+    }
+
     public int getPrimerPoemari(){
         int any = Integer.MAX_VALUE;
         for(Poemari poemari : poemaris){
