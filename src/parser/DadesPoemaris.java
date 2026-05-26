@@ -1,6 +1,7 @@
 package parser;
 
 import com.jogamp.nativewindow.OffscreenLayerOption;
+import comptes.ComptadorParaules;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -169,6 +170,16 @@ public class DadesPoemaris {
 
     public static int getNumPoemaris(Autor autor){
         return autor.getNumPoemaris();
+    }
+
+    public static String[] getTitolsSencersPoemaris(Autor autor){
+        String[] titols = new String[autor.getNumPoemaris()];
+        int numPoemari = 0;
+        for(Poemari poemari : autor.getPoemaris()){
+            titols[numPoemari] = poemari.getTitol();
+            numPoemari++;
+        }
+        return titols;
     }
 
     public static String[] getTitolsPoemaris(Autor autor){
@@ -461,6 +472,32 @@ public class DadesPoemaris {
     //
     // }
 
+
+    public float[][] getOcurrenciesTermes(String[] termes, ArrayList<Poemari> poemaris){
+        float[][] info = new float[poemaris.size()][termes.length];
+        int numPoemari = 0;
+        for(Poemari poemari : poemaris){
+            int numTerme =  0;
+            for(String terme: termes) {
+                info[numPoemari][numTerme] = poemari.getNumOcurrenciesTerme(terme);
+                numTerme++;
+            }
+        }
+        return info;
+    }
+
+
+
+    public static float[] getNumOcurrenciesTerme(String terme, ArrayList<Poemari> poemaris){
+        float[] info = new float[poemaris.size()];
+        int numPoemari = 0;
+        for(Poemari poemari : poemaris){
+            info[numPoemari] = poemari.getNumOcurrenciesTerme(terme);
+            numPoemari++;
+        }
+        return info;
+    }
+
     public static void printArray2D(String[][] info){
         for(int i=0; i<info.length; i++){
             for(int j=0; j<info[0].length; j++){
@@ -469,5 +506,7 @@ public class DadesPoemaris {
             System.out.println();
         }
     }
+
+    // Carrega dades
 
 }

@@ -2,21 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/gui/SectorApilat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/parser/test/Test_NumOcurrencies_Terme_01.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Poemes ocasionals (1981)/poema03.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/poems/Miquel Àngel Riera (1930)/Poemes ocasionals (1981)/poema03.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/comptes/TF_IDF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/comptes/TF_IDF.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/test/TestBotonsPoema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/test/TestBotonsPoema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lema/DiccionariLemesCatalà.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lema/DiccionariLemesCatalà.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lema/ResultatToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lema/ResultatToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Autor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Autor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Barra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Barra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/DiagramaBarres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DiagramaBarres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/test/TestDiagramaBarresApilat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/test/TestDiagramaBarresApilat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/ParserPoema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ParserPoema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sentiments/AnalisiSentiments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/AnalisiSentiments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sentiments/test/Test_AnalisiSentiment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/test/Test_AnalisiSentiment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sentiments/test/Test_Visualitza_AnalisiSentiment_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/test/Test_Visualitza_AnalisiSentiment_01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/silabes/ComptadorSilabes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silabes/ComptadorSillabes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/silabes/test/Test_ComptadorSilabesCatala.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/silabes/test/Test_ComptadorSilabesCatala.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Poemari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poemari.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,24 +35,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/processing354/processing-3.5.4/modes/java/libraries/pdf/library&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/tonim/Documents/CODE/Poetica/src",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tonim\Documents\CODE\Poetica\data\stats" />
@@ -70,14 +62,14 @@
       <recent name="silabes" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="visuals" />
       <recent name="parser.test" />
+      <recent name="visuals" />
       <recent name="comptes.test" />
       <recent name="gui" />
       <recent name="sentiments.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestBotonsPoema">
+  <component name="RunManager" selected="Application.Test_NumOcurrencies_Terme_01">
     <configuration name="TestBotomsVers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.test.TestBotomsVers" />
       <module name="Poetica" />
@@ -130,12 +122,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_Visualitza_AnalisiSentiment_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sentiments.test.Test_Visualitza_AnalisiSentiment_01" />
+    <configuration name="Test_NumOcurrencies_Terme_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parser.test.Test_NumOcurrencies_Terme_01" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sentiments.test.*" />
+          <option name="PATTERN" value="parser.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -145,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test_NumOcurrencies_Terme_01" />
+        <item itemvalue="Application.TestDiagramaBarresApilat" />
         <item itemvalue="Application.TestBotonsPoema" />
         <item itemvalue="Application.TestBotomsVers" />
         <item itemvalue="Application.Test_AnalisiSentiment" />
-        <item itemvalue="Application.Test_Visualitza_AnalisiSentiment_01" />
-        <item itemvalue="Application.TestDiagramaBarresApilat" />
       </list>
     </recent_temporary>
   </component>
@@ -268,14 +260,8 @@
       <workItem from="1779603436020" duration="12783000" />
       <workItem from="1779638108711" duration="9218000" />
       <workItem from="1779689548004" duration="7347000" />
-      <workItem from="1779775802918" duration="4096000" />
-    </task>
-    <task id="LOCAL-00050" summary="Inicial">
-      <created>1778223431948</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1778223431948</updated>
+      <workItem from="1779775802918" duration="4702000" />
+      <workItem from="1779811286997" duration="5959000" />
     </task>
     <task id="LOCAL-00051" summary="Inicial">
       <created>1778237744099</created>
@@ -613,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779644775222</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="Inicial">
+      <created>1779791965433</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1779791965434</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

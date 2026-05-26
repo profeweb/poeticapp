@@ -193,6 +193,20 @@ public class Poemari {
         return ((float)numSillabes) / numVersos;
     }
 
+    public int getNumOcurrenciesTerme(String terme){
+        int num = 0;
+        for(Poema poema : poemes){
+            for(Vers vers : poema.getVersos()){
+                for(Token token : vers.getParaules()){
+                    if (token.getValor().toLowerCase().equals(terme)){
+                        num++;
+                    }
+                }
+            }
+        }
+        return num;
+    }
+
     public void printInfo(){
         System.out.println("\nPoemari "+ titol +" (" + autor + ". "+any+"):\n");
         for(Poema poema : this.poemes){

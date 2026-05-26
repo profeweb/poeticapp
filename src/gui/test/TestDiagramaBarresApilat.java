@@ -9,8 +9,8 @@ import processing.core.PApplet;
 public class TestDiagramaBarresApilat extends PApplet {
 
     float[][] valors = { {100, 50, 200, 60}, {50, 150, 80, 20}, {50, 100, 20, 80}};
-    String[] piles = {"2010", "2015", "2020"};
-    String[] titols = {"A", "B", "C", "D"};
+    String[] piles = {"2010", "2015", "2020"};  // terme
+    String[] titols = {"A", "B", "C", "D"};  // poemaris
     int[] colorBarres;
     DiagramaBarresApilat db;
     Colors colors;
