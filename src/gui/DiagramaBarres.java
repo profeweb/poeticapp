@@ -2,6 +2,8 @@ package gui;
 
 import processing.core.PApplet;
 
+import static processing.core.PApplet.lerpColor;
+
 public class DiagramaBarres extends Diagrama {
 
     Barra[] barres;

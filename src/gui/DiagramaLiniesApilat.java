@@ -2,9 +2,13 @@ package gui;
 
 import processing.core.PApplet;
 
+import static processing.core.PConstants.PI;
+
 public class DiagramaLiniesApilat extends DiagramaApilat{
 
     PuntDades[][] punts;
+    Eix eixCategories;
+    float espaiX;
 
     public DiagramaLiniesApilat(float x, float y, float w, float h) {
         super(x, y, w, h);
@@ -14,7 +18,7 @@ public class DiagramaLiniesApilat extends DiagramaApilat{
 
         punts = new PuntDades[this.categories.length][this.piles.length];
 
-        float espaiX = w / (float) this.piles.length;
+        espaiX = w / (float) this.piles.length;
 
         for(int categoria=0; categoria<categories.length; categoria++) {
 
@@ -33,19 +37,30 @@ public class DiagramaLiniesApilat extends DiagramaApilat{
         }
     }
 
+    public void setEixHoritzontal(String titolEix){
+        eixCategories = new Eix(x, y + h, w, h);
+        eixCategories.setLlegenda(titolEix);
+        eixCategories.setFonts(fonts);
+        eixCategories.categories = this.piles;
+        eixCategories.espaiX = this.espaiX;
+        //eixCategories.setAngleEtiquetaCategoria(-PI/10f);
+        eixCategories.setAngleEtiquetaCategoria(0);
+    }
+
     // Dibuixa el Diagrama de Línies
 
     public void display(PApplet p5){
 
-        displayLinies(p5, colorsCategories, 1.5f);
+        displayLinies(p5, colorsCategories, 2.5f);
 
         for(int categoria=0; categoria<categories.length; categoria++) {
             for(int pila=0; pila<piles.length; pila++){
-                punts[categoria][pila].display(p5, pila>0);
+                punts[categoria][pila].display(p5, true);
             }
         }
 
         // Eix qualitatiu
+        eixCategories.display(p5);
 
         // Eix quantitatiu
 

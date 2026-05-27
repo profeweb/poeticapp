@@ -36,17 +36,19 @@ public class DiagramaApilat extends GuiElement{
             totalValors[pila] = 0;
             for(int categoria=0; categoria<valors[pila].length; categoria++){
                 totalValors[pila] += valors[pila][categoria];
+
+                if(valors[pila][categoria]> maxValor){
+                    maxValor = valors[pila][categoria];
+                }
+                if(valors[pila][categoria]< minValor){
+                    minValor = valors[pila][categoria];
+                }
+                mitjanaValors += valors[pila][categoria];
             }
-            if(totalValors[pila]> maxValor){
-                maxValor = totalValors[pila];
-            }
-            if(totalValors[pila]< minValor){
-                minValor = totalValors[pila];
-            }
-            mitjanaValors += totalValors[pila];
+
         }
 
-        mitjanaValors = mitjanaValors / piles.length;
+        mitjanaValors = mitjanaValors / (valors.length * valors[0].length);
 
         setPercentages();
     }

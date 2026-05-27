@@ -12,18 +12,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class Test_NumOcurrencies_Terme_01 extends PApplet {
+public class Test_NumVersosPoema_Poemari_01 extends PApplet {
 
     DiagramaBarres db;
     Colors colors;
     Fonts fonts;
 
-    int numTotalOcurrencies;
-    String terme = "cos";
+    int numPoemari =  0;
+    Poemari poemari;
+    ArrayList<Poemari> poemaris;
     boolean exportaPDF = false;
 
     public static void main(String[] args) {
-        PApplet.main("parser.test.Test_NumOcurrencies_Terme_01");
+        PApplet.main("parser.test.Test_NumVersosPoema_Poemari_01");
     }
 
     public void settings(){ size(1920, 1080);}
@@ -31,50 +32,41 @@ public class Test_NumOcurrencies_Terme_01 extends PApplet {
     public void setup(){
 
         // Carrega els poemaris de tots els autors (aplicant segmentació i tokenització)
-        ArrayList<Autor> autors = DadesPoemaris.carregaPoemarisAutors();
-        ArrayList<Poemari> poemaris = autors.get(0).getPoemaris();
+        poemaris = DadesPoemaris.carregaPoemarisAutors().get(0).getPoemaris();
 
-        // Ordena els poemaris per data ascendent
-        Collections.sort(poemaris, new Comparator<Poemari>() {
-            @Override
-            public int compare(Poemari o1, Poemari o2) {
-                return o1.getAny() - o2.getAny();
-            }
-        });
+       setDadesDiagrama(poemaris);
+    }
 
-        // Calcula el número total d'ocurrències del terme en el corpus
-        numTotalOcurrencies = DadesPoemaris.getNumTotalOcurrenciesTerme(terme, poemaris);
+    public void setDadesDiagrama(ArrayList<Poemari> poemaris ){
+
+        // Selecciona el poemari
+        poemari = poemaris.get(numPoemari);
 
         // Calcula el número d'ocurrències del terme en cadascun dels poemaris
-        float[] valors = DadesPoemaris.getNumOcurrenciesTerme(terme, poemaris);
+        float[] valors = DadesPoemaris.getNumVersosPoemes(poemari);
 
-        // Consulta els títols dels poemaris
-        String[] titols = DadesPoemaris.getTitolsSencersPoemaris(autors.get(0));
+        // Consulta els títols dels poemes
+        String[] titols = DadesPoemaris.getNumerosPoemes(poemari);
 
         colors = new Colors(this);
         fonts = new Fonts(this);
 
         // Crea el diagrama de barres per a la visualització
-        db = new DiagramaBarres(600, 100, 1000, 400);
+        db = new DiagramaBarres(100, 100, valors.length * 80, 400);
         db.setColors(colors);
         db.setFonts(fonts);
 
         // Defineix la paleta de colors per als 8 poemaris
-        int[] colorBarres = new int[8];
-        colorBarres[0] = color(0xFF6f1926);
-        colorBarres[1] = color(0xFFde324c);
-        colorBarres[2] = color(0xFFf4895f);
-        colorBarres[3] = color(0xFFf8e16f);
-        colorBarres[4] = color(0xFF95cf92);
-        colorBarres[5] = color(0xFF369acc);
-        colorBarres[6] = color(0xFF9656a2);
-        colorBarres[7] = color(0xFFcbabd1);
+        int[] colorBarres = new int[titols.length];
+        for(int i=0; i<colorBarres.length; i++) {
+            colorBarres[i] = color(0xFFde324c);
+        }
 
         // Estableix les propietats i valors del diagrama
         db.setValors(valors);
         db.setCategories(titols);
         db.setColorsCategories(colorBarres);
-        db.setOrientacio(DiagramaBarres.ORIENTACIO.HORITZONTAL);
+        db.setOrientacio(DiagramaBarres.ORIENTACIO.VERTICAL);
         db.setBarres();
     }
 
@@ -83,13 +75,13 @@ public class Test_NumOcurrencies_Terme_01 extends PApplet {
         background(255);
 
         if(exportaPDF){
-            String nomPDF = "data/pdfs/" + terme + " - num Ocurrencies (corpus).pdf";
+            String nomPDF = "data/pdfs/" + poemari.getTitol() + " - num versos (poemes).pdf";
             beginRecord(PDF, nomPDF);
         }
 
         // Informació del terme i número d'ocurrències
         textAlign(LEFT); textSize(18); fill(0);
-        text("Terme: " + terme + " ("+numTotalOcurrencies+")", 100, 100);
+        text("Num. Versos Poemari: " + poemari.getTitol() + "(" + poemari.getAny() +")", 100, 100);
 
         // Dibuixa el diagrama de barres
         db.display(this);
@@ -103,6 +95,14 @@ public class Test_NumOcurrencies_Terme_01 extends PApplet {
     public void keyPressed(){
         if(key=='s' || key=='S'){
             exportaPDF = true;
+        }
+        else if(keyCode==UP && numPoemari < poemari.getNumPoemes()-1){
+            numPoemari++;
+            setDadesDiagrama(poemaris);
+        }
+        else if(keyCode==DOWN && numPoemari>0){
+            numPoemari--;
+            setDadesDiagrama(poemaris);
         }
     }
 

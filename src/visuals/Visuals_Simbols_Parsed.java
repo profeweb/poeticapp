@@ -9,6 +9,7 @@ public class Visuals_Simbols_Parsed extends PApplet {
     Poema poema;
     int numPoema = 0;
 
+    boolean exportaPDF = false;
     String[] separadors = {"punt", "punt i coma", "coma", "altres"};
     String[] simbols = {".", ";", ","};
     int[] colors;
@@ -23,7 +24,7 @@ public class Visuals_Simbols_Parsed extends PApplet {
 
     public void setup() {
 
-        poemari = new Poemari("Poemes a Nai", "MA Rieria", 1988);
+        poemari = new Poemari("Poemes a Nai", "MA Rieria", 1960);
         poemari.parsePoemes(13, "data/poems/Miquel Àngel Riera (1930)/Poemes a Nai (1960)/");
         poema = poemari.getPoemaAt(numPoema);
 
@@ -36,15 +37,26 @@ public class Visuals_Simbols_Parsed extends PApplet {
     }
 
     public void draw() {
+
         background(255);
 
+        if(exportaPDF){
+            String nomPDF = "data/pdfs/" + poemari.getTitol() + " - P" + (numPoema+1) +" - símbols.pdf";
+            beginRecord(PDF, nomPDF);
+        }
+
         textSize(24); textAlign(LEFT); fill(0);
-        text(poemari.getTitol(), 50, 50);
+        text(poemari.getTitol() + " (" + poemari.getAny() + ")", 50, 50);
         textSize(18);
-        text("Poema " + (numPoema+1) +": " + poema.getTitol(), 50, 80);
+        text("Poema " + (numPoema+1) +": " + poema.getTitol() + "...", 50, 80);
         dibuixaPoema(this, poema, 50, 100, 20, 7.5f);
 
         dibuixaLlegendaColors(this, separadors, simbols, colors, 600, 50);
+
+        if(exportaPDF){
+            endRecord();
+            exportaPDF = false;
+        }
     }
 
     public void dibuixaLlegendaColors(PApplet p5, String[] separadors, String[] simbols, int[] colors, float x, float y){
@@ -123,6 +135,10 @@ public class Visuals_Simbols_Parsed extends PApplet {
 
 
     public void keyPressed(){
+
+        if(key=='s' || key=='S'){
+            exportaPDF = true;
+        }
 
         if(keyCode==UP){
             if(numPoema < poemari.getNumPoemes()-1) {
