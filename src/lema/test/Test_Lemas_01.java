@@ -6,7 +6,7 @@ import lema.ResultatToken;
 
 public class Test_Lemas_01 {
 
-    //github.com/michmech/lemmatization-lists/blob/master/lemmatization-ca.txt
+    // Font: http://www.github.com/michmech/lemmatization-lists/blob/master/lemmatization-ca.txt
     public static final String fitxer = "data/diccionaris/lemmatization-ca.txt";
 
     public static String[] paraules = {"cantaria", "espardenyes", "donaria", "ah", "ser", "caps", "cans"};

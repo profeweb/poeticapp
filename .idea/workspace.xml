@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/ner/DiccionariEntitats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/DiccionariEntitats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ner/EtiquetadorEntitats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/EtiquetadorEntitats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visuals/Visuals_NER_Parsed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visuals/Visuals_NER_Parsed.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/diec/test/Test_Termes_Categoriea_Tematica_Poemaris.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/diec/test/Visualitzacions_Art_Termes_Poemaris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/pdfs/Poemes ocasionals - P3 - ners.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/data/pdfs/Poemes ocasionals - P3 - ners.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lema/test/Test_Lemas_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lema/test/Test_Lemas_01.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,20 +60,20 @@
       <recent name="silabes" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="diec.test" />
       <recent name="visuals" />
       <recent name="parser.test" />
       <recent name="comptes.test" />
       <recent name="gui" />
-      <recent name="sentiments.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Visuals_NER_Parsed">
-    <configuration name="Test_NumOcurrencies_Termes_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.test.Test_NumOcurrencies_Termes_01" />
+  <component name="RunManager" selected="Application.Test_Termes_Categoriea_Tematica_Poemaris">
+    <configuration name="TestBotonsPoema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.test.TestBotonsPoema" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="parser.test.*" />
+          <option name="PATTERN" value="gui.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -79,12 +81,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Visuals_Cites_Parsed" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Cites_Parsed" />
+    <configuration name="Test_Categories_Tematiques_Poema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="diec.test.Test_Categories_Tematiques_Poema" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="visuals.*" />
+          <option name="PATTERN" value="diec.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -92,12 +94,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Visuals_NER_Parsed" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_NER_Parsed" />
+    <configuration name="Test_Lemas_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lema.test.Test_Lemas_01" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="visuals.*" />
+          <option name="PATTERN" value="lema.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -105,12 +107,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Visuals_Simbols_Parsed" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Simbols_Parsed" />
+    <configuration name="Test_Termes_Categoriea_Tematica_Poema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="diec.test.Test_Termes_Categoriea_Tematica_Poema" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="visuals.*" />
+          <option name="PATTERN" value="diec.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -118,12 +120,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Visuals_VersosPoemaris" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_VersosPoemaris" />
+    <configuration name="Test_Termes_Categoriea_Tematica_Poemaris" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="diec.test.Test_Termes_Categoriea_Tematica_Poemaris" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="visuals.*" />
+          <option name="PATTERN" value="diec.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -133,11 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Visuals_NER_Parsed" />
-        <item itemvalue="Application.Visuals_Cites_Parsed" />
-        <item itemvalue="Application.Visuals_Simbols_Parsed" />
-        <item itemvalue="Application.Visuals_VersosPoemaris" />
-        <item itemvalue="Application.Test_NumOcurrencies_Termes_01" />
+        <item itemvalue="Application.Test_Termes_Categoriea_Tematica_Poemaris" />
+        <item itemvalue="Application.Test_Termes_Categoriea_Tematica_Poema" />
+        <item itemvalue="Application.Test_Categories_Tematiques_Poema" />
+        <item itemvalue="Application.Test_Lemas_01" />
+        <item itemvalue="Application.TestBotonsPoema" />
       </list>
     </recent_temporary>
   </component>
@@ -258,14 +260,9 @@
       <workItem from="1779689548004" duration="7347000" />
       <workItem from="1779775802918" duration="4702000" />
       <workItem from="1779811286997" duration="7772000" />
-      <workItem from="1779862022590" duration="15968000" />
-    </task>
-    <task id="LOCAL-00055" summary="Inicial">
-      <created>1778504239767</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1778504239768</updated>
+      <workItem from="1779862022590" duration="18091000" />
+      <workItem from="1779899791726" duration="362000" />
+      <workItem from="1779901772320" duration="5500000" />
     </task>
     <task id="LOCAL-00056" summary="Inicial">
       <created>1778579555903</created>
@@ -603,7 +600,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779880642022</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Inicial">
+      <created>1779881120038</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1779881120038</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
