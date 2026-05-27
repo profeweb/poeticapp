@@ -109,19 +109,25 @@ public class Visuals_NER_Parsed extends PApplet {
         int llarg = textVers.length();
 
         float xToken = x;
+        boolean detectat = false;
         for (Token token : vers.getTokens()) {
 
             int llargToken = token.getValor().length();
 
             if(token.getTipus() == Token.Tipus.PARAULA){
 
-                if(etiquetadorEntitats.esEntitat(token.getValor())){
+                if(etiquetadorEntitats.esIniciEntitat(token.getValor())){
+                    detectat = true;
+                }
+
+                if(detectat && etiquetadorEntitats.esEntitat(token.getValor())){
                     p5.strokeWeight(10);
                     p5.stroke(getColorNER(p5, etiquetadorEntitats.tipusEntitat(token.getValor()), ners, colors));
                 }
                 else {
                     p5.stroke(0);
                     p5.strokeWeight(5);
+                    detectat = false;
                 }
                 p5.line(xToken, y, xToken + llargToken * factor, y);
 

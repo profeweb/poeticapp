@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/visuals/Visuals_NER_Parsed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/diccionaris/entitats_nomenades.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/diccionaris/entitats_nomenades.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ner/DiccionariEntitats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/DiccionariEntitats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ner/EntradaDiccionari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/EntradaDiccionari.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ner/EtiquetadorEntitats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/EtiquetadorEntitats.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ner/test/Test_NER_JSON_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/test/Test_NER_JSON_01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visuals/Visuals_Cites_Parsed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visuals/Visuals_Cites_Parsed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visuals/Visuals_NER_Parsed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visuals/Visuals_NER_Parsed.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,21 +258,7 @@
       <workItem from="1779689548004" duration="7347000" />
       <workItem from="1779775802918" duration="4702000" />
       <workItem from="1779811286997" duration="7772000" />
-      <workItem from="1779862022590" duration="15407000" />
-    </task>
-    <task id="LOCAL-00053" summary="Inicial">
-      <created>1778427452665</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1778427452667</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Inicial">
-      <created>1778481506538</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1778481506538</updated>
+      <workItem from="1779862022590" duration="15968000" />
     </task>
     <task id="LOCAL-00055" summary="Inicial">
       <created>1778504239767</created>
@@ -608,7 +589,21 @@
       <option name="project" value="LOCAL" />
       <updated>1779875000250</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Inicial">
+      <created>1779880625720</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1779880625736</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Inicial">
+      <created>1779880642022</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1779880642022</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

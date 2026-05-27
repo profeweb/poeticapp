@@ -273,6 +273,15 @@ public class EtiquetadorEntitats {
         return false;
     }
 
+    public boolean esIniciEntitat(String paraula){
+        for(TokenEtiquetat tokenEtiquetat : totalsTokens) {
+            if (tokenEtiquetat.getForma().equals(paraula.toLowerCase()) && tokenEtiquetat.esEntitat() && tokenEtiquetat.esInici()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean esEntitat(String paraula){
         for(TokenEtiquetat tokenEtiquetat : totalsTokens) {
             if (tokenEtiquetat.getForma().equals(paraula.toLowerCase()) && tokenEtiquetat.esEntitat()) {
