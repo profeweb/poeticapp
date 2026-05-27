@@ -1,5 +1,7 @@
 package ner;
 
+import parser.Token;
+
 public class EntradaDiccionari {
 
     /** Tokens normalitzats de l'expressió (p. ex. ["joan", "maragall"]). */
@@ -21,6 +23,8 @@ public class EntradaDiccionari {
     }
 
     int longitud() { return tokens.length; }
+
+    public EntitatNomenada.TipusEntitat getTipus(){ return  this.tipus; }
 
 
     public static String normalitza(String s) {

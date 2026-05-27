@@ -2,17 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/parser/test/Test_NumOcurrencies_Termes_01.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/parser/test/Test_NumVersosPoema_Poemari_01.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/visuals/Visuals_NER_Parsed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/DiagramaApilat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DiagramaApilat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/DiagramaBarres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DiagramaBarres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/DiagramaLiniesApilat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/DiagramaLiniesApilat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/Eix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Eix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/PuntDades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/PuntDades.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/test/Test_NumOcurrencies_Terme_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/test/Test_NumOcurrencies_Terme_01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visuals/Visuals_Simbols_Parsed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visuals/Visuals_Simbols_Parsed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/diccionaris/entitats_nomenades.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/diccionaris/entitats_nomenades.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ner/DiccionariEntitats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/DiccionariEntitats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ner/EntradaDiccionari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/EntradaDiccionari.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ner/EtiquetadorEntitats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/EtiquetadorEntitats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ner/test/Test_NER_JSON_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ner/test/Test_NER_JSON_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visuals/Visuals_Cites_Parsed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visuals/Visuals_Cites_Parsed.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,27 +63,14 @@
       <recent name="silabes" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="parser.test" />
       <recent name="visuals" />
+      <recent name="parser.test" />
       <recent name="comptes.test" />
       <recent name="gui" />
       <recent name="sentiments.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Visuals_Simbols_Parsed">
-    <configuration name="TestDiagramaLiniesApilat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.test.TestDiagramaLiniesApilat" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Visuals_NER_Parsed">
     <configuration name="Test_NumOcurrencies_Termes_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="parser.test.Test_NumOcurrencies_Termes_01" />
       <module name="Poetica" />
@@ -100,12 +84,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_NumVersosPoema_Poemari_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="parser.test.Test_NumVersosPoema_Poemari_01" />
+    <configuration name="Visuals_Cites_Parsed" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Cites_Parsed" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="parser.test.*" />
+          <option name="PATTERN" value="visuals.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Visuals_NER_Parsed" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_NER_Parsed" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="visuals.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -141,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Visuals_NER_Parsed" />
+        <item itemvalue="Application.Visuals_Cites_Parsed" />
         <item itemvalue="Application.Visuals_Simbols_Parsed" />
         <item itemvalue="Application.Visuals_VersosPoemaris" />
         <item itemvalue="Application.Test_NumOcurrencies_Termes_01" />
-        <item itemvalue="Application.TestDiagramaLiniesApilat" />
-        <item itemvalue="Application.Test_NumVersosPoema_Poemari_01" />
       </list>
     </recent_temporary>
   </component>
@@ -266,14 +263,7 @@
       <workItem from="1779689548004" duration="7347000" />
       <workItem from="1779775802918" duration="4702000" />
       <workItem from="1779811286997" duration="7772000" />
-      <workItem from="1779862022590" duration="10014000" />
-    </task>
-    <task id="LOCAL-00052" summary="Inicial">
-      <created>1778312140261</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1778312140262</updated>
+      <workItem from="1779862022590" duration="15407000" />
     </task>
     <task id="LOCAL-00053" summary="Inicial">
       <created>1778427452665</created>
@@ -611,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779824858359</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="Inicial">
+      <created>1779875000249</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1779875000250</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

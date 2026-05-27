@@ -20,7 +20,7 @@ public class Test_NER_JSON_01 extends PApplet {
 
     public void setup(){
 
-        DiccionariEntitats diccionariEntitats = diccionariEntitats = new DiccionariEntitats(rutaJSON);
+        DiccionariEntitats diccionariEntitats = new DiccionariEntitats(rutaJSON);
         diccionariEntitats.imprimeixEntradesDiccionari();
 
         EtiquetadorEntitats etiquetadorEntitats = new EtiquetadorEntitats(diccionariEntitats);

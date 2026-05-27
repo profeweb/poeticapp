@@ -262,4 +262,8 @@ public class DiccionariEntitats {
         System.out.println();
     }
 
+    public boolean esEntitat(String paraula, EntitatNomenada.TipusEntitat tipusEntitat){
+        return diccionari.containsKey(paraula) && diccionari.get(paraula) == tipusEntitat;
+    }
+
 }

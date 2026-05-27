@@ -9,6 +9,7 @@ public class Visuals_Cites_Parsed extends PApplet {
     Poema poema;
     int numPoema = 0;
 
+    boolean exportaPDF = false;
     String[] separadors = {"cita", "altres"};
     String[] simbols = {"\""};
     int[] colors;
@@ -34,8 +35,13 @@ public class Visuals_Cites_Parsed extends PApplet {
     }
 
     public void draw() {
+
         background(255);
 
+        if(exportaPDF){
+            String nomPDF = "data/pdfs/" + poemari.getTitol() + " - P" + (numPoema+1) +" - cites textuals.pdf";
+            beginRecord(PDF, nomPDF);
+        }
         textSize(24); textAlign(LEFT); fill(0);
         text(poemari.getTitol(), 50, 50);
         textSize(18);
@@ -43,6 +49,11 @@ public class Visuals_Cites_Parsed extends PApplet {
         dibuixaCitesPoema(this, poema, 50, 100, 20, 7.5f);
 
         dibuixaLlegendaColors(this, separadors, simbols, colors, 600, 50);
+
+        if(exportaPDF){
+            endRecord();
+            exportaPDF = false;
+        }
     }
 
     public void dibuixaLlegendaColors(PApplet p5, String[] separadors, String[] simbols, int[] colors, float x, float y){
@@ -96,7 +107,7 @@ public class Visuals_Cites_Parsed extends PApplet {
             else {
                 p5.stroke(0);
                 if(citaOberta){
-                    p5.stroke(255, 255, 0, 50);
+                    p5.stroke(255, 255, 0);
                 }
                 p5.strokeWeight(5);
                 p5.line(xToken, y, xToken + llargToken * factor, y);
@@ -132,6 +143,10 @@ public class Visuals_Cites_Parsed extends PApplet {
 
 
     public void keyPressed(){
+
+        if(key=='s' || key=='S'){
+            exportaPDF = true;
+        }
 
         if(keyCode==UP){
             if(numPoema < poemari.getNumPoemes()-1) {

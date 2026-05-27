@@ -57,12 +57,6 @@ public class EtiquetadorEntitats {
     /**
      * Tokenitza una línia de text separant per espais i tractant les
      * contraccions amb apòstrof pròpies del català.
-     *
-     * Exemples:
-     *   "l'Empordà"   →  ["l'",  "Empordà"]
-     *   "d'Aragó"     →  ["d'",  "Aragó"]
-     *   "s'estima"    →  ["s'",  "estima"]
-     *   "Catalunya,"  →  ["Catalunya,"]        (sense apòstrof intern)
      */
     public static String[] tokenitza(String linia) {
         List<String> tokens = new ArrayList<>();
@@ -267,5 +261,33 @@ public class EtiquetadorEntitats {
         System.out.printf("  Tokens etiquetats B+I           : %3d%n", nBIO);
         System.out.printf("  Tokens fora d'entitat (O)       : %3d%n", nO);
         System.out.printf("  Cobertura NER                   : %5.1f%%%n", 100.0 * nBIO / nTotal);
+    }
+
+
+    public boolean esEntitat(String paraula, String tipus){
+        for(TokenEtiquetat tokenEtiquetat : totalsTokens) {
+                if (tokenEtiquetat.getForma().equals(paraula.toLowerCase()) && tokenEtiquetat.esEntitat() && tokenEtiquetat.getTipus().equals(tipus)) {
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean esEntitat(String paraula){
+        for(TokenEtiquetat tokenEtiquetat : totalsTokens) {
+            if (tokenEtiquetat.getForma().equals(paraula.toLowerCase()) && tokenEtiquetat.esEntitat()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String tipusEntitat(String paraula){
+        for(TokenEtiquetat tokenEtiquetat : totalsTokens) {
+            if (tokenEtiquetat.getForma().equals(paraula.toLowerCase()) && tokenEtiquetat.esEntitat()) {
+                return tokenEtiquetat.getTipus();
+            }
+        }
+        return null;
     }
 }
