@@ -8,25 +8,24 @@ import java.util.stream.Collectors;
 
 public class Lematitzador {
 
+    // Retorna el resultat de la lematització per a un token a partir del diccionari de lemes
     public static ResultatToken lematitzarToken(String token, DiccionariLemesCatalà dicc) {
 
         // Cerca principal
         List<String> lemesInflectius = dicc.indexFormes.get(token);
         boolean      esLema          = dicc.conjuntLemes.contains(token);
 
-        // Fallback sense diacrítics si no es troba per cap via
+        // Cerca sense diacrítics si no es troba per cap via
         if (lemesInflectius == null && !esLema) {
-            String sd = eliminarDiacritics(token);
-            if (!sd.equals(token)) {
-                lemesInflectius = dicc.indexFormes.get(sd);
-                esLema          = dicc.conjuntLemes.contains(sd);
+            String senseDiacritics = eliminarDiacritics(token);
+            if (!senseDiacritics.equals(token)) {
+                lemesInflectius = dicc.indexFormes.get(senseDiacritics);
+                esLema          = dicc.conjuntLemes.contains(senseDiacritics);
             }
         }
 
         // Cas JA_ES_LEMA (prioritat sobre TROBAT/AMBIGU)
         if (esLema) {
-            // Pot ser alhora lema i tenir altres formes al diccionari
-            // (ex: "amor" apareix com a lema i com a forma d'amorar)
             List<String> tots = new ArrayList<>();
             tots.add(token); // el lema és ell mateix
             if (lemesInflectius != null)
@@ -49,6 +48,7 @@ public class Lematitzador {
         return new ResultatToken(token, unics.get(0), unics, estat);
     }
 
+    // Elimina els diacrítics d'una paraula
     private static String eliminarDiacritics(String s) {
         return Normalizer.normalize(s, Normalizer.Form.NFD)
                 .replaceAll("\\p{InCombiningDiacriticalMarks}", "");

@@ -5,13 +5,14 @@ import java.util.stream.Collectors;
 
 public class ResultatToken {
 
-    enum Estat { TROBAT, AMBIGU, JA_ES_LEMA, DESCONEGUT }
+    enum Estat { TROBAT, AMBIGU, JA_ES_LEMA, DESCONEGUT }   // Estats de lematització possibles
 
     final String       forma;           // Forma normalitzada del tokem
     final String       lemaPreferit;    // Lema escollit
     final List<String> lemes;           // Conjunt de tots els lemes possibles
     final Estat        estat;           // Resultat de la lematització
 
+    // Constructor
     public ResultatToken(String forma, String lemaPreferit, List<String> lemes, Estat estat) {
         this.forma        = forma;
         this.lemaPreferit = lemaPreferit;

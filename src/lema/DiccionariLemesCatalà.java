@@ -6,11 +6,16 @@ import java.util.*;
 
 public class DiccionariLemesCatalà {
 
+    // Idioma utilitzat per al diccionari de lemes
     private static final Locale CA  = Locale.forLanguageTag("ca");
 
+    // Conjunt de lemes del diccionari
     Set<String> conjuntLemes;
+
+    // Index invers de formes canòniques a partir del lema
     Map<String, List<String>> indexFormes;
 
+    // Constructor del diccionari a partir del fitxer JSON
     public DiccionariLemesCatalà(String fitxer) {
         construirDiccionari(fitxer);
     }
@@ -20,10 +25,11 @@ public class DiccionariLemesCatalà {
         indexFormes  = new HashMap<>(700_000);
         conjuntLemes = new HashSet<>(200_000);
 
+        // Recórre el fitxer JSON
         try (BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(fitxer), StandardCharsets.UTF_8))) {
 
             String linia;
-            long   numLinia = 0;
+            long numLinia = 0;
 
             while ((linia = br.readLine()) != null) {
                 numLinia++;
@@ -39,7 +45,7 @@ public class DiccionariLemesCatalà {
                 String forma = linia.substring(tab + 1).strip();
                 if (lema.isEmpty() || forma.isEmpty()) continue;
 
-                // Índex invers: forma_lower → lemes
+                // Índex invers: forma -> lemes
                 String clauForma = forma.toLowerCase(CA);
                 indexFormes.computeIfAbsent(clauForma, k -> new ArrayList<>()).add(lema);
 
@@ -52,9 +58,9 @@ public class DiccionariLemesCatalà {
             throw new RuntimeException(e);
         }
 
-        System.out.printf("Diccionari carregat:%n");
-        System.out.printf("  Formes indexades : %,d%n", indexFormes.size());
-        System.out.printf("  Lemes únics      : %,d%n", conjuntLemes.size());
+        System.out.printf("Diccionari de lemes carregat:%n");
+        System.out.printf("Formes indexades : %d%n", indexFormes.size());
+        System.out.printf("Lemes únics      : %d%n", conjuntLemes.size());
     }
 
 }
