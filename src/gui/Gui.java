@@ -80,7 +80,7 @@ public class Gui {
         setMedia(p5);
         setElementsGUI();
         setPantalles();
-        this.currentPantalla = pantallaVisual; //pantallaInici;
+        this.currentPantalla = pantallaInici;
 
     }
 
