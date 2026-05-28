@@ -8,6 +8,8 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 import static gui.Mides.*;
 import static java.lang.Math.min;
@@ -18,7 +20,7 @@ public class Gui {
     // PANTALLES
     public enum PANTALLA { INICI, EXPLORAR, FAVORITS, LLIBRES, POEMES, AUTORS,
         AUTOR_OBRA, AUTOR_RESUM, AUTOR_VISUAL, AUTOR_EDITA,
-        QUANTITATIVES, QUALITATIVES, CRONOLOGIQUES, RELACIONALS, TEMATIQUES, ALTRES,
+        QUANTITATIVES, QUALITATIVES, CRONOLOGIQUES, RELACIONALS, TEMATIQUES, ALTRES, VISUAL,
         LLIBRE_RESUM, LLIBRE_OBRA, LLIBRE_VISUAL, LLIBRE_EDITA,
         POEMA_RESUM, POEMA_EDITA
     };
@@ -52,7 +54,7 @@ public class Gui {
     public Pantalla pantallaAutorResum, pantallaAutorObra, pantallaAutorVisual, pantallaAutorEdita;
     public Pantalla pantallaLlibreResum, pantallaLlibreObra, pantallaLlibreVisual, pantallaLlibreEdita;
     Pantalla pantallaPoemaResum, pantallaPoemaEdita;
-    Pantalla pantallaQuantitatives, pantallaQualitatives, pantallaRelacionals, pantallaTematiques, pantallaCronologiques, pantallaAltres;
+    Pantalla pantallaQuantitatives, pantallaQualitatives, pantallaRelacionals, pantallaTematiques, pantallaCronologiques, pantallaAltres, pantallaVisual;
 
     // MEDIA
     Colors colors;
@@ -78,7 +80,7 @@ public class Gui {
         setMedia(p5);
         setElementsGUI();
         setPantalles();
-        this.currentPantalla = pantallaInici;
+        this.currentPantalla = pantallaVisual; //pantallaInici;
 
     }
 
@@ -421,6 +423,9 @@ public class Gui {
         pantallaAltres.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar, graellaVisualitzacions);
         pantallaAltres.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_ALTRES, "Visualitzacions", "Altres"));
 
+        pantallaVisual = new Pantalla(PANTALLA.VISUAL);
+        pantallaVisual.addElements(menuApp, entradaCercador,  llistaAutors, llistaLlibres, llistaPoemes, botoFiltrar);
+        pantallaVisual.addElement(new Titulars(posTitularX, posTitularY, colors, fonts, CODI_QUANTITATS, "Visualització", "Altres"));
     }
 
     public GraellaTarja setGraella(String[][] dades, String titol, PImage img, int colorFons, int numFiles, int numColumnes, float x, float y, float w, float h){
@@ -461,6 +466,7 @@ public class Gui {
 
     public void dibuixaGUI(){
         currentPantalla.display(p5);
+        dibuixaVisuals(p5);
     }
 
     public void updatePantallesAutor(PApplet p5){
@@ -610,6 +616,114 @@ public class Gui {
 
     public void keyTypedEvent(PApplet p5){
         currentPantalla.keyTypedEvents(p5);
+    }
+
+
+    public void dibuixaVisuals01(PApplet p5){
+        DiagramaLiniesApilat dl;
+        int[] colorBarres;
+        Colors colors;
+        Fonts fonts;
+
+        String[] termes = {"amor", "cos", "home", "vida" };
+        String[] categories, piles;
+        String totsTermes;
+
+        ArrayList<Poemari> poemaris = autors.get(0).getPoemaris();
+
+        // Ordena els poemaris per data ascendent
+        Collections.sort(poemaris, new Comparator<Poemari>() {
+            @Override
+            public int compare(Poemari o1, Poemari o2) {
+                return o1.getAny() - o2.getAny();
+            }
+        });
+
+        totsTermes = "";
+        int numTerme = 0;
+        float[][] valors = new float[termes.length][poemaris.size()];
+        for(String terme : termes){
+            totsTermes += terme + ((numTerme==termes.length-1) ? "." : ", ");
+            valors[numTerme] = DadesPoemaris.getNumOcurrenciesTerme(terme, poemaris);
+            numTerme++;
+        }
+
+        piles = DadesPoemaris.getTitolsSencersPoemaris(autors.get(0));
+        categories = termes;  // paraules
+
+        // Defineix la paleta de colors per als 8 poemaris
+        colorBarres = new int[8];
+        colorBarres[0] = p5.color(0xFF6f1926);
+        colorBarres[1] = p5.color(0xFFde324c);
+        colorBarres[2] = p5.color(0xFFf4895f);
+        colorBarres[3] = p5.color(0xFFf8e16f);
+        colorBarres[4] = p5.color(0xFF95cf92);
+        colorBarres[5] = p5.color(0xFF369acc);
+        colorBarres[6] = p5.color(0xFF9656a2);
+        colorBarres[7] = p5.color(0xFFcbabd1);
+
+        // Estableix les propietats i valors del diagrama
+        colors = new Colors(p5);
+        fonts = new Fonts(p5);
+        dl = new DiagramaLiniesApilat(400, 300, 1400, 700);
+        dl.setColorsFonts(colors, fonts);
+        dl.setCategories(categories);
+        dl.setPiles(piles);
+        dl.setValors(valors);
+        dl.setColorsCategories(colorBarres);
+        dl.setPunts();
+        dl.setEixHoritzontal("Poemaris");
+
+        // Informació del terme i número d'ocurrències
+        p5.textAlign(p5.LEFT); p5.textSize(18); p5.fill(0);
+        p5.text("Termes: " + totsTermes, 400, 250);
+
+        // Dibuixa la llegenda de categories i colors
+        //dibuixaLlegendaCategoriesColors(120, 200);
+
+        // Dibuixa el diagrama de barres
+        dl.display(p5);
+
+        numTerme = 0;
+        float xcat = 400; float ycat = 300;
+        for(String terme : termes){
+            p5.fill( colorBarres[numTerme] );
+            p5.noStroke();
+            p5.circle(xcat, ycat + numTerme*25, 20);
+            p5.fill(0); p5.textAlign(p5.LEFT, p5.CENTER);
+            p5.text(categories[numTerme], xcat + 25, ycat + numTerme*25);
+            numTerme++;
+        }
+    }
+
+    public void dibuixaVisuals(PApplet p5){
+        int[] colors;
+        float[] dades;
+        String[] etiquetes;
+        DiagramaSectors sectors;
+
+        Autor autor = autors.get(0);
+
+        etiquetes = getTitolAnysPoemaris(autor);
+        dades = getNumVersosPoemaris(autor);
+
+        colors = new int[8];
+        colors[0] = p5.color(0xFF6f1926);
+        colors[1] = p5.color(0xFFde324c);
+        colors[2] = p5.color(0xFFf4895f);
+        colors[3] = p5.color(0xFFf8e16f);
+        colors[4] = p5.color(0xFF95cf92);
+        colors[5] = p5.color(0xFF369acc);
+        colors[6] = p5.color(0xFF9656a2);
+        colors[7] = p5.color(0xFFcbabd1);
+
+        sectors = new DiagramaSectors(p5.width/2 + 100, p5.height/2 + 100, 600);
+        sectors.setCategories(etiquetes);
+        sectors.setValors(dades);
+        sectors.setColorsCategories(colors);
+        sectors.setSectors();
+
+        sectors.display(p5);
     }
 
 }

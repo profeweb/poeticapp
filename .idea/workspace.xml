@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/diccionaris/diccionari_sentiments_ca.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/diccionaris/diccionari_sentiments_ca.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/visuals/Visuals_Sentiments_Parsed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visuals/Visuals_Sentiments_Parsed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/Gui.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +65,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
+    <configuration name="DiagramaLinies_Anys" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="visuals.DiagramaLinies_Anys" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="visuals.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Poetica" />
@@ -73,12 +85,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_Termes_Categoriea_Tematica_Poemaris" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="diec.test.Test_Termes_Categoriea_Tematica_Poemaris" />
+    <configuration name="Test_NumOcurrencies_Termes_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parser.test.Test_NumOcurrencies_Termes_01" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="diec.test.*" />
+          <option name="PATTERN" value="parser.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,12 +98,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test_Visualitza_AnalisiSentiment_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sentiments.test.Test_Visualitza_AnalisiSentiment_01" />
+    <configuration name="Test_NumVersosPoema_Poemari_01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="parser.test.Test_NumVersosPoema_Poemari_01" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sentiments.test.*" />
+          <option name="PATTERN" value="parser.test.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,21 +111,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Visualitzacions_Art_Termes_Poemaris" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="diec.test.Visualitzacions_Art_Termes_Poemaris" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="diec.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Visuals_Sentiments_Parsed" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_Sentiments_Parsed" />
+    <configuration name="Visuals_VersosPoemaris" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="visuals.Visuals_VersosPoemaris" />
       <module name="Poetica" />
       <extension name="coverage">
         <pattern>
@@ -128,10 +127,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Visuals_Sentiments_Parsed" />
-        <item itemvalue="Application.Test_Visualitza_AnalisiSentiment_01" />
-        <item itemvalue="Application.Visualitzacions_Art_Termes_Poemaris" />
-        <item itemvalue="Application.Test_Termes_Categoriea_Tematica_Poemaris" />
+        <item itemvalue="Application.Visuals_VersosPoemaris" />
+        <item itemvalue="Application.Test_NumVersosPoema_Poemari_01" />
+        <item itemvalue="Application.Test_NumOcurrencies_Termes_01" />
+        <item itemvalue="Application.DiagramaLinies_Anys" />
       </list>
     </recent_temporary>
   </component>
@@ -255,14 +254,8 @@
       <workItem from="1779862022590" duration="18091000" />
       <workItem from="1779899791726" duration="362000" />
       <workItem from="1779901772320" duration="5516000" />
-      <workItem from="1779948085385" duration="13545000" />
-    </task>
-    <task id="LOCAL-00059" summary="Inicial">
-      <created>1778770778634</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1778770778635</updated>
+      <workItem from="1779948085385" duration="14156000" />
+      <workItem from="1779968020139" duration="2552000" />
     </task>
     <task id="LOCAL-00060" summary="Inicial">
       <created>1778772784013</created>
@@ -600,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779958626323</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="Inicial">
+      <created>1779963345662</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1779963345663</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
