@@ -34,7 +34,7 @@ public class Visuals_NER_Parsed extends PApplet {
         diccionariEntitats = new DiccionariEntitats(rutaJSON);
 
         etiquetadorEntitats = new EtiquetadorEntitats(diccionariEntitats);
-        etiquetadorEntitats.tokenitzaPoema(rutaFitxer + "poema" + nf(numPoema+1, 2, 0) + ".txt");
+        etiquetadorEntitats.etiquetaPoema(rutaFitxer + "poema" + nf(numPoema+1, 2, 0) + ".txt");
         etiquetadorEntitats.extrauEntitats();
         etiquetadorEntitats.estadistiquesEtiquetador();
 
@@ -182,7 +182,7 @@ public class Visuals_NER_Parsed extends PApplet {
         }
 
         etiquetadorEntitats = new EtiquetadorEntitats(diccionariEntitats);
-        etiquetadorEntitats.tokenitzaPoema(rutaFitxer + "poema" + nf(numPoema+1, 2, 0) + ".txt");
+        etiquetadorEntitats.etiquetaPoema(rutaFitxer + "poema" + nf(numPoema+1, 2, 0) + ".txt");
         etiquetadorEntitats.extrauEntitats();
         etiquetadorEntitats.estadistiquesEtiquetador();
         poema = poemari.getPoemaAt(numPoema);

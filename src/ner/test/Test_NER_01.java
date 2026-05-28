@@ -13,7 +13,7 @@ public class Test_NER_01 {
         diccionariEntitats.imprimeixEntradesDiccionari();
 
         EtiquetadorEntitats etiquetadorEntitats = new EtiquetadorEntitats(diccionariEntitats);
-        etiquetadorEntitats.tokenitzaPoema(rutaFitxer);
+        etiquetadorEntitats.etiquetaPoema(rutaFitxer);
         //etiquetadorEntitats.mostraTokens();
         etiquetadorEntitats.extrauEntitats();
         //etiquetadorEntitats.mostraEntitats();

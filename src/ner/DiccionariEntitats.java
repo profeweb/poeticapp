@@ -16,44 +16,39 @@ import java.util.Map;
 
 public class DiccionariEntitats {
 
-    /**
-     * Diccionari principal.
-     * Clau:  expressió original (amb la capitalització correcta), p. ex. "Joan Maragall"
-     * Valor: tipus d'entitat
-     */
-
+    // Etiquetes del fitxer JSON per identificar camps d'informació
     private static final String CAMP_ARREL = "entitats";
     private static final String CAMP_TEXT  = "text";
     private static final String CAMP_TIPUS = "tipus";
 
+    // Diccionari d'entitats anomenades
     private final Map<String, EntitatNomenada.TipusEntitat> diccionari;
 
-    /**
-     * Llista d'entrades ordenada per longitud descendent per a la cerca greedy.
-     * Les expressions més llargues s'intenten primer (longest-match-first).
-     */
+    // Llista d'entrades del diccionari
     private List<EntradaDiccionari> entrades;
 
+    // Constructor
     public DiccionariEntitats() {
         diccionari = new LinkedHashMap<>();
         construeixDiccionari();
         construeixEntrades();
     }
 
+    // Constructor a partir de fitxer JSON
     public DiccionariEntitats(String rutaJSON) {
         diccionari = new LinkedHashMap<>();
         carregaDesDeJSON(this, rutaJSON);
         construeixEntrades();
     }
 
+    // Retona una llista amb les entrades del diccionari
     public List<EntradaDiccionari> getEntrades(){ return  this.entrades; }
+
 
     //  CONSTRUCCIÓ DEL DICCIONARI
 
-    /** Afegeix (o sobreescriu) una expressió al diccionari. */
-    private void afegeixEntitat(String expressio, EntitatNomenada.TipusEntitat tipus) {
-        diccionari.put(expressio, tipus);   // clau = expressió original (respecta la capitalització)
-    }
+    // Afegeix (o sobreescriu) una expressió al diccionari.
+    private void afegeixEntitat(String expressio, EntitatNomenada.TipusEntitat tipus) { diccionari.put(expressio, tipus); }
 
     private void afegeixEntitatPER(String expressio) {
         afegeixEntitat(expressio, EntitatNomenada.TipusEntitat.PER);
@@ -71,7 +66,7 @@ public class DiccionariEntitats {
         afegeixEntitat(expressio, EntitatNomenada.TipusEntitat.MISC);
     }
 
-    /** Construeix la llista d'entrades ordenada per a la cerca greedy. */
+    // Construeix la llista d'entrades ordenada
     private void construeixEntrades() {
 
         entrades = new ArrayList<>();
@@ -80,15 +75,15 @@ public class DiccionariEntitats {
             entrades.add(new EntradaDiccionari(e.getKey(), e.getValue()));
         }
 
-        // Ordena per longitud descendent → longest-match-first
+        // Ordena per longitud descendent
         entrades.sort((a, b) -> Integer.compare(b.longitud(), a.longitud()));
     }
 
 
-    /** Construeix el diccionari complet d'entitats predefinides. */
+    // Construeix el diccionari complet d'entitats predefinides.
     private void construeixDiccionari() {
 
-        // PER: Persones ─────────────────────────────────────────────────
+        // PER: Persones
 
         // Noms de persona (expressions compostes primer)
         afegeixEntitatPER("Miquel Àngel Riera");
@@ -136,7 +131,7 @@ public class DiccionariEntitats {
         afegeixEntitatPER("Vayreda");
 
 
-        // LOC: Llocs geogràfics ─────────────────────────────────────────
+        // LOC: Llocs geogràfics
 
         // Expressions compostes (han d'anar al mapa abans que les simples)
         afegeixEntitatLOC("Jardí Botànic");
@@ -166,7 +161,7 @@ public class DiccionariEntitats {
         afegeixEntitatLOC("Espanya");
 
 
-        // ORG: Organitzacions ───────────────────────────────────────────
+        // ORG: Organitzacions
 
         // Noms simples
         afegeixEntitatORG("Veritat");
@@ -174,7 +169,7 @@ public class DiccionariEntitats {
         afegeixEntitatORG("Equilibri");
         afegeixEntitatORG("Persona-Trista");
 
-        // MISC: Miscel·lani ─────────────────────────────────────────────
+        // MISC: Miscel·lània
         afegeixEntitatMISC("Sant Joan Sebastià");
         afegeixEntitatMISC("Pentecostès");
         afegeixEntitatMISC("Gènesi");
@@ -188,6 +183,7 @@ public class DiccionariEntitats {
 
 
 
+    // Construeix el diccionari complet d'entitats a partir del fitxer JSON.
     public static void carregaDesDeJSON(DiccionariEntitats diccionari,String rutaFitxer) {
 
         Path path = Paths.get(rutaFitxer);
@@ -205,6 +201,7 @@ public class DiccionariEntitats {
 
     }
 
+    // Processa el fitxer JSON amb la informació de les entitats anomenades.
     private static void processaJSON(DiccionariEntitats diccionari,String contingut) {
 
         // 1. Construeix l'objecte arrel
@@ -241,22 +238,23 @@ public class DiccionariEntitats {
     }
 
 
+    // Imprimeix el contingut del diccionari d'entitats anomenades
     public void imprimeixEntradesDiccionari(){
-        System.out.println("[ DICCIONARI D'ENTITATS ]");
+
+        System.out.println("Diccionari d'Entitats Anomenades.");
 
         Map<String, List<String>> entitatsPerTipus = new LinkedHashMap<>();
         for (EntitatNomenada.TipusEntitat te : EntitatNomenada.TipusEntitat.values()) entitatsPerTipus.put(te.name(), new ArrayList<>());
         for (Map.Entry<String, EntitatNomenada.TipusEntitat> e : diccionari.entrySet())
             entitatsPerTipus.get(e.getValue().name()).add(e.getKey());
 
-        for (EntitatNomenada.TipusEntitat te : EntitatNomenada.TipusEntitat.values()) {
-            List<String> llista = entitatsPerTipus.get(te.name());
-            System.out.printf("  %-5s %-18s (%d entrades):%n",
-                te.name(), "(" + te.getDescripcio() + ")", llista.size());
+        for (EntitatNomenada.TipusEntitat tipusEntitat : EntitatNomenada.TipusEntitat.values()) {
+            List<String> llista = entitatsPerTipus.get(tipusEntitat.name());
+            System.out.printf("  %-5s %-18s (%d entrades):%n", tipusEntitat.name(), "(" + tipusEntitat.getDescripcio() + ")", llista.size());
             // Mostra fins a 6 exemples per línia
             for (int k = 0; k < llista.size(); k += 6) {
-                List<String> chunk = llista.subList(k, Math.min(k + 6, llista.size()));
-                System.out.println("    " + String.join(" · ", chunk));
+                List<String> partEntitat = llista.subList(k, Math.min(k + 6, llista.size()));
+                System.out.println("    " + String.join(" · ", partEntitat));
             }
         }
         System.out.println();

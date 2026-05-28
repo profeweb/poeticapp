@@ -3,9 +3,6 @@ package ner.test;
 import ner.DiccionariEntitats;
 import ner.EtiquetadorEntitats;
 import processing.core.PApplet;
-import processing.data.JSONObject;
-
-import java.io.IOException;
 
 public class Test_NER_JSON_01 extends PApplet {
 
@@ -24,7 +21,7 @@ public class Test_NER_JSON_01 extends PApplet {
         diccionariEntitats.imprimeixEntradesDiccionari();
 
         EtiquetadorEntitats etiquetadorEntitats = new EtiquetadorEntitats(diccionariEntitats);
-        etiquetadorEntitats.tokenitzaPoema(rutaFitxer);
+        etiquetadorEntitats.etiquetaPoema(rutaFitxer);
         //etiquetadorEntitats.mostraTokens();
         etiquetadorEntitats.extrauEntitats();
         //etiquetadorEntitats.mostraEntitats();
