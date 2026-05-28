@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 public class AnalisiSentiments {
 
+    // Catalogació dels sentiments segons polarització
     public enum Sentiment {
         MOLT_POSITIU ("Molt positiu",          1.2,  Double.MAX_VALUE),
         POSITIU      ("Positiu",               0.4,  1.2),
@@ -19,25 +20,27 @@ public class AnalisiSentiments {
         NEGATIU      ("Negatiu",             -1.2, -0.4),
         MOLT_NEGATIU ("Molt negatiu",  Double.NEGATIVE_INFINITY, -1.2);
 
-        final String etiqueta;
-        final double llindarInf, llindarSup;
+        final String etiqueta;  // Text del sentiment
+        final double llindarInf, llindarSup;    // Rang de l'interval
 
+        // Constructor
         Sentiment(String etiqueta, double inf, double sup) {
             this.etiqueta   = etiqueta;
             this.llindarInf = inf;
             this.llindarSup = sup;
         }
 
+        // Retorna la descripció textual
         public String getEtiqueta(){ return  this.etiqueta; }
 
-        /** Retorna el Sentiment corresponent a la puntuació donada. */
+        // Retorna el sentiment corresponent a la puntuació
         public static Sentiment de(double p) {
             for (Sentiment s : values())
                 if (p >= s.llindarInf && p < s.llindarSup) return s;
             return MOLT_NEGATIU;
         }
 
-        /** Símbol ASCII de 3 caràcters per a la sortida compacta. */
+        // Símbol ASCII de 3 caràcters per a la sortida compacta
         public String simbol() {
             return switch (this) {
                 case MOLT_POSITIU -> "[+++]";
@@ -51,6 +54,7 @@ public class AnalisiSentiments {
         }
     }
 
+    // Catalogació del tipus de rol dels tokens en l'anàlisi de sentiments
     public enum Rol {
         LEXIC          ("LEX", "Paraula al lexicó amb puntuació"),
         NEGADOR        ("NEG", "Negador — inverteix la polaritat (x-1)"),
@@ -58,29 +62,35 @@ public class AnalisiSentiments {
         DIMINUIDOR     ("DIM", "Diminuïdor — redueix la polaritat (x0.5)"),
         NEUTRE         (" — ", "Sense càrrega afectiva (no al lexicó)");
 
-        final String codi;
-        final String descripcio;
-        Rol(String codi, String descripcio) { this.codi = codi; this.descripcio = descripcio; }
+        final String codi;  // Etiqueta del rol
+        final String descripcio;    // Text descriptiu del rol
+
+        // Constructor
+        Rol(String codi, String descripcio) {
+            this.codi = codi;
+            this.descripcio = descripcio;
+        }
+
+        // Retorna el codi del Rol
         public String getCodi() { return codi; }
     }
 
 
+    // Llista de versos analitzats per estrofes i agrupats
     public List<List<VersAnalitzat>> estrofes;
     public List<VersAnalitzat>       totalsVersos;
 
     DiccionariSentiments diccionariSentiments;
 
-    /**
-     * Finestra de negació: nombre màxim de tokens endavant afectats
-     * per un negador. La finestra es decrementa amb cada token no-negador.
-     */
+    // Finestra de negació: nombre màxim de tokens endavant afectats per un negador.
     private static final int FINESTRA_NEGACIO = 3;
 
+    // Constructor
     public AnalisiSentiments(DiccionariSentiments diccionariSentiments) {
         this.diccionariSentiments = diccionariSentiments;
     }
 
-    /** Normalitza: minúscules + suprimeix puntuació als extrems. */
+    // Normalitza: minúscules i suprimeix puntuació als extrems
     public static String normalitza(String s) {
         return s.toLowerCase()
                 .replaceAll("^[.,;:!?¡¿\"«»()\\[\\]{}'\\-–—/·]+", "")
@@ -88,6 +98,7 @@ public class AnalisiSentiments {
                 .trim();
     }
 
+    // Retorna els tokens d'una línia de text
     public static String[] tokenitza(String linia) {
         List<String> tokens = new ArrayList<>();
         for (String part : linia.trim().split("\\s+")) {
@@ -107,6 +118,7 @@ public class AnalisiSentiments {
         return tokens.toArray(new String[0]);
     }
 
+    // Retorna el vers analitzat
     public VersAnalitzat analitzaVers(String text, int numero) {
         String[] parts = tokenitza(text);
         List<TokenAnalitzat> resultat = new ArrayList<>();
@@ -156,6 +168,7 @@ public class AnalisiSentiments {
         return new VersAnalitzat(numero, text, resultat);
     }
 
+    // Retorna el vers analitzat
     public VersAnalitzat analitzaVers(Vers vers) {
 
         List<TokenAnalitzat> resultat = new ArrayList<>();
@@ -205,6 +218,7 @@ public class AnalisiSentiments {
         return new VersAnalitzat(vers.getNumVers(), vers.getText(), resultat);
     }
 
+    // Analitza els sentiments d'un text
      public void analitzaPoema(String text) {
 
         this.estrofes    = new ArrayList<>();
@@ -228,6 +242,7 @@ public class AnalisiSentiments {
          totalsVersos = estrofes.stream().flatMap(Collection::stream).collect(Collectors.toList());
     }
 
+    // Analitza els sentiments d'un poema
     public void analitzaPoema(Poema poema) {
 
         this.estrofes    = new ArrayList<>();
@@ -244,6 +259,7 @@ public class AnalisiSentiments {
     }
 
 
+    // Retorna les paraules més positives del lèxic
     public ArrayList<TokenAnalitzat> topLexicPositives(int num){
 
         ArrayList<TokenAnalitzat> lexicPositius = new ArrayList<>();
@@ -264,6 +280,7 @@ public class AnalisiSentiments {
         return lexicPositius;
     }
 
+    // Retorna les paraules més negatives del lèxic
     public ArrayList<TokenAnalitzat> topLexicNegatives(int num){
 
         ArrayList<TokenAnalitzat> lexicPositius = new ArrayList<>();
@@ -284,6 +301,7 @@ public class AnalisiSentiments {
         return lexicPositius;
     }
 
+    // Retorna la puntuació total del poema
     public double getPuntuacioPoema(){
         float sumaTotal = 0;
         for(VersAnalitzat vers : totalsVersos){
@@ -292,6 +310,7 @@ public class AnalisiSentiments {
         return sumaTotal / totalsVersos.size();
     }
 
+    // Retorna el sentiment global del poema
     public Sentiment getSentimentPoema(){
         return Sentiment.de(getPuntuacioPoema());
     }

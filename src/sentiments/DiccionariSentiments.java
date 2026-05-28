@@ -13,7 +13,7 @@ import java.util.*;
 
 public class DiccionariSentiments {
 
-    // Noms de claus del JSON
+    // Noms de claus del JSON del diccionari de sentiments
     private static final String CLAU_LEXIC        = "lexic";
     private static final String CLAU_NEGADORS     = "negadors";
     private static final String CLAU_MODIFICADORS = "modificadors";
@@ -22,21 +22,23 @@ public class DiccionariSentiments {
     private static final String CLAU_FACTOR        = "factor";
     private static final String CLAU_ROL           = "rol";
 
-    /** Lexicó: forma normalitzada → puntuació de polaritat. */
+    // Conjunt de termes del diccionari: forma normalitzada i puntuació de polaritat
     public Map<String, Double> lexic;
 
-    /** Negadors: paraules que inverteixen la polaritat dels tokens propers. */
+    // Negadors: paraules que inverteixen la polaritat dels tokens propers
     public Set<String> negadors;
 
-    /** Modificadors: paraula → factor multiplicador. > 1.0 = intensificador  |  < 1.0 = diminuïdor */
+    // Modificadors (intensificadors i diminuïdors)
     public Map<String, Double>  modificadors;
 
+    // Constructor
     public DiccionariSentiments(){
         construeixLexic();
         construeixNegadors();
         construeixModificadors();
     }
 
+    // Constructor del diccionari a partir del JSON
     public DiccionariSentiments(String rutaJSON){
 
         Path path = Paths.get(rutaJSON);
@@ -45,7 +47,7 @@ public class DiccionariSentiments {
             // Llegim tot el fitxer com a String UTF-8
             String contingutJSON = Files.readString(path, StandardCharsets.UTF_8);
 
-            // Processa el fitxer JSON i afegeix
+            // Processa el fitxer JSON
             processa(contingutJSON);
 
         } catch (IOException e) {
@@ -53,7 +55,7 @@ public class DiccionariSentiments {
         }
     }
 
-    /** Normalitza: minúscules + suprimeix puntuació als extrems. */
+    // Normalitza: minúscules i suprimeix puntuació als extrems
     public static String normalitza(String s) {
         return s.toLowerCase()
                 .replaceAll("^[.,;:!?¡¿\"«»()\\[\\]{}'\\-–—/·]+", "")
@@ -61,7 +63,7 @@ public class DiccionariSentiments {
                 .trim();
     }
 
-    /** Afegeix una paraula i la seva puntuació de polaritat al lexicó. */
+    // Afegeix una paraula i la seva puntuació de polaritat al diccionari
     private void afegeixTerme(String paraula, double puntuacio) {
         lexic.put(normalitza(paraula), puntuacio);
     }
@@ -198,6 +200,7 @@ public class DiccionariSentiments {
     }
 
 
+    // Construeix el diccionari a partir del JSON
     private void processa(String contingut) throws JSONException {
 
         JSONObject arrel = new JSONObject(contingut);
@@ -273,6 +276,7 @@ public class DiccionariSentiments {
     }
 
 
+    // Imprimeix el lèxic del diccionari de sentiments
     public void imprimeixLexic(float minFactor, float maxFactor, String text, int numLexics){
         System.out.print(text +" ["+minFactor+", "+maxFactor+"]: ");
         lexic.entrySet().stream()
@@ -300,22 +304,23 @@ public class DiccionariSentiments {
     }
 
 
+    // Imprimeix el diccionari de sentiments
     public void imprimeix(){
 
-         System.out.println("Diccionari de Sentiments");
-        System.out.printf("  Lexic: %d paraules  |  Negadors: %d  |  Modificadors: %d%n", lexic.size(), negadors.size(), modificadors.size());
+        System.out.println("Diccionari de Sentiments: ");
+        System.out.printf("Lèxic: %d paraules  |  Negadors: %d  |  Modificadors: %d%n", lexic.size(), negadors.size(), modificadors.size());
 
-        System.out.println("[ Lèxic de Polaritats (mostra) ]");
+        System.out.println("Lèxic de Polaritats (subconjunt)");
         imprimeixMoltPositius(8);
         imprimeixPositius(8);
         imprimeixNegatius(8);
         imprimeixMoltNegatius(8);
 
-        System.out.print("  Negadors: ");
+        System.out.print("Negadors: ");
         negadors.forEach(n -> System.out.print(n + " "));
         System.out.println();
 
-        System.out.print("  Modificadors: ");
+        System.out.print("Modificadors: ");
         modificadors.forEach((k, v) -> System.out.printf("%s(x%.1f) ", k, v));
         System.out.println("\n");
     }

@@ -4,11 +4,12 @@ public class TokenAnalitzat {
 
     private final String original;              // forma original al text
     private final String forma;                 // forma normalitzada
-    private final double puntuacioBase;         // puntuació al diccionari     (+2.0)
+    private final double puntuacioBase;         // puntuació al diccionari (+2.0)
     private final double factor;                // modificador aplicat     (−1.0, 1.5, 0.5, 1.0)
     private final double puntuacioFinal;        // base × factor           (−2.0)
-    private final AnalisiSentiments.Rol rol;
+    private final AnalisiSentiments.Rol rol;    // rol del token
 
+    // Constructor
     public TokenAnalitzat(String original, String forma, double base, double factor, AnalisiSentiments.Rol rol) {
         this.original       = original;
         this.forma          = forma;
@@ -18,19 +19,20 @@ public class TokenAnalitzat {
         this.rol            = rol;
     }
 
-    public String getOriginal()       { return original;       }
+    // Getters
+    public String getOriginal(){ return original; }
 
-    public String getForma()          { return forma;          }
+    public String getForma(){ return forma; }
 
-    public double getPuntuacioBase()  { return puntuacioBase;  }
+    public double getPuntuacioBase() { return puntuacioBase; }
 
-    public double getFactor()         { return factor;         }
+    public double getFactor(){ return factor; }
 
-    public double getPuntuacioFinal() { return puntuacioFinal; }
+    public double getPuntuacioFinal(){ return puntuacioFinal; }
 
-    public AnalisiSentiments.Rol getRol()            { return rol;            }
+    public AnalisiSentiments.Rol getRol(){ return rol; }
 
-    public boolean esSignificatiu()   { return rol == AnalisiSentiments.Rol.LEXIC && puntuacioFinal != 0; }
+    public boolean esSignificatiu() { return rol == AnalisiSentiments.Rol.LEXIC && puntuacioFinal != 0; }
 
 
 }

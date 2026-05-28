@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/parser/Autor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Autor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/DadesPoema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/DadesPoema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/DadesPoemaris.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Estrofa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Estrofa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Frase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Frase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Paraula.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Paraula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/ParserPoema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/ParserPoema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Poema.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poema.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Poemari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poemari.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Simbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Simbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Vers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Vers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/parser/Visualitzacions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Visualitzacions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sentiments/AnalisiSentiments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/AnalisiSentiments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sentiments/DiccionariSentiments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/DiccionariSentiments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sentiments/TokenAnalitzat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/TokenAnalitzat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sentiments/VersAnalitzat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/VersAnalitzat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,14 +258,7 @@
       <workItem from="1779901772320" duration="5516000" />
       <workItem from="1779948085385" duration="14156000" />
       <workItem from="1779968020139" duration="2601000" />
-      <workItem from="1779977972202" duration="5118000" />
-    </task>
-    <task id="LOCAL-00067" summary="Inicial">
-      <created>1778865574319</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1778865574320</updated>
+      <workItem from="1779977972202" duration="5988000" />
     </task>
     <task id="LOCAL-00068" summary="Inicial">
       <created>1779006594812</created>
@@ -612,7 +596,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779982175607</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="Inicial">
+      <created>1779983131649</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1779983131649</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
