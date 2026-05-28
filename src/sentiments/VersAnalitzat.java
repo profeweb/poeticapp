@@ -14,7 +14,7 @@ public class VersAnalitzat {
 
     // Constructor
     public VersAnalitzat(int numero, String text, List<TokenAnalitzat> tokens) {
-            
+
         this.numero  = numero;
         this.text    = text;
         this.tokens  = Collections.unmodifiableList(tokens);
