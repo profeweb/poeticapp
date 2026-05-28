@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 public class Categoria {
 
+    // Categories gramaticals extretes del DIEC
+
     public enum CategoriaGramatical {
 
         // Categories gramaticals al DIEC
@@ -54,18 +56,18 @@ public class Categoria {
         public String getAbreviatura() { return abreviatura; }
         public String getNomCatala()   { return nomCatala; }
 
-        // Retrona categoria a partir de l'abreviatura
-        public static CategoriaGramatical obteCategoriaDeAbreviatura(String abrev) {
+        // Retorna la categoria a partir de l'abreviatura
+        public static CategoriaGramatical obteCategoriaDeAbreviatura(String abreviatura) {
 
-            if (abrev == null || abrev.isBlank()) return DESCONEGUT;
+            if (abreviatura == null || abreviatura.isBlank()) return DESCONEGUT;
 
-            String normalized = abrev.trim().toLowerCase();
+            String normalitzat = abreviatura.trim().toLowerCase();
             for (CategoriaGramatical categoria : values()) {
-                if (categoria.abreviatura.equalsIgnoreCase(normalized)) return categoria;
+                if (categoria.abreviatura.equalsIgnoreCase(normalitzat)) return categoria;
             }
-            // Cerca parcial: p.ex. "m" és prefix de "m i f"
+            // Cerca parcial (començament)
             for (CategoriaGramatical cat : values()) {
-                if (normalized.startsWith(cat.abreviatura.toLowerCase())) return cat;
+                if (normalitzat.startsWith(cat.abreviatura.toLowerCase())) return cat;
             }
             return DESCONEGUT;
         }
@@ -101,7 +103,7 @@ public class Categoria {
 
     public enum CategoriaTematica {
 
-        // Categories temàtiques al DIEC
+        // Categories temàtiques extretes del DIEC
 
         // A
         ADMINISTRATIU          ("AD",        "llenguatge administratiu"),
@@ -227,7 +229,7 @@ public class Categoria {
             for (CategoriaTematica categoria : values()) {
                 if (categoria.abreviatura.equalsIgnoreCase(normalized)) return categoria;
             }
-            // Cerca parcial: p.ex. "m" és prefix de "m i f"
+            // Cerca parcial (començament)
             for (CategoriaTematica cat : values()) {
                 if (normalized.startsWith(cat.abreviatura.toLowerCase())) return cat;
             }
@@ -256,7 +258,7 @@ public class Categoria {
                 }
             }
 
-            if(categories.size()==0){
+            if(categories.size() == 0){
                 categories.add(DESCONEGUT);
             }
             return categories;

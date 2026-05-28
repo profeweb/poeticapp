@@ -10,10 +10,12 @@ import java.util.ArrayList;
 
 public class ConsultaWebDIEC {
 
+    // Paràmetres de la petició HTTP
     private static final String USER_AGENT      = "Mozilla/5.0";
     private static final String GET_URL_TERME   = "https://dlc.iec.cat/Results?DecEntradaText=";
     private static final String GET_URL_ID      = "https://dlc.iec.cat/Results/PrintAccepcio?id=";
 
+    // Retorna la connexió HTTP al DIEC per a la cerca del terme
     private static HttpURLConnection creaConnexioHttpTermeDIEC(String terme) throws IOException{
         StringBuilder termeCodificat = new StringBuilder(URLEncoder.encode(terme, "UTF-8"));
         URL urlTerme = new URL(GET_URL_TERME + termeCodificat);
@@ -23,6 +25,7 @@ public class ConsultaWebDIEC {
         return connexio;
     }
 
+    // Retorna la connexió HTTP al DIEC per a la cerca a partir del identificador del terme
     private static HttpURLConnection creaConnexioHttpIdTermeDIEC(String idTerme) throws IOException{
         URL urlID = new URL(GET_URL_ID + idTerme);
         HttpURLConnection connexio = (HttpURLConnection) urlID.openConnection();
@@ -31,6 +34,7 @@ public class ConsultaWebDIEC {
         return connexio;
     }
 
+    // Retorna l'identificador del terme mitjançant connexió HTTP al DIEC
     private static String obteIdTerme(String terme) throws IOException {
 
         // Dissenya la petició HTTP al DIEC
@@ -116,6 +120,7 @@ public class ConsultaWebDIEC {
         }
     }
 
+    // Retorna el significat d'un terme a través de consulta HTTP al DIEC
     public static String obteSignificatTerme(String terme) throws IOException{
 
         // Obté l'identificador del terme de cerca
@@ -151,6 +156,7 @@ public class ConsultaWebDIEC {
         return null;
     }
 
+    // Retorna la resposta HTTP d'una consulta al DIEC
     private static String obteTextRespostaHTTP(HttpURLConnection connexio) throws IOException{
 
         StringBuffer respostaText = new StringBuffer();
@@ -165,19 +171,20 @@ public class ConsultaWebDIEC {
         return respostaText.toString();
     }
 
+    // Filtra les etiquetes HTML (<>...</>) de la resposta a la consulta HTTP al DIEC
     private static String esborraEtiquetesHTML(String html){
 
         String sortidaSenseHtml = html;
-        int indexStartTag = -1, indexEndTag = -1;
+        int indexIniciTag = -1, indexFinalTag = -1;
 
         do {
-            indexStartTag = sortidaSenseHtml.indexOf("<");
-            indexEndTag = sortidaSenseHtml.indexOf(">");
-            if (indexStartTag != -1 && indexEndTag != -1) {
-                String tag = sortidaSenseHtml.substring(indexStartTag, indexEndTag + 1);
+            indexIniciTag = sortidaSenseHtml.indexOf("<");
+            indexFinalTag = sortidaSenseHtml.indexOf(">");
+            if (indexIniciTag != -1 && indexFinalTag != -1) {
+                String tag = sortidaSenseHtml.substring(indexIniciTag, indexFinalTag + 1);
                 sortidaSenseHtml = sortidaSenseHtml.replace(tag, "");
             }
-        } while (indexStartTag != -1 && indexEndTag != -1);
+        } while (indexIniciTag != -1 && indexFinalTag != -1);
 
         return sortidaSenseHtml;
     }
