@@ -207,6 +207,20 @@ public class Poemari {
         return num;
     }
 
+    public ArrayList<Integer> getVersosOcurrenciesTerme(String terme){
+        ArrayList<Integer> numVersos = new ArrayList<>();
+        for(Poema poema : poemes){
+            for(Vers vers : poema.getVersos()){
+                for(Token token : vers.getParaules()){
+                    if (token.getValor().toLowerCase().equals(terme)){
+                        numVersos.add(vers.getNumVers());
+                    }
+                }
+            }
+        }
+        return numVersos;
+    }
+
     public void printInfo(){
         System.out.println("\nPoemari "+ titol +" (" + autor + ". "+any+"):\n");
         for(Poema poema : this.poemes){

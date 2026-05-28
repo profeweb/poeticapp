@@ -2,11 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/diec/test/Test_Termes_Categoriea_Tematica_Poemaris.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/diec/test/Visualitzacions_Art_Termes_Poemaris.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/pdfs/Biografia - termes relacionats amb ART.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/pdfs/El pis de la badia - termes relacionats amb ART.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/pdfs/La bellesa de l'home - termes relacionats amb ART.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/pdfs/Llibre de Benaventurances - termes relacionats amb ART.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/pdfs/Paràbola i clam de la cosa humana - termes relacionats amb ART.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/pdfs/Poemes a Nai - termes relacionats amb ART.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/pdfs/Poemes de l'enyorament - termes relacionats amb ART.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/pdfs/Poemes ocasionals - termes relacionats amb ART.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pdfs/Poemes ocasionals - P3 - ners.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/data/pdfs/Poemes ocasionals - P3 - ners.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lema/test/Test_Lemas_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lema/test/Test_Lemas_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/diec/test/Visualitzacions_Art_Termes_Poemaris.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/diec/test/Visualitzacions_Art_Termes_Poemaris.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Poemari.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Poemari.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,20 +73,7 @@
       <recent name="gui" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test_Termes_Categoriea_Tematica_Poemaris">
-    <configuration name="TestBotonsPoema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.test.TestBotonsPoema" />
-      <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Visualitzacions_Art_Termes_Poemaris">
     <configuration name="Test_Categories_Tematiques_Poema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="diec.test.Test_Categories_Tematiques_Poema" />
       <module name="Poetica" />
@@ -133,13 +126,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Visualitzacions_Art_Termes_Poemaris" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="diec.test.Visualitzacions_Art_Termes_Poemaris" />
+      <module name="Poetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="diec.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Visualitzacions_Art_Termes_Poemaris" />
         <item itemvalue="Application.Test_Termes_Categoriea_Tematica_Poemaris" />
         <item itemvalue="Application.Test_Termes_Categoriea_Tematica_Poema" />
         <item itemvalue="Application.Test_Categories_Tematiques_Poema" />
         <item itemvalue="Application.Test_Lemas_01" />
-        <item itemvalue="Application.TestBotonsPoema" />
       </list>
     </recent_temporary>
   </component>
@@ -262,14 +268,8 @@
       <workItem from="1779811286997" duration="7772000" />
       <workItem from="1779862022590" duration="18091000" />
       <workItem from="1779899791726" duration="362000" />
-      <workItem from="1779901772320" duration="5500000" />
-    </task>
-    <task id="LOCAL-00056" summary="Inicial">
-      <created>1778579555903</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1778579555903</updated>
+      <workItem from="1779901772320" duration="5516000" />
+      <workItem from="1779948085385" duration="5186000" />
     </task>
     <task id="LOCAL-00057" summary="Inicial">
       <created>1778581417151</created>
@@ -607,7 +607,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779881120038</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="Inicial">
+      <created>1779912967746</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1779912967747</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
