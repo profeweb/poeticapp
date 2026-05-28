@@ -25,9 +25,13 @@ public class VersAnalitzat {
         }
 
         public int                  getNumero()    { return numero;    }
+
         public String               getText()      { return text;      }
+
         public List<TokenAnalitzat> getTokens()    { return tokens;    }
+
         public double               getPuntuacio() { return puntuacio; }
+
         public AnalisiSentiments.Sentiment getSentiment() { return sentiment; }
 
         /** Retorna tots els tokens lexicals (amb puntuació diferent de 0). */

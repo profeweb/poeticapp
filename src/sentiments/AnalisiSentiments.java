@@ -124,18 +124,18 @@ public class AnalisiSentiments {
             boolean esLexic        = diccionariSentiments.lexic.containsKey(forma);
 
             if (esNegador) {
-                // ── Negador ─────────────────────────────────────────────
+                // Negador
                 finestraNegacio = FINESTRA_NEGACIO;
                 resultat.add(new TokenAnalitzat(part, forma, 0.0, 1.0, Rol.NEGADOR));
 
             } else if (esModificador) {
-                // ── Intensificador o Diminuïdor ─────────────────────────
+                // Intensificador o Diminuïdor
                 factorMod = diccionariSentiments.modificadors.get(forma);
                 Rol rol   = (factorMod > 1.0) ? Rol.INTENSIFICADOR : Rol.DIMINUIDOR;
                 resultat.add(new TokenAnalitzat(part, forma, 0.0, factorMod, rol));
 
             } else if (esLexic) {
-                // ── Token lexical amb puntuació ──────────────────────────
+                // ── Token lexical amb puntuació
                 double base      = diccionariSentiments.lexic.get(forma);
                 double signe     = (finestraNegacio > 0) ? -1.0 : 1.0;
                 double factorFin = signe * factorMod;
@@ -146,9 +146,9 @@ public class AnalisiSentiments {
                 if (finestraNegacio > 0) finestraNegacio--;
 
             } else {
-                // ── Token neutre (no al lexicó) ──────────────────────────
+                // Token neutre (no al diccionari de sentiments)
                 if (finestraNegacio > 0) finestraNegacio--;
-                // El factorMod NO es reset: persisteix fins al proper token lexical
+                // El factorMod NO es reseteja: persisteix fins al proper token lexical
                 resultat.add(new TokenAnalitzat(part, forma, 0.0, 1.0, Rol.NEUTRE));
             }
         }
@@ -173,18 +173,18 @@ public class AnalisiSentiments {
             boolean alLexic        = diccionariSentiments.lexic.containsKey(forma);
 
             if (esNegador) {
-                // ── Negador ─────────────────────────────────────────────
+                // Negador
                 finestraNegacio = FINESTRA_NEGACIO;
                 resultat.add(new TokenAnalitzat(token.getValor(), forma, 0.0, 1.0, Rol.NEGADOR));
 
             } else if (esModificador) {
-                // ── Intensificador o Diminuïdor ─────────────────────────
+                // Intensificador o Diminuïdor
                 factorMod = diccionariSentiments.modificadors.get(forma);
                 Rol rol   = (factorMod > 1.0) ? Rol.INTENSIFICADOR : Rol.DIMINUIDOR;
                 resultat.add(new TokenAnalitzat(token.getValor(), forma, 0.0, factorMod, rol));
 
             } else if (alLexic) {
-                // ── Token lexical amb puntuació ──────────────────────────
+                // Token lexical amb puntuació
                 double base      = diccionariSentiments.lexic.get(forma);
                 double signe     = (finestraNegacio > 0) ? -1.0 : 1.0;
                 double factorFin = signe * factorMod;
@@ -195,7 +195,7 @@ public class AnalisiSentiments {
                 if (finestraNegacio > 0) finestraNegacio--;
 
             } else {
-                // ── Token neutre (no al lexicó) ──────────────────────────
+                // Token neutre (no apareix en el diccionari de sentiments)
                 if (finestraNegacio > 0) finestraNegacio--;
                 // El factorMod NO es reset: persisteix fins al proper token lexical
                 resultat.add(new TokenAnalitzat(token.getValor(), forma, 0.0, 1.0, Rol.NEUTRE));
@@ -282,6 +282,18 @@ public class AnalisiSentiments {
                 });
 
         return lexicPositius;
+    }
+
+    public double getPuntuacioPoema(){
+        float sumaTotal = 0;
+        for(VersAnalitzat vers : totalsVersos){
+            sumaTotal += vers.getPuntuacio();
+        }
+        return sumaTotal / totalsVersos.size();
+    }
+
+    public Sentiment getSentimentPoema(){
+        return Sentiment.de(getPuntuacioPoema());
     }
 
 }

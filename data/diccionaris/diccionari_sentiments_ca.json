@@ -61,6 +61,7 @@
     { "paraula": "molt bé",          "puntuacio":  1.3, "sentiment": "MOLT_POSITIU" },
     { "paraula": "estimar",          "puntuacio":  1.3, "sentiment": "MOLT_POSITIU" },
     { "paraula": "amor",             "puntuacio":  1.3, "sentiment": "MOLT_POSITIU" },
+    { "paraula": "bellesa",          "puntuacio":  1.3, "sentiment": "MOLT_POSITIU" },
 
     { "paraula": "bo",               "puntuacio":  1.1, "sentiment": "POSITIU" },
     { "paraula": "bona",             "puntuacio":  1.1, "sentiment": "POSITIU" },

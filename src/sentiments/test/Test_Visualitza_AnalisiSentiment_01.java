@@ -15,8 +15,8 @@ public class Test_Visualitza_AnalisiSentiment_01 extends PApplet {
 
     public static void main(String[] args) {
 
-        Poemari poemari = new Poemari("Poemes a Nai", "MA Rieria", 1988);
-        poemari.parsePoemes(13, "data/poems/Miquel Àngel Riera (1930)/El pis de la badia (1993)/");
+        Poemari poemari = new Poemari("La Bellesa de l'home", "MA Rieria", 1972);
+        poemari.parsePoemes(13, "data/poems/Miquel Àngel Riera (1930)/La bellesa de l'home (1972)/");
         Poema p1 = poemari.getPoemaAt(0);
 
         DiccionariSentiments diccionariSentiments = new DiccionariSentiments();
