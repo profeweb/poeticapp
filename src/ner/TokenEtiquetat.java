@@ -4,7 +4,7 @@ public class TokenEtiquetat {
 
     private final String original;  // forma original al text (amb puntuació)
     private final String forma;     // forma normalitzada (minúscules)
-    private final String etiqueta;  // "O" | "B-PER" | "I-LOC" | ...
+    private final String etiqueta;  // "O" , "B-PER" , "I-LOC" , ...
 
     // Constructor
     public TokenEtiquetat(String original, String forma, String etiqueta) {
