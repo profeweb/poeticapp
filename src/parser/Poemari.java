@@ -1,7 +1,5 @@
 package parser;
 
-import processing.core.PApplet;
-
 import java.io.File;
 import java.util.ArrayList;
 
@@ -9,12 +7,12 @@ import static processing.core.PApplet.nf;
 
 public class Poemari {
 
-    String titol;
-    String autor;
-    int any;
+    String titol;   // Títol del poemari
+    String autor;   // Nom de l'autor/a
+    int any;        // Any de creació
+    ArrayList<Poema> poemes;    // Llista de poemes del poemari
 
-    ArrayList<Poema> poemes;
-
+    // Constructor
     public Poemari(String titol, String autor, int any) {
         this.titol = titol;
         this.autor = autor;
@@ -22,8 +20,11 @@ public class Poemari {
         this.poemes = new ArrayList<>();
     }
 
+    // Getters
     public String getTitol(){ return  this.titol; }
+
     public String getAutor(){ return  this.autor; }
+
     public int getAny(){ return  this.any; }
 
     public int getNumPoemes(){ return this.poemes.size(); }
@@ -83,6 +84,7 @@ public class Poemari {
         return null;
     }
 
+    // Analitza els poemes del poemari
     public void parsePoemes(int numPoemes, String rutaCarpetaPoemes){
         for(int i=1; i<=numPoemes; i++) {
             try {

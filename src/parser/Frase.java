@@ -4,15 +4,17 @@ import java.util.ArrayList;
 
 public class Frase {
 
-    int numFrase;
-    boolean finalAmbPunt;
-    ArrayList<Vers> versos;
+    int numFrase;   // Número de frase dins l'estrofa
+    boolean finalAmbPunt;   // Acaba amb punt final
+    ArrayList<Vers> versos; // Llista de versos de la frase
 
+    // Constructor
     public Frase(int n){
         this.numFrase = n;
         this.versos = new ArrayList<>();
     }
 
+    // Getters
     public int getNumVersos(){ return this.versos.size(); }
 
     public Vers getVersAt(int i){ return  this.versos.get(i); }

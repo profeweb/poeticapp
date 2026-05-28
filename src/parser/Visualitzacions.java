@@ -7,12 +7,14 @@ import static processing.core.PApplet.*;
 public class Visualitzacions {
 
 
+    // Tipus de mesures quantitatives
     public enum QUANTITAT { PARAULES, LLETRES, SILABES };
 
+    // Retorna una descripció del tipus de quantitat
     public static String getText(QUANTITAT quantitat){
         switch (quantitat){
             case PARAULES: return "paraules";
-            case LLETRES: return "lleters";
+            case LLETRES: return "lletres";
             case SILABES: return "síl.labes";
             default: return "";
         }

@@ -4,14 +4,16 @@ import java.util.ArrayList;
 
 public class Estrofa {
 
-    int numero;
-    ArrayList<Frase> frases;
+    int numero;     // Número de l'estrofa dins el poema
+    ArrayList<Frase> frases;    // Llista de frases de l'estrofa
 
+    // Constructor
     public Estrofa(int posicio) {
         this.numero = posicio;
         this.frases = new ArrayList<>();
     }
 
+    // Getters
     public int getNumero(){ return this.numero; }
 
     public int getNumFrases(){ return this.frases.size(); }

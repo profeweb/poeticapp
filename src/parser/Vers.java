@@ -9,16 +9,18 @@ import static processing.core.PApplet.sin;
 
 public class Vers {
 
-    int numVers;
-    String text;
-    ArrayList<Token> tokens;
+    int numVers;    // Número de vers dins el poema
+    String text;    // Línia de text del vers
+    ArrayList<Token> tokens;    // Llista de tokens del vers
 
+    // Constructor
     public Vers(int nv, String text){
         this.numVers = nv;
         this.text = text;
         this.tokens = new ArrayList<>();
     }
 
+    // Getters
     public int getNumVers(){ return this.numVers; }
 
     public String getText(){ return this.text; }
@@ -86,6 +88,7 @@ public class Vers {
         return getTokensTipus(Token.Tipus.SEPARADOR);
     }
 
+    // Imprimeix el vers
     public void printVers(){
         System.out.println("\nVers #"+ numVers + " ("+tokens.size()+ " tokens): "+ text);
         for(Token token : tokens){

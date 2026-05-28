@@ -8,10 +8,11 @@ import static processing.core.PApplet.*;
 
 public class Poema {
 
-    int numero;
-    String titol;
-    ArrayList<Estrofa> estrofes;
+    int numero;     // Número de poema dins el poemari
+    String titol;   // Títol del poema
+    ArrayList<Estrofa> estrofes;    // Llista d'estrofes del poema
 
+    // Constructors
     public Poema(int numero) {
         this.titol = "";
         this.numero = numero;
@@ -24,6 +25,7 @@ public class Poema {
         this.estrofes = new ArrayList<>();
     }
 
+    // Getters
     public int getNumero(){ return this.numero; }
 
     public String getTitol(){ return  this.titol; }

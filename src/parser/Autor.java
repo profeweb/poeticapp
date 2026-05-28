@@ -4,16 +4,18 @@ import java.util.ArrayList;
 
 public class Autor {
 
-    String nom;
-    int any;
-    ArrayList<Poemari> poemaris;
+    String nom;     // Nom de l'Autor/a
+    int any;        // Any de naixement
+    ArrayList<Poemari> poemaris;    // Llista de poemaris
 
+    // Constructor
     public Autor(String nom, int any) {
         this.nom = nom;
         this.any = any;
         this.poemaris = new ArrayList<>();
     }
 
+    // Getters
     public String getNom() {
         return nom;
     }
@@ -26,6 +28,7 @@ public class Autor {
         return poemaris;
     }
 
+    // Setters
     public void setNom(String nom) {
         this.nom = nom;
     }
@@ -38,7 +41,8 @@ public class Autor {
         poemaris.add(poemari);
     }
 
-    // Dades estadistiques
+
+    // Dades estadistiques +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
     public int getNumPoemaris(){ return this.poemaris.size(); }
 

@@ -7,6 +7,7 @@ import static java.lang.Math.min;
 
 public class DadesPoemaris {
 
+    // Carrega tot el corpus
     public static ArrayList<Autor> carregaPoemarisAutors(){
 
         ArrayList<Autor> autors = new ArrayList<>();
@@ -15,13 +16,15 @@ public class DadesPoemaris {
         File carpetaArrel = new File(rutaCarpetaArrel);
         File[] carpetesAutors = carpetaArrel.listFiles();
         for(File carpetaAutor: carpetesAutors) {
+
             int posParentesiObert = carpetaAutor.getName().indexOf("(");
             int posParentesiTancat = carpetaAutor.getName().indexOf(")");
             String nomAutor = carpetaAutor.getName().substring(0, posParentesiObert).trim();
-            System.out.println(nomAutor);
             int anyAutor = Integer.valueOf(carpetaAutor.getName().substring(posParentesiObert + 1, posParentesiTancat).trim());
-            System.out.println(anyAutor);
+
+            // Crea autor/a
             Autor autor = new Autor(nomAutor, anyAutor);
+
             File[] carpetesPoemarisAutor = carpetaAutor.listFiles();
             for (File carpetaPoemari : carpetesPoemarisAutor) {
 

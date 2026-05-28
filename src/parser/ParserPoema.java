@@ -11,23 +11,17 @@ import java.util.Scanner;
 
 public class ParserPoema {
 
-    public static void main(String[] args) throws IOException {
+    // Retorna el poema segmentat (poema, estrofes, frases, versos i tokens) del poema
+    public static Poema parse(File fitxer) throws IOException {
 
-        Poemari poemari = new Poemari("Poemes a Nai", "MA Rieria", 1988);
-        poemari.parsePoemes(3, "data/poems/mariera/poemes a nai/");
-        poemari.getPoemaAt(2).printInfo();
-        //poemari.getPoemaAt(2).getVersAt(15).printVers();
-    }
-
-    public static Poema parse(File file) throws IOException {
-
+        // Inicialitza números
         int numEstrofa = 1, numSeccio = 1, numVers = 1;
 
         Poema poema = new Poema(1);
         Estrofa estrofaActual = new Estrofa(numEstrofa);
         Frase fraseActual = new Frase(numSeccio);
 
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(fitxer))) {
 
             String line;
 
@@ -63,7 +57,7 @@ public class ParserPoema {
             }
         }
 
-        // flush final
+        // confirmació final
         if (!fraseActual.versos.isEmpty()) {
             estrofaActual.frases.add(fraseActual);
         }
@@ -75,14 +69,14 @@ public class ParserPoema {
         return poema;
     }
 
-
-
-    private static void confirmaFrase(Estrofa e, Frase s) {
-        if (!s.versos.isEmpty()) {
-            e.frases.add(s);
+    // Confirma la frase dins l'estrofa
+    private static void confirmaFrase(Estrofa estrofa, Frase frase) {
+        if (!frase.versos.isEmpty()) {
+            estrofa.frases.add(frase);
         }
     }
 
+    // Retorna el vers segmentat (vers, tokens)
     public static Vers parseVers(String line, int numVers) {
 
         Vers vers = new Vers(numVers, line);
@@ -111,6 +105,7 @@ public class ParserPoema {
         return vers;
     }
 
+    // Confirma la paraula en el vers
     private static void confirmaParaula(Vers vers, StringBuilder buffer) {
         if (buffer.length() > 0) {
             String textParaula = buffer.toString();
@@ -121,12 +116,14 @@ public class ParserPoema {
         }
     }
 
+    // Retorna vertader si el caràcter és una lletra catalana
     private static boolean esLletraCatalà(char c) {
         return Character.isLetter(c)
                 || "àèéíòóúïüçÀÈÉÍÒÓÚÏÜÇ".indexOf(c) >= 0
                 || c == '·'; // en el cas de l·l
     }
 
+    // Retorna una llista amb les línies del poema
     public static ArrayList<String> getLinies(String fitxerPoema){
         ArrayList<String> linies = new ArrayList<>();
         try {
