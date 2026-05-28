@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ComptadorSillabes {
-    
-    // Utilitzades les regles de SoftCatalà: https://www.softcatala.org/sillabes/
+
+    // Utilitzam les regles de SoftCatalà: https://www.softcatala.org/sillabes/
 
     // Totes les vocals catalanes (accentuades i dièresi)
     private static final String VOCALS_CATALÀ = "aeiouàáèéòóíúïü";
@@ -26,7 +26,6 @@ public class ComptadorSillabes {
     }
 
     // Preprocessament
-
     private static String preProcessament(String paraula) {
         paraula = paraula.toLowerCase().trim();
         paraula = paraula.replace("l·l", "ll");  // el·la geminada -> doble consonant
@@ -54,8 +53,6 @@ public class ComptadorSillabes {
         return mascara;
     }
 
-    // Adjacència
-
     // Retorna true si no hi ha cap consonant (lletra que no sigui 'h') entre les posicions p1 i p2.
     private static boolean adjacent(String paraula, int p1, int p2) {
         for (int k = p1 + 1; k < p2; k++) {
@@ -73,8 +70,6 @@ public class ComptadorSillabes {
         }
         return true;
     }
-
-    // Hiat
 
     // Retorna true si v1 i v2 (adjacents) formen un hiat.
     private static boolean esHiat(char v1, char v2) {
