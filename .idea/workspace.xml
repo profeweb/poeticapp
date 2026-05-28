@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/visuals/Visuals_Sentiments_Parsed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/diccionaris/diccionari_sentiments_ca.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/diccionaris/diccionari_sentiments_ca.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sentiments/AnalisiSentiments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/AnalisiSentiments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sentiments/TokenAnalitzat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/TokenAnalitzat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sentiments/VersAnalitzat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/VersAnalitzat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sentiments/test/Test_Visualitza_AnalisiSentiment_01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sentiments/test/Test_Visualitza_AnalisiSentiment_01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/visuals/Visuals_Sentiments_Parsed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/visuals/Visuals_Sentiments_Parsed.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,16 +65,10 @@
       <recent name="gui" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Visuals_Sentiments_Parsed">
-    <configuration name="Test_Termes_Categoriea_Tematica_Poema" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="diec.test.Test_Termes_Categoriea_Tematica_Poema" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Poetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="diec.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -137,11 +127,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Visuals_Sentiments_Parsed" />
         <item itemvalue="Application.Test_Visualitza_AnalisiSentiment_01" />
         <item itemvalue="Application.Visualitzacions_Art_Termes_Poemaris" />
         <item itemvalue="Application.Test_Termes_Categoriea_Tematica_Poemaris" />
-        <item itemvalue="Application.Test_Termes_Categoriea_Tematica_Poema" />
       </list>
     </recent_temporary>
   </component>
@@ -265,14 +255,7 @@
       <workItem from="1779862022590" duration="18091000" />
       <workItem from="1779899791726" duration="362000" />
       <workItem from="1779901772320" duration="5516000" />
-      <workItem from="1779948085385" duration="10421000" />
-    </task>
-    <task id="LOCAL-00058" summary="Inicial">
-      <created>1778584022856</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1778584022856</updated>
+      <workItem from="1779948085385" duration="13545000" />
     </task>
     <task id="LOCAL-00059" summary="Inicial">
       <created>1778770778634</created>
@@ -610,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1779953326699</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="Inicial">
+      <created>1779958626323</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1779958626323</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

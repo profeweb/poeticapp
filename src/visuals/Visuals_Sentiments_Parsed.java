@@ -69,6 +69,13 @@ public class Visuals_Sentiments_Parsed extends PApplet {
         text("Poema " + (numPoema+1) +": " + poema.getTitol() + "...", 50, 80);
 
 
+        float puntuacio = (float) analisiSentiments.getPuntuacioPoema();
+        String sentiment = analisiSentiments.getSentimentPoema().getEtiqueta();
+
+        text("Puntuació: " + nf(puntuacio, 0, 2), 50, 110);
+        text("Sentiment: " + sentiment, 250, 110);
+
+
         dibuixaSentimentsPoema(this, analisiSentiments, 50, 100, 50, 10.5f);
 
         dibuixaLlegendaColors(this, categories, colors, 1000, 50);
@@ -84,7 +91,7 @@ public class Visuals_Sentiments_Parsed extends PApplet {
         p5.fill(0);
         p5.textAlign(p5.LEFT, p5.BOTTOM);
         p5.textSize(16);
-        p5.text("Tipus Sentiments", x, y -10);
+        p5.text("Categories", x, y -10);
         p5.stroke(0); p5.strokeWeight(1f);
         p5.line(x, y-10, x + 80, y-10);
         for(int i=0; i<ners.length; i++){
@@ -110,6 +117,7 @@ public class Visuals_Sentiments_Parsed extends PApplet {
     public void dibuixaVers(PApplet p5, VersAnalitzat vers, float x, float y, float factor) {
 
         float xToken = x;
+
         for (TokenAnalitzat token : vers.getTokens()) {
 
             int llargToken = token.getOriginal().length();
@@ -118,7 +126,7 @@ public class Visuals_Sentiments_Parsed extends PApplet {
                 p5.stroke(colors[0]);
                 p5.strokeWeight(25);
                 p5.line(xToken, y, xToken + llargToken * factor, y);
-                p5.fill(0);
+                p5.fill(0); p5.textSize(14);
                 p5.text(nf((float)token.getPuntuacioBase(), 0, 2), xToken, y -25);
 
             }
@@ -131,12 +139,16 @@ public class Visuals_Sentiments_Parsed extends PApplet {
                 p5.stroke(colors[2]);
                 p5.strokeWeight(25);
                 p5.line(xToken, y, xToken + llargToken * factor, y);
+                p5.fill(0); p5.textSize(14);
+                p5.text(nf((float)token.getFactor(), 0, 2), xToken, y -25);
 
             }
             else if(token.getRol() == AnalisiSentiments.Rol.DIMINUIDOR){
                 p5.stroke(colors[3]);
                 p5.strokeWeight(25);
                 p5.line(xToken, y, xToken + llargToken * factor, y);
+                p5.fill(0); p5.textSize(14);
+                p5.text(nf((float)token.getFactor(), 0, 2), xToken, y -25);
 
             }
             else if(token.getRol() == AnalisiSentiments.Rol.NEUTRE){
@@ -151,7 +163,7 @@ public class Visuals_Sentiments_Parsed extends PApplet {
             p5.textAlign(p5.LEFT, p5.CENTER);
             p5.text(token.getForma(), xToken, y);
 
-            xToken += llargToken * factor + 50;
+            xToken += llargToken * factor + 30;
         }
 
         if(vers.getNumero() %5 == 0 || vers.getNumero() == 1) {
