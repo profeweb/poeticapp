@@ -13,33 +13,39 @@ import static processing.core.PApplet.*;
 
 public class ComptadorParaules {
 
+    // Delimitadors de paraules
     final String DELIMITADORS = "\n\r\t \".,:;...?!¿¡'''-—–()[]{}«»/\\@#&*+=<>|%~^`";
 
-    ArrayList<File> poemes;
-    ArrayList<File> poemaris;
+    // Carpetes dels poemaris i fitxers dels poemes
+    ArrayList<File> poemes, poemaris;
+
+    // Mapa de hashing per a paraules i comptes
     HashMap<String, Integer> comptes;
 
+    // Constructor: inicialitza propietats
     public ComptadorParaules() {
         this.comptes = new HashMap<>();
         this.poemes = new ArrayList<>();
         this.poemaris = new ArrayList<>();
     }
 
-    public String[] getTokens(File file){
-        String[] linies  = loadStrings(file);
+    // Tokenitza un fitxer corresponent a un poema
+    public String[] getTokens(File fitxer){
+        String[] linies  = loadStrings(fitxer);
         String textJunt = join(linies, "\n");
         String[] tokens = splitTokens(textJunt, DELIMITADORS);
         return tokens;
     }
 
-    public boolean poemaConteTerme(String term, File file){
+    // Retorna true si un poema conté el terme
+    public boolean poemaConteTerme(String terme, File fitxer){
 
-        String normalizedTerm = term.toLowerCase().trim();
-        String[] tokens       = getTokens(file);
+        String termeNormalitzat = terme.toLowerCase().trim();
+        String[] tokens       = getTokens(fitxer);
 
         for (String token : tokens) {
-            String word = token.toLowerCase().trim();
-            if (word.equals(normalizedTerm)) {
+            String paraula = token.toLowerCase().trim();
+            if (paraula.equals(termeNormalitzat)) {
                 return true;
             }
         }
@@ -47,22 +53,24 @@ public class ComptadorParaules {
         return false;
     }
 
-    public void processaPoema(File file) {
+    // Processa totes les paraules d'un poema
+    public void processaPoema(File fitxer) {
 
-        String[] tokens = getTokens(file);
+        String[] tokens = getTokens(fitxer);
 
         for (int i = 0; i < tokens.length; i++) {
-            String word = tokens[i].toLowerCase().trim();
-            if (comptes.containsKey(word)) {
-                int newValue = comptes.get(word) + 1;
-                comptes.replace(word, newValue);
+            String paraula = tokens[i].toLowerCase().trim();
+            if (comptes.containsKey(paraula)) {
+                int nouValor = comptes.get(paraula) + 1;
+                comptes.replace(paraula, nouValor);
             } else {
-                comptes.put(word, 1);
+                comptes.put(paraula, 1);
             }
         }
-        poemes.add(file);
+        poemes.add(fitxer);
     }
 
+    // Processa totes les paraules dels poemes del poemari
     public void processaPoemari(File carpetaPoemari) {
 
         File[] poemes = carpetaPoemari.listFiles();
@@ -74,12 +82,12 @@ public class ComptadorParaules {
                 String[] tokens = getTokens(poema);
 
                 for (int i = 0; i < tokens.length; i++) {
-                    String word = tokens[i].toLowerCase().trim();
-                    if (comptes.containsKey(word)) {
-                        int newValue = comptes.get(word) + 1;
-                        comptes.replace(word, newValue);
+                    String paraula = tokens[i].toLowerCase().trim();
+                    if (comptes.containsKey(paraula)) {
+                        int nouValor = comptes.get(paraula) + 1;
+                        comptes.replace(paraula, nouValor);
                     } else {
-                        comptes.put(word, 1);
+                        comptes.put(paraula, 1);
                     }
                 }
             }
@@ -88,26 +96,26 @@ public class ComptadorParaules {
         poemaris.add(carpetaPoemari);
     }
 
+    // Retorna una llista amb els termes d'un poema
     public List<String> getTermesPoema(File poema) {
 
         String[] tokens = getTokens(poema);
-
         ArrayList<String> termesDocument = new ArrayList<>();
 
         for (int i = 0; i < tokens.length; i++) {
-            String word = tokens[i].toLowerCase();
-            if (!termesDocument.contains(word)) {
-                termesDocument.add(word);
+            String paraula = tokens[i].toLowerCase();
+            if (!termesDocument.contains(paraula)) {
+                termesDocument.add(paraula);
             }
         }
 
         return termesDocument;
     }
 
+    // Retorna una llista amb els termes d'un poemari
     public List<String> getTermesPoemari(File carpetaPoemari){
 
         ArrayList<String> termesPoemari = new ArrayList<>();
-
         File[] poemes = carpetaPoemari.listFiles();
 
         for(File poema : poemes) {
@@ -117,24 +125,25 @@ public class ComptadorParaules {
         return termesPoemari;
     }
 
+    // Retorna els termes d'un poema excloent les paraules buides
     public ArrayList<String> getTermesPoemaParaulesBuides(File poema, ParaulesBuidesCatala paraulesBuidesCatala) {
 
         String[] tokens = getTokens(poema);
         ArrayList<String> termesPoema = new ArrayList<>();
 
         for (int i = 0; i < tokens.length; i++) {
-            String word = tokens[i].toLowerCase();
-            if (!termesPoema.contains(word) &&
-                    !paraulesBuidesCatala.esParaulaBuida(word)) {
-                termesPoema.add(word);
+            String paraula = tokens[i].toLowerCase();
+            if (!termesPoema.contains(paraula) &&
+                    !paraulesBuidesCatala.esParaulaBuida(paraula)) {
+                termesPoema.add(paraula);
             }
         }
 
         return termesPoema;
     }
 
-
-    public static ArrayList<String> getTermesPoemariStopWords(ComptadorParaules wcPoemari, ParaulesBuidesCatala paraulesBuidesCatala){
+    // Retorna els termes d'un poemari excloent les paraules buides
+    public static ArrayList<String> getTermesPoemariParaulesBuides(ComptadorParaules wcPoemari, ParaulesBuidesCatala paraulesBuidesCatala){
 
         ArrayList<String> termesPoemari = new ArrayList<>();
 
@@ -146,10 +155,10 @@ public class ComptadorParaules {
         return termesPoemari;
     }
 
+    // Retorna els termes d'un poemari excloent les paraules buides
     public ArrayList<String> getTermesPoemariStopWords(File carpetaPoemari, ParaulesBuidesCatala paraulesBuidesCatala) {
 
         ArrayList<String> termesPoemari = new ArrayList<>();
-
         File[] poemes = carpetaPoemari.listFiles();
 
         if (poemes != null) {
@@ -161,6 +170,7 @@ public class ComptadorParaules {
         return termesPoemari;
     }
 
+    // Processa totes les paraules del poema excloent les paraules buides
     public void processaPoemaParaulesBuides(File poema, ParaulesBuidesCatala paraulesBuidesCatala) {
 
         String[] tokens = getTokens(poema);
@@ -180,6 +190,7 @@ public class ComptadorParaules {
         poemes.add(poema);
     }
 
+    // Processa totes les paraules del poemari excloent les paraules buides
     public void processaPoemariParaulesBuides(File carpetaPoemari, ParaulesBuidesCatala paraulesBuidesCatala) {
 
         File[] poemes = carpetaPoemari.listFiles();
@@ -190,13 +201,13 @@ public class ComptadorParaules {
                 String[] tokens = getTokens(poema);
 
                 for (int i = 0; i < tokens.length; i++) {
-                    String word = tokens[i].toLowerCase().trim();
-                    if(!paraulesBuidesCatala.esParaulaBuida(word)) {
-                        if (comptes.containsKey(word)) {
-                            int newValue = comptes.get(word) + 1;
-                            comptes.replace(word, newValue);
+                    String paraula = tokens[i].toLowerCase().trim();
+                    if(!paraulesBuidesCatala.esParaulaBuida(paraula)) {
+                        if (comptes.containsKey(paraula)) {
+                            int nouValor = comptes.get(paraula) + 1;
+                            comptes.replace(paraula, nouValor);
                         } else {
-                            comptes.put(word, 1);
+                            comptes.put(paraula, 1);
                         }
                     }
                 }
@@ -206,38 +217,45 @@ public class ComptadorParaules {
         poemaris.add(carpetaPoemari);
     }
 
+    // Retorna el número de termes processats
     public int getNumTerms(){
         return this.comptes.size();
     }
 
+    // Retorna el número de poemes processats
     public int getNumPoemes(){
         return this.poemes.size();
     }
 
+    // Retorna el fitxer corresponent al poema i-èssim
     public File getPoemaAt(int i){ return this.poemes.get(i); }
 
+    // Retorna el número de poemaris processats
     public int getNumPoemaris(){
         return this.poemaris.size();
     }
 
+    // Retorna la carpeta corresponent al poemari i-èssim
     public File getPoemariAt(int i){ return this.poemaris.get(i); }
 
-    public int getNumPoemesContenenTerme(String term){
+    // Retorna el número de poemes que contenen el terme
+    public int getNumPoemesContenenTerme(String terme){
         int num = 0;
         for(File document : poemes){
-            if(poemaConteTerme(term, document)){
+            if(poemaConteTerme(terme, document)){
                 num++;
             }
         }
         return num;
     }
 
-    public int getNumPoemarisContenenTerme(String term){
+    // Retorna el número de poemaris que contenen el terme
+    public int getNumPoemarisContenenTerme(String terme){
         int num = 0;
         for(File poemari : poemaris){
             File[] poemes = poemari.listFiles();
             for(File poema : poemes) {
-                if (poemaConteTerme(term, poema)) {
+                if (poemaConteTerme(terme, poema)) {
                     num++;
                     break;
                 }
@@ -246,15 +264,17 @@ public class ComptadorParaules {
         return num;
     }
 
-    public int getNumOcurrenciesTerme(String term) {
-        if(comptes.containsKey(term)) {
-            return comptes.get(term);
+    // Retorna el número d'ocurrències d'un terme processat
+    public int getNumOcurrenciesTerme(String terme) {
+        if(comptes.containsKey(terme)) {
+            return comptes.get(terme);
         }
         else {
             return 0;
         }
     }
 
+    // Retorna el número d'ocurrències d'un conjunt de termes processats
     public int getNumOcurrenciesTermes(String ... termes) {
         int numOcurrencies =0;
         for(String terme : termes){
@@ -263,16 +283,18 @@ public class ComptadorParaules {
         return  numOcurrencies;
     }
 
+    // Retorna un array amb el text de tots els termes processats
     public String[] getTermes() {
-        String[] words = new String[comptes.size()];
+        String[] termes = new String[comptes.size()];
         int i = 0;
-        for (String word : comptes.keySet()) {
-            words[i] = word;
+        for (String paraula : comptes.keySet()) {
+            termes[i] = paraula;
             i++;
         }
-        return words;
+        return termes;
     }
 
+    // Mostra els termes i número d'ocurrències
     public void display(PApplet p5) {
         String[] keys = getTermes();
         for (String k : keys) {
@@ -285,6 +307,7 @@ public class ComptadorParaules {
         }
     }
 
+    // Retorna una llista ordenada dels termes processats en ordre alfabètic descendent
     public List<String> ordenarPerOcurrenciaDesc() {
         return comptes.entrySet()
                 .stream()
@@ -293,6 +316,7 @@ public class ComptadorParaules {
                 .collect(Collectors.toList());
     }
 
+    // Retorna una llista ordenada dels termes processats en ordre alfabètic ascendent
     public List<String> ordenarPerOcurrenciaAsc() {
         return comptes.entrySet()
                 .stream()
@@ -301,68 +325,80 @@ public class ComptadorParaules {
                 .collect(Collectors.toList());
     }
 
-    // TF IDF
+    // TF IDF *******************************************************************************************************
 
-    public float freqTermePoema(String term, File poema){
+    // Calcula la freqüència d'un terme en un poema
+    public float freqTermePoema(String terme, File poema){
         ComptadorParaules cpPoema = new ComptadorParaules();
         cpPoema.processaPoema(poema);
-        return (float)(cpPoema.getNumOcurrenciesTerme(term)) / cpPoema.getNumTerms();
+        return (float)(cpPoema.getNumOcurrenciesTerme(terme)) / cpPoema.getNumTerms();
     }
 
+    // Calcula la freqüència d'un terme en un poemari
     public float freqTermePoemari(String term, File carpetaPoemari){
         ComptadorParaules cpPoemari = new ComptadorParaules();
         cpPoemari.processaPoemari(carpetaPoemari);
         return (float)(cpPoemari.getNumOcurrenciesTerme(term)) / cpPoemari.getNumTerms();
     }
 
+    // Calcula la freqüència d'un terme a partir del comptador de paraules del poemari
     public static float freqTermePoemari(String term, ComptadorParaules wcPoemari){
         return ((float) wcPoemari.getNumOcurrenciesTerme(term)) / wcPoemari.getNumTerms();
     }
 
+    // Calcula la freqüència d'un terme a partir del comptador de paraules del poema excloent paraules buides
     public float freqTermePoemaParaulesBuides(String term, File poema, ParaulesBuidesCatala paraulesBuidesCatala){
         ComptadorParaules cpPoema = new ComptadorParaules();
         cpPoema.processaPoemaParaulesBuides(poema, paraulesBuidesCatala);
         return (float)(cpPoema.getNumOcurrenciesTerme(term)) / cpPoema.getNumTerms();
     }
 
+    // Calcula la freqüència d'un terme a partir del comptador de paraules del poemari
     public float freqTermePoemariParaulesBuides(String term, ComptadorParaules cpPoemari){
         return (float)(cpPoemari.getNumOcurrenciesTerme(term)) / getNumTerms();
     }
 
-    // Freqüència de Document Invers: df(t,D) = log (N/( n))
+    // Calcula la freqüència de Document (Poema) Invers: df(t,D) = log (N/( n))
     public float freqPoemaInvers(String term){
         int N = getNumPoemes();
         int n = getNumPoemesContenenTerme(term);
         return log (N/((float) n));
     }
 
+    // Calcula la freqüència de Document (Poemari) Invers: df(t,D) = log (N/( n))
     public double freqPoemariInvers(String term){
         int N = getNumPoemaris();
         int n = getNumPoemarisContenenTerme(term);
         return Math.log ((double) N /((double) n));
     }
 
-    public float tfIdfPoema(String term, File poema){
-        return freqTermePoema(term, poema) * freqPoemaInvers(term);
+    // Calcula el tfIdf en el poema d'un terme
+    public float tfIdfPoema(String terme, File poema){
+        return freqTermePoema(terme, poema) * freqPoemaInvers(terme);
     }
 
-    public double tfIdfPoemari(String term, File carpetaPoemari){
-        return freqTermePoemari(term, carpetaPoemari) * freqPoemariInvers(term);
+    // Calcula el tfIdf en el poemari d'un terme
+    public double tfIdfPoemari(String terme, File carpetaPoemari){
+        return freqTermePoemari(terme, carpetaPoemari) * freqPoemariInvers(terme);
     }
 
+    // Calcula el tfIdf en el poemari d'un terme excloent paraules buides
     public double tfIdfPoemari(String term, ComptadorParaules wcPoemari){
         return freqTermePoemari(term, wcPoemari) * freqPoemariInvers(term);
     }
 
-    public float tfIdfPoemaParaulesBuides(String term, File poema, ParaulesBuidesCatala swc){
-        return freqTermePoemaParaulesBuides(term, poema, swc) * freqPoemaInvers(term);
+    // Calcula el tfIdf en el poemari d'un terme excloent paraules buides
+    public float tfIdfPoemaParaulesBuides(String terme, File poema, ParaulesBuidesCatala paraulesBuidesCatala){
+        return freqTermePoemaParaulesBuides(terme, poema, paraulesBuidesCatala) * freqPoemaInvers(terme);
     }
 
-    public double tfIdfPoemariParaulesBuides(String term, ComptadorParaules wcPoemari){
-        return freqTermePoemariParaulesBuides(term, wcPoemari) * freqPoemariInvers(term);
+    // Calcula el tfIdf en el poemari d'un terme excloent paraules buides
+    public double tfIdfPoemariParaulesBuides(String terme, ComptadorParaules wcPoemari){
+        return freqTermePoemariParaulesBuides(terme, wcPoemari) * freqPoemariInvers(terme);
     }
 
 
+    // Retorna un array amb les paraules clau d'un poema ordenades per TF-IDF descendent
     public TermeFreq[] getParaulesClauPoema(int numParaulesClau, File poema){
         TermeFreq[] paraulesClau = new TermeFreq[numParaulesClau];
         for(String terme : getTermesPoema(poema)){
@@ -412,12 +448,13 @@ public class ComptadorParaules {
      */
 
 
-    public TermeFreq[] getParaulesClauPoemaParaulesBuides(int numParaulesClau, File poema, ParaulesBuidesCatala swc){
+    // Retorna un array amb les paraules clau d'un poema ordenades per TF-IDF descendent excloent les paraules buides
+    public TermeFreq[] getParaulesClauPoemaParaulesBuides(int numParaulesClau, File poema, ParaulesBuidesCatala paraulesBuidesCatala){
 
         TermeFreq[] paraulesClau = new TermeFreq[numParaulesClau];
 
-        for(String terme : getTermesPoemaParaulesBuides(poema, swc)){
-            float tfIdfTerme = tfIdfPoemaParaulesBuides(terme, poema, swc);
+        for(String terme : getTermesPoemaParaulesBuides(poema, paraulesBuidesCatala)){
+            float tfIdfTerme = tfIdfPoemaParaulesBuides(terme, poema, paraulesBuidesCatala);
             int i=0;
             while(i<paraulesClau.length && paraulesClau[i]!=null && paraulesClau[i].frequencia > tfIdfTerme){
                 i++;
@@ -432,11 +469,12 @@ public class ComptadorParaules {
         return paraulesClau;
     }
 
+    // Retorna un array amb les paraules clau d'un poemari ordenades per TF-IDF descendent excloent les paraules buides
     public TermeFreq[] getParaulesClauPoemariParaulesBuides(int numParaulesClau, ParaulesBuidesCatala swc, ComptadorParaules wcPoemari){
 
         TermeFreq[] paraulesClau = new TermeFreq[numParaulesClau];
 
-        ArrayList<String> termesPoemari = ComptadorParaules.getTermesPoemariStopWords(wcPoemari, swc);
+        ArrayList<String> termesPoemari = ComptadorParaules.getTermesPoemariParaulesBuides(wcPoemari, swc);
 
         for(String terme : termesPoemari){
 
@@ -457,14 +495,13 @@ public class ComptadorParaules {
         return paraulesClau;
     }
 
+    // Retorna un array amb les paraules clau d'un poemari ordenades per TF-IDF descendent
     public TermeFreq[] getParaulesClauPoemari(int numParaulesClau, ComptadorParaules wcPoemari){
 
         TermeFreq[] paraulesClau = new TermeFreq[numParaulesClau];
-
         String[] termesPoemari = wcPoemari.getTermes();
 
         for(String terme : termesPoemari){
-
             double tfIdfTerme = tfIdfPoemari(terme, wcPoemari);
             int i=0;
             while(i<paraulesClau.length && paraulesClau[i]!=null && paraulesClau[i].frequencia > tfIdfTerme){
@@ -480,6 +517,7 @@ public class ComptadorParaules {
         return paraulesClau;
     }
 
+    // Retorna un array de termes processats i freqüències
     public ArrayList<TermeFreq> getTermesFreqs(){
         ArrayList<TermeFreq> termesFreqs = new ArrayList<>();
         for(String terme : comptes.keySet()){
@@ -490,8 +528,9 @@ public class ComptadorParaules {
     }
 
 
-    // Cerques
+    // Cerques ****************************************************************************************
 
+    // Retorna un array amb tots els termes processats que comencen amb un prefix
     public ArrayList<String> termesComencenAmb(String prefix){
         ArrayList<String> termesPrefix = new ArrayList<>();
         for(String terme : getTermes()){
@@ -502,6 +541,7 @@ public class ComptadorParaules {
         return termesPrefix;
     }
 
+    // Retorna un array amb tots els termes processats que acaben amb un sufix
     public ArrayList<String> termesAcabenAmb(String sufix){
         ArrayList<String> termesPrefix = new ArrayList<>();
         for(String terme : getTermes()){
@@ -512,6 +552,7 @@ public class ComptadorParaules {
         return termesPrefix;
     }
 
+    // Retorna un array amb tots els termes processats que acaben amb un dels sufixos
     public ArrayList<String> termesAcabenAmb(String ... sufixos){
         ArrayList<String> termesSufix = new ArrayList<>();
         for(String sufix : sufixos){
@@ -520,6 +561,7 @@ public class ComptadorParaules {
         return termesSufix;
     }
 
+    // Retorna un array amb tots els termes processats que contenen un afix
     public ArrayList<String> termesContenen(String afix){
         ArrayList<String> termesPrefix = new ArrayList<>();
         for(String terme : getTermes()){

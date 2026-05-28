@@ -5,9 +5,6 @@ import java.util.ArrayList;
 
 import static processing.core.PApplet.log;
 
-// https://medium.com/@adityamdk/tf-idf-implementation-in-java-f6c4d1d97e3b
-// term frequency–inverse document frequency
-
 public class TF_IDF {
 
     // Freqüència d'un terme t en un document d: tf(t, d)
@@ -28,8 +25,9 @@ public class TF_IDF {
         return log (N/( n));
     }
 
-    public static float tfIdf(String term, File document, ArrayList<File> documents){
-        return termFreq(term, document) * inverseDocFreq(term, documents);
+    // TF-IDF d'un terme respecte d'un document en un corpus de documents
+    public static float tfIdf(String terme, File document, ArrayList<File> documents){
+        return termFreq(terme, document) * inverseDocFreq(terme, documents);
     }
 
 
