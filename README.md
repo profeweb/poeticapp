@@ -243,6 +243,121 @@ Conté visualitzacions concretes que combinen les dades dels poemes amb diagrame
 
 ---
 
+### Visualitzacions quantitatives
+
+**Diagrama de barres — Longitud de versos (lletres per vers)**
+
+![Diagrama de barres amb la longitud en lletres dels versos dels 4 primers poemes de Poemes a Nai](src/data/grafics/vis_barres_lletres_vers.png)
+
+Cada barra horitzontal representa un vers del poema, i la seva longitud és proporcional al nombre de lletres. Les línies de referència marquen la mitjana del poemari (vermell), del poema (blau) i de l'estrofa (verd). Permet visualitzar d'una ullada el ritme visual i les variacions de longitud dins i entre estrofes.
+
+---
+
+**Diagrama de barres — Ocurrències d'un terme als poemaris**
+
+![Ocurrències del terme vida als 8 poemaris](src/data/grafics/vis_barres_ocurrencies.png)
+
+El diagrama mostra la distribució del terme *«vida»* (103 ocurrències totals) al llarg dels 8 poemaris. *Biografia* (1970) concentra el 38,83% de les ocurrències (40 aparicions), seguit d'*El pis de la badia* (23, 22,33%) i *La bellesa de l'home* (15, 14,56%). El terme té presència en tots els poemaris, cosa que evidencia la seva condició de tema transversal de l'obra.
+
+---
+
+**Diagrama de barres — Versos per poema**
+
+![Nombre de versos en cada poema del poemari La Bellesa de l'home](src/data/grafics/vis_barres_versos_poema.png)
+
+La distribució de versos per poema revela l'estructura formal del poemari. A *La bellesa de l'home*, el 7è poema és el més llarg (127 versos, 19,01%), mentre que el 9è és el més curt (4 versos, 0,60%). Aquesta variabilitat indica que Riera no segueix una estructura mètrica regular.
+
+---
+
+**Diagrama de sectors — Distribució de versos al corpus**
+
+![Diagrama de sectors amb la distribució de versos entre els poemaris](src/data/grafics/vis_sectors_versos.png)
+
+El diagrama circular mostra el pes relatiu de cada poemari en el conjunt de l'obra. *Biografia* (1970) conté el sector més gran amb 989 versos (22,33%), seguit d'*El pis de la badia* (700, 15,80%) i *Paràbola i clam* (707, 15,96%). *Poemes de l'enyorament* és el poemari més breu (224 versos, 5,06%).
+
+---
+
+**Diagrama de línies — Evolució de termes clau al llarg dels poemaris**
+
+![Evolució dels termes amor, cos, home i vida al llarg dels 8 poemaris](src/data/grafics/vis_linies_termes.png)
+
+El diagrama de línies permet comparar l'evolució de fins a quatre termes simultàniament al llarg de la cronologia dels poemaris. *Vida* (groc) assoleix el màxim a *Biografia* (40), mentre que *amor* (vermell) ho fa a *Paràbola* i *El pis de la badia*. *Home* (taronja) concentra les aparicions a *La bellesa de l'home* i *Paràbola*.
+
+---
+
+**Visualització radial — Paraules per vers**
+
+![Visualització radial de paraules per vers del poema 15 d'El pis de la badia](src/data/grafics/vis_radial_paraules.png)
+
+La visualització radial ad hoc combina un diagrama de sectors (l'angle proporcional al nombre de versos de cada estrofa) amb barres radials (la longitud proporcional al nombre de paraules de cada vers). Les línies de referència de color marquen les mitjanes del poemari (vermell), del poema (blau) i de l'estrofa (verd). Permet detectar d'un cop d'ull les variacions internes de cada estrofa.
+
+---
+
+**Visualització radial — Síl·labes per vers**
+
+![Visualització radial de síl·labes per vers del poema 8 de Poemes a Nai](src/data/grafics/vis_radial_silabes.png)
+
+La mateixa estructura radial aplicada al còmput de síl·labes. En el 8è poema de *Poemes a Nai*, les estrofes presenten una regularitat relativa al voltant de les 28–31 síl·labes per vers, amb algunes excepcions puntuals. Les mitjanes per estrofa (de 22,00 a 28,91 síl·labes) mostren la variació entre les sis estrofes del poema.
+
+---
+
+### Visualitzacions qualitatives
+
+**Núvol de paraules — Llibre de Benaventurances (150 paraules)**
+
+![Núvol de 150 paraules del Llibre de Benaventurances](src/data/grafics/vis_nigul_benaventurances.png)
+
+El núvol de paraules representa les 150 paraules més freqüents del poemari, amb la mida proporcional a la freqüència. Els termes dominants —*món*, *vida*, *cos*, *amor*, *veritat*, *benaventurat*— defineixen el camp semàntic central d'aquest poemari de marcat to filosòfic i humanista. Les paraules buides ja han estat eliminades prèviament.
+
+---
+
+**Núvol de paraules — Corpus complet de Miquel Àngel Riera (250 paraules)**
+
+![Núvol de 250 paraules del corpus lèxic complet de M.A. Riera](src/data/grafics/vis_nigul_corpus.png)
+
+El núvol del corpus complet (250 paraules) revela el vocabulari nuclear de l'obra de Riera. *Vida*, *home*, *amor*, *món* i *cos* dominen amb diferència, confirmant que el cos humà, l'existència i el món social constitueixen els tres eixos temàtics centrals de tota la seva producció poètica.
+
+---
+
+**Símbols de puntuació i ritme**
+
+![Visualització dels símbols de puntuació del poema 9 de Poemes a Nai](data/grafics/Poemes a Nai - P1,2, 3 i 9 - símbols-01.png)
+
+Cada línia representa un vers, amb els tokens de paraula com a guions i els símbols de puntuació com a punts de color: vermell (punt final), verd (punt i coma), blau (coma) i gris (altres). La distribució dels símbols permet visualitzar el ritme pausat o intens del poema i detectar l'estructura sintàctica sense llegir el text.
+
+---
+
+**Citacions textuals**
+
+![Visualització de les citacions del poema 2 de Poemes a Nai](src/data/grafics/vis_citacions.png)
+
+La visualització de citacions destaca en groc els tokens que formen part de cites textuals o expressions marcades tipogràficament dins del poema. Permet localitzar d'una ullada la presència i densitat de veus alienes o referències intertextuals en l'obra de Riera.
+
+---
+
+**Entitats nomenades**
+
+![Visualització d'entitats nomenades en els primers 20 versos del poema 3 de Poemes ocasionals](src/data/grafics/vis_ner_entitats.png)
+
+Cada vers es representa com una línia de tokens. Les entitats nomenades es ressalten amb colors: vermell per a persones (PER), verd per a localitzacions (LOC) i blau per a miscel·lània (MISC). En el 3r poema de *Poemes ocasionals*, la densitat d'entitats és especialment alta, reflectint el caràcter de dedicatòria del poema a Rafael Alberti.
+
+---
+
+**Relacions temàtiques**
+
+![Visualització de les relacions entre termes i àrees temàtiques](src/data/grafics/vis_relacions_tematiques.png)
+
+El gràfic relacional connecta els tokens del vers amb les categories temàtiques a les quals pertanyen (natura, temps, cos humà, emoció, etc.). Cada línia representa un vincle semàntic, i el gruix és proporcional a la intensitat de la relació. Permet identificar quins camps semàntics s'activen simultàniament en un poema donat.
+
+---
+
+**Visualització de l'anàlisi de sentiments**
+
+![Visualització de l'anàlisi de sentiments del poema 3 de Poemes ocasionals](src/data/grafics/vis_sentiments.png)
+
+La visualització de sentiments mostra, vers a vers, la puntuació de polaritat calculada en una escala de colors que va del blau (molt positiu) al vermell (molt negatiu). Els tokens responsables de la puntuació apareixen ressaltats. Permet seguir l'arc emocional del poema i identificar els moments de màxima intensitat afectiva.
+---
+
 ## Fitxers de dades
 
 ### Diccionaris NLP (`data/diccionaris/`)
