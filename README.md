@@ -247,7 +247,7 @@ Conté visualitzacions concretes que combinen les dades dels poemes amb diagrame
 
 **Diagrama de barres — Longitud de versos (lletres per vers)**
 
-![Diagrama de barres amb la longitud en lletres dels versos dels 4 primers poemes de Poemes a Nai](src/data/grafics/vis_barres_lletres_vers.png)
+!(data/grafics/Poemes a Nai - P1-4 num lletres (blocs)-01.png)
 
 Cada barra horitzontal representa un vers del poema, i la seva longitud és proporcional al nombre de lletres. Les línies de referència marquen la mitjana del poemari (vermell), del poema (blau) i de l'estrofa (verd). Permet visualitzar d'una ullada el ritme visual i les variacions de longitud dins i entre estrofes.
 
