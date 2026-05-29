@@ -2,6 +2,7 @@
 
 **PoeticAPP** és una aplicació de codi obert desenvolupada en **Java** i **Processing** per a l'anàlisi i la visualització de dades no estructurades de poemaris en llengua catalana. El projecte aplica tècniques de processament del llenguatge natural (PLN/NLP) per extreure coneixement dels textos poètics: freqüències, paraules clau, sentiments, entitats i estructura mètrica.
 
+![Pantalla Resum](https://github.com/profeweb/poeticapp/blob/master/data/grafics/poeticapp01.png)
 ---
 
 ## Taula de continguts
@@ -13,7 +14,6 @@
 - [Fitxers de dades](#fitxers-de-dades)
 - [Dependències](#dependències)
 - [Instal·lació i execució](#installació-i-execució)
-- [Captures de pantalla](#captures-de-pantalla)
 
 ---
 
