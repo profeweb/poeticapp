@@ -355,7 +355,8 @@ El gràfic relacional connecta els tokens del vers amb les categories temàtique
 
 ![Visualització de l'anàlisi de sentiments del poema 3 de Poemes ocasionals](https://github.com/profeweb/poeticapp/blob/master/data/grafics/Biografia%20-%20P6%20-%20sentiments-01.png)
 
-La visualització de sentiments mostra, vers a vers, la puntuació de polaritat calculada en una escala de colors que va del blau (molt positiu) al vermell (molt negatiu). Els tokens responsables de la puntuació apareixen ressaltats. Permet seguir l'arc emocional del poema i identificar els moments de màxima intensitat afectiva.
+La visualització de sentiments mostra, vers a vers, la puntuació de polaritat. Els tokens responsables de la puntuació apareixen ressaltats. Permet seguir l'arc emocional del poema i identificar els moments de màxima intensitat afectiva.
+
 ---
 
 ## Fitxers de dades
