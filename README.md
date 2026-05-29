@@ -287,7 +287,7 @@ El diagrama de línies permet comparar l'evolució de fins a quatre termes simul
 
 **Visualització radial — Paraules per vers**
 
-![Visualització radial de paraules per vers del poema 15 d'El pis de la badia](src/data/grafics/vis_radial_paraules.png)
+![Visualització radial de paraules per vers del poema 15 d'El pis de la badia](https://github.com/profeweb/poeticapp/blob/master/data/grafics/El%20pis%20de%20la%20badia%20-%20P15-01.png)
 
 La visualització radial ad hoc combina un diagrama de sectors (l'angle proporcional al nombre de versos de cada estrofa) amb barres radials (la longitud proporcional al nombre de paraules de cada vers). Les línies de referència de color marquen les mitjanes del poemari (vermell), del poema (blau) i de l'estrofa (verd). Permet detectar d'un cop d'ull les variacions internes de cada estrofa.
 
@@ -295,7 +295,7 @@ La visualització radial ad hoc combina un diagrama de sectors (l'angle proporci
 
 **Visualització radial — Síl·labes per vers**
 
-![Visualització radial de síl·labes per vers del poema 8 de Poemes a Nai](src/data/grafics/vis_radial_silabes.png)
+![Visualització radial de síl·labes per vers del poema 8 de Poemes a Nai](https://github.com/profeweb/poeticapp/blob/master/data/grafics/Poemes%20a%20Nai%20-%20P8%20-%20num%20sil.labes%20(radial)-01.png)
 
 La mateixa estructura radial aplicada al còmput de síl·labes. En el 8è poema de *Poemes a Nai*, les estrofes presenten una regularitat relativa al voltant de les 28–31 síl·labes per vers, amb algunes excepcions puntuals. Les mitjanes per estrofa (de 22,00 a 28,91 síl·labes) mostren la variació entre les sis estrofes del poema.
 
@@ -305,7 +305,7 @@ La mateixa estructura radial aplicada al còmput de síl·labes. En el 8è poema
 
 **Núvol de paraules — Llibre de Benaventurances (150 paraules)**
 
-![Núvol de 150 paraules del Llibre de Benaventurances](src/data/grafics/vis_nigul_benaventurances.png)
+![Núvol de 150 paraules del Llibre de Benaventurances](https://github.com/profeweb/poeticapp/blob/master/data/grafics/Llibre%20de%20Benaventurances%20(1977)%20-%20n%C3%ADgul%20paraules-01.png)
 
 El núvol de paraules representa les 150 paraules més freqüents del poemari, amb la mida proporcional a la freqüència. Els termes dominants —*món*, *vida*, *cos*, *amor*, *veritat*, *benaventurat*— defineixen el camp semàntic central d'aquest poemari de marcat to filosòfic i humanista. Les paraules buides ja han estat eliminades prèviament.
 
@@ -313,7 +313,7 @@ El núvol de paraules representa les 150 paraules més freqüents del poemari, a
 
 **Núvol de paraules — Corpus complet de Miquel Àngel Riera (250 paraules)**
 
-![Núvol de 250 paraules del corpus lèxic complet de M.A. Riera](src/data/grafics/vis_nigul_corpus.png)
+![Núvol de 250 paraules del corpus lèxic complet de M.A. Riera](https://github.com/profeweb/poeticapp/blob/master/data/grafics/Corpus%20MA%20Riera%20-%20n%C3%ADgul%20paraules.png)
 
 El núvol del corpus complet (250 paraules) revela el vocabulari nuclear de l'obra de Riera. *Vida*, *home*, *amor*, *món* i *cos* dominen amb diferència, confirmant que el cos humà, l'existència i el món social constitueixen els tres eixos temàtics centrals de tota la seva producció poètica.
 
@@ -321,7 +321,7 @@ El núvol del corpus complet (250 paraules) revela el vocabulari nuclear de l'ob
 
 **Símbols de puntuació i ritme**
 
-![Visualització dels símbols de puntuació del poema 9 de Poemes a Nai](data/grafics/Poemes a Nai - P1,2, 3 i 9 - símbols-01.png)
+![Visualització dels símbols de puntuació del poema 9 de Poemes a Nai](https://github.com/profeweb/poeticapp/blob/master/data/grafics/Poemes%20a%20Nai%20-%20P1%2C2%2C%203%20i%209%20-%20s%C3%ADmbols-01.png)
 
 Cada línia representa un vers, amb els tokens de paraula com a guions i els símbols de puntuació com a punts de color: vermell (punt final), verd (punt i coma), blau (coma) i gris (altres). La distribució dels símbols permet visualitzar el ritme pausat o intens del poema i detectar l'estructura sintàctica sense llegir el text.
 
@@ -329,7 +329,7 @@ Cada línia representa un vers, amb els tokens de paraula com a guions i els sí
 
 **Citacions textuals**
 
-![Visualització de les citacions del poema 2 de Poemes a Nai](src/data/grafics/vis_citacions.png)
+![Visualització de les citacions del poema 2 de Poemes a Nai](https://github.com/profeweb/poeticapp/blob/master/data/grafics/Poemes%20a%20Nai%20-%20P2%20-%20cites%20textuals-01.png)
 
 La visualització de citacions destaca en groc els tokens que formen part de cites textuals o expressions marcades tipogràficament dins del poema. Permet localitzar d'una ullada la presència i densitat de veus alienes o referències intertextuals en l'obra de Riera.
 
@@ -337,7 +337,7 @@ La visualització de citacions destaca en groc els tokens que formen part de cit
 
 **Entitats nomenades**
 
-![Visualització d'entitats nomenades en els primers 20 versos del poema 3 de Poemes ocasionals](src/data/grafics/vis_ner_entitats.png)
+![Visualització d'entitats nomenades en els primers 20 versos del poema 3 de Poemes ocasionals](https://github.com/profeweb/poeticapp/blob/master/data/grafics/Poemes%20ocasionals%20-%20P3%20-%20ners-01.png)
 
 Cada vers es representa com una línia de tokens. Les entitats nomenades es ressalten amb colors: vermell per a persones (PER), verd per a localitzacions (LOC) i blau per a miscel·lània (MISC). En el 3r poema de *Poemes ocasionals*, la densitat d'entitats és especialment alta, reflectint el caràcter de dedicatòria del poema a Rafael Alberti.
 
@@ -345,7 +345,7 @@ Cada vers es representa com una línia de tokens. Les entitats nomenades es ress
 
 **Relacions temàtiques**
 
-![Visualització de les relacions entre termes i àrees temàtiques](src/data/grafics/vis_relacions_tematiques.png)
+![Visualització de les relacions entre termes i àrees temàtiques](https://github.com/profeweb/poeticapp/blob/master/data/grafics/Biografia%20-%20termes%20relacionats%20amb%20ART-01.png)
 
 El gràfic relacional connecta els tokens del vers amb les categories temàtiques a les quals pertanyen (natura, temps, cos humà, emoció, etc.). Cada línia representa un vincle semàntic, i el gruix és proporcional a la intensitat de la relació. Permet identificar quins camps semàntics s'activen simultàniament en un poema donat.
 
@@ -353,7 +353,7 @@ El gràfic relacional connecta els tokens del vers amb les categories temàtique
 
 **Visualització de l'anàlisi de sentiments**
 
-![Visualització de l'anàlisi de sentiments del poema 3 de Poemes ocasionals](src/data/grafics/vis_sentiments.png)
+![Visualització de l'anàlisi de sentiments del poema 3 de Poemes ocasionals](https://github.com/profeweb/poeticapp/blob/master/data/grafics/Biografia%20-%20P6%20-%20sentiments-01.png)
 
 La visualització de sentiments mostra, vers a vers, la puntuació de polaritat calculada en una escala de colors que va del blau (molt positiu) al vermell (molt negatiu). Els tokens responsables de la puntuació apareixen ressaltats. Permet seguir l'arc emocional del poema i identificar els moments de màxima intensitat afectiva.
 ---
