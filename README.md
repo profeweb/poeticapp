@@ -263,7 +263,7 @@ El diagrama mostra la distribució del terme *«vida»* (103 ocurrències totals
 
 **Diagrama de barres — Versos per poema**
 
-![Nombre de versos en cada poema del poemari La Bellesa de l'home](https://github.com/profeweb/poeticapp/blob/master/data/grafics/La%20bellesa%20de%20l'home%20-%20num%20versos%20(poemes)-01.png)
+![Nombre de versos en cada poema del poemari La Bellesa de l'home](https://github.com/profeweb/poeticapp/blob/master/data/grafics/vida%20-%20num%20Ocurrencies%20(corpus)-01.png)
 
 La distribució de versos per poema revela l'estructura formal del poemari. A *La bellesa de l'home*, el 7è poema és el més llarg (127 versos, 19,01%), mentre que el 9è és el més curt (4 versos, 0,60%). Aquesta variabilitat indica que Riera no segueix una estructura mètrica regular.
 
