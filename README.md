@@ -11,7 +11,7 @@
 - [Corpus literari](#corpus-literari)
 - [Estructura del projecte](#estructura-del-projecte)
 - [Paquets i classes principals](#paquets-i-classes-principals)
-- [Visualitzacions](##visualitzacions)
+- [Visualitzacions](#visualitzacions)
 - [Fitxers de dades](#fitxers-de-dades)
 - [Dependències](#dependències)
 - [Instal·lació i execució](#installació-i-execució)
