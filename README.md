@@ -23,12 +23,12 @@ PoeticAPP permet explorar i analitzar poemaris en català a través d'una interf
 
 - **Segmentació i tokenització** de textos poètics (versos, estrofes, frases)
 - **Recompte de paraules** i freqüències de termes
-- **Filtratge per paraules buides** (*stop words*) en català
+- **Filtratge per paraules buides** en català
 - **Lematització** basada en un diccionari de lemes del català
 - **Càlcul del TF-IDF** (Term Frequency – Inverse Document Frequency) per identificar les paraules clau de cada poema o poemari
 - **Anàlisi de sentiments** amb detecció de polaritat, negadors i modificadors
 - **Reconeixement d'entitats nomenades (NER)** amb etiquetatge BIO (persones, llocs, organitzacions)
-- **Còmput de síl·labes** en català seguint les regles de diftongs i hiats
+- **Còmput de síl·labes** en català seguint les regles de diftongs i hiats (Softcatalà)
 - **Consulta al DIEC** (Diccionari de l'Institut d'Estudis Catalans) per a categories gramaticals
 - **Visualització** de dades amb diagrames de barres, línies, sectors i núvols de paraules
 
@@ -71,7 +71,6 @@ poeticapp/
 ├── data/
 │   ├── poems/                  # Textos dels poemes (.txt)
 │   ├── diccionaris/            # Diccionaris NLP (JSON, TXT)
-│   ├── stats/                  # Estadístiques precalculades (.txt)
 │   ├── fonts/                  # Fonts tipogràfiques (.ttf)
 │   └── img/                    # Imatges de la interfície (.png, .jpg)
 ├── libs/
@@ -99,7 +98,6 @@ Conté el model jeràrquic del corpus poètic i el processador que transforma el
 | `Token` | Interfície comuna per a paraules i símbols. |
 | `Paraula` | Token de tipus paraula: conté el text i permet la lematització. |
 | `Simbol` | Token de tipus puntuació o signe especial. |
-| `Metrica` | Calcula la mètrica dels versos. |
 | `DadesPoemaris` | Utilitats per agregar estadístiques de tots els poemaris (nombre de poemes, versos, paraules, etc.). |
 | `Visualitzacions` | Genera representacions visuals dels poemes directament amb Processing. |
 
@@ -453,21 +451,6 @@ Cada fitxer `.txt` conté el text del poema en text pla UTF-8, amb línies en bl
 
 ---
 
-### Estadístiques precalculades (`data/stats/`)
-
-Fitxers de text amb resultats d'anàlisis NLP prèvies, usats per a prototipatge i tests:
-
-| Fitxer | Contingut |
-|---|---|
-| `keywords.txt` | Paraules clau globals del corpus |
-| `amor i Derivats.txt` | Freqüències del camp semàntic de l'amor |
-| `estimaDerivats.txt` | Termes derivats d'*estimar* |
-| `home.txt` | Ocurrències i derivats de la paraula *home* |
-| `nai.txt` | Estadístiques del terme *Nai* |
-| `vida.txt` | Freqüències del camp semàntic de la vida |
-
----
-
 ### Fonts tipogràfiques (`data/fonts/`)
 
 | Fitxer | Ús |
@@ -488,7 +471,6 @@ Fitxers de text amb resultats d'anàlisis NLP prèvies, usats per a prototipatge
 |---|---|---|
 | **Processing Core** | 3.5.4 | Motor gràfic principal: renderitzat 2D, gestió de events, fonts i imatges |
 | **org.json** | 20240303 | Lectura i escriptura de fitxers JSON (diccionaris NLP) |
-| **jsoup** | 1.21.2 | Anàlisi HTML per a les consultes web al DIEC |
 
 ### Requisits del sistema
 
