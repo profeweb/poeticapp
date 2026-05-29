@@ -348,7 +348,7 @@ Cada vers es representa com una línia de tokens. Les entitats nomenades es ress
 
 ![Visualització de les relacions entre termes i àrees temàtiques](https://github.com/profeweb/poeticapp/blob/master/data/grafics/Biografia%20-%20termes%20relacionats%20amb%20ART-01.png)
 
-El gràfic relacional connecta els tokens del vers amb les categories temàtiques a les quals pertanyen (natura, temps, cos humà, emoció, etc.). Cada línia representa un vincle semàntic, i el gruix és proporcional a la intensitat de la relació. Permet identificar quins camps semàntics s'activen simultàniament en un poema donat.
+El gràfic relacional connecta els tokens del vers amb les categories temàtiques a les quals pertanyen. Cada línia representa un vincle semàntic. Permet identificar quins camps semàntics s'activen simultàniament en un poema donat.
 
 ---
 
