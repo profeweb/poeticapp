@@ -255,7 +255,7 @@ Cada barra horitzontal representa un vers del poema, i la seva longitud és prop
 
 **Diagrama de barres — Ocurrències d'un terme als poemaris**
 
-![Ocurrències del terme vida als 8 poemaris](src/data/grafics/vis_barres_ocurrencies.png)
+![Ocurrències del terme vida als 8 poemaris](https://github.com/profeweb/poeticapp/blob/master/data/grafics/vida%20-%20num%20Ocurrencies%20(corpus).png)
 
 El diagrama mostra la distribució del terme *«vida»* (103 ocurrències totals) al llarg dels 8 poemaris. *Biografia* (1970) concentra el 38,83% de les ocurrències (40 aparicions), seguit d'*El pis de la badia* (23, 22,33%) i *La bellesa de l'home* (15, 14,56%). El terme té presència en tots els poemaris, cosa que evidencia la seva condició de tema transversal de l'obra.
 
@@ -263,7 +263,7 @@ El diagrama mostra la distribució del terme *«vida»* (103 ocurrències totals
 
 **Diagrama de barres — Versos per poema**
 
-![Nombre de versos en cada poema del poemari La Bellesa de l'home](src/data/grafics/vis_barres_versos_poema.png)
+![Nombre de versos en cada poema del poemari La Bellesa de l'home](https://github.com/profeweb/poeticapp/blob/master/data/grafics/La%20bellesa%20de%20l'home%20-%20num%20versos%20(poemes)-01.png)
 
 La distribució de versos per poema revela l'estructura formal del poemari. A *La bellesa de l'home*, el 7è poema és el més llarg (127 versos, 19,01%), mentre que el 9è és el més curt (4 versos, 0,60%). Aquesta variabilitat indica que Riera no segueix una estructura mètrica regular.
 
@@ -271,7 +271,7 @@ La distribució de versos per poema revela l'estructura formal del poemari. A *L
 
 **Diagrama de sectors — Distribució de versos al corpus**
 
-![Diagrama de sectors amb la distribució de versos entre els poemaris](src/data/grafics/vis_sectors_versos.png)
+![Diagrama de sectors amb la distribució de versos entre els poemaris](https://github.com/profeweb/poeticapp/blob/master/data/grafics/Coprus%20MA%20Riera%20-%20Num%20Versos%20x%20Poemari%20-%20sectors%20.png)
 
 El diagrama circular mostra el pes relatiu de cada poemari en el conjunt de l'obra. *Biografia* (1970) conté el sector més gran amb 989 versos (22,33%), seguit d'*El pis de la badia* (700, 15,80%) i *Paràbola i clam* (707, 15,96%). *Poemes de l'enyorament* és el poemari més breu (224 versos, 5,06%).
 

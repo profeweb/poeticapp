@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebd31310-deb3-4823-8f90-e0c25489e3ec" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data/grafics/PoemesaNaiBlocs.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +49,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tonim\Documents\CODE\Poetica\data\grafics" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tonim\Documents\CODE\Poetica\data\stats" />
       <recent name="C:\Users\tonim\Documents\CODE\Poetica\data\diccionaris" />
@@ -258,14 +261,7 @@
       <workItem from="1779968020139" duration="2601000" />
       <workItem from="1779977972202" duration="6557000" />
       <workItem from="1779984639836" duration="96000" />
-      <workItem from="1780038252545" duration="613000" />
-    </task>
-    <task id="LOCAL-00074" summary="Inicial">
-      <created>1779043607207</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1779043607207</updated>
+      <workItem from="1780038252545" duration="963000" />
     </task>
     <task id="LOCAL-00075" summary="Inicial">
       <created>1779109059357</created>
@@ -603,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1780038584368</updated>
     </task>
-    <option name="localTasksCounter" value="123" />
+    <task id="LOCAL-00123" summary="Inicial">
+      <created>1780039015804</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1780039015804</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
