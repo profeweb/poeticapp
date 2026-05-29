@@ -11,6 +11,7 @@
 - [Corpus literari](#corpus-literari)
 - [Estructura del projecte](#estructura-del-projecte)
 - [Paquets i classes principals](#paquets-i-classes-principals)
+- [Visualitzacions](## Visualitzacions)
 - [Fitxers de dades](#fitxers-de-dades)
 - [Dependències](#dependències)
 - [Instal·lació i execució](#installació-i-execució)
@@ -240,6 +241,8 @@ Conté visualitzacions concretes que combinen les dades dels poemes amb diagrame
 | `Visuals_Simbols_Parsed` | Versió que treballa sobre dades extretes pel parser. |
 
 ---
+
+## Visualitzacions
 
 ### Visualitzacions quantitatives
 
