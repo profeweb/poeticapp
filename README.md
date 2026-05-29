@@ -255,7 +255,7 @@ Cada barra horitzontal representa un vers del poema, i la seva longitud és prop
 
 **Diagrama de barres — Ocurrències d'un terme als poemaris**
 
-![Ocurrències del terme vida als 8 poemaris](https://github.com/profeweb/poeticapp/blob/master/data/grafics/vida%20-%20num%20Ocurrencies%20(corpus).png)
+![Ocurrències del terme vida als 8 poemaris](https://github.com/profeweb/poeticapp/blob/master/data/grafics/vida%20-%20num%20Ocurrencies%20(corpus)-01.png)
 
 El diagrama mostra la distribució del terme *«vida»* (103 ocurrències totals) al llarg dels 8 poemaris. *Biografia* (1970) concentra el 38,83% de les ocurrències (40 aparicions), seguit d'*El pis de la badia* (23, 22,33%) i *La bellesa de l'home* (15, 14,56%). El terme té presència en tots els poemaris, cosa que evidencia la seva condició de tema transversal de l'obra.
 
@@ -263,7 +263,7 @@ El diagrama mostra la distribució del terme *«vida»* (103 ocurrències totals
 
 **Diagrama de barres — Versos per poema**
 
-![Nombre de versos en cada poema del poemari La Bellesa de l'home](https://github.com/profeweb/poeticapp/blob/master/data/grafics/vida%20-%20num%20Ocurrencies%20(corpus)-01.png)
+![Nombre de versos en cada poema del poemari La Bellesa de l'home](https://github.com/profeweb/poeticapp/blob/master/data/grafics/La%20bellesa%20de%20l'home%20-%20num%20versos%20(poemes)-01.png)
 
 La distribució de versos per poema revela l'estructura formal del poemari. A *La bellesa de l'home*, el 7è poema és el més llarg (127 versos, 19,01%), mentre que el 9è és el més curt (4 versos, 0,60%). Aquesta variabilitat indica que Riera no segueix una estructura mètrica regular.
 
@@ -279,7 +279,7 @@ El diagrama circular mostra el pes relatiu de cada poemari en el conjunt de l'ob
 
 **Diagrama de línies — Evolució de termes clau al llarg dels poemaris**
 
-![Evolució dels termes amor, cos, home i vida al llarg dels 8 poemaris](src/data/grafics/vis_linies_termes.png)
+![Evolució dels termes amor, cos, home i vida al llarg dels 8 poemaris](https://github.com/profeweb/poeticapp/blob/master/data/grafics/termes%20amor%2C%20cos%2C%20home%2C%20vida.%20-%20num%20Ocurrencies%20(corpus)-01.png)
 
 El diagrama de línies permet comparar l'evolució de fins a quatre termes simultàniament al llarg de la cronologia dels poemaris. *Vida* (groc) assoleix el màxim a *Biografia* (40), mentre que *amor* (vermell) ho fa a *Paràbola* i *El pis de la badia*. *Home* (taronja) concentra les aparicions a *La bellesa de l'home* i *Paràbola*.
 
